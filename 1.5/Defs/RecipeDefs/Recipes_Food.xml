@@ -52,4 +52,39 @@
 		<workSkill>Cooking</workSkill>
 		<researchPrerequisite>VFEM2_Beekeeping</researchPrerequisite>
 	</RecipeDef>
+	<RecipeDef>
+		<defName>VFEM2_Make_Must</defName>
+		<label>make grape must</label>
+		<description>Make must from grapes.</description>
+		<jobString>Making must.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<recipeUsers>
+			<li>Brewery</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VFEM2_RawGrapes</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>VFEM2_RawGrapes</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<VFEM2_Must>5</VFEM2_Must>
+		</products>
+		<researchPrerequisite>VFEM2_Wine</researchPrerequisite>
+	</RecipeDef>
 </Defs>

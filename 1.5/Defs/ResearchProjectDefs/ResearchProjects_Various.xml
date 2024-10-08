@@ -13,4 +13,16 @@
 			<li>Pemmican</li>
 		</prerequisites>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFEM2_Wine</defName>
+		<label>wine</label>
+		<description>Plant grapes which can then be used to create wine must and eventually, high quality wine.</description>
+		<baseCost>600</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>0.15</researchViewY>
+		
+	</ResearchProjectDef>
 </Defs>
