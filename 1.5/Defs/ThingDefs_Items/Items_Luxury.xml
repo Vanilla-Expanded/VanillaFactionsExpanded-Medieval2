@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>VFEM2_Sweetroll</defName>
+		<label>sweetroll</label>
+		<description>A baked treat made of an eggy bread base drizzled with a thick, sweetened glaze. Any trader selling these should be immediately concerned, as sweetrolls have a knack for being stolen.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Food/Sweetroll</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<soundInteract>Standard_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>6.4</MarketValue>
+			<Mass>0.1</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1</DeteriorationRate>
+			<Nutrition>0.4</Nutrition>
+		</statBases>
+		<thingCategories>
+			<li>Foods</li>
+		</thingCategories>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+			<foodType>Processed</foodType>
+			<joy>0.15</joy>
+			<joyKind>Gluttonous</joyKind>
+			<maxNumToIngestAtOnce>4</maxNumToIngestAtOnce>
+			<ingestSound>Meal_Eat</ingestSound>
+		</ingestible>
+	</ThingDef>
+</Defs>

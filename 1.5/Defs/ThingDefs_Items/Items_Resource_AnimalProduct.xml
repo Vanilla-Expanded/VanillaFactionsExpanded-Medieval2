@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="OrganicProductBase">
+        <defName>VFEM2_Honey</defName>
+        <label>raw honey</label>
+        <description>Raw, unprocessed honey harvested from an apiary, very sugary and fun to eat while also extremely long-lasting, perfect for taking on caravan trips, fermenting into mead, or baking into desserts.</description>
+        <graphicData>
+            <texPath>Things/Item/Resource/AnimalProductRaw/Honey</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <socialPropernessMatters>true</socialPropernessMatters>
+        <statBases>
+            <MarketValue>4.2</MarketValue>
+            <Mass>0.015</Mass>
+            <Nutrition>0.05</Nutrition>
+            <FoodPoisonChanceFixedHuman>0.04</FoodPoisonChanceFixedHuman>
+        </statBases>
+        <ingestible>
+            <foodType>AnimalProduct</foodType>
+			<preferability>RawTasty</preferability>
+			<joy>0.10</joy>
+			<joyKind>Gluttonous</joyKind>
+			<maxNumToIngestAtOnce>4</maxNumToIngestAtOnce>
+			<ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+        <thingCategories>
+            <li>AnimalProductRaw</li>
+        </thingCategories>
+    </ThingDef>
+
+</Defs>

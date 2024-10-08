@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM2_Apiary</defName>
+		<thingClass>VFEMedieval.Building_Apiary</thingClass>
+		<label>apiary</label>
+		<tickerType>Rare</tickerType>
+		<description>A wooden box-like structure with a series of shelves, lattices, and chambers. When placed near flowers the apiary will naturally attract wild bees which will make it their new home. Over time these bees will produce honey which can be harvested and eaten directly, or later fermented into mead.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/Apiary</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.5, 1.5, 1)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>1.0</fillPercent>
+		<designationCategory>Misc</designationCategory>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>3000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<Mass>20</Mass>
+		</statBases>
+		<building>
+			<paintable>true</paintable>
+			<soundAmbient>VFEM2_Apiary_Ambience</soundAmbient>
+		</building>
+		<stuffCategories>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>90</costStuffCount>
+		<holdsRoof>false</holdsRoof>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.6</uiIconScale>
+		<specialDisplayRadius>4.9</specialDisplayRadius>
+		<researchPrerequisites>
+			<li>VFEM2_Beekeeping</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>VFEMedieval.Placeworker_Apiary</li>
+		</placeWorkers>
+	</ThingDef>
+</Defs>

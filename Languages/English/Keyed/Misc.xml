@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<!-- Apiary -->
+	<VFEM2_NeedTend>The apiary needs to be tended to</VFEM2_NeedTend>
+	<VFEM2_Resting>The apiary is resting because the ambient temperature is below 10°C</VFEM2_Resting>
+	<VFEM2_Ready>Honey ready</VFEM2_Ready>
+	<VFEM2_NeedFlower>The apiary needs {0} more flowers around it for bees to forage around</VFEM2_NeedFlower>
+	<VFEM2_NeedTIn>The apiary needs tending in {0}</VFEM2_NeedTIn>
+	<VFEM2_PlaceWorker>The apiary needs to be one cell away from any other apiaries</VFEM2_PlaceWorker>
+	<VFEM2_PlaceWorkerNoRoof>The apiary can't be built under a roof</VFEM2_PlaceWorkerNoRoof>
+	
+	<!-- Mead barrel -->
+	<VFEM2_Mead_InsertFirstItemDesc>Honey to Insert</VFEM2_Mead_InsertFirstItemDesc>
+	<VFEM2_Mead_bringIngredientsText>Bring honey</VFEM2_Mead_bringIngredientsText>
+	<VFEM2_Mead_bringIngredientsDesc>Bring honey to the mead barrel to start fermentation</VFEM2_Mead_bringIngredientsDesc>
+	<VFEM2_Mead_cancelIngredientsText>Cancel bringing honey</VFEM2_Mead_cancelIngredientsText>
+	<VFEM2_Mead_cancelIngredientsDesc>Cancel bringing honey to the mead barrel.</VFEM2_Mead_cancelIngredientsDesc>
+	<VFEM2_Mead_removeProductText>Remove mead</VFEM2_Mead_removeProductText>
+	<VFEM2_Mead_removeProductDesc>Remove mead from the mead barrel. The barrel will be ready.</VFEM2_Mead_removeProductDesc>
+</LanguageData>

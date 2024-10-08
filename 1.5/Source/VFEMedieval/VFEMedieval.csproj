@@ -291,7 +291,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\JobDrivers\JobDriver_TakeHoneyOutOfApiary.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_TendToApiary.cs" />
+    <Compile Include="AI\WorkGivers\WorkGiver_TakeHoneyOutOfApiary.cs" />
+    <Compile Include="AI\WorkGivers\WorkGiver_TendToApiary.cs" />
+    <Compile Include="Buildings\Building_Apiary.cs" />
     <Compile Include="DefOf\VFEM_DefOf.cs" />
+    <Compile Include="Placeworkers\Placeworker_Apiary.cs" />
     <Compile Include="VFEMedieval.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

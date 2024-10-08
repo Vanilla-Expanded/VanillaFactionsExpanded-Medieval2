@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ============= TakeHoneyOutOfApiary ============= -->
+	<WorkGiverDef>
+		<defName>VFEM2_TakeHoneyOutOfApiary</defName>
+		<label>take honey out of apiary</label>
+		<giverClass>VFEMedieval.WorkGiver_TakeHoneyOutOfApiary</giverClass>
+		<workType>Handling</workType>
+		<verb>take honey</verb>
+		<gerund>taking honey from</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	<!-- ============= TendToTheApiary ============= -->
+	<WorkGiverDef>
+		<defName>VFEM2_TendToTheApiary</defName>
+		<label>tend to the apiary</label>
+		<giverClass>VFEMedieval.WorkGiver_TendToApiary</giverClass>
+		<workType>Handling</workType>
+		<verb>tend apiary</verb>
+		<gerund>tend to</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+</Defs>
