@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "S3bIXH36g1RcrsB7EnKXoKxBn+HKz15jNOhNPTRzFVU+QRxpkLHc9dw2X7wrqvq3iouJXnOowx//a+ZJB4stxw==",
+  "success": true,
+  "projectFilePath": "E:\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\VFEMedieval.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\lib.harmony\\2.3.3\\lib.harmony.2.3.3.nupkg.sha512"
+  ],
+  "logs": []
+}

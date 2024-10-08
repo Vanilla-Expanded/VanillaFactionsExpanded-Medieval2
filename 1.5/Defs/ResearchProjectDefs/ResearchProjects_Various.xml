@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>VFEM_HeavyCrossbow</defName>
+    <label>heavy crossbow</label>
+    <description>Construct heavy crossbows, capable of firing a projectile unstoppable by most man-made armors.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>Greatbow</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFEM_NobleMedievalApparel</defName>
+    <label>medieval noble apparel</label>
+    <description>Make noble apparel that brings a certain degree of authority to the wearer.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>ComplexClothing</li>
+    </prerequisites>
+  <researchViewX>0.00</researchViewX>
+  <researchViewY>3.0</researchViewY>
+	<tab>VanillaExpanded</tab>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFEM_PlagueMask</defName>
+    <label>plague mask</label>
+    <description>Make masks filled with herbal medicine to prevent wearers from catching plague and spreading the black plague.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>ComplexClothing</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.0</researchViewY>
+	<tab>VanillaExpanded</tab>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFEM_TreeHealroot</defName>
+    <label>healroot tree</label>
+    <description>Grow healroot trees that yield medicine and emit antispetic smell.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>TreeSowing</li>
+    </prerequisites>
+  <researchViewX>0.00</researchViewX>
+  <researchViewY>3.5</researchViewY>
+	<tab>VanillaExpanded</tab>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFEM_MeatSmoking</defName>
+    <label>meat smoking</label>
+    <description>Smoke meat to preserve it for a long amount of time.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>Pemmican</li>
+    </prerequisites>
+  <researchViewX>1.00</researchViewX>
+  <researchViewY>3.5</researchViewY>
+	<tab>VanillaExpanded</tab>
+  </ResearchProjectDef>
+
+
+</Defs>
