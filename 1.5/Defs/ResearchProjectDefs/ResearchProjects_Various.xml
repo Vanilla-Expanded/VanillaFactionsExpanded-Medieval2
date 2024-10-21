@@ -23,6 +23,34 @@
 		<techLevel>Medieval</techLevel>
 		<researchViewX>3.00</researchViewX>
 		<researchViewY>0.15</researchViewY>
-		
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFEM2_Alchemy</defName>
+		<label>alchemy</label>
+		<description>Learn to plant various alchemical ingredients and combining them into different draughts at an alchemy lab.</description>
+		<baseCost>1500</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>0.8</researchViewY>
+		<prerequisites>
+			<li>PsychoidBrewing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFEM2_MedievalArchitecture</defName>
+		<label>medieval architecture</label>
+		<description>Learn to construct various medieval structures, including cloth walls.</description>
+		<baseCost>1200</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>0.8</researchViewY>
+		<prerequisites>
+			<li>PsychoidBrewing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
 </Defs>
