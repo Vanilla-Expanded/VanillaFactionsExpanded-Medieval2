@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase" Name="VFEM2_VikingBase" Abstract="True">
+    <pawnSingular>nordsman</pawnSingular>
+    <pawnsPlural>nordspeople</pawnsPlural>
+    <categoryTag>VFEM2_Vikings</categoryTag>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+	<settlementTexturePath>MapIcons/Expanding/ClanExpanding</settlementTexturePath>
+    <factionNameMaker>VFEM2_NamerFactionViking</factionNameMaker>
+    <settlementNameMaker>VFEM2_NamerSettlementViking</settlementNameMaker>
+    <techLevel>Medieval</techLevel>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <allowedCultures>
+      <li>VFEM2_Vikings</li>
+    </allowedCultures>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+    </disallowedMemes>
+    <structureMemeWeights>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">3</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Yttakin MayRequire="Ludeon.RimWorld.Biotech">0.15</Yttakin>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.25</Hussar>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Tribal</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <leaderTitle>jarl</leaderTitle>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+      <!--<li>VFEM2_Caravan_Looter</li>-->
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Standard</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>-55~25</allowedArrivalTemperatureRange>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 1)</li>
+        <!--Constant 1 at all points levels-->
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(800, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <modExtensions>
+      <li Class="VFECore.FactionDefExtension">
+        <allowedBiomes>
+          <li>IceSheet</li>
+          <li>SeaIce</li>
+          <li>BorealForest</li>
+          <li>ColdBog</li>
+          <li>Tundra</li>
+        </allowedBiomes>
+      </li>
+    </modExtensions>
+  </FactionDef>
+
+  <FactionDef ParentName="VFEM2_VikingBase">
+    <defName>VFEM2_ClanRough</defName>
+    <label>rough clan</label>
+    <description>These clanmen have been here for a long time. Perhaps their ancestors crashed here a thousand years ago, as their legends suggest. In any case, the nordmen are fierce people who live off of the work of others, and they are not afraid to use force to take what's not theirs.\n\nAlbeit not as technologically advanced as other factions, the nordmen can be a valuable ally and a terrible enemy due to their hardiness and savage, heathen ways.\n\nThis particular clan values warlike dominance; it may be difficult to turn them into an ally.</description>
+    <colorSpectrum>
+      <li>(0.80, 0.36, 0.30)</li>
+      <li>(0.90, 0.34, 0.34)</li>
+    </colorSpectrum>
+	<factionIconPath>MapIcons/ClanRough</factionIconPath>
+    <permanentEnemy>false</permanentEnemy>
+	<naturalEnemy>true</naturalEnemy>
+	<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+	<listOrderPriority>20</listOrderPriority>
+    <pawnGroupMakers>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Drifter>1</Drifter>
+        </traders>
+        <carriers>
+          <Muffalo>8</Muffalo>
+          <Yak>4</Yak>
+          <Alpaca>2.5</Alpaca>
+        </carriers>
+        <guards>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>80</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Archer>10</VFEM2_Archer>
+          <VFEM2_Berserker>5</VFEM2_Berserker>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, raiders -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>45</VFEM2_Raider>
+          <VFEM2_Guardian>5</VFEM2_Guardian>
+          <VFEM2_Ravager>5</VFEM2_Ravager>
+          <VFEM2_Berserker>1</VFEM2_Berserker>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, hunting party -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>45</VFEM2_Raider>
+          <VFEM2_Guardian>5</VFEM2_Guardian>
+          <VFEM2_Ravager>5</VFEM2_Ravager>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, shield wall -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>30</VFEM2_Raider>
+          <VFEM2_ShieldedGuardian>5</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>5</VFEM2_ShieldedRavager>
+          <VFEM2_Shieldbearer>50</VFEM2_Shieldbearer>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged only -->
+        <kindDef>Combat</kindDef>
+        <commonality>30</commonality>
+        <options>
+          <!--<VFEM2_Archer>60</VFEM2_Archer>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, mix only -->
+        <kindDef>Combat</kindDef>
+        <commonality>40</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Miner>1</Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Hunter>1</Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Logger>1</Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Farmer>1</Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>100</configurationListOrderPriority>
+  </FactionDef>
+
+  <FactionDef ParentName="VFEM2_VikingBase">
+    <defName>VFEM2_ClanSavage</defName>
+    <label>savage clan</label>
+    <description>These clanmen have been here for a long time. Perhaps their ancestors crashed here a thousand years ago, as their legends suggest. In any case, the nordmen are fierce people who live off of the work of others, and they are not afraid to use force to take what's not theirs.\n\nAlbeit not as technologically advanced as other factions, the nordmen can be a valuable ally and a terrible enemy due to their hardiness and savage, heathen ways.\n\nThis particular clan wreaks havoc in surrounding settlements and takes any survivors into slavery - it will be impossible to become their ally!</description>
+    <colorSpectrum>
+      <li>(0.65, 0.0, 0.0)</li>
+      <li>(0.55, 0.20, 0.0)</li>
+    </colorSpectrum>
+    <factionIconPath>MapIcons/ClanSavage</factionIconPath>
+    <permanentEnemy>true</permanentEnemy>
+	<startingCountAtWorldCreation>0</startingCountAtWorldCreation>
+    <naturalEnemy>true</naturalEnemy>
+	<listOrderPriority>21</listOrderPriority>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Drifter>1</Drifter>
+        </traders>
+        <carriers>
+          <Muffalo>8</Muffalo>
+          <Yak>4</Yak>
+          <Alpaca>2.5</Alpaca>
+        </carriers>
+        <guards>
+          <!--<VFEM2_Slave>25</VFEM2_Slave>
+          <VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <!--<VFEM2_Slave>25</VFEM2_Slave>
+          <VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <!--<VFEM2_Slave>25</VFEM2_Slave>
+          <VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>80</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Archer>10</VFEM2_Archer>
+          <VFEM2_Berserker>5</VFEM2_Berserker>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, raiders -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <VFEM2_Raider>45</VFEM2_Raider>
+          <VFEM2_Guardian>5</VFEM2_Guardian>
+          <VFEM2_Ravager>5</VFEM2_Ravager>
+          <VFEM2_Berserker>1</VFEM2_Berserker>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, hunting party -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>45</VFEM2_Raider>
+          <VFEM2_Guardian>5</VFEM2_Guardian>
+          <VFEM2_Ravager>5</VFEM2_Ravager>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, shield wall -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>30</VFEM2_Raider>
+          <VFEM2_ShieldedGuardian>5</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>5</VFEM2_ShieldedRavager>
+          <VFEM2_Shieldbearer>50</VFEM2_Shieldbearer>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, mix only -->
+        <kindDef>Combat</kindDef>
+        <commonality>40</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, slaves -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Miner>1</Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Hunter>1</Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Logger>1</Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Farmer>1</Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+  
+  <FactionDef ParentName="VFEM2_VikingBase">
+    <defName>VFEM2_CivilClan</defName>
+    <label>civil clan</label>
+    <description>These clanmen have been here for a long time. Perhaps their ancestors crashed here a thousand years ago, as their legends suggest. In any case, the nordmen are fierce people who live off of the work of others, and they are not afraid to use force to take what's not theirs.\n\nAlbeit not as technologically advanced as other factions, the nordmen can be a valuable ally and a terrible enemy due to their hardiness and savage, heathen ways.\n\nThis particular clan is more progressive than others, and is more likely to engage in trade and diplomacy with other factions.</description>
+    <colorSpectrum>
+      <li>(0.30, 0.58, 0.65)</li>
+      <li>(0.35, 0.75, 0.70)</li>
+    </colorSpectrum>
+	<factionIconPath>MapIcons/ClanRough</factionIconPath>
+    <permanentEnemy>false</permanentEnemy>
+	<naturalEnemy>false</naturalEnemy>
+	<startingCountAtWorldCreation>0</startingCountAtWorldCreation>
+	<listOrderPriority>22</listOrderPriority>
+    <pawnGroupMakers>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Drifter>1</Drifter>
+        </traders>
+        <carriers>
+          <Muffalo>8</Muffalo>
+          <Yak>4</Yak>
+          <Alpaca>2.5</Alpaca>
+        </carriers>
+        <guards>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>80</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Archer>10</VFEM2_Archer>
+          <VFEM2_Berserker>5</VFEM2_Berserker>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, raiders -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>45</VFEM2_Raider>
+          <VFEM2_Guardian>5</VFEM2_Guardian>
+          <VFEM2_Ravager>5</VFEM2_Ravager>
+          <VFEM2_Berserker>1</VFEM2_Berserker>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, hunting party -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>45</VFEM2_Raider>
+          <VFEM2_Guardian>5</VFEM2_Guardian>
+          <VFEM2_Ravager>5</VFEM2_Ravager>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, shield wall -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Raider>30</VFEM2_Raider>
+          <VFEM2_ShieldedGuardian>5</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>5</VFEM2_ShieldedRavager>
+          <VFEM2_Shieldbearer>50</VFEM2_Shieldbearer>
+          <VFEM2_Archer>10</VFEM2_Archer>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged only -->
+        <kindDef>Combat</kindDef>
+        <commonality>30</commonality>
+        <options>
+          <!--<VFEM2_Archer>60</VFEM2_Archer>
+          <VFEM2_HousecarlRanged>1</VFEM2_HousecarlRanged>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, mix only -->
+        <kindDef>Combat</kindDef>
+        <commonality>40</commonality>
+        <options>
+          <!--<VFEM2_Raider>25</VFEM2_Raider>
+          <VFEM2_Guardian>20</VFEM2_Guardian>
+          <VFEM2_Ravager>10</VFEM2_Ravager>
+          <VFEM2_Berserker>15</VFEM2_Berserker>
+          <VFEM2_Shieldbearer>10</VFEM2_Shieldbearer>
+          <VFEM2_ShieldedGuardian>10</VFEM2_ShieldedGuardian>
+          <VFEM2_ShieldedRavager>10</VFEM2_ShieldedRavager>
+          <VFEM2_HousecarlMelee>1</VFEM2_HousecarlMelee>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Miner>1</Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Hunter>1</Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Logger>1</Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Farmer>1</Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>100</configurationListOrderPriority>
+  </FactionDef>
+  
+</Defs>

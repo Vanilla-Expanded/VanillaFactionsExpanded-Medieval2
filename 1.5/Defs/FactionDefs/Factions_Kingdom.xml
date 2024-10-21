@@ -6,7 +6,7 @@
     <pawnsPlural>subjects</pawnsPlural>
     <listOrderPriority>25</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
-    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
     <canStageAttacks>true</canStageAttacks>
     <factionIconPath>MapIcons/CastleCivil</factionIconPath>
