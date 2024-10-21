@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FactionDef Name="VFEM2_MedievalFactionBase" ParentName="FactionBase" Abstract="True">
+    <pawnSingular>subject</pawnSingular>
+    <pawnsPlural>subjects</pawnsPlural>
+    <listOrderPriority>25</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <factionIconPath>MapIcons/CastleCivil</factionIconPath>
+    <settlementTexturePath>Expanding/CastleExpanding</settlementTexturePath>
+    <factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
+    <settlementNameMaker>VFEM2_NamerSettlementMedieval</settlementNameMaker>
+    <allowedCultures><li>VFEM2_Feudal</li></allowedCultures>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_FreeApproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Standard</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">BodyMod_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator_Preferred</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NeuralSupercharge_Preferred</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AgeReversal_Demanded</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Disapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Execution_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Execution_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
+    </disallowedPrecepts>
+    <structureMemeWeights>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">2</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">2</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.025</Neanderthal>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.1</Hussar>
+        <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.15</Dirtmole>
+      </xenotypeChances>
+    </xenotypeSet>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories>
+      <li>Tribal</li>
+    </backstoryCategories>
+    <leaderTitle>king</leaderTitle>
+    <fixedLeaderKinds>
+      <li>VFEM2_Medieval_King</li>
+    </fixedLeaderKinds>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 1)</li> <!--Constant 1 at all points levels-->
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>VFEM2_Caravan_Medieval_Farmer</li>
+      <li>VFEM2_Caravan_Medieval_WineMerchant</li>
+      <li>VFEM2_Caravan_Medieval_ArtPatron</li>
+      <li>VFEM2_Caravan_Medieval_Armourer</li>
+      <li>VFEM2_Caravan_Medieval_Weaponsmith</li>
+      <li>VFEM2_Caravan_Medieval_Sellswords</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>VFEM2_Visitor_Medieval_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>VFEM2_Base_Medieval_Standard</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>
+      <min>-40</min>
+      <max>45</max>
+    </allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, melee with ranged mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <!--<VFEM2_Medieval_Peasant>20</VFEM2_Medieval_Peasant>
+          <VFEM2_Medieval_Squire>40</VFEM2_Medieval_Squire>
+          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
+          <VFEM2_Medieval_Bowman>50</VFEM2_Medieval_Bowman>
+          <VFEM2_Medieval_Knight>20</VFEM2_Medieval_Knight>
+          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged only -->
+        <kindDef>Combat</kindDef>
+        <commonality>30</commonality>
+        <options>
+          <!--<VFEM2_Medieval_Bowman>100</VFEM2_Medieval_Bowman>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, melee only -->
+        <kindDef>Combat</kindDef>
+        <commonality>60</commonality>
+        <options>
+          <!--<VFEM2_Medieval_Peasant>15</VFEM2_Medieval_Peasant>
+          <VFEM2_Medieval_Squire>40</VFEM2_Medieval_Squire>
+          <VFEM2_Medieval_Footsoldier>40</VFEM2_Medieval_Footsoldier>
+          <VFEM2_Medieval_Knight>25</VFEM2_Medieval_Knight>
+          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <!--<VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
+          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
+          <VFEM2_Medieval_Bowman>40</VFEM2_Medieval_Bowman>
+          <VFEM2_Medieval_Knight>20</VFEM2_Medieval_Knight>
+          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>
+          <VFEM2_Medieval_Jester>25</VFEM2_Medieval_Jester>
+          <VFEM2_Medieval_Dame>20</VFEM2_Medieval_Dame>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <VFEM2_Medieval_Merchant>1</VFEM2_Medieval_Merchant>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>2.5</Alpaca>
+          <Elephant>2</Elephant>
+        </carriers>
+        <guards>
+          <!--<VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
+          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
+          <VFEM2_Medieval_Bowman>40</VFEM2_Medieval_Bowman>
+          <VFEM2_Medieval_Knight>10</VFEM2_Medieval_Knight>-->
+		  <Drifter>10</Drifter>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <!--<VFEM2_Medieval_Peasant>30</VFEM2_Medieval_Peasant>
+          <VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
+          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
+          <VFEM2_Medieval_Bowman>50</VFEM2_Medieval_Bowman>
+          <VFEM2_Medieval_Knight>25</VFEM2_Medieval_Knight>
+          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>
+          <VFEM2_Medieval_King>60</VFEM2_Medieval_King>
+          <VFEM2_Medieval_Jester>25</VFEM2_Medieval_Jester>
+          <VFEM2_Medieval_Dame>20</VFEM2_Medieval_Dame>-->
+		  <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Miner>1</Tribal_Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Hunter>1</Tribal_Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Logger>1</Tribal_Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Farmer>1</Tribal_Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <!--<modExtensions>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromlayouts>
+          <li>VFEM2_Castle1</li>
+          <li>VFEM2_Castle2</li>
+          <li>VFEM2_Castle3</li>
+          <li>VFEM2_Castle4</li>
+          <li>VFEM2_Castle5</li>
+          <li>VFEM2_Castle6</li>
+        </chooseFromlayouts>
+      </li>
+    </modExtensions>-->
+  </FactionDef>
+
+  <FactionDef ParentName="VFEM2_MedievalFactionBase">
+    <defName>VFEM2_KingdomCivil</defName>
+    <label>civil kingdom</label>
+    <description>These people have been here for a shorter period of time than their neolithic bretheren. It is believed that some tribespeople and outlanders had come to embrace the medieval ways of life and decided to unite.\n\nThough still technologically inferior to many other factions, the subjects of this kingdom are well-known for using towering fortifications to protect their assets, as well as adopting the use of shields in combat and fighting in a particularly orderly manner.\n\nThis particular kingdom is open to keeping trade relations good with other settlements to bolster their economic position.</description>
+    <colorSpectrum>
+      <li>(0.34, 0.73, 0.76)</li>
+      <li>(0.47, 1, 1)</li>
+      <!-- <li>(0.47, 1.05, 1.12)</li> -->
+    </colorSpectrum>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+	<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>30</configurationListOrderPriority>
+  </FactionDef>
+
+  <FactionDef ParentName="VFEM2_MedievalFactionBase">
+    <defName>VFEM2_KingdomRough</defName>
+    <label>rough kingdom</label>
+    <description>These people have been here for a shorter period of time than their neolithic bretheren. It is believed that some tribespeople and outlanders had come to embrace the medieval ways of life and decided to unite.\n\nThough still technologically inferior to many other factions, the subjects of this kingdom are well-known for using towering fortifications to protect their assets, as well as adopting the use of shields in combat and fighting in a particularly orderly manner.\n\nThis particular kingdom is ruled under a heavy hand and wishes to expand by laying the less fortunate to waste - though it is still possible to befriend them.</description>
+    <colorSpectrum>
+      <li>(0.99, 0.65, 0.40)</li>
+      <li>(1, 0.65, 0.40)</li>
+      <!-- <li>(1.45, 0.93, 0.49)</li> -->
+    </colorSpectrum>
+    <factionIconPath>MapIcons/CastleRough</factionIconPath>
+    <naturalEnemy>true</naturalEnemy>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+	<startingCountAtWorldCreation>0</startingCountAtWorldCreation>
+    <configurationListOrderPriority>31</configurationListOrderPriority>
+  </FactionDef>
+
+  <FactionDef ParentName="VFEM2_MedievalFactionBase">
+    <defName>VFEM2_KingdomSavage</defName>
+    <label>savage kingdom</label>
+    <description>These people have been here for a shorter period of time than their neolithic bretheren. It is believed that some tribespeople and outlanders had come to embrace the medieval ways of life and decided to unite.\n\nThough still technologically inferior to many other factions, the subjects of this kingdom are well-known for using towering fortifications to protect their assets, as well as adopting the use of shields in combat and fighting in a particularly orderly manner.\n\nThis particular kingdom is driven by a warband styled culture; you will not be able to ally with them!</description>
+    <colorSpectrum>
+      <li>(0.85, 0, 0)</li>
+      <li>(1, 0.1, 0.1)</li>
+    </colorSpectrum>
+    <factionIconPath>MapIcons/CastleSavage</factionIconPath>
+    <permanentEnemy>true</permanentEnemy>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+	<startingCountAtWorldCreation>0</startingCountAtWorldCreation>
+    <configurationListOrderPriority>32</configurationListOrderPriority>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+    </requiredMemes>
+  </FactionDef>
+
+</Defs>
