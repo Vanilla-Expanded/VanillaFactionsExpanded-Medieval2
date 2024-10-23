@@ -14,6 +14,7 @@
     <settlementNameMaker>VFEM2_NamerSettlementViking</settlementNameMaker>
     <techLevel>Medieval</techLevel>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+	<configurationListOrderPriority>100</configurationListOrderPriority>
     <allowedCultures>
       <li>VFEM2_Vikings</li>
     </allowedCultures>
@@ -262,8 +263,6 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>100</configurationListOrderPriority>
   </FactionDef>
 
   <FactionDef ParentName="VFEM2_VikingBase">
@@ -620,8 +619,6 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>100</configurationListOrderPriority>
   </FactionDef>
   
 </Defs>
