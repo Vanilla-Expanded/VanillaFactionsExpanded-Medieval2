@@ -266,7 +266,7 @@
 			<WorkToMake>38000</WorkToMake>
 			<MaxHitPoints>280</MaxHitPoints>
 			<Mass>18</Mass>
-            <StuffEffectMultiplierArmor>0.35</StuffEffectMultiplierArmor> <!-- as far as I'm aware I can't set separate factors for different damage types -->
+            <StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>2.0</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>20</EquipDelay>
@@ -328,7 +328,7 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToMake>38000</WorkToMake>
 			<Mass>14</Mass>
-			<StuffEffectMultiplierArmor>0.28</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
 			<StuffEffectMultiplierInsulation_Cold>1.5</StuffEffectMultiplierInsulation_Cold>
 			<StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>15</EquipDelay>
