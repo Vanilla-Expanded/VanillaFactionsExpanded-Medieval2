@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ArmorSmithableBase">
+    <defName>VFEM2_Apparel_PlateArmorHeavy</defName>
+    <label>heavy plate armor</label>
+    <description>Overlapping solid plates of armor covering the entire body from neck to feet. The plates have been reinforced which offers significantly more protection, but at the cost of mobility.</description>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/HeavyPlateArmor/HeavyPlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>240</costStuffCount>
+    <statBases>
+      <WorkToMake>60000</WorkToMake>
+      <MaxHitPoints>380</MaxHitPoints>
+      <Mass>20</Mass>
+      <StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>20</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-1.2</MoveSpeed>
+      <MeleeDodgeChance>-20</MeleeDodgeChance>      <!-- Offsets nimble and the minimum skill to get a dodge chance -->
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyPlateArmor/HeavyPlateArmor</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>MedievalArmorElite</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>VFEM2_Apparel_JesterOutfit</defName>
+    <label>jester outfit</label>
+    <description>A colorful jester outfit. It predisposes to conversation, but it's impossible to learn anything in such a suit.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/JesterOutfit/JesterOutfit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+    </recipeMaker>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>2000</WorkToMake>
+      <Mass>0.3</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+		<li>Neck</li>
+		<li>Arms</li>
+		<li>Shoulders</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/JesterOutfit/JesterOutfit</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <tags>
+		<li>Jester</li>
+      </tags>
+    </apparel>
+    <equippedStatOffsets>
+      <SocialImpact>0.25</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.5</SlaveSuppressionOffset>
+	  <GlobalLearningFactor>-1.0</GlobalLearningFactor>
+    </equippedStatOffsets>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+	<modExtensions>
+		<li Class="VanillaApparelExpanded.ApparelExtension">
+			<skillGainModifier>0</skillGainModifier>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>VFEM2_Apparel_DameDress</defName>
+    <label>dame dress</label>
+    <description>A beautiful full body dress for a dame. Wearing such clothes will inevitably lead to getting used to luxury, so the user will not be capable of dumb labor.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/DameDress/DameDress</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>70</costStuffCount>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+    </recipeMaker>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>4200</WorkToMake>
+      <Mass>0.5</Mass>
+      <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>2.0</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+		<li>Shoulders</li>
+		<li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/DameDress/DameDress</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+		<li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <tags>
+        <li>MedievalApparelNoble</li>
+		<li>Dame</li>
+      </tags>
+	  <gender>Female</gender>
+    </apparel>
+    <equippedStatOffsets>
+      <SocialImpact>0.2</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+	<modExtensions>
+		<li Class="VanillaApparelExpanded.ApparelExtension">
+			<workDisables>
+				<li>ManualDumb</li>
+			</workDisables>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>VFEM2_Apparel_KingsRobes</defName>
+    <label>king’s robes</label>
+    <description>A long robe with golden chestplate, worthy of a king. Extremely beautiful.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/KingsRobe/KingsRobe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <costList>
+      <Gold>8</Gold>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+    </recipeMaker>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>0.25</Mass>
+      <StuffEffectMultiplierArmor>0.6</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.35</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>2.0</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+		<li>Legs</li>
+		<li>Shoulders</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/KingsRobe/KingsRobe</wornGraphicPath>
+      <layers>
+		<li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <tags>
+        <li>MedievalApparelNoble</li>
+		<li>King</li>
+		<li>RoyalTier6</li>
+      </tags>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+    </apparel>
+    <equippedStatOffsets>
+      <SocialImpact>0.3</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+  
+  <!--====================================== Vikings ======================================-->
+  
+	<ThingDef ParentName="ArmorSmithableBase">
+		<defName>VFEM2_Apparel_HeavyLeatherArmor</defName>
+		<label>heavy leather armor</label>
+		<description>A heavy leather breastplate meant to provide warmth and protection to heavy infantry during battles in frigid tundras. Unfortunately, this armor leaves one slowed and more vulnerable to melee attacks.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Smithing</techLevel>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			<researchPrerequisite>PlateArmor</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>9</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>220</costStuffCount>
+		<statBases>
+			<WorkToMake>38000</WorkToMake>
+			<MaxHitPoints>280</MaxHitPoints>
+			<Mass>18</Mass>
+            <StuffEffectMultiplierArmor>0.35</StuffEffectMultiplierArmor> <!-- as far as I'm aware I can't set separate factors for different damage types -->
+            <StuffEffectMultiplierInsulation_Cold>2.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>20</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.8</MoveSpeed>
+			<MeleeDodgeChance>-8</MeleeDodgeChance>
+		</equippedStatOffsets>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<tags Inherit="False">
+				<li>Apparel_Viking</li>
+				<li>Apparel_VikingGuardian</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+	</ThingDef>
+	
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>VFEM2_Apparel_LeatherArmor</defName>
+		<label>leather armor</label>
+		<description>This armor is made much more carefully and tightly out of processed leathers, sacrificing some insulation in favor of extra protection against damage. Intended to be worn by front-line troops and often accompanied by a shield.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/LeatherArmor/LeatherArmor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<costStuffCount>180</costStuffCount>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+		</recipeMaker>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>38000</WorkToMake>
+			<Mass>14</Mass>
+			<StuffEffectMultiplierArmor>0.28</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>1.5</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>15</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.10</PainShockThreshold>
+			<MoveSpeed>-0.1</MoveSpeed>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Torso</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/LeatherArmor/LeatherArmor</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<tags Inherit="False">
+				<li>Apparel_VikingRavager</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+	</ThingDef>
+
+</Defs>
