@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BedWithQualityBase">
+		<defName>VFEM2_FurBed</defName>
+		<label>fur bed</label>
+		<description>A wood-framed bed stuffed with dried grasses and covered in a variety of pelts and furs to provide extra insulation during frigid nights. The warmth of this bed counters hypothermia.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Bed/BedPelts</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>True</castEdgeShadows>
+		<statBases>
+			<MaxHitPoints>125</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Mass>25</Mass>
+			<BedRestEffectiveness>0.98</BedRestEffectiveness>
+			<ImmunityGainSpeedFactor>1.06</ImmunityGainSpeedFactor>
+			<Comfort>0.71</Comfort>
+			<WorkToBuild>750</WorkToBuild>
+			<SurgerySuccessChanceFactor>0.8</SurgerySuccessChanceFactor>
+		</statBases>
+		<size>(1,2)</size>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costList>
+			<WoodLog>25</WoodLog>
+		</costList>
+		<costStuffCount>35</costStuffCount>
+        <researchPrerequisites>
+            <li>ComplexFurniture</li>
+        </researchPrerequisites>
+		<building>
+			<bed_showSleeperBody>False</bed_showSleeperBody>
+			<bed_healPerDay>4</bed_healPerDay>
+		</building>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>50</pathCost>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<techLevel>Medieval</techLevel>
+		<uiIconScale>0.90</uiIconScale>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>EndTable</li>
+					<li>Dresser</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_LightEndTable</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalDresser</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalEndTable</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_Wardrobe</li>
+					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedEndTable</li>
+					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedDresser</li>
+				</linkableFacilities>
+			</li>
+			<li Class="VFEM2.CompProperties_CureHypothermia"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BedWithQualityBase">
+		<defName>VFEM2_DoubleFurBed</defName>
+		<label>double fur bed</label>
+		<description>A two-person, wood-framed bed stuffed with dried grasses and covered in a variety of pelts and furs to provide extra insulation during frigid nights. The warmth of this bed counters hypothermia.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Bed/DoubleBedPelts</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2.05,2.05)</drawSize>
+			<damageData>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>True</castEdgeShadows>
+		<statBases>
+			<MaxHitPoints>175</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Mass>50</Mass>
+			<BedRestEffectiveness>0.98</BedRestEffectiveness>
+			<ImmunityGainSpeedFactor>1.06</ImmunityGainSpeedFactor>
+			<Comfort>0.71</Comfort>
+			<WorkToBuild>1500</WorkToBuild>
+			<SurgerySuccessChanceFactor>0.8</SurgerySuccessChanceFactor>
+		</statBases>
+		<size>(2,2)</size>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+        <researchPrerequisites>
+            <li>ComplexFurniture</li>
+        </researchPrerequisites>
+		<costList>
+			<WoodLog>45</WoodLog>
+		</costList>
+		<building>
+			<bed_showSleeperBody>False</bed_showSleeperBody>
+			<bed_healPerDay>3</bed_healPerDay>
+		</building>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<techLevel>Medieval</techLevel>
+		<uiIconScale>0.90</uiIconScale>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>EndTable</li>
+					<li>Dresser</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_LightEndTable</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalDresser</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalEndTable</li>
+					<li MayRequire="VanillaExpanded.VFECore">Table_Wardrobe</li>
+					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedEndTable</li>
+					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedDresser</li>
+				</linkableFacilities>
+			</li>
+			<li Class="VFEM2.CompProperties_CureHypothermia"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="FurnitureBase">
+		<defName>VFEM2_Hearth</defName>
+		<label>hearth</label>
+		<description>A large, tightly packed fire pit capable of holding high amounts of wood at once. Provides hefty warmth and light to thronerooms and halls alike and acts as a gathering spot for idle colonists.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/Hearth/Hearth</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef Inherit='False'/>
+		<thingCategories Inherit='False'/>
+		<statBases>
+			<MaxHitPoints>220</MaxHitPoints>
+			<WorkToBuild>100</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+			<Mass>15</Mass>
+		</statBases>
+		<category>Building</category>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<fillPercent>0.15</fillPercent>
+		<size>(2,1)</size>
+		<selectable>true</selectable>
+		<designationCategory>Temperature</designationCategory>
+		<uiIconPath>Things/Building/Misc/Hearth/HearthIcon</uiIconPath>
+		<uiIconOffset>(0, -0.04)</uiIconOffset>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>150</costStuffCount>
+		<placeWorkers>
+			<li>PlaceWorker_Heater</li>
+			<li>PlaceWorker_NeverAdjacentUnstandable</li>
+		</placeWorkers>
+		<canOverlapZones>false</canOverlapZones>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<rotatable>true</rotatable>
+		<comps>
+			<li>
+				<compClass>CompGatherSpot</compClass>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>3.0</fuelConsumptionRate>
+				<fuelCapacity>90.0</fuelCapacity>
+				<fuelConsumptionPerTickInRain>0.0012</fuelConsumptionPerTickInRain>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(252,187,113,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>32</heatPerSecond>
+				<heatPushMaxTemperature>32</heatPushMaxTemperature>
+			</li>
+			<li Class="CompProperties_FireOverlay">
+				<fireSize>1.35</fireSize>
+				<offset>(0,0,0.18)</offset>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtSarcophagusPlate</nameMaker>
+				<descriptionMaker>ArtDescription_Hearth</descriptionMaker>
+				<mustBeFullGrave>true</mustBeFullGrave>
+			</li>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Flame</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_Lit">
+						<offset>0.12</offset>
+					</li>
+					<li Class="FocusStrengthOffset_BuildingDefsLit">
+						<defs>
+							<li>Campfire</li>
+							<li>TorchLamp</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+						</defs>
+						<radius>9.9</radius>
+						<maxBuildings>8</maxBuildings>
+						<offsetPerBuilding>0.02</offsetPerBuilding>
+						<explanationKey>MeditationFocusPerFlame</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+					</li>
+				</offsets>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<building>
+			<paintable>true</paintable>
+			<isMealSource>false</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+			<destroySound>BuildingDestroyed_Wood_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+</Defs>
