@@ -130,5 +130,76 @@
         </comps>
 		<!-- <colorGenerator Class="ColorGenerator_StandardApparel" /> -->
     </ThingDef>
+	
+	<!-- Vikings -->
+    <ThingDef ParentName="VFEM2_BaseShield">
+        <defName>VFEM2_Shield_Round</defName>
+        <label>round shield</label>
+        <description>A wooden shield held together with a metal band. A leather strap and metal handle are also present on the back to allow for easy one-handed maneuvering during combat.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/Shield/RoundShield/RoundShield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1</drawSize>
+        </graphicData>
+        <costList>
+            <WoodLog>75</WoodLog>
+			<Steel>25</Steel>
+        </costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			<researchPrerequisite>ComplexClothing</researchPrerequisite>
+            <recipeUsers>
+                <li>ElectricSmithy</li>
+                <li>FueledSmithy</li>
+            </recipeUsers>
+		</recipeMaker>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.55</ArmorRating_Heat>
+            <WorkToMake>2600</WorkToMake>
+            <Mass>1.7</Mass>
+        </statBases>
+        <comps>
+            <li Class="VFECore.CompProperties_Shield">
+                <shieldTags>
+                    <li>VikingBasic</li>
+                </shieldTags>
+                <useDeflectMetalEffect>false</useDeflectMetalEffect>
+                <coveredBodyPartGroups>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Arms</li>
+                    <li>Hands</li>
+                </coveredBodyPartGroups>
+                <offHandGraphicData>
+                    <texPath>Things/Item/Equipment/Shield/RoundShield/RoundShield</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawSize>1.6</drawSize>
+                </offHandGraphicData>
+                <offHandHoldOffset>
+                    <northDefault>
+                        <offset>(-0.05, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </northDefault>
+                    <east>
+                        <offset>(-0.15, 0, 0.2)</offset>
+                        <behind>true</behind>
+                    </east>
+                    <south>
+                        <offset>(0.2, -0.04, 0.2)</offset>
+                    </south>
+                    <west>
+                        <offset>(0.15, 0, 0.2)</offset>
+                    </west>
+                </offHandHoldOffset>
+            </li>
+        </comps>
+		<colorGenerator Class="ColorGenerator_StandardApparel" /> <!-- we'll see if this works -->
+    </ThingDef>
 
 </Defs>
