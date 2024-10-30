@@ -10,20 +10,8 @@
 	<VFEM2_PlaceWorkerNoRoof>The apiary can't be built under a roof</VFEM2_PlaceWorkerNoRoof>
 	
 	<!-- Mead barrel -->
-	<VFEM2_Mead_InsertFirstItemDesc>Honey to Insert</VFEM2_Mead_InsertFirstItemDesc>
-	<VFEM2_Mead_bringIngredientsText>Bring honey</VFEM2_Mead_bringIngredientsText>
-	<VFEM2_Mead_bringIngredientsDesc>Bring honey to the mead barrel to start fermentation</VFEM2_Mead_bringIngredientsDesc>
-	<VFEM2_Mead_cancelIngredientsText>Cancel bringing honey</VFEM2_Mead_cancelIngredientsText>
-	<VFEM2_Mead_cancelIngredientsDesc>Cancel bringing honey to the mead barrel.</VFEM2_Mead_cancelIngredientsDesc>
-	<VFEM2_Mead_removeProductText>Remove mead</VFEM2_Mead_removeProductText>
-	<VFEM2_Mead_removeProductDesc>Remove mead from the mead barrel. The barrel will be ready.</VFEM2_Mead_removeProductDesc>
+	<VFEM2_MeadFermentingBarrelNotWorking>This mead fermenting barrel is not working at the moment</VFEM2_MeadFermentingBarrelNotWorking>
 	
 	<!-- Wine barrel -->
-	<VFEM2_Wine_InsertFirstItemDesc>Must to Insert</VFEM2_Wine_InsertFirstItemDesc>
-    <VFEM2_Wine_bringIngredientsText>Bring must</VFEM2_Wine_bringIngredientsText>
-    <VFEM2_Wine_bringIngredientsDesc>Bring wine must to the wine barrel to start fermentation</VFEM2_Wine_bringIngredientsDesc>
-    <VFEM2_Wine_cancelIngredientsText>Cancel bringing must</VFEM2_Wine_cancelIngredientsText>
-    <VFEM2_Wine_cancelIngredientsDesc>Cancel bringing wine must to the wine barrel.</VFEM2_Wine_cancelIngredientsDesc>
-    <VFEM2_Wine_removeProductText>Remove wine ({0})</VFEM2_Wine_removeProductText>
-    <VFEM2_Wine_removeProductDesc>Remove wine from the wine barrel. The barrel will be ready at the present quality level ({0})</VFEM2_Wine_removeProductDesc>
+	<VFEM2_WineBarrelNotWorking>This wine fermenting barrel is not working at the moment</VFEM2_WineBarrelNotWorking>
 </LanguageData>

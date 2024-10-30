@@ -4,7 +4,6 @@
 		<defName>VFEM2_MeadFermentingBarrel</defName>
 		<label>mead fermenting barrel</label>
 		<description>A very simple barrel, held together with a series of mortise and tenon joints. Can turn honey into mead.</description>
-		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Misc/MeadBarrel/MeadBarrel</texPath>
@@ -34,37 +33,17 @@
 			<WoodLog>45</WoodLog>
 		</costList>
 		<comps>
-			<li Class="ItemProcessor.CompProperties_ItemProcessor">
-				<buildingOnGraphic>Things/Building/Misc/MeadBarrel/MeadBarrel</buildingOnGraphic>
-				<numberOfInputs>1</numberOfInputs>
-				<qualitySelector>false</qualitySelector>
-				<acceptsNoneAsInput>false</acceptsNoneAsInput>
-				<InsertFirstItemDesc>VFEM2_Mead_InsertFirstItemDesc</InsertFirstItemDesc>
-				<isSemiAutomaticMachine>true</isSemiAutomaticMachine>
-				<resetSemiautomaticIcon>UI/HoneyReset</resetSemiautomaticIcon>
-				<!---->
-				<chooseIngredientsIcon>UI/HoneyEmpty</chooseIngredientsIcon>
-				<!---->
-				<showProgressBar>true</showProgressBar>
-				<bringIngredientsText>VFEM2_Mead_bringIngredientsText</bringIngredientsText>
-				<bringIngredientsDesc>VFEM2_Mead_bringIngredientsDesc</bringIngredientsDesc>
-				<bringIngredientsIcon>UI/HoneyInsert</bringIngredientsIcon>
-				<!---->
-				<cancelIngredientsText>VFEM2_Mead_cancelIngredientsText</cancelIngredientsText>
-				<cancelIngredientsDesc>VFEM2_Mead_cancelIngredientsDesc</cancelIngredientsDesc>
-				<cancelIngredientsIcon>UI/HoneyCancel</cancelIngredientsIcon>
-				<!---->
-				<noPowerDestroysProgress>false</noPowerDestroysProgress>
-				<removeProductText>VFEM2_Mead_removeProductText</removeProductText>
-				<removeProductDesc>VFEM2_Mead_removeProductDesc</removeProductDesc>
-				<removeProductIcon>UI/RemoveMead</removeProductIcon>
-				<!---->
-				<isTemperatureDependingMachine>true</isTemperatureDependingMachine>
-				<minTemp>7</minTemp>
-				<maxTemp>32</maxTemp>
-				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+			<li Class="PipeSystem.CompProperties_AdvancedResourceProcessor">
+				<notWorkingKey>VFEM2_MeadFermentingBarrelNotWorking</notWorkingKey>
+				<processes>
+					<li>VFEM2_HoneyToMead</li>
+				</processes>
+				<progressBarOffset>(0,0,-1)</progressBarOffset>
 			</li>
 		</comps>
+		<inspectorTabs>
+			<li>PipeSystem.ITab_Processor</li>
+		</inspectorTabs>
 		<tickerType>Rare</tickerType>
 		<rotatable>true</rotatable>
 		<designationCategory>Production</designationCategory>
@@ -82,25 +61,4 @@
 		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		<resourcesFractionWhenDeconstructed>0.75</resourcesFractionWhenDeconstructed>
 	</ThingDef>
-	<ItemProcessor.ItemAcceptedDef>
-		<defName>VFEM2_MeadBarrelFirstItem</defName>
-		<building>VFEM2_MeadFermentingBarrel</building>
-		<slot>1</slot>
-		<items>
-			<li>VFEM2_Honey</li>
-		</items>
-	</ItemProcessor.ItemAcceptedDef>
-	<ItemProcessor.CombinationDef>
-		<defName>VFEM2_HoneyToMead</defName>
-		<building>VFEM2_MeadFermentingBarrel</building>
-		<items>
-			<li>VFEM2_Honey</li>
-		</items>
-		<amount>
-			<li>75</li>
-		</amount>
-		<result>VFEM2_Mead</result>
-		<yield>25</yield>
-		<useQualityIncreasing>false</useQualityIncreasing>
-	</ItemProcessor.CombinationDef>
 </Defs>

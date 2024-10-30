@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_HoneyToMead</defName>
+		<label>Ferment honey into mead</label>
+		<description>Turns 75 honey into 25 mead.</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 75 honey into 25 mead</labelOverride>
+		<priorityInBillList>0</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Honey</thing>
+				<countNeeded>75</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>180000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Mead</thing>
+				<count>25</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>7</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+	</PipeSystem.ProcessDef>
+	
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToAwfulWine</defName>
+		<label>Ferment grape must into wine (awful)</label>
+		<description>Turns 10 grape must into 10 wine (awful).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (awful).</labelOverride>
+		<priorityInBillList>0</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>60000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Awful</quality>
+	</PipeSystem.ProcessDef>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToPoorWine</defName>
+		<label>Ferment grape must into wine (poor)</label>
+		<description>Turns 10 grape must into 10 wine (poor).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (poor).</labelOverride>
+		<priorityInBillList>1</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>180000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Poor</quality>
+	</PipeSystem.ProcessDef>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToNormalWine</defName>
+		<label>Ferment grape must into wine (normal)</label>
+		<description>Turns 10 grape must into 10 wine (normal).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (normal).</labelOverride>
+		<priorityInBillList>1</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>480000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Normal</quality>
+	</PipeSystem.ProcessDef>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToGoodWine</defName>
+		<label>Ferment grape must into wine (good)</label>
+		<description>Turns 10 grape must into 10 wine (good).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (good).</labelOverride>
+		<priorityInBillList>1</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>840000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Good</quality>
+	</PipeSystem.ProcessDef>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToExcellentWine</defName>
+		<label>Ferment grape must into wine (excellent)</label>
+		<description>Turns 10 grape must into 10 wine (excellent).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (excellent).</labelOverride>
+		<priorityInBillList>1</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>1200000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Excellent</quality>
+	</PipeSystem.ProcessDef>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToMasterworkWine</defName>
+		<label>Ferment grape must into wine (masterwork)</label>
+		<description>Turns 10 grape must into 10 wine (masterwork).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (masterwork).</labelOverride>
+		<priorityInBillList>1</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>3000000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Masterwork</quality>
+	</PipeSystem.ProcessDef>
+	<PipeSystem.ProcessDef>
+		<defName>VFEM2_GrapeToLegendaryWine</defName>
+		<label>Ferment grape must into wine (legendary)</label>
+		<description>Turns 10 grape must into 10 wine (legendary).</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Ferment 10 grape must into 10 wine (legendary).</labelOverride>
+		<priorityInBillList>1</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>VFEM2_Must</thing>
+				<countNeeded>10</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>7200000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_Wine</thing>
+				<count>10</count>
+			</li>
+		</results>
+		<temperatureRuinable>true</temperatureRuinable>
+		<minSafeTemperature>-1</minSafeTemperature>
+		<maxSafeTemperature>32</maxSafeTemperature>
+		<stopAtQuality>true</stopAtQuality>
+		<quality>Legendary</quality>
+	</PipeSystem.ProcessDef>
+	
+
+</Defs>

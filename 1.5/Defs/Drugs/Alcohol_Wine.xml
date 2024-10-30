@@ -18,6 +18,7 @@
 			<Flammability>0.5</Flammability>
 			<Nutrition>0.08</Nutrition>
 		</statBases>
+		<thingCategories/>
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
 			<joyKind>Chemical</joyKind>
