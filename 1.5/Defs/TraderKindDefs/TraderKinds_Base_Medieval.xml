@@ -222,7 +222,7 @@
                     <max>10</max>
                 </countRange>
             </li>
-            <li Class="VFEM2edieval.StockGenerator_MedievalMercs">
+            <li Class="VFEMedieval.StockGenerator_MedievalMercs">
                 <countRange>
                     <min>2</min>
                     <max>4</max>

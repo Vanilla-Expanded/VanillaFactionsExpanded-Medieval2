@@ -48,9 +48,9 @@
     <defName>VFEM2_Vikings</defName>
     <label>vikings</label>
     <description>A harsh norse culture common among the vikings.</description>
-    <pawnNameMaker>NamerPersonViking</pawnNameMaker>
+    <pawnNameMaker>VFEM2_NamerPersonViking</pawnNameMaker>
     <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
-    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">VFEV_NamerDeityVikings</deityNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">VFEM2_NamerDeityVikings</deityNameMaker>
     <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
     <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
     <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LeaderTitleMaker_Corunan</leaderTitleMaker>

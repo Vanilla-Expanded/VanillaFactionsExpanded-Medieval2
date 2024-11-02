@@ -325,7 +325,7 @@
         <li>FullHead</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlagueMask/PlagueMask</wornGraphicPath>
-      <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
+     
       <layers>
         <li>Overhead</li>
       </layers>

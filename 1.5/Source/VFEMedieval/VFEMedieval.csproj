@@ -291,15 +291,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\JobDrivers\JobDriver_PlayArchery.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TakeHoneyOutOfApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TendToApiary.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_TrainAtDummy.cs" />
+    <Compile Include="JoyGivers\JoyGiver_PlayTrainingDummy.cs" />
     <Compile Include="AI\WorkGivers\WorkGiver_TakeHoneyOutOfApiary.cs" />
     <Compile Include="AI\WorkGivers\WorkGiver_TendToApiary.cs" />
     <Compile Include="Buildings\Building_Apiary.cs" />
+    <Compile Include="Comps\CompCureHypothermia.cs" />
     <Compile Include="Comps\CompIngestedThoughtFromQuality.cs" />
+    <Compile Include="Comps\Properties\CompProperties_CureHypothermia.cs" />
     <Compile Include="Comps\Properties\CompProperties_IngestedThoughtFromQuality.cs" />
     <Compile Include="DefOf\VFEM_DefOf.cs" />
     <Compile Include="Placeworkers\Placeworker_Apiary.cs" />
+    <Compile Include="StockGenerators\StockGenerator_MedievalMercs.cs" />
     <Compile Include="VFEMedieval.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -310,5 +316,6 @@
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,7 @@
     <description>A belt with a number of wooden torches strapped to it. They can be lit up and thrown to set things ablaze. Can be refueled with wood.</description>
     <techLevel>Neolithic</techLevel>
     <comps>
-      <li Class="CompProperties_Reloadable">
+      <li Class="CompProperties_ApparelReloadable">
         <maxCharges>3</maxCharges>
         <ammoDef>WoodLog</ammoDef>
         <ammoCountToRefill>20</ammoCountToRefill>

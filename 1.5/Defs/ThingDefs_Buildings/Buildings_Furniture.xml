@@ -60,7 +60,7 @@
 					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedDresser</li>
 				</linkableFacilities>
 			</li>
-			<li Class="VFEM2.CompProperties_CureHypothermia"/>
+			<li Class="VFEMedieval.CompProperties_CureHypothermia"/>
 		</comps>
 	</ThingDef>
 	
@@ -123,7 +123,7 @@
 					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedDresser</li>
 				</linkableFacilities>
 			</li>
-			<li Class="VFEM2.CompProperties_CureHypothermia"/>
+			<li Class="VFEMedieval.CompProperties_CureHypothermia"/>
 		</comps>
 	</ThingDef>
 	

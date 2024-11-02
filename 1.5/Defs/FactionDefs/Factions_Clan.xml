@@ -350,10 +350,10 @@
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
-          <VFEM2_Raider>45</VFEM2_Raider>
+          <!--<VFEM2_Raider>45</VFEM2_Raider>
           <VFEM2_Guardian>5</VFEM2_Guardian>
           <VFEM2_Ravager>5</VFEM2_Ravager>
-          <VFEM2_Berserker>1</VFEM2_Berserker>
+          <VFEM2_Berserker>1</VFEM2_Berserker>-->
         </options>
       </li>
       <li>

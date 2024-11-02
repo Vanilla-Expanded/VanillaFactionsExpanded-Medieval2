@@ -250,7 +250,7 @@
 			<texPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<techLevel>Smithing</techLevel>
+		<techLevel>Medieval</techLevel>
 		<recipeMaker>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
 			<researchPrerequisite>PlateArmor</researchPrerequisite>

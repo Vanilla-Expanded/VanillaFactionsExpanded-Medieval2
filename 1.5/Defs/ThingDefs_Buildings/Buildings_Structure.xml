@@ -5,7 +5,7 @@
     <defName>VFEM2_CobblestoneWall</defName>
     <label>cobblestone wall</label>
     <graphicData>
-      <texPath>Things/Building/Linked/RockWall</texPath>
+      <texPath>Things/Building/Linked/CobblestoneWall</texPath>
       <graphicClass>Graphic_Appearances</graphicClass>
       <linkType>CornerFiller</linkType>
       <linkFlags>
@@ -23,7 +23,7 @@
         <edgeRight>Damage/Edge</edgeRight>
       </damageData>
     </graphicData>
-    <uiIconPath>Things/Building/Linked/RockWall_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/CobblestoneWall/CobblestoneWall_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToBuild>135</WorkToBuild>
@@ -33,7 +33,7 @@
     </statBases>
     <building>
       <blueprintGraphicData>
-        <texPath>Things/Building/Linked/RockWall/RockWall_Blueprint_Atlas</texPath>
+        <texPath>Things/Building/Linked/CobblestoneWall/CobblestoneWall_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
 	  <paintable>true</paintable>
     </building>

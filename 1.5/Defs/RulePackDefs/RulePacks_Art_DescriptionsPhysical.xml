@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Different physical description roots for different kinds of artworks. 
+      Added to artworks with tales and taleless art.-->
+
+  <RulePackDef>
+    <defName>ArtDescription_Hearth</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>physical_description_root->The hearth is engraved with a [depiction] of [image]. [desc_sentence_group]</li>
+        <li>physical_description_root->The hearth bears a [depiction] of [image]. [desc_sentence_group]</li>
+        <li>physical_description_root->The hearth is engraved with a [depiction] of [image]. [desc_sentence_group]</li>
+        <li>physical_description_root->An engraving on this hearth [depicts] [image]. [desc_sentence_group]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

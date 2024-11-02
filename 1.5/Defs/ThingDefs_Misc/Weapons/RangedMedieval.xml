@@ -73,7 +73,7 @@
 			</li>
 		</tools>
 		<modExtensions>
-			<li Class="VFEM2Core.ThingDefExtension">
+			<li Class="VFECore.ThingDefExtension">
 				<usableWithShields>true</usableWithShields>
 			</li>
 		</modExtensions>

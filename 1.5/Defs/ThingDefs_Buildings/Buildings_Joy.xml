@@ -1,102 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM2_ArcheryTarget</defName>
-    <label>archery target</label>
-    <description>A simple archery target mounted on a wooden stand. It's relaxing, and trains shooting skills.</description>
-    <graphicData>
-      <texPath>Things/Building/Furniture/ArcheryTarget/ArcheryTarget</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <shadowData>
-        <volume>(0.08, 0.2, 0.08)</volume>
-        <offset>(0, 0, -0.1)</offset>
-      </shadowData>
-      <damageData>
-        <rect>(0.3,0.3,0.4,0.4)</rect>
-      </damageData>
-    </graphicData>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <altitudeLayer>Building</altitudeLayer>
-    <socialPropernessMatters>true</socialPropernessMatters>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <thingCategories>
-      <li>BuildingsJoy</li>
-    </thingCategories>
-    <statBases>
-      <MaxHitPoints>75</MaxHitPoints>
-      <WorkToBuild>100</WorkToBuild>
-      <Mass>3</Mass>
-      <Flammability>1.0</Flammability>
-      <JoyGainFactor>1</JoyGainFactor>
-    </statBases>
-    <defaultPlacingRot>South</defaultPlacingRot>
-    <building>
-      <joyKind>Gaming_Dexterity</joyKind>
-      <watchBuildingStandDistanceRange>8~9</watchBuildingStandDistanceRange>
-      <watchBuildingStandRectWidth>5</watchBuildingStandRectWidth>
-      <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
-      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
-    </building>
-    <costList>
-      <WoodLog>20</WoodLog>
-    </costList>
-    <pathCost>14</pathCost>
-    <researchPrerequisites>
-        <li>ComplexFurniture</li>
-    </researchPrerequisites>
-    <placeWorkers>
-      <li>PlaceWorker_WatchArea</li>
-    </placeWorkers>
-    <designationCategory>Joy</designationCategory>
-  </ThingDef>
-  
-  <JobDef>
-    <defName>VFEM2_Play_Archery</defName>
-    <driverClass>VFEMedieval.JobDriver_PlayArchery</driverClass>
-    <reportString>shooting at archery.</reportString>
-    <joyDuration>4000</joyDuration>
-    <joyMaxParticipants>1</joyMaxParticipants>
-    <joySkill>Shooting</joySkill>
-    <joyXpPerTick>0.003</joyXpPerTick>
-    <joyKind>Gaming_Dexterity</joyKind>
-    <taleOnCompletion>PlayedGame</taleOnCompletion>
-    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-  </JobDef>
-  
-  <JoyGiverDef>
-    <defName>VFEM2_Play_Archery</defName>
-    <giverClass>JoyGiver_WatchBuilding</giverClass>
-    <baseChance>2.5</baseChance>
-    <thingDefs>
-      <li>VFEM2_ArcheryTarget</li>
-    </thingDefs>
-    <jobDef>VFEM2_Play_Archery</jobDef>
-    <desireSit>false</desireSit>
-    <joyKind>Gaming_Dexterity</joyKind>
-    <requiredCapacities>
-      <li>Sight</li>
-      <li>Manipulation</li>
-    </requiredCapacities>
-  </JoyGiverDef>
-  
-  <FleckDef ParentName="FleckBase_Thrown">
-    <defName>VFEM2_ArrowThrowable</defName>
-    <graphicData>
-      <texPath>Things/Projectile/Arrow_Small</texPath>
-    </graphicData>
-    <altitudeLayer>MoteLow</altitudeLayer>
-    <solidTime>10</solidTime>
-    <fadeOutTime>4</fadeOutTime>
-    <landSound>StoneImpact</landSound>
-  </FleckDef>
-  
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM2_ArcheryTarget</defName>
+		<label>archery target</label>
+		<description>A simple archery target mounted on a wooden stand. It's relaxing, and trains shooting skills.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/ArcheryTarget/ArcheryTarget</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shadowData>
+				<volume>(0.08, 0.2, 0.08)</volume>
+				<offset>(0, 0, -0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.3,0.3,0.4,0.4)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<thingCategories>
+			<li>BuildingsJoy</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>100</WorkToBuild>
+			<Mass>3</Mass>
+			<Flammability>1.0</Flammability>
+			<JoyGainFactor>1</JoyGainFactor>
+		</statBases>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<building>
+			<joyKind>Gaming_Dexterity</joyKind>
+			<watchBuildingStandDistanceRange>8~9</watchBuildingStandDistanceRange>
+			<watchBuildingStandRectWidth>5</watchBuildingStandRectWidth>
+			<watchBuildingInSameRoom>true</watchBuildingInSameRoom>
+			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		</building>
+		<costList>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<pathCost>14</pathCost>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_WatchArea</li>
+		</placeWorkers>
+		<designationCategory>Joy</designationCategory>
+	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM2_TrainingDummy</defName>
 		<label>training dummy</label>
 		<description>A target dummy made out of wood, soil, and dried plant matter. Surprisingly durable, allows oneself to test their swordsmanship and train over time without risking fatal confrontation.</description>
 		<graphicData>
-			<texPath>Things/Building/Misc/TrainingDummy</texPath>
+			<texPath>Things/Building/Misc/TrainingDummy/TrainingDummy</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1.5,1.5)</drawSize>
 			<shadowData>
@@ -128,7 +86,7 @@
 		</building>
 		<passability>Impassable</passability>
 		<designationCategory>Joy</designationCategory>
-		<uiIconPath>Things/Building/Misc/TrainingDummy_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Misc/TrainingDummy/TrainingDummy_MenuIcon</uiIconPath>
 		<uiIconScale>0.6</uiIconScale>
 		<size>(1,1)</size>
 		<fillPercent>1.0</fillPercent>
@@ -140,33 +98,4 @@
 			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 	</ThingDef>
-	
-	<JobDef>
-		<defName>VFEM2_Play_TrainingDummy</defName>
-		<driverClass>VFEM2.JobDriver_TrainAtDummy</driverClass>
-		<reportString>training at dummy.</reportString>
-		<joyDuration>4000</joyDuration>
-		<joyMaxParticipants>1</joyMaxParticipants>
-		<joySkill>Melee</joySkill>
-		<joyXpPerTick>0.005</joyXpPerTick>
-		<joyKind>Gaming_Dexterity</joyKind>
-		<taleOnCompletion>PlayedGame</taleOnCompletion>
-		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-	</JobDef>
-
-	<JoyGiverDef>
-		<defName>VFEM2_Play_TrainingDummy</defName>
-		<giverClass>VFEM2.JoyGiver_PlayTrainingDummy</giverClass>
-		<baseChance>4</baseChance>
-		<thingDefs>
-			<li>VFEM2_TrainingDummy</li>
-		</thingDefs>
-		<desireSit>false</desireSit>
-		<jobDef>Play_TrainingDummy</jobDef>
-		<joyKind>Gaming_Dexterity</joyKind>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-	</JoyGiverDef>
-  
 </Defs>

@@ -198,13 +198,7 @@
           <max>10</max>
         </countRange>
       </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>VFEM2_Apparel_Tabard</thingDef>
-        <countRange>
-          <min>2</min>
-          <max>5</max>
-        </countRange>
-      </li>
+     
       <li Class="StockGenerator_Category">
         <categoryDef>VFEC_Shields</categoryDef>
         <thingDefCountRange>
@@ -331,7 +325,7 @@
           <max>20</max>
         </countRange>
       </li>
-      <li Class="VFEM2edieval.StockGenerator_MedievalMercs">
+      <li Class="VFEMedieval.StockGenerator_MedievalMercs">
         <countRange>
           <min>2</min>
           <max>3</max>
