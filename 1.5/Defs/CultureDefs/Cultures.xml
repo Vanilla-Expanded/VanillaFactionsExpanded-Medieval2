@@ -59,10 +59,10 @@
     </allowedPlaceTags>
     <iconPath>World/WorldObjects/Expanding/VikingsClan</iconPath>
     <iconColor>(0.8, 0.8, 0.8)</iconColor>
-    <!--<preferredWeaponClasses>
+    <preferredWeaponClasses>
       <noble>VFEM2_Vikings</noble>
       <despised>Ultratech</despised>
-    </preferredWeaponClasses>-->
+    </preferredWeaponClasses>
     <styleItemTags>
       <li>
         <tag>Tribal</tag>
