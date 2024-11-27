@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef>
+		<defName>VFEM2_MakeHerbalMedicine</defName>
+		<label>make herbal medicine x3</label>
+		<description>Make a small batch of herbal medicine from different alchemical ingredients.</description>
+		<jobString>making herbal medicine.</jobString>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<workAmount>840</workAmount>
+		<recipeUsers>
+			<li>VFEM2_AlchemicalWorkbench</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VFEM2_Honey</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VFEM2_AlocasiaLeaves</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RawAgave</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>VFEM2_Honey</li>
+				<li>VFEM2_AlocasiaLeaves</li>
+				<li>RawAgave</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<MedicineHerbal>3</MedicineHerbal>
+		</products>
+		<workSkill>Crafting</workSkill>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>VFEM2_Make_ChemfuelFromWood</defName>
+		<label>make chemfuel from wood</label>
+		<description>Make a batch of chemfuel by extracting and condensing wood gas from logs.</description>
+		<jobString>Refining chemfuel from wood.</jobString>
+		<recipeUsers>
+			<li>VFEM2_AlchemicalWorkbench</li>
+		</recipeUsers>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>3000</workAmount>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>70</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Chemfuel>25</Chemfuel>
+		</products>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>VFEM2_Make_ChemfuelFromOrganics</defName>
+		<label>make chemfuel from organics</label>
+		<description>Make a batch of chemfuel by extracting biofuel from organic feedstocks.</description>
+		<jobString>Refining chemfuel from organics.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>3500</workAmount>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<recipeUsers>
+			<li>VFEM2_AlchemicalWorkbench</li>
+		</recipeUsers>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+					<customSummary>feedstock</customSummary>
+					<categories>
+						<li>Foods</li>
+						<li>PlantMatter</li>
+					</categories>
+					<disallowedThingDefs>
+						<li>Hay</li>
+						<li>Dye</li>
+					</disallowedThingDefs>
+					<disallowedCategories>
+						<li>FoodMeals</li>
+					</disallowedCategories>
+				</filter>
+				<count>3.5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Foods</li>
+				<li>PlantMatter</li>
+			</categories>
+			<disallowedThingDefs>
+				<li>Hay</li>
+				<li>Dye</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">HemogenPack</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">BabyFood</li>
+			</disallowedThingDefs>
+			<disallowedCategories>
+				<li>FoodMeals</li>
+			</disallowedCategories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+			<disallowedCategories>
+				<li>MeatRaw</li>
+				<li>AnimalProductRaw</li>
+			</disallowedCategories>
+		</defaultIngredientFilter>
+		<products>
+			<Chemfuel>25</Chemfuel>
+		</products>
+	</RecipeDef>
+</Defs>
