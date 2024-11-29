@@ -295,6 +295,10 @@
     <Compile Include="AI\JobDrivers\JobDriver_TakeHoneyOutOfApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TendToApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TrainAtDummy.cs" />
+    <Compile Include="Comps\CompUseEffect_AddHediffWithSeverity.cs" />
+    <Compile Include="Comps\CompUseEffect_ReduceRest.cs" />
+    <Compile Include="Comps\Properties\CompProperties_UseEffectAddHediffWithSeverity.cs" />
+    <Compile Include="Comps\Properties\CompProperties_UseEffectReduceRest.cs" />
     <Compile Include="JoyGivers\JoyGiver_PlayTrainingDummy.cs" />
     <Compile Include="AI\WorkGivers\WorkGiver_TakeHoneyOutOfApiary.cs" />
     <Compile Include="AI\WorkGivers\WorkGiver_TendToApiary.cs" />

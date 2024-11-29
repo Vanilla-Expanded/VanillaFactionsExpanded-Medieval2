@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+		<defName>VFEM2_SingleBeerDrink</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>
+				<grains>
+				<li Class="AudioGrain_Folder">
+					<clipFolderPath>Pawn/Human/Drinking/Ingest_Beer/Loop</clipFolderPath>
+				</li>
+				</grains>
+				<volumeRange>17~13</volumeRange>
+				<pitchRange>0.8~1.2</pitchRange>
+				<distRange>0~49.53489</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+</Defs>

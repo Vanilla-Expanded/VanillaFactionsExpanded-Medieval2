@@ -2,11 +2,11 @@
 <Defs>
 	<ThingDef ParentName="BenchBase">
 		<defName>VFEM2_AlchemicalWorkbench</defName>
-		<label>alchemical workbench</label>
-		<description>An alchemical workbench.</description>
+		<label>fueled draught lab</label>
+		<description>A wood-fueled station for brewing various alchemical draughts.</description>
 		<thingClass>Building_WorkTable</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Production/TableDrugLab</texPath>
+			<texPath>Things/Building/Production/AlchemyLab/DraughtLab</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(3.5,1.5)</drawSize>
@@ -19,22 +19,23 @@
 		</graphicData>
 		<castEdgeShadows>true</castEdgeShadows>
 		<staticSunShadowHeight>0.20</staticSunShadowHeight>
-		<costStuffCount>50</costStuffCount>
+		<costStuffCount>75</costStuffCount>
 		<stuffCategories>
 			<li>Metallic</li>
 			<li>Woody</li>
 		</stuffCategories>
 		<costList>
-			<Steel>75</Steel>
-			<ComponentIndustrial>6</ComponentIndustrial>
+			<Steel>50</Steel>
 		</costList>
 		<altitudeLayer>Building</altitudeLayer>
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<WorkToBuild>3500</WorkToBuild>
-			<MaxHitPoints>120</MaxHitPoints>
+			<WorkToBuild>3000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<MarketValue>200</MarketValue>
 			<Flammability>1.0</Flammability>
+			<Mass>20</Mass>
 		</statBases>
 		<size>(3,1)</size>
 		<designationCategory>Production</designationCategory>
@@ -52,6 +53,17 @@
 			<paintable>true</paintable>
 		</building>
 		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>80.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>ToolCabinet</li>

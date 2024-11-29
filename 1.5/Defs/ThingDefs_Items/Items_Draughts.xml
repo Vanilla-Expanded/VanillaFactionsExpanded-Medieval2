@@ -67,24 +67,66 @@
 		<label>immunization draught</label>
 		<description>An amber-colored drink with tiny particles floating in it that bolsters the immune system of anyone that drinks it. While it helps them fight off sickness better, the downside is that it makes the user feel much more tired after drinking it, as well as overall makes the user get sleepy much faster than usual. The effects of the draught are strongest immediately after consumption, and then slowly fade away over the following days.</description>
 		<graphicData>
-			<texPath>Things/Item/Draught/ImmunizationDraught</texPath>
+			<texPath>Things/Item/Draught/DraughtImmunization</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.8</drawSize>
+			
 		</graphicData>
 		<statBases>
 			<MarketValue>60</MarketValue>
 		</statBases>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
-				<hediffDef>Voidsight</hediffDef>
-				<allowRepeatedUse>false</allowRepeatedUse>
+				<hediffDef>VFEM2_ImmunizationDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
 			</li>
 			<li Class="CompProperties_UseEffectPlaySound">
-				<soundOnUsed>Ingest_Beer</soundOnUsed>
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectReduceRest">
+				<amount>0.25</amount>
 			</li>
 		</comps>
 		<costList>
 			<PsychoidLeaves>2</PsychoidLeaves>
+			<VFEM2_RafflesiaLeaves>2</VFEM2_RafflesiaLeaves>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_HealingDraught</defName>
+		<label>healing draught</label>
+		<description>A vibrant red liquid. When the user drinks it, it greatly enhances their injury healing rate, speeding up the process of wound closure and tissue repair. This potion works by boosting the body’s natural healing mechanisms, making recovery from injuries much quicker.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtHealing</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_HealingDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			
+		</comps>
+		<costList>
+			<VFEM2_RawGlowstool>2</VFEM2_RawGlowstool>
 			<VFEM2_RafflesiaLeaves>2</VFEM2_RafflesiaLeaves>
 		</costList>
 		<recipeMaker>
