@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+ 
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_TorturerDraught"]/stages/li[@Name="fading"]</xpath>
+        <value>
+            <statFactors>
+				<SlaveSuppressionFallRate>0.9</SlaveSuppressionFallRate>
+			</statFactors>
+        </value>
+    </Operation>
+	
+	 <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_TorturerDraught"]/stages/li[@Name="potent"]</xpath>
+        <value>
+            <statFactors>
+				<SlaveSuppressionFallRate>0.7</SlaveSuppressionFallRate>
+			</statFactors>
+        </value>
+    </Operation>
+
+</Patch>

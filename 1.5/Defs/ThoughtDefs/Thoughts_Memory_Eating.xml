@@ -77,4 +77,17 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_TorturerDraught</defName>
+		<durationDays>2</durationDays>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>twisting pain</label>
+				<description>This wicked concoction set my insides on fire! It hurts all over!</description>
+				<baseMoodEffect>-15</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

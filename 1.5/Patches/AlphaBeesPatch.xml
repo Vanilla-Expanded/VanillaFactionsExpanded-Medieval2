@@ -7,46 +7,46 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/ThingDef[defName="VFEM2_MeadFermentingBarrel"]/label</xpath>
+					<xpath>Defs/ThingDef[defName="VFEM2_MeadFermentingBarrel"]/label</xpath>
 					<value>
 						<label>honey-wine fermenting barrel</label>		
 					</value>
 				</li>
 				
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/ThingDef[defName="VFEM2_MeadFermentingBarrel"]/description</xpath>
+					<xpath>Defs/ThingDef[defName="VFEM2_MeadFermentingBarrel"]/description</xpath>
 					<value>
 						<description>A very simple barrel, held together with a series of mortise and tenon joints. Can turn honey into honey-wine.</description>
 					</value>
 				</li>
 							
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/ThingDef[defName="VFEM2_Mead"]/label</xpath>
+					<xpath>Defs/ThingDef[defName="VFEM2_Mead"]/label</xpath>
 					<value>
 						<label>honey-wine</label>		
 					</value>
 				</li>
 				
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/ThingDef[defName="VFEM2_Mead"]/description</xpath>
+					<xpath>Defs/ThingDef[defName="VFEM2_Mead"]/description</xpath>
 					<value>
 						<description>A drink akin to wine, made of fermented honey and water, aged in a simple barrel. This sweet, crisp drink is known be nursed over time and has a reputation of being particularly comforting. Consuming honey-wine lowers psychic sensitivity.</description>		
 					</value>
 				</li>
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/label</xpath>
+					<xpath>Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/label</xpath>
 					<value>
 						<label>honey-wine high</label>		
 					</value>
 				</li>
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/labelNoun</xpath>
+					<xpath>Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/labelNoun</xpath>
 					<value>
 						<label>a honey-wine high</label>		
 					</value>
 				</li>
 				<li Class="PatchOperationReplace"> 
-					<xpath>/Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/description</xpath>
+					<xpath>Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/description</xpath>
 					<value>
 						<description>Honey-wine in the bloodstream. It makes people happy, but reduces capacities. Slightly reduces psychic sensitivity.</description>	
 					</value>

@@ -22,8 +22,7 @@
 				<minSeverity>0</minSeverity>
 				<statOffsets>
 					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
-
-				</statOffsets>		
+				</statOffsets>
 			</li>
 			<li>
 				<label>potent</label>
@@ -31,10 +30,8 @@
 				<restFallFactor>1.3</restFallFactor>
 				<statOffsets>
 					<ImmunityGainSpeed>0.35</ImmunityGainSpeed>
-
-				</statOffsets>		
+				</statOffsets>
 			</li>
-			
 		</stages>
 	</HediffDef>
 	<HediffDef>
@@ -57,21 +54,255 @@
 			<li>
 				<label>fading</label>
 				<minSeverity>0</minSeverity>
-				<statOffsets>
+				<statFactors>
 					<InjuryHealingFactor>2</InjuryHealingFactor>
-
-				</statOffsets>		
+				</statFactors>
 			</li>
 			<li>
 				<label>potent</label>
 				<minSeverity>0.65</minSeverity>
-				
-				<statOffsets>
+				<statFactors>
 					<InjuryHealingFactor>3</InjuryHealingFactor>
-
-				</statOffsets>		
+				</statFactors>
 			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_StrengthDraught</defName>
+		<label>strength draught</label>
+		<description>A draught is improving strength and reflexes of the user, improving their combat capabilities at the cost of increased social fight chance and higher mental break threshold.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<statFactors>
+					<MeleeDamageFactor>1.2</MeleeDamageFactor>
+					<MeleeDodgeChance>1.2</MeleeDodgeChance>
+				</statFactors>
+			</li>
+			<li>
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<socialFightChanceFactor>2</socialFightChanceFactor>
+				<statFactors>
+					<MeleeDamageFactor>1.5</MeleeDamageFactor>
+					<MeleeDodgeChance>1.5</MeleeDodgeChance>
+					<IncomingDamageFactor>0.75</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<MentalBreakThreshold>0.08</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_EfficiencyDraught</defName>
+		<label>efficiency draught</label>
+		<description>A draught is improving global workspeed of the user while also simultaneously slowing down their energy loss at the cost of increased chance of a heart attack. At the end of the potent duration, the user receives a major sleep fall rate increase.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<restFallFactor>1.5</restFallFactor>
+				<statFactors>
+					<WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+				</statFactors>
+			</li>
+			<li>
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<restFallFactor>0.7</restFallFactor>
+				<statFactors>
+					<WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+					<MoveSpeed>1.1</MoveSpeed>
+				</statFactors>
+				<statOffsets>
+					<MentalBreakThreshold>0.08</MentalBreakThreshold>
+				</statOffsets>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>HeartAttack</hediff>
+						<allowOnLodgers>false</allowOnLodgers>
+						<allowOnQuestRewardPawns>false</allowOnQuestRewardPawns>
+						<allowOnQuestReservedPawns>false</allowOnQuestReservedPawns>
+						<allowOnBeggars>false</allowOnBeggars>
+						<mtbDays>300</mtbDays>
+						<partsToAffect>
+							<li>Heart</li>
+						</partsToAffect>
+					</li>
+				</hediffGivers>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VFEM2_PainkillerDraught</defName>
+		<label>painkiller draught</label>
+		<description>A draught is stopping the user from feeling pain at the cost of lowering their focus and productivity greatly.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<painFactor>0.75</painFactor>
+			</li>
+			<li>
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<painFactor>0.2</painFactor>
+				<statFactors>
+					<WorkSpeedGlobal>0.75</WorkSpeedGlobal>
+					<ShootingAccuracyFactor_Medium>0.75</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>0.5</ShootingAccuracyFactor_Long>
+				</statFactors>
+				
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_TorturerDraught</defName>
+		<label>torturer draught</label>
+		<description>A draught is causing severe pain to the user, making them unable to even move. If they are a prisoner, they will rapidly lose their resistance, and if they are a slave, they will be fully suppressed.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+			<li Class="VFEMedieval.HediffCompProperties_ResistancePerSeverity">
+				
+			</li>
+		</comps>
+		<stages>
+			<li Name="fading">
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<painFactor>1.5</painFactor>
+			</li>
+			<li Name="potent">
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<painFactor>2</painFactor>
+				<painOffset>0.5</painOffset>
+			 <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+				
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_FocusDraught</defName>
+		<label>focus draught</label>
+		<description>A draught is increasing the capability of the user to learn, allowing them to gain more knowledge, eat faster, rest quicker and gain more psyfocus while potent. The effects are reversed when the draught is fading.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li Name="fading">
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<statFactors>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<EatingSpeed>0.75</EatingSpeed>
+					<RestRateMultiplier>0.5</RestRateMultiplier>
+				</statFactors>
+			</li>
+			<li Name="potent">
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
 			
+				<statFactors>
+					<GlobalLearningFactor>1.25</GlobalLearningFactor>
+					<EatingSpeed>2</EatingSpeed>
+					<RestRateMultiplier>1.25</RestRateMultiplier>
+				</statFactors>
+				
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_FertilityDraught</defName>
+		<label>fertility draught</label>
+		<description>A draught is artificially increasing the fertility of the user. The slight boost to fertility will allow even infertile people to have a chance to become parents.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li Name="fading">
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				
+			</li>
+			<li Name="potent">
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+			
+				
+				
+			</li>
 		</stages>
 	</HediffDef>
 </Defs>

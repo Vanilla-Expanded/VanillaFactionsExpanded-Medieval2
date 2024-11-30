@@ -5,11 +5,11 @@
     <Operation Class="PatchOperationSequence">
         <operations>
             <li Class="PatchOperationTest">
-                <xpath>/Defs/ThingDef[@Name="ChunkRockBase"]/stuffProps</xpath>
+                <xpath>Defs/ThingDef[@Name="ChunkRockBase"]/stuffProps</xpath>
                 <success>Invert</success>
             </li>
             <li Class="PatchOperationAdd">
-                <xpath>/Defs/ThingDef[@Name="ChunkRockBase"]</xpath>
+                <xpath>Defs/ThingDef[@Name="ChunkRockBase"]</xpath>
                 <value>
                     <stuffProps>
                         <categories/>
@@ -20,7 +20,7 @@
     </Operation>
 
     <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[@Name="ChunkRockBase"]/stuffProps/categories</xpath>
+        <xpath>Defs/ThingDef[@Name="ChunkRockBase"]/stuffProps/categories</xpath>
         <value>
             <li>VFEM2_StoneChunks</li>
         </value>

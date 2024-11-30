@@ -134,4 +134,229 @@
 			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
+	
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_StrengthDraught</defName>
+		<label>strength draught</label>
+		<description>A bold, deep red liquid. When the user drinks it, it significantly increases their physical strength, giving them the power to perform feats they normally couldn't. However, the potion also raises the user's mental break threshold, making them more prone to psychological stress. Additionally, the intense surge of strength increases the likelihood of conflicts, leading to a higher chance of social fights.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtStrength</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_StrengthDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			
+		</comps>
+		<costList>
+			<PsychoidLeaves>2</PsychoidLeaves>
+			<VFEM2_RafflesiaLeaves>1</VFEM2_RafflesiaLeaves>
+			<VFEM2_CliviaPetals>2</VFEM2_CliviaPetals>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_EfficiencyDraught</defName>
+		<label>efficiency draught</label>
+		<description>A slate-gray liquid that when drunk, enhances the user’s global work speed and reduces their energy depletion, allowing them to work faster and longer without feeling tired. However, the intense boost in productivity comes at a significant risk, increasing the chance of a heart attack due to the strain on the body. After the potion's effects diminish, the user experiences a sharp increase in the rate at which they become sleepy, necessitating immediate rest to recover.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtEfficiency</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_EfficiencyDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectReduceRest">
+				<amount>-0.15</amount>
+			</li>
+		</comps>
+		<costList>
+			
+			<RawAgave>2</RawAgave>
+			<VFEM2_CliviaPetals>2</VFEM2_CliviaPetals>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_PainkillerDraught</defName>
+		<label>painkiller draught</label>
+		<description>A pale blue liquid known as Painkiller Draught. When the user drinks it, it effectively reduces their sensation of pain, providing relief from discomfort and injuries. However, the sedative components of the draught also diminish the user's productivity and focus, making it harder to concentrate and complete tasks efficiently. This makes it suitable for recovery periods but less ideal when active mental or physical effort is required.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtPainkiller</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_PainkillerDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			
+		</comps>
+		<costList>
+			<PsychoidLeaves>2</PsychoidLeaves>
+			<VFEM2_RafflesiaLeaves>1</VFEM2_RafflesiaLeaves>
+			<VFEM2_RawGlowstool>1</VFEM2_RawGlowstool>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_TorturerDraught</defName>
+		<label>torturer draught</label>
+		<description>A dark, foreboding purple liquid. When the user drinks it, it induces severe pain, incapacitating them to the point where movement becomes impossible. For prisoners, this intense agony causes a rapid decline in their will to resist, breaking down any mental barriers they may have. In the case of slaves, the draught completely suppresses their spirit, leaving them entirely subdued. This potion is used with caution due to its extreme effects.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtTorturer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_PainkillerDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectGiveThought">
+				<thought>VFEM2_TorturerDraught</thought>
+				
+			</li>
+			
+		</comps>
+		<costList>
+			<PsychoidLeaves>3</PsychoidLeaves>
+			<VFEM2_RafflesiaLeaves>1</VFEM2_RafflesiaLeaves>
+			<VFEM2_AlocasiaLeaves>1</VFEM2_AlocasiaLeaves>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_FocusDraught</defName>
+		<label>focus draught</label>
+		<description>A crisp, energizing turquoise liquid that when drank, significantly enhances learning abilities of the user, enabling them to absorb and retain more information rapidly. Additionally, the draught increases the efficiency of eating and resting, allowing quicker nourishment and recovery. It also boosts the accumulation of psyfocus, enhancing mental clarity and psychic abilities. However, once the effects of the draught begin to fade, these enhancements reverse, leading to decreased learning capacity, slower eating and resting rates, and diminished psyfocus.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtFocus</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_FocusDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			
+		</comps>
+		<costList>
+			<PsychoidLeaves>2</PsychoidLeaves>
+			
+			<VFEM2_Honey>2</VFEM2_Honey>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_FertilityDraught</defName>
+		<label>fertility draught</label>
+		<description>A gentle, rose-pink liquid. When the user drinks it, it artificially boosts their fertility, giving even those who are infertile a chance to conceive. This slight increase in fertility opens the possibility for individuals or couples struggling with infertility to become parents, focusing on enhancing natural reproductive processes.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtFertility</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_FertilityDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			
+		</comps>
+		<costList>
+			<VFEM2_CliviaPetals>2</VFEM2_CliviaPetals>
+			
+			<VFEM2_Honey>1</VFEM2_Honey>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
 </Defs>

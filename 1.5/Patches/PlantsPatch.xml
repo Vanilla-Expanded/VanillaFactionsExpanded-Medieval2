@@ -4,7 +4,7 @@
  
 
     <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="Plant_Rafflesia"]/plant</xpath>
+        <xpath>Defs/ThingDef[defName="Plant_Rafflesia"]/plant</xpath>
         <value>
             <harvestYield>6</harvestYield>
 			<harvestedThingDef>VFEM2_RafflesiaLeaves</harvestedThingDef>
@@ -14,7 +14,7 @@
     </Operation>
 	
 	 <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="Plant_Astragalus"]/plant</xpath>
+        <xpath>Defs/ThingDef[defName="Plant_Astragalus"]/plant</xpath>
         <value>
             <harvestYield>3</harvestYield>
 			<harvestedThingDef>VFEM2_AstragalusFlowers</harvestedThingDef>
@@ -23,7 +23,7 @@
         </value>
     </Operation>
 	<Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="Plant_Astragalus"]</xpath>
+        <xpath>Defs/ThingDef[defName="Plant_Astragalus"]</xpath>
         <value>
             <selectable>true</selectable>
         </value>
@@ -32,7 +32,7 @@
 	
 	
 	 <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="Plant_Clivia"]/plant</xpath>
+        <xpath>Defs/ThingDef[defName="Plant_Clivia"]/plant</xpath>
         <value>
             <harvestYield>8</harvestYield>
 			<harvestedThingDef>VFEM2_CliviaPetals</harvestedThingDef>
@@ -42,7 +42,7 @@
     </Operation>
 	
 	<Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="Plant_Alocasia"]/plant</xpath>
+        <xpath>Defs/ThingDef[defName="Plant_Alocasia"]/plant</xpath>
         <value>
             <harvestYield>3</harvestYield>
 			<harvestedThingDef>VFEM2_AlocasiaLeaves</harvestedThingDef>
@@ -52,13 +52,13 @@
     </Operation>
 	
 	<Operation Class="PatchOperationReplace">
-        <xpath>/Defs/ThingDef[defName="Glowstool"]/plant/harvestedThingDef</xpath>
+        <xpath>Defs/ThingDef[defName="Glowstool"]/plant/harvestedThingDef</xpath>
         <value>
             <harvestedThingDef>VFEM2_RawGlowstool</harvestedThingDef>
         </value>
     </Operation>
 	<Operation Class="PatchOperationReplace">
-        <xpath>/Defs/ThingDef[defName="Glowstool"]/plant/harvestYield</xpath>
+        <xpath>Defs/ThingDef[defName="Glowstool"]/plant/harvestYield</xpath>
         <value>
             <harvestYield>8</harvestYield>
         </value>
