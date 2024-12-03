@@ -13,6 +13,7 @@ namespace VFEMedieval
         }
 
         public static HediffDef VFEM2_Sting;
+        public static HediffDef HeartAttack;
 
         public static ThoughtDef VFEM2_StingMoodDebuff;
 
@@ -29,5 +30,7 @@ namespace VFEMedieval
         public static FleckDef VFEM2_ArrowThrowable;
 
         public static PawnKindDef VFEM_SellSword;
+
+        public static BodyPartDef Kidney;
     }
 }

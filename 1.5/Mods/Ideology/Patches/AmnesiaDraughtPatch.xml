@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+ 
+
+ 
+	 <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_AmnesiaDraught"]/stages/li[@Name="potent"]</xpath>
+        <value>
+            <statOffsets>
+				<SlaveSuppressionFallRate>-0.05</SlaveSuppressionFallRate>
+			</statOffsets>
+        </value>
+    </Operation>
+
+</Patch>

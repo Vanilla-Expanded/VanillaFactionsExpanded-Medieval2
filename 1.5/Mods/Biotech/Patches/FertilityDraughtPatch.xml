@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+ 
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_FertilityDraught"]/stages/li[@Name="fading"]</xpath>
+        <value>
+            <statFactors>
+				<Fertility>0.1</Fertility>
+			</statFactors>
+        </value>
+    </Operation>
+	
+	 <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_FertilityDraught"]/stages/li[@Name="potent"]/statFactors</xpath>
+        <value>
+            
+				<Fertility>0.2</Fertility>
+			
+        </value>
+    </Operation>
+
+</Patch>

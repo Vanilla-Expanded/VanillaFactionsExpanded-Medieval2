@@ -21,11 +21,11 @@ namespace VFEMedieval
                 float loss;
                 if (this.parent.Severity > 0.65f)
                 {
-                    loss = 0.25f;
+                    loss = Props.resistanceLossOnPotent;
                 }
                 else
                 {
-                    loss = 0.08f;
+                    loss = Props.resistanceLossOnFading;
                 }
                 if (pawn.guest != null && pawn.guest.resistance > 0f)
                 {
