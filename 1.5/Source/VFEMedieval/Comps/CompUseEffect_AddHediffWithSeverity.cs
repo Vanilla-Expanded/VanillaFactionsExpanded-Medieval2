@@ -10,22 +10,26 @@ namespace VFEMedieval
 
         public override void DoEffect(Pawn user)
         {
-            Hediff hediff = user.health.hediffSet.GetFirstHediffOfDef(Props.hediffDef);
-            float adjustedSeverity = (1 - user.GetStatValue(StatDefOf.ToxicResistance, true))*Props.severity;
-
-            if (adjustedSeverity > 0)
+            if(Props.neededGene==null || (Props.neededGene!=null&& user.genes?.HasActiveGene(Props.neededGene) == true))
             {
-                if (hediff == null)
+                Hediff hediff = user.health.hediffSet.GetFirstHediffOfDef(Props.hediffDef);
+                float adjustedSeverity = Props.scaleSeverityByToxResistance ?  (1 - user.GetStatValue(StatDefOf.ToxicResistance, true)) * Props.severity : Props.severity;
+
+                if (adjustedSeverity > 0)
                 {
-                    user.health.AddHediff(Props.hediffDef);
-                    hediff = user.health.hediffSet.GetFirstHediffOfDef(Props.hediffDef);
-                    hediff.Severity = adjustedSeverity;
-                }
-                else
-                {
-                    hediff.Severity += adjustedSeverity;
+                    if (hediff == null)
+                    {
+                        user.health.AddHediff(Props.hediffDef);
+                        hediff = user.health.hediffSet.GetFirstHediffOfDef(Props.hediffDef);
+                        hediff.Severity = adjustedSeverity;
+                    }
+                    else
+                    {
+                        hediff.Severity += adjustedSeverity;
+                    }
                 }
             }
+            
             
         }
 

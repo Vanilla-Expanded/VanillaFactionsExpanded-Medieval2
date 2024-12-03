@@ -297,6 +297,7 @@
     <Compile Include="AI\JobDrivers\JobDriver_TrainAtDummy.cs" />
     <Compile Include="Comps\CompUseEffect_AddHediffWithSeverity.cs" />
     <Compile Include="Comps\CompUseEffect_AddInspiration.cs" />
+    <Compile Include="Comps\CompUseEffect_ReduceAllInfections.cs" />
     <Compile Include="Comps\CompUseEffect_ReduceRest.cs" />
     <Compile Include="Comps\CompUseEffect_IncreasePsypower.cs" />
     <Compile Include="Comps\CompUseEffect_GiveThought.cs" />
@@ -304,15 +305,18 @@
     <Compile Include="Comps\Properties\CompProperties_UseEffectAddInspiration.cs" />
     <Compile Include="Comps\Properties\CompProperties_UseEffectGiveThought.cs" />
     <Compile Include="Comps\Properties\CompProperties_UseEffectIncreasePsypower.cs" />
+    <Compile Include="Comps\Properties\CompProperties_UseEffectReduceAllInfections.cs" />
     <Compile Include="Comps\Properties\CompProperties_UseEffectReduceRest.cs" />
     <Compile Include="HarmonyPatches\Thought_Memory_DurationTicks.cs" />
     <Compile Include="HediffComps\HediffComp_CauseOrganDecay.cs" />
     <Compile Include="HediffComps\HediffComp_MoodPeriodModifier.cs" />
+    <Compile Include="HediffComps\HediffComp_OffsetHemogen.cs" />
     <Compile Include="HediffComps\Properties\HediffCompProperties_CauseOrganDecay.cs" />
     <Compile Include="HediffComps\Properties\HediffCompProperties_MoodPeriodModifier.cs" />
     <Compile Include="HediffComps\HediffComp_HeartAttacks.cs" />
     <Compile Include="HediffComps\HediffComp_ResistancePerSeverity.cs" />
     <Compile Include="HediffComps\Properties\HediffCompProperties_HeartAttacks.cs" />
+    <Compile Include="HediffComps\Properties\HediffCompProperties_OffsetHemogen.cs" />
     <Compile Include="HediffComps\Properties\HediffCompProperties_ResistancePerSeverity.cs" />
     <Compile Include="JoyGivers\JoyGiver_PlayTrainingDummy.cs" />
     <Compile Include="AI\WorkGivers\WorkGiver_TakeHoneyOutOfApiary.cs" />

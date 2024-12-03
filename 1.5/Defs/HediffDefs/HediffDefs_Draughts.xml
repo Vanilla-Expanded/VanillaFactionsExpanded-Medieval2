@@ -487,4 +487,38 @@
 			</li>
 		</stages>
 	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_AntitoxDraught</defName>
+		<label>antitox draught</label>
+		<description>A draught is improving the toxic resistance of the user.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		
+		</comps>
+		<stages>
+			<li Name="fading">
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<statOffSets>
+				<ToxicResistance>0.2</ToxicResistance>
+				</statOffSets>
+			</li>
+			<li Name="potent">
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<statOffSets>
+				<ToxicResistance>0.5</ToxicResistance>
+				</statOffSets>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

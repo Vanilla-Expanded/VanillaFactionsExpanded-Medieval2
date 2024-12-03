@@ -536,6 +536,7 @@
 			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
 				<hediffDef>VFEM2_PoisonDraught</hediffDef>
 				<severity>0.01</severity>
+				<scaleSeverityByToxResistance>false</scaleSeverityByToxResistance>
 			</li>
 			
 			
@@ -544,6 +545,45 @@
 			<VFEM2_AlocasiaLeaves>1</VFEM2_AlocasiaLeaves>
 			<VFEM2_RafflesiaLeaves>1</VFEM2_RafflesiaLeaves>
 			<InsectJelly>2</InsectJelly>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_AntitoxDraught</defName>
+		<label>antitox draught</label>
+		<description>A clear, vibrant teal liquid. When the user drinks it, it enhances their resistance to toxins, fortifying their body against harmful substances. Additionally, this draught actively works to remove any existing toxic buildup within the user’s system, purifying their body and preventing the detrimental effects of toxins.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtAntitox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>-0.2</severity>
+				<scaleSeverityByToxResistance>false</scaleSeverityByToxResistance>
+			</li>
+			
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_AntitoxDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			
+		</comps>
+		<costList>
+			<VFEM2_AlocasiaLeaves>1</VFEM2_AlocasiaLeaves>
+			<VFEM2_RafflesiaLeaves>1</VFEM2_RafflesiaLeaves>
+			<VFEM2_AstragalusFlowers>2</VFEM2_AstragalusFlowers>
 		</costList>
 		<recipeMaker>
 			<workAmount>800</workAmount>

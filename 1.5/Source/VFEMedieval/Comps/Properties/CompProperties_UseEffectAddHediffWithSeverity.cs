@@ -7,6 +7,8 @@ namespace VFEMedieval
     {
         public float severity = 1;
         public HediffDef hediffDef;
+        public GeneDef neededGene;
+        public bool scaleSeverityByToxResistance = true;
 
         public CompProperties_UseEffectAddHediffWithSeverity()
         {
