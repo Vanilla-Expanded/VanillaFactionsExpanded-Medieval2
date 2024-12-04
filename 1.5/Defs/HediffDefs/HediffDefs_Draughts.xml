@@ -458,7 +458,6 @@
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>1</severityPerDay>
-				
 			</li>
 			<li Class="VFEMedieval.HediffCompProperties_CauseOrganDecay">
 				
@@ -502,22 +501,21 @@
 				<severityPerDay>-0.2</severityPerDay>
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
-		
 		</comps>
 		<stages>
 			<li Name="fading">
 				<label>fading</label>
 				<minSeverity>0</minSeverity>
-				<statOffSets>
-				<ToxicResistance>0.2</ToxicResistance>
-				</statOffSets>
+				<statOffsets>
+					<ToxicResistance>0.2</ToxicResistance>
+				</statOffsets>
 			</li>
 			<li Name="potent">
 				<label>potent</label>
 				<minSeverity>0.65</minSeverity>
-				<statOffSets>
-				<ToxicResistance>0.5</ToxicResistance>
-				</statOffSets>
+				<statOffsets>
+					<ToxicResistance>0.5</ToxicResistance>
+				</statOffsets>
 			</li>
 		</stages>
 	</HediffDef>
