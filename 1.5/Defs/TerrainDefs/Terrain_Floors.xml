@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>VFEM2_Chemdrench</defName>
+    <label>chemdrench</label>
+    <description>Rough straw matting drenched heavily in chemfuel. Ignites very easily and spreads rapidly between all connected areas.</description>
+    <texturePath>Terrains/Chemdrench</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/StrawMattingPolluted</pollutedTexturePath>
+    <pollutionOverlayTexturePath></pollutionOverlayTexturePath>
+    <pollutionColor>(1, 1, 1, 1)</pollutionColor>
+    <pollutionTintColor>(1, 1, 1, 1)</pollutionTintColor>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>240</renderPrecedence>
+    <burnedDef>BurnedStrawMatting</burnedDef>
+    <pathCost>1</pathCost>
+    <statBases>
+      <Beauty>-2</Beauty>
+      <Cleanliness>-0.1</Cleanliness>
+      <WorkToBuild>120</WorkToBuild>
+      <FilthMultiplier>0.05</FilthMultiplier>
+      <Flammability>1.5</Flammability>
+    </statBases>
+    <costList>
+      <Hay>2</Hay>
+	  <Chemfuel>1</Chemfuel>
+    </costList>
+    <designationHotKey>Misc6</designationHotKey>
+    <uiOrder>2011</uiOrder>
+  </TerrainDef>
+
+</Defs>
