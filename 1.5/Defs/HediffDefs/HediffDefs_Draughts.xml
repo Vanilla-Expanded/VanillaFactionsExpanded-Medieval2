@@ -274,6 +274,9 @@
 				<severityPerDay>-0.2</severityPerDay>
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
+			<li Class="VFEMedieval.HediffCompProperties_MTBLovinModifier">
+				
+			</li>
 		</comps>
 		<stages>
 			<li Name="fading">
@@ -303,6 +306,9 @@
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.2</severityPerDay>
 				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+			<li Class="VFEMedieval.HediffCompProperties_LearningPassionsModifier">
+				
 			</li>
 		</comps>
 		<stages>
