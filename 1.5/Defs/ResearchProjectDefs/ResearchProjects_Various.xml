@@ -49,7 +49,7 @@
 		<researchViewX>3.00</researchViewX>
 		<researchViewY>0.8</researchViewY>
 		<prerequisites>
-			<li>PsychoidBrewing</li>
+			<li>Stonecutting</li>
 		</prerequisites>
 	</ResearchProjectDef>
 	
