@@ -287,7 +287,7 @@
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Building/Linked/Pallisade/Pallisade_Atlas</texPath>
+      <texPath>Things/Building/Linked/Palisade/Palisade_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <linkType>CornerFiller</linkType>
       <linkFlags>
@@ -305,7 +305,7 @@
         <edgeRight>Damage/Edge</edgeRight>
       </damageData>
     </graphicData>
-    <uiIconPath>Things/Building/Linked/Pallisade/Pallisade_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/Palisade/Palisade_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToBuild>200</WorkToBuild>
@@ -344,7 +344,7 @@
       <ai_chillDestination>false</ai_chillDestination>
       <supportsWallAttachments>true</supportsWallAttachments>
       <blueprintGraphicData>
-        <texPath>Things/Building/Linked/Pallisade/Pallisade_Blueprint_Atlas</texPath>
+        <texPath>Things/Building/Linked/Palisade/Palisade_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
       <relatedBuildCommands>
         <li>Door</li>
