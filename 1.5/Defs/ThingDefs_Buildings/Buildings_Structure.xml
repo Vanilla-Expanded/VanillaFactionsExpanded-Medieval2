@@ -402,7 +402,7 @@
         <edgeRight>Damage/Edge</edgeRight>
       </damageData>
     </graphicData>
-    <uiIconPath>Things/Building/Linked/CastleWall/CastleWall_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/CastleWall/CastleWallMenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>750</MaxHitPoints>
       <WorkToBuild>370</WorkToBuild>
@@ -499,7 +499,7 @@
         <edgeRight>Damage/Edge</edgeRight>
       </damageData>
     </graphicData>
-    <uiIconPath>Things/Building/Linked/CastleWallDamaged/CastleWallDamaged_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/CastleWallDamaged/CastleWallDamagedMenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>750</MaxHitPoints>
       <WorkToBuild>370</WorkToBuild>
