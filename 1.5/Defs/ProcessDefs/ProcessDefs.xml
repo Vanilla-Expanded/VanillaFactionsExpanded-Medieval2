@@ -26,6 +26,29 @@
 	</PipeSystem.ProcessDef>
 	
 	<PipeSystem.ProcessDef>
+		<defName>VFEM2_PatchLeatherToHardleather</defName>
+		<label>Boil patch leather into hard leather</label>
+		<description>Turns 100 patch leather into 100 hard leather.</description>
+		<spawnOnInteractionCell>true</spawnOnInteractionCell>
+		<labelOverride>Boil 100 patch leather into 100 hard leather</labelOverride>
+		<priorityInBillList>0</priorityInBillList>
+		<ingredients>
+			<li>
+				<thing>Leather_Patch</thing>
+				<countNeeded>100</countNeeded>
+			</li>
+		</ingredients>
+		<ticks>120000</ticks>
+		<results>
+			<li>
+				<thing>VFEM2_HardLeather</thing>
+				<count>100</count>
+			</li>
+		</results>
+		<autoExtract>false</autoExtract>
+	</PipeSystem.ProcessDef>
+	
+	<PipeSystem.ProcessDef>
 		<defName>VFEM2_GrapeToAwfulWine</defName>
 		<label>Ferment grape must into wine (awful)</label>
 		<description>Turns 10 grape must into 10 wine (awful).</description>

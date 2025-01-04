@@ -14,4 +14,7 @@
 	
 	<!-- Wine barrel -->
 	<VFEM2_WineBarrelNotWorking>This wine fermenting barrel is not working at the moment</VFEM2_WineBarrelNotWorking>
+	
+	<!-- Leather boil pot -->
+	<VFEM2_BoilPotNotWorking>This boil pot is not working at the moment</VFEM2_BoilPotNotWorking>
 </LanguageData>
