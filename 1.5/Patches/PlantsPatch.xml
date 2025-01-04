@@ -1,67 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
- 
-
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Plant_Rafflesia"]/plant</xpath>
-        <value>
-            <harvestYield>6</harvestYield>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Plant_Rafflesia"]/plant</xpath>
+		<value>
+			<harvestYield>6</harvestYield>
 			<harvestedThingDef>VFEM2_RafflesiaLeaves</harvestedThingDef>
 			<harvestWork>300</harvestWork>
 			<harvestTag>Standard</harvestTag>
-        </value>
-    </Operation>
-	
-	 <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Plant_Astragalus"]/plant</xpath>
-        <value>
-            <harvestYield>3</harvestYield>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<sowResearchPrerequisites Inherit="False">
+				<li>VFEM2_Alchemy</li>
+			</sowResearchPrerequisites>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Plant_Astragalus"]/plant</xpath>
+		<value>
+			<harvestYield>3</harvestYield>
 			<harvestedThingDef>VFEM2_AstragalusFlowers</harvestedThingDef>
 			<harvestWork>300</harvestWork>
 			<harvestTag>Standard</harvestTag>
-        </value>
-    </Operation>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<sowResearchPrerequisites Inherit="False">
+				<li>VFEM2_Alchemy</li>
+			</sowResearchPrerequisites>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Plant_Astragalus"]</xpath>
-        <value>
-            <selectable>true</selectable>
-        </value>
-    </Operation>
-	
-	
-	
-	 <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Plant_Clivia"]/plant</xpath>
-        <value>
-            <harvestYield>8</harvestYield>
+		<xpath>Defs/ThingDef[defName="Plant_Astragalus"]</xpath>
+		<value>
+			<selectable>true</selectable>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Plant_Clivia"]/plant</xpath>
+		<value>
+			<harvestYield>8</harvestYield>
 			<harvestedThingDef>VFEM2_CliviaPetals</harvestedThingDef>
 			<harvestWork>300</harvestWork>
 			<harvestTag>Standard</harvestTag>
-        </value>
-    </Operation>
-	
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<sowResearchPrerequisites Inherit="False">
+				<li>VFEM2_Alchemy</li>
+			</sowResearchPrerequisites>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Plant_Alocasia"]/plant</xpath>
-        <value>
-            <harvestYield>3</harvestYield>
+		<xpath>Defs/ThingDef[defName="Plant_Alocasia"]/plant</xpath>
+		<value>
+			<harvestYield>3</harvestYield>
 			<harvestedThingDef>VFEM2_AlocasiaLeaves</harvestedThingDef>
 			<harvestWork>300</harvestWork>
 			<harvestTag>Standard</harvestTag>
-        </value>
-    </Operation>
-	
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<sowResearchPrerequisites Inherit="False">
+				<li>VFEM2_Alchemy</li>
+			</sowResearchPrerequisites>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Glowstool"]/plant/harvestedThingDef</xpath>
-        <value>
-            <harvestedThingDef>VFEM2_RawGlowstool</harvestedThingDef>
-        </value>
-    </Operation>
+		<xpath>Defs/ThingDef[defName="Glowstool"]/plant/harvestedThingDef</xpath>
+		<value>
+			<harvestedThingDef>VFEM2_RawGlowstool</harvestedThingDef>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Glowstool"]/plant/harvestYield</xpath>
-        <value>
-            <harvestYield>8</harvestYield>
-        </value>
-    </Operation>
-
+		<xpath>Defs/ThingDef[defName="Glowstool"]/plant/harvestYield</xpath>
+		<value>
+			<harvestYield>8</harvestYield>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Glowstool"]/plant</xpath>
+		<value>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<sowResearchPrerequisites Inherit="False">
+				<li>VFEM2_Alchemy</li>
+			</sowResearchPrerequisites>
+		</value>
+	</Operation>
 </Patch>

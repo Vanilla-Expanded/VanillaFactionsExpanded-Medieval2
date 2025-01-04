@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VFEMedieval.LeatherTerrainTemplateDef>
+		<defName>VFEM2_Matting_</defName>
+		<label>matting ({0})</label>
+		<description>Rough matting made from interwoven leather pieces. It's rustic, cozy, and boosts the beauty of the room it's in. It's also quite flammable, and cleaning it is a laborious process.</description>
+		<texturePath>Terrains/Matting</texturePath>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<burnedDef>VFEM2_Matting_Burned</burnedDef>
+		<designatorDropdown>VFEM2_Floor_Matting</designatorDropdown>
+		<costList>3</costList>
+		<tags>
+			<li>Floor</li>
+		</tags>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<statBases>
+			<Beauty>2</Beauty>
+			<Flammability>0.32</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<CleaningTimeFactor>2</CleaningTimeFactor>
+		</statBases>
+		<uiOrder>2100</uiOrder>
+		<renderPrecedenceStart>200</renderPrecedenceStart>
+	</VFEMedieval.LeatherTerrainTemplateDef>
+	<TerrainDef ParentName="BurnedFloorBase">
+		<defName>VFEM2_Matting_Burned</defName>
+		<label>burned matting</label>
+		<renderPrecedence>201</renderPrecedence>
+		<description>Burned-out matting.</description>
+		<texturePath>Terrains/BurnedMatting</texturePath>
+		<edgeType>FadeRough</edgeType>
+	</TerrainDef>
+</Defs>

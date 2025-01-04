@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\harmonypatches\\thought_memory_durationticks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\thought_memory_durationticks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\harmonypatches\\defgenerator_generateimplieddefs_preresolve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\defgenerator_generateimplieddefs_preresolve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\harmonypatches\\harmonypatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\harmonypatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\vfemedieval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:vfemedieval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\harmonypatches\\skillrecord_learnratefactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\skillrecord_learnratefactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\defs\\leatherterraintemplatedef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:defs\\leatherterraintemplatedef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\harmonypatches\\thought_memory_durationticks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\thought_memory_durationticks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\staticcollections\\staticcollections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\hediffcomps\\hediffcomp_mtblovinmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:hediffcomps\\hediffcomp_mtblovinmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\harmonypatches\\skillrecord_learnratefactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\skillrecord_learnratefactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\hediffcomps\\properties\\hediffcompproperties_learningpassionsmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -155,10 +163,6 @@
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:placeworkers\\placeworker_apiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\vfemedieval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:vfemedieval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|VFEMedieval||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
@@ -169,37 +173,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DefGenerator_GenerateImpliedDefs_PreResolve.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\DefGenerator_GenerateImpliedDefs_PreResolve.cs",
+              "RelativeDocumentMoniker": "HarmonyPatches\\DefGenerator_GenerateImpliedDefs_PreResolve.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\DefGenerator_GenerateImpliedDefs_PreResolve.cs",
+              "RelativeToolTip": "HarmonyPatches\\DefGenerator_GenerateImpliedDefs_PreResolve.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T08:27:48.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LeatherTerrainTemplateDef.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Defs\\LeatherTerrainTemplateDef.cs",
+              "RelativeDocumentMoniker": "Defs\\LeatherTerrainTemplateDef.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Defs\\LeatherTerrainTemplateDef.cs",
+              "RelativeToolTip": "Defs\\LeatherTerrainTemplateDef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T08:18:42.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Thought_Memory_DurationTicks.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\Thought_Memory_DurationTicks.cs",
               "RelativeDocumentMoniker": "HarmonyPatches\\Thought_Memory_DurationTicks.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\Thought_Memory_DurationTicks.cs*",
-              "RelativeToolTip": "HarmonyPatches\\Thought_Memory_DurationTicks.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBgAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\Thought_Memory_DurationTicks.cs",
+              "RelativeToolTip": "HarmonyPatches\\Thought_Memory_DurationTicks.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T11:05:55.463Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "SkillRecord_LearnRateFactor.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\SkillRecord_LearnRateFactor.cs",
               "RelativeDocumentMoniker": "HarmonyPatches\\SkillRecord_LearnRateFactor.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\SkillRecord_LearnRateFactor.cs",
               "RelativeToolTip": "HarmonyPatches\\SkillRecord_LearnRateFactor.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCMAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwCMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T13:18:21.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "VFEMedieval.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\VFEMedieval.cs",
+              "RelativeDocumentMoniker": "VFEMedieval.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\VFEMedieval.cs",
+              "RelativeToolTip": "VFEMedieval.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:54:28.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs",
               "RelativeDocumentMoniker": "HarmonyPatches\\JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs",
@@ -211,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "HediffComp_MTBLovinModifier.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\HediffComp_MTBLovinModifier.cs",
               "RelativeDocumentMoniker": "HediffComps\\HediffComp_MTBLovinModifier.cs",
@@ -219,12 +266,11 @@
               "RelativeToolTip": "HediffComps\\HediffComp_MTBLovinModifier.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T13:06:28.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T13:06:28.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "StaticCollections.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\StaticCollections\\StaticCollections.cs",
               "RelativeDocumentMoniker": "StaticCollections\\StaticCollections.cs",
@@ -232,25 +278,11 @@
               "RelativeToolTip": "StaticCollections\\StaticCollections.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T13:03:53.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T13:03:53.822Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HarmonyPatches.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\HarmonyPatches.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\HarmonyPatches.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\HarmonyPatches.cs",
-              "RelativeToolTip": "HarmonyPatches\\HarmonyPatches.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:54:28.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "HediffCompProperties_LearningPassionsModifier.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\Properties\\HediffCompProperties_LearningPassionsModifier.cs",
               "RelativeDocumentMoniker": "HediffComps\\Properties\\HediffCompProperties_LearningPassionsModifier.cs",
@@ -262,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "HediffComp_LearningPassionsModifier.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\HediffComp_LearningPassionsModifier.cs",
               "RelativeDocumentMoniker": "HediffComps\\HediffComp_LearningPassionsModifier.cs",
@@ -274,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "HediffCompProperties_MTBLovinModifier.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\Properties\\HediffCompProperties_MTBLovinModifier.cs",
               "RelativeDocumentMoniker": "HediffComps\\Properties\\HediffCompProperties_MTBLovinModifier.cs",
@@ -286,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "CompProperties_UseEffectReduceAllInfections.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_UseEffectReduceAllInfections.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_UseEffectReduceAllInfections.cs",
@@ -298,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "HediffComp_OffsetHemogen.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\HediffComp_OffsetHemogen.cs",
               "RelativeDocumentMoniker": "HediffComps\\HediffComp_OffsetHemogen.cs",
@@ -310,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CompUseEffect_ReduceAllInfections.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompUseEffect_ReduceAllInfections.cs",
               "RelativeDocumentMoniker": "Comps\\CompUseEffect_ReduceAllInfections.cs",
@@ -322,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CompUseEffect_IncreasePsypower.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompUseEffect_IncreasePsypower.cs",
               "RelativeDocumentMoniker": "Comps\\CompUseEffect_IncreasePsypower.cs",
@@ -334,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CompUseEffect_AddHediffWithSeverity.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompUseEffect_AddHediffWithSeverity.cs",
               "RelativeDocumentMoniker": "Comps\\CompUseEffect_AddHediffWithSeverity.cs",
@@ -346,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "HediffCompProperties_OffsetHemogen.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\Properties\\HediffCompProperties_OffsetHemogen.cs",
               "RelativeDocumentMoniker": "HediffComps\\Properties\\HediffCompProperties_OffsetHemogen.cs",
@@ -358,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "HediffComp_ResistancePerSeverity.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\HediffComp_ResistancePerSeverity.cs",
               "RelativeDocumentMoniker": "HediffComps\\HediffComp_ResistancePerSeverity.cs",
@@ -370,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CompProperties_UseEffectIncreasePsypower.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_UseEffectIncreasePsypower.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_UseEffectIncreasePsypower.cs",
@@ -382,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "CompProperties_UseEffectAddHediffWithSeverity.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_UseEffectAddHediffWithSeverity.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_UseEffectAddHediffWithSeverity.cs",
@@ -394,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CompUseEffect_ReduceRest.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompUseEffect_ReduceRest.cs",
               "RelativeDocumentMoniker": "Comps\\CompUseEffect_ReduceRest.cs",
@@ -406,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "HediffCompProperties_ResistancePerSeverity.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HediffComps\\Properties\\HediffCompProperties_ResistancePerSeverity.cs",
               "RelativeDocumentMoniker": "HediffComps\\Properties\\HediffCompProperties_ResistancePerSeverity.cs",
@@ -418,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "CompProperties_UseEffectGiveThought.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_UseEffectGiveThought.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_UseEffectGiveThought.cs",
@@ -430,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "CompUseEffect_GiveThought.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompUseEffect_GiveThought.cs",
               "RelativeDocumentMoniker": "Comps\\CompUseEffect_GiveThought.cs",
@@ -442,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "CompProperties_UseEffectReduceRest.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_UseEffectReduceRest.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_UseEffectReduceRest.cs",
@@ -454,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "StockGenerator_MedievalMercs.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\StockGenerators\\StockGenerator_MedievalMercs.cs",
               "RelativeDocumentMoniker": "StockGenerators\\StockGenerator_MedievalMercs.cs",
@@ -466,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "JoyGiver_PlayTrainingDummy.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\JoyGivers\\JoyGiver_PlayTrainingDummy.cs",
               "RelativeDocumentMoniker": "JoyGivers\\JoyGiver_PlayTrainingDummy.cs",
@@ -478,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "JobDriver_TrainAtDummy.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\AI\\JobDrivers\\JobDriver_TrainAtDummy.cs",
               "RelativeDocumentMoniker": "AI\\JobDrivers\\JobDriver_TrainAtDummy.cs",
@@ -490,7 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "JobDriver_PlayArchery.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\AI\\JobDrivers\\JobDriver_PlayArchery.cs",
               "RelativeDocumentMoniker": "AI\\JobDrivers\\JobDriver_PlayArchery.cs",
@@ -502,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "CompCureHypothermia.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompCureHypothermia.cs",
               "RelativeDocumentMoniker": "Comps\\CompCureHypothermia.cs",
@@ -514,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "VFEM_DefOf.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\DefOf\\VFEM_DefOf.cs",
               "RelativeDocumentMoniker": "DefOf\\VFEM_DefOf.cs",
@@ -526,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "CompProperties_CureHypothermia.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_CureHypothermia.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_CureHypothermia.cs",
@@ -538,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "CompIngestedThoughtFromQuality.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\CompIngestedThoughtFromQuality.cs",
               "RelativeDocumentMoniker": "Comps\\CompIngestedThoughtFromQuality.cs",
@@ -550,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "CompProperties_IngestedThoughtFromQuality.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Comps\\Properties\\CompProperties_IngestedThoughtFromQuality.cs",
               "RelativeDocumentMoniker": "Comps\\Properties\\CompProperties_IngestedThoughtFromQuality.cs",
@@ -562,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "JobDriver_TakeHoneyOutOfApiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\AI\\JobDrivers\\JobDriver_TakeHoneyOutOfApiary.cs",
               "RelativeDocumentMoniker": "AI\\JobDrivers\\JobDriver_TakeHoneyOutOfApiary.cs",
@@ -574,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "JobDriver_TendToApiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\AI\\JobDrivers\\JobDriver_TendToApiary.cs",
               "RelativeDocumentMoniker": "AI\\JobDrivers\\JobDriver_TendToApiary.cs",
@@ -586,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "WorkGiver_TakeHoneyOutOfApiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\AI\\WorkGivers\\WorkGiver_TakeHoneyOutOfApiary.cs",
               "RelativeDocumentMoniker": "AI\\WorkGivers\\WorkGiver_TakeHoneyOutOfApiary.cs",
@@ -598,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "WorkGiver_TendToApiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\AI\\WorkGivers\\WorkGiver_TendToApiary.cs",
               "RelativeDocumentMoniker": "AI\\WorkGivers\\WorkGiver_TendToApiary.cs",
@@ -610,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "Placeworker_Apiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Placeworkers\\Placeworker_Apiary.cs",
               "RelativeDocumentMoniker": "Placeworkers\\Placeworker_Apiary.cs",
@@ -622,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "Building_Apiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Buildings\\Building_Apiary.cs",
               "RelativeDocumentMoniker": "Buildings\\Building_Apiary.cs",
@@ -634,19 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "VFEMedieval.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\VFEMedieval.cs",
-              "RelativeDocumentMoniker": "VFEMedieval.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\VFEMedieval.cs",
-              "RelativeToolTip": "VFEMedieval.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:54:28.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "VFEMedieval",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\VFEMedieval.csproj",
               "RelativeDocumentMoniker": "VFEMedieval.csproj",
