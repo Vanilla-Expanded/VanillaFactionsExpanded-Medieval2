@@ -28,7 +28,7 @@
 		<defName>VFEM2_Matting_Burned</defName>
 		<label>burned matting</label>
 		<renderPrecedence>201</renderPrecedence>
-		<description>Burned-out matting.</description>
+		<description>Leather matting that has been burned in a fire.</description>
 		<texturePath>Terrains/BurnedMatting</texturePath>
 		<edgeType>FadeRough</edgeType>
 	</TerrainDef>

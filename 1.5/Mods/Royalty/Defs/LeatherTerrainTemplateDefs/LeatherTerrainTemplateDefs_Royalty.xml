@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VFEMedieval.LeatherTerrainTemplateDef>
+		<defName>VFEM2_FineMatting_</defName>
+		<label>fine matting ({0})</label>
+		<description>Luxurious, carefully stitched matting made from leather strips. Beautiful to look at, but cleaning it is a labor-intensive process.</description>
+		<texturePath>Terrains/FineMatting</texturePath>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<burnedDef>VFEM2_FineMatting_Burned</burnedDef>
+		<designatorDropdown>VFEM2_Floor_FineMatting</designatorDropdown>
+		<costList>14</costList>
+		<tags>
+			<li>Floor</li>
+		</tags>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<statBases>
+			<Beauty>4</Beauty>
+			<Flammability>0.32</Flammability>
+			<WorkToBuild>4200</WorkToBuild>
+			<CleaningTimeFactor>2</CleaningTimeFactor>
+		</statBases>
+		 <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiOrder>2100</uiOrder>
+		<renderPrecedenceStart>200</renderPrecedenceStart>
+	</VFEMedieval.LeatherTerrainTemplateDef>
+	<TerrainDef ParentName="BurnedFloorBase">
+		<defName>VFEM2_FineMatting_Burned</defName>
+		<label>burned fine matting</label>
+		<renderPrecedence>201</renderPrecedence>
+		<description>Luxurious leather matting that has been burned in a fire.</description>
+		<texturePath>Terrains/BurnedFineMatting</texturePath>
+		<edgeType>FadeRough</edgeType>
+	</TerrainDef>
+</Defs>
