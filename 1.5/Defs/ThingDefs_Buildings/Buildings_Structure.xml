@@ -326,7 +326,7 @@
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
     <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
-    <terrainAffordanceNeeded>true</terrainAffordanceNeeded> 
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded> 
     <holdsRoof>true</holdsRoof>
     <designationCategory>Structure</designationCategory>
     <uiOrder>2003</uiOrder>
