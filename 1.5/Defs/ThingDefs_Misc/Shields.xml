@@ -142,7 +142,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <drawSize>1</drawSize>
-			<shaderType>CutoutComplex</shaderType>
         </graphicData>
         <costList>
             <WoodLog>75</WoodLog>
