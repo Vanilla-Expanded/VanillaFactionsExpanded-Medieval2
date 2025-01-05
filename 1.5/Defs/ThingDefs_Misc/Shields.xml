@@ -129,7 +129,7 @@
                 </offHandHoldOffset>
             </li>
         </comps>
-		<!-- <colorGenerator Class="ColorGenerator_StandardApparel" /> -->
+		<colorGenerator Class="ColorGenerator_StandardApparel" /> 
     </ThingDef>
 	
 	<!-- Vikings -->
