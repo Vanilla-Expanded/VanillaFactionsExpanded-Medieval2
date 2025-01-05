@@ -314,6 +314,7 @@
     </statBases>
     <costStuffCount>3</costStuffCount>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
