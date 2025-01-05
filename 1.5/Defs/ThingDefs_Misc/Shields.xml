@@ -69,6 +69,7 @@
             <texPath>Things/Item/Equipment/Shield/HeaterShield/HeaterShield</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.75</drawSize>
+			<shaderType>CutoutComplex</shaderType>
         </graphicData>
         <costList>
             <Steel>100</Steel>
@@ -141,6 +142,7 @@
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <drawSize>1</drawSize>
+			<shaderType>CutoutComplex</shaderType>
         </graphicData>
         <costList>
             <WoodLog>75</WoodLog>
