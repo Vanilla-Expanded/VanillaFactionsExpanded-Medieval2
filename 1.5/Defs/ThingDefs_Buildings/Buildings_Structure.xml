@@ -289,7 +289,7 @@
     <graphicData>
       <texPath>Things/Building/Linked/Palisade/Palisade_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <linkType>CornerFiller</linkType>
+      <linkType>Basic</linkType>
       <linkFlags>
         <li>Wall</li>
         <li>Rock</li>
@@ -385,7 +385,6 @@
     <graphicData>
       <texPath>Things/Building/Linked/CastleWall/CastleWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <shaderType>CutoutComplex</shaderType>
       <linkType>CornerFiller</linkType>
       <linkFlags>
         <li>Wall</li>
@@ -482,7 +481,6 @@
     <graphicData>
       <texPath>Things/Building/Linked/CastleWallDamaged/CastleWallDamaged_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <shaderType>CutoutComplex</shaderType>
       <linkType>CornerFiller</linkType>
       <linkFlags>
         <li>Wall</li>
