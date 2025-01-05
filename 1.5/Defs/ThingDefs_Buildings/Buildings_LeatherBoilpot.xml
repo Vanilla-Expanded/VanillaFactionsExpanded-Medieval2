@@ -46,6 +46,17 @@
 				<inProgressTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Working</inProgressTexture>
 				<finishedTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Finished</finishedTexture>
 			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>80.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
 		</comps>
 		<inspectorTabs>
 			<li>PipeSystem.ITab_Processor</li>
@@ -62,7 +73,6 @@
 		</building>
 		<researchPrerequisites>
 			<li>ComplexClothing</li>
-			
 		</researchPrerequisites>
 		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		<resourcesFractionWhenDeconstructed>0.75</resourcesFractionWhenDeconstructed>
