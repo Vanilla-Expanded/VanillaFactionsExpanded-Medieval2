@@ -10,7 +10,7 @@
     <canMakeRandomly>true</canMakeRandomly>
     <canStageAttacks>true</canStageAttacks>
     <factionIconPath>MapIcons/CastleCivil</factionIconPath>
-    <settlementTexturePath>Expanding/CastleExpanding</settlementTexturePath>
+    <settlementTexturePath>MapIcons/Expanding/CastleExpanding</settlementTexturePath>
     <factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
     <settlementNameMaker>VFEM2_NamerSettlementMedieval</settlementNameMaker>
     <allowedCultures><li>VFEM2_Feudal</li></allowedCultures>
