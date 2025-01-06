@@ -53,4 +53,18 @@
 		</prerequisites>
 	</ResearchProjectDef>
 	
+	<ResearchProjectDef>
+		<defName>VFEM2_Heraldry</defName>
+		<label>heraldry</label>
+		<description>Adorn the colors of your faction and construct decorative banners and heraldic rugs.</description>
+		<baseCost>2500</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>0.8</researchViewY>
+		<prerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
 </Defs>
