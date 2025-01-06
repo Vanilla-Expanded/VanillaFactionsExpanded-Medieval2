@@ -60,7 +60,6 @@
     <backstoryCategories>
       <li>Tribal</li>
     </backstoryCategories>
-    <leaderTitle>king</leaderTitle>
     <fixedLeaderKinds>
       <li>VFEM2_Medieval_King</li>
     </fixedLeaderKinds>

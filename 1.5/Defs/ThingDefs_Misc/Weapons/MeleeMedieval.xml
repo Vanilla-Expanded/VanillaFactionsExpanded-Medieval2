@@ -139,7 +139,7 @@
       <MoveSpeed>-0.4</MoveSpeed>
     </equippedStatOffsets>
     <relicChance>2</relicChance>
-    <equippedAngleOffset>-65</equippedAngleOffset>
+    <equippedAngleOffset>-25</equippedAngleOffset>
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
@@ -184,6 +184,81 @@
         <Crafting>6</Crafting>
       </skillRequirements>
       <displayPriority>421</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>VFEM2_MeleeWeapon_Pike</defName>
+    <label>pike</label>
+    <description>A long, unwieldy polearm tipped with a sharp point for stabbing opponents. The reach of the pike allows to strike enemies much further away.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Pike</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>2.0</drawSize>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <weaponTags>
+      <li>MedievalMeleeAdvanced</li>
+      <li>VFEM2_Pike</li>
+    </weaponTags>
+    <costStuffCount>100</costStuffCount>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>14000</WorkToMake>
+      <Mass>8</Mass>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <tools>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>3.9</cooldownTime>
+		<armorPenetration>0.2</armorPenetration>
+      </li>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>4.2</cooldownTime>
+		<armorPenetration>0.2</armorPenetration>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>24</power>
+        <armorPenetration>0.5</armorPenetration>
+        <cooldownTime>4.2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>5.2</cooldownTime>
+		<armorPenetration>0.5</armorPenetration>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>LongBlades</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <displayPriority>331</displayPriority>
     </recipeMaker>
   </ThingDef>
 
