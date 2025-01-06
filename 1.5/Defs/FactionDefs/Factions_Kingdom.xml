@@ -14,6 +14,7 @@
     <factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
     <settlementNameMaker>VFEM2_NamerSettlementMedieval</settlementNameMaker>
     <allowedCultures><li>VFEM2_Feudal</li></allowedCultures>
+	<leaderTitle>king</leaderTitle>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>

@@ -13,6 +13,7 @@
     <factionNameMaker>VFEM2_NamerFactionViking</factionNameMaker>
     <settlementNameMaker>VFEM2_NamerSettlementViking</settlementNameMaker>
     <techLevel>Medieval</techLevel>
+	<leaderTitle>jarl</leaderTitle>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
 	<configurationListOrderPriority>100</configurationListOrderPriority>
     <allowedCultures>
