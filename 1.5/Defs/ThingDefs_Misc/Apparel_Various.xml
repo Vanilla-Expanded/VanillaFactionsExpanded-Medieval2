@@ -359,4 +359,60 @@
 		<colorGenerator Class="ColorGenerator_StandardApparel" />
 	</ThingDef>
 
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>VFEM2_Apparel_Tabard</defName>
+    <label>tabard</label>
+    <description>A sleeveless cloth overgarment worn over armor or clothing, designed to display the wearer's heraldry. Though it provides no protection, it proudly showcases the colors and symbol of their allegiance.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Tabard/Tabard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>1200</WorkToMake>
+      <Mass>0.6</Mass>
+      <ArmorRating_Sharp>0</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+      <Insulation_Cold>0</Insulation_Cold>
+      <Insulation_Heat>0</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <recipeMaker>
+      <unfinishedThingDef>VFEM2_UnfinishedApparelNoStuff</unfinishedThingDef>
+      <researchPrerequisite>VFEM2_Heraldry</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+      </recipeUsers>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    </recipeMaker>
+    <costList>
+      <Cloth>20</Cloth>
+    </costList>
+    <equippedStatOffsets>
+      <PainShockThreshold>0.05</PainShockThreshold>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Tabard/Tabard</wornGraphicPath>
+      <layers>
+        <li>VFEC_OuterShell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags>
+        <li>VFEM2_Tabard</li>
+      </tags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+  
 </Defs>
