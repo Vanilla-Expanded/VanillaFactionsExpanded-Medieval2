@@ -10,7 +10,7 @@ namespace VFEMedieval
     {      
 
         public static Dictionary<Pawn,float> pawnMoodTimeMultiplier = new Dictionary<Pawn, float>();
-        public static Dictionary<Pawn, float> pawnMTBLovinMultiplier = new Dictionary<Pawn, float>();
+    
         public static Dictionary<Pawn, float> pawnLearningFactorSinglePassionMultiplier = new Dictionary<Pawn, float>();
         public static Dictionary<Pawn, float> pawnLearningFactorDoublePassionMultiplier = new Dictionary<Pawn, float>();
 
@@ -28,18 +28,7 @@ namespace VFEMedieval
             }
         }
 
-        public static void AddPawnMTBLovinMultiplierToList(Pawn thing, float modifier)
-        {
-            pawnMTBLovinMultiplier[thing] = modifier;
-        }
-
-        public static void RemovePawnMTBLovinMultiplierFromList(Pawn thing)
-        {
-            if (pawnMTBLovinMultiplier.ContainsKey(thing))
-            {
-                pawnMTBLovinMultiplier.Remove(thing);
-            }
-        }
+     
 
         public static void AddPawnLearningFactorSinglePassionMultiplierToList(Pawn thing, float modifier)
         {

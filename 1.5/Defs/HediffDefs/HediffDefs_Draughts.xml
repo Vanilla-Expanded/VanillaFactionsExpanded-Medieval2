@@ -274,20 +274,20 @@
 				<severityPerDay>-0.2</severityPerDay>
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
-			<li Class="VFEMedieval.HediffCompProperties_MTBLovinModifier">
-				
-			</li>
+			
 		</comps>
 		<stages>
 			<li Name="fading">
 				<label>fading</label>
 				<minSeverity>0</minSeverity>
+				
 			</li>
 			<li Name="potent">
 				<label>potent</label>
 				<minSeverity>0.65</minSeverity>
 				<statFactors>
 					<RestRateMultiplier>1.1</RestRateMultiplier>
+					<VEF_MTBLovinFactor>0.75</VEF_MTBLovinFactor>
 				</statFactors>
 			</li>
 		</stages>
