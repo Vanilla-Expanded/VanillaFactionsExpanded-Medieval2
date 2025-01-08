@@ -331,7 +331,7 @@
     <holdsRoof>true</holdsRoof>
     <designationCategory>Structure</designationCategory>
     <uiOrder>2003</uiOrder>
-    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <staticSunShadowHeight>0.75</staticSunShadowHeight>
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
