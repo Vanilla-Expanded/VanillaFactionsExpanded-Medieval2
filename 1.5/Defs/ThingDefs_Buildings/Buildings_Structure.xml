@@ -318,7 +318,7 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
-    <castEdgeShadows>true</castEdgeShadows>
+    <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>0.75</fillPercent>
     <coversFloor>true</coversFloor>
     <placingDraggableDimensions>1</placingDraggableDimensions>
