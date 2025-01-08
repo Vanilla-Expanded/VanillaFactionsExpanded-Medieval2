@@ -261,5 +261,66 @@
       <displayPriority>331</displayPriority>
     </recipeMaker>
   </ThingDef>
+  
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>VFEM2_MeleeWeapon_Standard</defName>
+    <label>standard</label>
+    <description>A long wooden pole adorned with a flag bearing the heraldry of its bearer. While it inspires unity and bolsters morale as a rallying point for soldiers, the standard itself is poorly suited for combat, offering little in terms of offense or defense.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/Standard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>2.0</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <weaponTags>
+      <li>VFEM2_Standard</li>
+    </weaponTags>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>6</Mass>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <equippedAngleOffset>-25</equippedAngleOffset>
+    <costList>
+      <WoodLog>80</WoodLog>
+      <Cloth>80</Cloth>
+    </costList>
+    <tools>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>4.0</cooldownTime>
+		<armorPenetration>0</armorPenetration>
+      </li>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>13</power>
+        <armorPenetration>0</armorPenetration>
+        <cooldownTime>4.2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>VFEM2_Heraldry</researchPrerequisite>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+		<li>CraftingSpot</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <displayPriority>332</displayPriority>
+    </recipeMaker>
+  </ThingDef>
 
 </Defs>
