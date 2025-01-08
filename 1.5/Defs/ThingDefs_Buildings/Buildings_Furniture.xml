@@ -251,7 +251,7 @@
 		<description>A tall fabric banner mounted on a sturdy wooden frame, proudly displaying the heraldry of the faction.</description>
 		<graphicData>
 			<drawSize>(2,2)</drawSize>
-			<texPath>Furniture/VFE_ImperialBanner</texPath>
+			<texPath>Things/Building/Misc/StandingBanner</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<shadowData>
