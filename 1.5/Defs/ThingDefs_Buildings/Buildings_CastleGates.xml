@@ -86,7 +86,7 @@
 				<texPath>Things/Building/Doors/CastleDoor3x1_MenuIcon</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2.6, 4.1)</drawSize>
+				<drawSize>(3.6, 4.1)</drawSize>
 			</blueprintGraphicData>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor3x1_Top</texPath>
@@ -140,7 +140,7 @@
 				<texPath>Things/Building/Doors/CastleDoor4x1_MenuIcon</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2.6, 5.1)</drawSize>
+				<drawSize>(4.6, 5.1)</drawSize>
 			</blueprintGraphicData>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor4x1_Top</texPath>
@@ -255,7 +255,7 @@
 				<texPath>Things/Building/Doors/CastleGate3x1_MenuIcon</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2.6, 4.1)</drawSize>
+				<drawSize>(3.6, 4.1)</drawSize>
 			</blueprintGraphicData>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor3x1_Top</texPath>
@@ -312,7 +312,7 @@
 				<texPath>Things/Building/Doors/CastleGate4x1_MenuIcon</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2.6, 5.1)</drawSize>
+				<drawSize>(4.6, 5.1)</drawSize>
 			</blueprintGraphicData>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor4x1_Top</texPath>
