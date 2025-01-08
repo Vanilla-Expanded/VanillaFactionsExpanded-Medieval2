@@ -270,6 +270,7 @@
       <texPath>Things/Building/Misc/Standard</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 	  <drawSize>2.0</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>

@@ -244,4 +244,56 @@
 		</researchPrerequisites>
 	</ThingDef>
 	
+	<!-- Heraldry -->
+	<ThingDef ParentName="FurnitureBase">
+		<defName>VFEM2_StandingBanner</defName>
+		<label>standing banner</label>
+		<description>A tall fabric banner mounted on a sturdy wooden frame, proudly displaying the heraldry of the faction.</description>
+		<graphicData>
+			<drawSize>(2,2)</drawSize>
+			<texPath>Furniture/VFE_ImperialBanner</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<shadowData>
+				<volume>(1,0.6,0.3)</volume>
+				<offset>(0,0,0</offset>
+			</shadowData>
+			<damageData>
+				<rectN>(0.1, 0.1, 0.8, 0.5)</rectN>
+				<rectS>(0.1, 0.1, 0.8, 0.5)</rectS>
+				<rectE>(0.25, 0.5, 0.5, 0.5)</rectE>
+				<rectW>(0.25, 0.5, 0.5, 0.5)</rectW>
+			</damageData>
+		</graphicData>
+		<designationCategory>Misc</designationCategory>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1000</WorkToBuild>
+			<Mass>10</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>7.55</Beauty>
+		</statBases>
+		<costList>
+			<WoodLog>50</WoodLog>
+			<Cloth>100</Cloth>
+		</costList>
+		<canOverlapZones>true</canOverlapZones>
+		<pathCost>14</pathCost>
+		<rotatable>false</rotatable>
+		<size>(1,1)</size>
+		<uiIconOffset>(0, 0)</uiIconOffset>
+		<uiIconScale>0.6</uiIconScale>
+		<filthLeaving>Filth_Trash</filthLeaving>
+		<building>
+			<destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+			<destroyShakeAmount>0</destroyShakeAmount>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_Heraldry</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
 </Defs>
