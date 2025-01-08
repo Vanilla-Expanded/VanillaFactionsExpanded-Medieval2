@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Castle Doors -->
+	<ThingDef ParentName="DoorBase">
+		<defName>VFEM2_2x1CastleDoor</defName>
+		<label>castle door (medium)</label>
+		<description>An incredibly resistant door made out of oversized stone blocks. Very slow to build. It’s a good choice if you want to keep the enemies out - or in. The door requires walls on either side to function.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>5500</WorkToBuild>
+			<MaxHitPoints>800</MaxHitPoints>
+			<DoorOpenSpeed>0.8</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Doors/CastleDoor2x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Doors/CastleDoor2x1_MenuIcon_south</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(2, 1)</size>
+		<rotatable>true</rotatable>
+		<costStuffCount>130</costStuffCount>
+		<stuffCategories Inherit="False">
+			<li>Stony</li>
+		</stuffCategories>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Doors/CastleDoor2x1_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2.6, 3.1)</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/Doors/CastleDoor2x1_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(3.1, 2.3)</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>Things/Building/Doors/CastleDoor2x1_Support</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(3.1, 2.3)</drawSize>
+			</doorSupportGraphic>
+			<soundDoorOpenManual>VFEM2_CastleGate_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>VFEM2_CastleGate_CloseManual</soundDoorCloseManual>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef ParentName="DoorBase">
+		<defName>VFEM2_3x1CastleDoor</defName>
+		<label>castle door (large)</label>
+		<description>An incredibly resistant door made out of oversized stone blocks. Very slow to build. It’s a good choice if you want to keep the enemies out - or in. The door requires walls on either side to function.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>7700</WorkToBuild>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<DoorOpenSpeed>0.8</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Doors/CastleDoor3x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Doors/CastleDoor3x1_MenuIcon_south</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(3, 1)</size>
+		<rotatable>true</rotatable>
+		<costStuffCount>200</costStuffCount>
+		<stuffCategories Inherit="False">
+			<li>Stony</li>
+		</stuffCategories>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Doors/CastleDoor3x1_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2.6, 4.1)</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/Doors/CastleDoor3x1_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(4.1, 2.3)</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>Things/Building/Doors/CastleDoor3x1_Support</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(4.1, 2.3)</drawSize>
+			</doorSupportGraphic>
+			<soundDoorOpenManual>VFEM2_CastleGate_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>VFEM2_CastleGate_CloseManual</soundDoorCloseManual>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef ParentName="DoorBase">
+		<defName>VFEM2_4x1CastleDoor</defName>
+		<label>castle door (grand)</label>
+		<description>An incredibly resistant door made out of oversized stone blocks. Very slow to build. It’s a good choice if you want to keep the enemies out - or in. The door requires walls on either side to function.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>11000</WorkToBuild>
+			<MaxHitPoints>1600</MaxHitPoints>
+			<DoorOpenSpeed>0.8</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Doors/CastleDoor4x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Doors/CastleDoor4x1_MenuIcon_south</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(4, 1)</size>
+		<rotatable>true</rotatable>
+		<costStuffCount>280</costStuffCount>
+		<stuffCategories Inherit="False">
+			<li>Stony</li>
+		</stuffCategories>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Doors/CastleDoor4x1_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2.6, 5.1)</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/Doors/CastleDoor4x1_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(5.1, 2.3)</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>Things/Building/Doors/CastleDoor4x1_Support</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(5.1, 2.3)</drawSize>
+			</doorSupportGraphic>
+			<soundDoorOpenManual>VFEM2_CastleGate_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>VFEM2_CastleGate_CloseManual</soundDoorCloseManual>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<!-- Castle Gates -->
+	<ThingDef ParentName="DoorBase">
+		<defName>VFEM2_2x1CastleGate</defName>
+		<label>castle gate (medium)</label>
+		<description>An incredibly resistant door made out of oversized stone blocks, with a latticed grille protecting the passage. Very slow to build. It’s a good choice if you want to keep the enemies out - or in. The door requires walls on either side to function. Castle gates take a long time to open.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>5000</WorkToBuild>
+			<MaxHitPoints>800</MaxHitPoints>
+			<DoorOpenSpeed>0.5</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Doors/CastleGate2x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Doors/CastleGate2x1_MenuIcon_south</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(2, 1)</size>
+		<rotatable>true</rotatable>
+		<costStuffCount>130</costStuffCount>
+		<stuffCategories Inherit="False">
+			<li>Stony</li>
+		</stuffCategories>
+		<costList>
+			<Steel>65</Steel>
+		</costList>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Doors/CastleGate2x1_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2.6, 3.1)</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/Doors/CastleDoor2x1_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(3.1, 2.3)</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>Things/Building/Doors/CastleDoor2x1_Support</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(3.1, 2.3)</drawSize>
+			</doorSupportGraphic>
+			<soundDoorOpenManual>VFEM2_CastleGate_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>VFEM2_CastleGate_CloseManual</soundDoorCloseManual>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef ParentName="DoorBase">
+		<defName>VFEM2_3x1CastleGate</defName>
+		<label>castle gate (large)</label>
+		<description>An incredibly resistant door made out of oversized stone blocks, with a latticed grille protecting the passage. Very slow to build. It’s a good choice if you want to keep the enemies out - or in. The door requires walls on either side to function. Castle gates take a long time to open.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>7000</WorkToBuild>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<DoorOpenSpeed>0.5</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Doors/CastleGate3x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Doors/CastleGate3x1_MenuIcon_south</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(3, 1)</size>
+		<rotatable>true</rotatable>
+		<costStuffCount>200</costStuffCount>
+		<stuffCategories Inherit="False">
+			<li>Stony</li>
+		</stuffCategories>
+		<costList>
+			<Steel>130</Steel>
+		</costList>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Doors/CastleGate3x1_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2.6, 4.1)</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/Doors/CastleDoor3x1_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(4.1, 2.3)</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>Things/Building/Doors/CastleDoor3x1_Support</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(4.1, 2.3)</drawSize>
+			</doorSupportGraphic>
+			<soundDoorOpenManual>VFEM2_CastleGate_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>VFEM2_CastleGate_CloseManual</soundDoorCloseManual>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef ParentName="DoorBase">
+		<defName>VFEM2_4x1CastleGate</defName>
+		<label>castle gate (grand)</label>
+		<description>An incredibly resistant door made out of oversized stone blocks, with a latticed grille protecting the passage. Very slow to build. It’s a good choice if you want to keep the enemies out - or in. The door requires walls on either side to function. Castle gates take a long time to open.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>9000</WorkToBuild>
+			<MaxHitPoints>1600</MaxHitPoints>
+			<DoorOpenSpeed>0.5</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Doors/CastleGate4x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Doors/CastleGate4x1_MenuIcon_south</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(4, 1)</size>
+		<rotatable>true</rotatable>
+		<costStuffCount>280</costStuffCount>
+		<stuffCategories Inherit="False">
+			<li>Stony</li>
+		</stuffCategories>
+		<costList>
+			<Steel>180</Steel>
+		</costList>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Doors/CastleGate4x1_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2.6, 5.1)</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/Doors/CastleDoor4x1_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(5.1, 2.3)</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>Things/Building/Doors/CastleDoor4x1_Support</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(5.1, 2.3)</drawSize>
+			</doorSupportGraphic>
+			<soundDoorOpenManual>VFEM2_CastleGate_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>VFEM2_CastleGate_CloseManual</soundDoorCloseManual>
+		</building>
+		<researchPrerequisites>
+			<li>VFEM2_MedievalArchitecture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+	</ThingDef>
+</Defs>
