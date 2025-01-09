@@ -17,4 +17,8 @@
 	
 	<!-- Leather boil pot -->
 	<VFEM2_BoilPotNotWorking>This boil pot is not working at the moment</VFEM2_BoilPotNotWorking>
+	
+	<!-- Misc -->
+	<VFEM2_StatsReport_Flammability>Timbered wall: +50%</VFEM2_StatsReport_Flammability>
+	<VFEM2_ItemImproved>{0} has been improved to {1} quality level due to the smithing anvil.</VFEM2_ItemImproved>
 </LanguageData>

@@ -302,7 +302,7 @@
     <defName>VFEM2_CastleWall</defName>
     <label>castle wall</label>
     <description>An incredibly resistant impassable wall made out of oversized stone blocks. Very slow to build. Capable of holding a roof. If castle wall sustains enough damage, it becomes a chest-high passable cover that when repaired, turns into an impassable wall again.</description>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEMedieval.CastleWall</thingClass>
     <category>Building</category>
     <graphicData>
       <texPath>Things/Building/Linked/CastleWall/CastleWall_Atlas</texPath>
@@ -339,7 +339,7 @@
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
     <placingDraggableDimensions>1</placingDraggableDimensions>
-    <tickerType>Never</tickerType>
+    <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
@@ -398,7 +398,7 @@
     <defName>VFEM2_DamagedCastleWall</defName>
     <label>damaged castle wall</label>
     <description>An incredibly resistant impassable wall made out of oversized stone blocks. Very slow to build. Capable of holding a roof. If castle wall sustains enough damage, it becomes a chest-high passable cover that when repaired, turns into an impassable wall again.</description>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEMedieval.DamagedCastleWall</thingClass>
     <category>Building</category>
     <graphicData>
       <texPath>Things/Building/Linked/CastleWallDamaged/CastleWallDamaged_Atlas</texPath>
@@ -436,7 +436,7 @@
     <fillPercent>0.55</fillPercent>
     <coversFloor>true</coversFloor>
     <placingDraggableDimensions>1</placingDraggableDimensions>
-    <tickerType>Never</tickerType>
+    <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>

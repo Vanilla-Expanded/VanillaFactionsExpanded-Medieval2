@@ -295,6 +295,8 @@
     <Compile Include="AI\JobDrivers\JobDriver_TakeHoneyOutOfApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TendToApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TrainAtDummy.cs" />
+    <Compile Include="Buildings\CastleWall.cs" />
+    <Compile Include="Buildings\DamagedCastleWall.cs" />
     <Compile Include="Comps\CompUseEffect_AddHediffWithSeverity.cs" />
     <Compile Include="Comps\CompUseEffect_AddInspiration.cs" />
     <Compile Include="Comps\CompUseEffect_ReduceAllInfections.cs" />
@@ -310,6 +312,7 @@
     <Compile Include="Defs\CobblestoneWallTemplateDef.cs" />
     <Compile Include="Defs\LeatherTerrainTemplateDef.cs" />
     <Compile Include="HarmonyPatches\DefGenerator_GenerateImpliedDefs_PreResolve.cs" />
+    <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_LearnRateFactor.cs" />
     <Compile Include="HarmonyPatches\Thought_Memory_DurationTicks.cs" />
     <Compile Include="HediffComps\HediffComp_CauseOrganDecay.cs" />
@@ -335,6 +338,7 @@
     <Compile Include="DefOf\VFEM_DefOf.cs" />
     <Compile Include="Placeworkers\Placeworker_Apiary.cs" />
     <Compile Include="StaticCollections\StaticCollections.cs" />
+    <Compile Include="StatParts\StatPart_Flammability.cs" />
     <Compile Include="StockGenerators\StockGenerator_MedievalMercs.cs" />
     <Compile Include="VFEMedieval.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
