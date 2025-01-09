@@ -307,6 +307,7 @@
     <Compile Include="Comps\Properties\CompProperties_UseEffectIncreasePsypower.cs" />
     <Compile Include="Comps\Properties\CompProperties_UseEffectReduceAllInfections.cs" />
     <Compile Include="Comps\Properties\CompProperties_UseEffectReduceRest.cs" />
+    <Compile Include="Defs\CobblestoneWallTemplateDef.cs" />
     <Compile Include="Defs\LeatherTerrainTemplateDef.cs" />
     <Compile Include="HarmonyPatches\DefGenerator_GenerateImpliedDefs_PreResolve.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_LearnRateFactor.cs" />

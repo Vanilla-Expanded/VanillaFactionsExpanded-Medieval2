@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <DesignatorDropdownGroupDef>
-    <defName>VFEM2_Floor_Matting</defName>
-    <label>matting</label>
-  
-  </DesignatorDropdownGroupDef>
-
- 
-
+	<DesignatorDropdownGroupDef>
+		<defName>VFEM2_Floor_Matting</defName>
+		<label>matting</label>
+	</DesignatorDropdownGroupDef>
+	<DesignatorDropdownGroupDef>
+		<defName>VFEM2_CobblestoneWalls</defName>
+		<label>cobblestone wall</label>
+	</DesignatorDropdownGroupDef>
 </Defs>
