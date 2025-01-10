@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:buildings\\damagedcastlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\buildings\\castlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\buildings\\castlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:buildings\\castlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:buildings\\building_apiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -35,11 +35,11 @@
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:comps\\compuseeffect_addhediffwithseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\comps\\compuseeffect_addinspiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\comps\\compuseeffect_addinspiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:comps\\compuseeffect_addinspiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\statparts\\statpart_flammability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\statparts\\statpart_flammability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:statparts\\statpart_flammability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,7 +47,7 @@
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:defs\\leatherterraintemplatedef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\harmonypatches\\defgenerator_generateimplieddefs_preresolve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\harmonypatches\\defgenerator_generateimplieddefs_preresolve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\defgenerator_generateimplieddefs_preresolve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -214,8 +214,7 @@
               "RelativeToolTip": "Buildings\\CastleWall.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAgwBYAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T15:10:38.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T15:10:38.287Z"
             },
             {
               "$type": "Document",
@@ -227,8 +226,7 @@
               "RelativeToolTip": "HarmonyPatches\\GenRecipe_MakeRecipeProducts.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T14:46:02.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T14:46:02.354Z"
             },
             {
               "$type": "Document",
@@ -240,8 +238,7 @@
               "RelativeToolTip": "Comps\\CompIngestedThoughtFromQuality.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:54:28.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T12:54:28.073Z"
             },
             {
               "$type": "Document",
@@ -253,8 +250,7 @@
               "RelativeToolTip": "Comps\\CompCureHypothermia.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T14:36:32.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T14:36:32.461Z"
             },
             {
               "$type": "Document",
@@ -266,8 +262,7 @@
               "RelativeToolTip": "Buildings\\Building_Apiary.cs",
               "ViewState": "AgIAAMAAAAAAAAAAAAAgwOYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:54:28.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T12:54:28.244Z"
             },
             {
               "$type": "Document",
@@ -279,8 +274,7 @@
               "RelativeToolTip": "DefOf\\VFEM_DefOf.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAADwvxkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:54:28.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T12:54:28.25Z"
             },
             {
               "$type": "Document",
@@ -292,8 +286,7 @@
               "RelativeToolTip": "Comps\\CompUseEffect_AddHediffWithSeverity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T14:35:40.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T14:35:40.018Z"
             },
             {
               "$type": "Document",
@@ -305,8 +298,7 @@
               "RelativeToolTip": "Comps\\CompUseEffect_AddInspiration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T14:53:59.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T14:53:59.325Z"
             },
             {
               "$type": "Document",
@@ -318,8 +310,7 @@
               "RelativeToolTip": "StatParts\\StatPart_Flammability.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T14:35:06.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T14:35:06.259Z"
             },
             {
               "$type": "Document",
@@ -331,8 +322,7 @@
               "RelativeToolTip": "Defs\\LeatherTerrainTemplateDef.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T08:18:42.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T08:18:42.648Z"
             },
             {
               "$type": "Document",
@@ -392,8 +382,7 @@
               "RelativeToolTip": "HarmonyPatches\\DefGenerator_GenerateImpliedDefs_PreResolve.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T08:27:48.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T08:27:48.522Z"
             },
             {
               "$type": "Document",
