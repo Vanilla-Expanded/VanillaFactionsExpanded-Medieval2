@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <TerrainDef ParentName="FloorBase">
+  <VFECore.ActiveTerrainDef ParentName="FloorBase">
     <defName>VFEM2_Chemdrench</defName>
     <label>chemdrench</label>
     <description>Rough straw matting drenched heavily in chemfuel. Ignites very easily and spreads rapidly between all connected areas.</description>
@@ -13,6 +13,7 @@
     <edgeType>Hard</edgeType>
     <renderPrecedence>240</renderPrecedence>
     <burnedDef>BurnedStrawMatting</burnedDef>
+	<tickerType>Normal</tickerType>
     <pathCost>1</pathCost>
     <statBases>
       <Beauty>-2</Beauty>
@@ -27,6 +28,13 @@
     </costList>
     <designationHotKey>Misc6</designationHotKey>
     <uiOrder>2011</uiOrder>
-  </TerrainDef>
+	<terrainComps>
+			<li Class="VFECore.TerrainCompProperties_FireSpreader">
+				<spreadTimer>15</spreadTimer>
+				
+			</li>
+			
+		</terrainComps>
+  </VFECore.ActiveTerrainDef>
 
 </Defs>

@@ -1,86 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM2_CobblestoneWall</defName>
-    <label>cobblestone wall</label>
-	<description>An impassable wall made out of thick overlapping strips of fabric or leather stitched together. Quick to build, but extremely flammable. When deconstructed, returns all of the cloth used.</description>
-    <graphicData>
-      <texPath>Things/Building/Linked/CobblestoneWall</texPath>
-      <graphicClass>Graphic_Appearances</graphicClass>
-      <linkType>CornerFiller</linkType>
-      <linkFlags>
-        <li>Wall</li>
-        <li>Rock</li>
-      </linkFlags>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-        <edgeTop>Damage/Edge</edgeTop>
-        <edgeBot>Damage/Edge</edgeBot>
-        <edgeLeft>Damage/Edge</edgeLeft>
-        <edgeRight>Damage/Edge</edgeRight>
-      </damageData>
-    </graphicData>
-    <uiIconPath>Things/Building/Linked/CobblestoneWall/CobblestoneWall_MenuIcon</uiIconPath>
-    <statBases>
-      <MaxHitPoints>300</MaxHitPoints>
-      <WorkToBuild>135</WorkToBuild>
-      <Flammability>1.0</Flammability>
-      <MeditationFocusStrength>0.22</MeditationFocusStrength>
-      <Beauty>-2</Beauty>
-    </statBases>
-    <building>
-      <blueprintGraphicData>
-        <texPath>Things/Building/Linked/CobblestoneWall/CobblestoneWall_Blueprint_Atlas</texPath>
-      </blueprintGraphicData>
-	  <paintable>true</paintable>
-    </building>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <castEdgeShadows>true</castEdgeShadows>
-    <fillPercent>1</fillPercent>
-    <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
-    <tickerType>Never</tickerType>
-    <rotatable>false</rotatable>
-    <selectable>true</selectable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
-    <staticSunShadowHeight>1.0</staticSunShadowHeight>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <fertility>0</fertility>
-    <costStuffCount>1</costStuffCount>
-    <stuffCategories Inherit="False">
-      <li>VFEM2_StoneChunks</li>
-    </stuffCategories>
-    <comps>
-      <li Class="CompProperties_MeditationFocus">
-        <statDef>MeditationFocusStrength</statDef>
-        <focusTypes>
-          <li>Minimal</li>
-        </focusTypes>
-      </li>
-    </comps>
-    <damageMultipliers>
-      <li>
-        <damageDef>Bomb</damageDef>
-        <multiplier>2</multiplier>
-      </li>
-      <li>
-        <damageDef>Thump</damageDef>
-        <multiplier>4</multiplier>
-      </li>
-    </damageMultipliers>
-  </ThingDef>
+
   
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM2_ClothWall</defName>
@@ -381,7 +302,7 @@
     <defName>VFEM2_CastleWall</defName>
     <label>castle wall</label>
     <description>An incredibly resistant impassable wall made out of oversized stone blocks. Very slow to build. Capable of holding a roof. If castle wall sustains enough damage, it becomes a chest-high passable cover that when repaired, turns into an impassable wall again.</description>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEMedieval.CastleWall</thingClass>
     <category>Building</category>
     <graphicData>
       <texPath>Things/Building/Linked/CastleWall/CastleWall_Atlas</texPath>
@@ -418,7 +339,7 @@
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
     <placingDraggableDimensions>1</placingDraggableDimensions>
-    <tickerType>Never</tickerType>
+    <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
@@ -477,7 +398,7 @@
     <defName>VFEM2_DamagedCastleWall</defName>
     <label>damaged castle wall</label>
     <description>An incredibly resistant impassable wall made out of oversized stone blocks. Very slow to build. Capable of holding a roof. If castle wall sustains enough damage, it becomes a chest-high passable cover that when repaired, turns into an impassable wall again.</description>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEMedieval.DamagedCastleWall</thingClass>
     <category>Building</category>
     <graphicData>
       <texPath>Things/Building/Linked/CastleWallDamaged/CastleWallDamaged_Atlas</texPath>
@@ -515,7 +436,7 @@
     <fillPercent>0.55</fillPercent>
     <coversFloor>true</coversFloor>
     <placingDraggableDimensions>1</placingDraggableDimensions>
-    <tickerType>Never</tickerType>
+    <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>

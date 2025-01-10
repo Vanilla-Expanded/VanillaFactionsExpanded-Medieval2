@@ -21,6 +21,9 @@ namespace VFEMedieval
         public static ThingDef VFEM2_Apiary;
         public static ThingDef Bow_Great;
         public static ThingDef MeleeWeapon_LongSword;
+        public static ThingDef VFEM2_TimberedWall;
+        public static ThingDef VFEM2_DamagedCastleWall;
+        public static ThingDef VFEM2_CastleWall;
 
         public static DamageDef VFEM2_DamageSting;
 
