@@ -10,7 +10,7 @@
     <pollutionOverlayTexturePath></pollutionOverlayTexturePath>
     <pollutionColor>(1, 1, 1, 1)</pollutionColor>
     <pollutionTintColor>(1, 1, 1, 1)</pollutionTintColor>
-    <edgeType>Hard</edgeType>
+    <edgeType>FadeRough</edgeType>
     <renderPrecedence>240</renderPrecedence>
     <burnedDef>BurnedStrawMatting</burnedDef>
 	<tickerType>Normal</tickerType>
@@ -30,7 +30,7 @@
     <uiOrder>2011</uiOrder>
 	<terrainComps>
 			<li Class="VFECore.TerrainCompProperties_FireSpreader">
-				<spreadTimer>15</spreadTimer>
+				<spreadTimer>8</spreadTimer>
 				
 			</li>
 			
