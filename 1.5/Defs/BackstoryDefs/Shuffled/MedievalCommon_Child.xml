@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<BackstoryDef>
+  <defName>VFEM_VillageUrchin101</defName>
+  <title>village urchin</title>
+  <titleShort>urchin</titleShort>
+  <description>[PAWN_nameDef] grew up as a street child in a small village, surviving by stealing scraps and begging from passersby. [PAWN_pronoun] quickly learned to navigate crowded markets and avoid the watchful eyes of the guards. Though [PAWN_pronoun] lacked formal education, [PAWN_pronoun] became clever and resourceful.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>3</Social>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ShepherdsChild102</defName>
+  <title>shepherd's child</title>
+  <titleShort>shepherd</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood helping [PAWN_possessive] family tend sheep on the hillsides near the village. [PAWN_pronoun] learned patience, vigilance, and a deep understanding of animal behavior. The quiet life also gave [PAWN_pronoun] plenty of time to dream and observe the world around [PAWN_objective].</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>3</Animals>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_BlacksmithsApprentice103</defName>
+  <title>blacksmith's apprentice</title>
+  <titleShort>apprentice</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] early years in a smoky forge, assisting [PAWN_possessive] family with small tasks like pumping bellows and carrying coal. The heat and noise became a constant part of [PAWN_possessive] life, and [PAWN_pronoun] began to understand the basics of crafting and hard work. Though the work was tiring, it sparked an appreciation for precision and skill.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Crafting>3</Crafting>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FarmersChild104</defName>
+  <title>farmer's child</title>
+  <titleShort>farmhand</titleShort>
+  <description>[PAWN_nameDef] grew up working the fields with [PAWN_possessive] family, planting crops and tending to livestock. [PAWN_pronoun] became skilled at using simple tools and understanding the rhythms of the seasons. The hard labor instilled a strong work ethic but left little time for formal learning.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Animals>2</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FishermansChild105</defName>
+  <title>fisherman’s child</title>
+  <titleShort>fisher</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] youth casting nets and hauling in fish alongside [PAWN_possessive] family. The smell of salt and the sound of water became second nature to [PAWN_objective], as did a knack for patience and a steady hand. Life on the water left [PAWN_pronoun] with a practical mindset and the ability to adapt to challenges.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>3</Animals>
+    <Cooking>2</Cooking>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_WoodcuttersChild106</defName>
+  <title>woodcutter's child</title>
+  <titleShort>woodcutter</titleShort>
+  <description>[PAWN_nameDef] grew up helping [PAWN_possessive] family cut trees and haul logs from the nearby forest. [PAWN_pronoun] quickly learned to handle axes and saws, developing both strength and skill. Though accustomed to hard labor, [PAWN_pronoun] rarely had time for anything beyond work and rest.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Construction>3</Construction>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_MillersChild107</defName>
+  <title>miller's child</title>
+  <titleShort>miller</titleShort>
+  <description>[PAWN_nameDef] grew up around the constant hum of the mill, helping [PAWN_possessive] family grind grain into flour. [PAWN_pronoun] learned the importance of precision and efficiency, keeping the machinery running smoothly. [PAWN_pronoun] also gained a knack for basic problem-solving when repairs were needed.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Crafting>3</Crafting>
+    <Intellectual>2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_HuntersChild108</defName>
+  <title>hunter's child</title>
+  <titleShort>hunter</titleShort>
+  <description>[PAWN_nameDef] followed [PAWN_possessive] family through the forests, learning to track animals and use a bow. [PAWN_pronoun] grew up attuned to the wilderness, with sharp instincts and steady hands. While skilled at survival, [PAWN_pronoun] spent little time with other children and was often solitary.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>3</Shooting>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_BakersChild109</defName>
+  <title>baker's child</title>
+  <titleShort>baker</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood kneading dough and tending ovens in the family bakery. [PAWN_pronoun] developed a keen sense of timing and a knack for crafting simple but satisfying meals. The early mornings and long hours left [PAWN_pronoun] with a strong work ethic but little free time.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Cooking>4</Cooking>
+    <Social>1</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_StablehandsChild110</defName>
+  <title>stablehand's child</title>
+  <titleShort>stablehand</titleShort>
+  <description>[PAWN_nameDef] grew up in the stables, helping care for horses and keeping the stalls clean. [PAWN_pronoun] learned the basics of animal care and the value of steady, dependable work. While comfortable around animals, [PAWN_pronoun] often struggled to relate to [PAWN_possessive] peers.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>4</Animals>
+    <Plants>1</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ForestForager111</defName>
+  <title>forest forager</title>
+  <titleShort>forager</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood scouring the woods for berries, herbs, and mushrooms to help feed the village. [PAWN_pronoun] learned to identify edible plants and navigate dense forests with ease. Though [PAWN_pronoun] rarely interacted with others, [PAWN_pronoun] became deeply attuned to nature.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Animals>2</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_RiverWader112</defName>
+  <title>river wader</title>
+  <titleShort>river wader</titleShort>
+  <description>[PAWN_nameDef] spent endless hours by the river, catching fish with traps and nets. [PAWN_pronoun] became skilled at spotting fish and understanding the flow of water, skills that kept [PAWN_objective] well-fed even in lean times. Life by the river gave [PAWN_pronoun] a practical outlook but limited [PAWN_possessive] social skills.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>3</Animals>
+    <Cooking>2</Cooking>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_WanderingHelper113</defName>
+  <title>wandering helper</title>
+  <titleShort>helper</titleShort>
+  <description>[PAWN_nameDef] grew up lending a hand wherever [PAWN_pronoun] could, moving from farm to farm doing odd jobs. From tending crops to mending fences, [PAWN_pronoun] learned a little bit of everything but mastered none. Constantly on the move, [PAWN_pronoun] never formed close friendships but gained practical skills.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Construction>3</Construction>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_QuietObserver114</defName>
+  <title>quiet observer</title>
+  <titleShort>observer</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood watching the world from the edges, unnoticed but always attentive. [PAWN_pronoun] learned to listen, read emotions, and predict behavior, skills that [PAWN_pronoun] used to avoid trouble and gain favor. While [PAWN_pronoun] excelled at understanding others, [PAWN_pronoun] avoided physical labor whenever possible.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Intellectual>2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_EarlyLaborer115</defName>
+  <title>early laborer</title>
+  <titleShort>laborer</titleShort>
+  <description>[PAWN_nameDef] started working in the fields as soon as [PAWN_pronoun] could carry a tool, spending long days planting and harvesting. The grueling work made [PAWN_pronoun] strong and resilient but left little time for play or education. Despite the hardships, [PAWN_pronoun] grew to appreciate the rewards of hard work.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageRunner116</defName>
+  <title>village runner</title>
+  <titleShort>runner</titleShort>
+  <description>[PAWN_nameDef] was often tasked with delivering messages and small packages between villagers. [PAWN_pronoun] spent countless hours running along dirt paths, learning the fastest routes and how to avoid danger. The constant movement made [PAWN_pronoun] quick and agile but left little time for rest or study.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>2</Shooting>
+    <Melee>3</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FieldWatcher117</defName>
+  <title>field watcher</title>
+  <titleShort>watcher</titleShort>
+  <description>[PAWN_nameDef] spent hours sitting by the fields, keeping an eye out for crows, rabbits, or anything else that might harm the crops. [PAWN_pronoun] learned patience and vigilance, but the solitary work left [PAWN_pronoun] starved for human interaction. [PAWN_pronoun] grew resourceful, using simple tools to ward off pests and predators.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Animals>2</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_MarketHelper118</defName>
+  <title>market helper</title>
+  <titleShort>helper</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood helping traders set up their stalls, haul goods, and haggle with customers. The bustling marketplace taught [PAWN_pronoun] how to read people and bargain effectively. Though quick-witted, [PAWN_pronoun] had little time for physical labor outside the market.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_WellTender119</defName>
+  <title>well tender</title>
+  <titleShort>well tender</titleShort>
+  <description>[PAWN_nameDef] was responsible for keeping the village well clean and drawing water for the community. [PAWN_pronoun] grew strong from hauling heavy buckets and learned to maintain the mechanisms that made the work easier. The repetitive work left [PAWN_pronoun] with little variety but a dependable skill set.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Construction>3</Construction>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_StreetEntertainer120</defName>
+  <title>street entertainer</title>
+  <titleShort>entertainer</titleShort>
+  <description>[PAWN_nameDef] performed in the village square as a juggler, singer, or storyteller, hoping to earn coins or scraps of food. [PAWN_pronoun] learned how to capture an audience’s attention and bring joy to others, even when times were tough. While talented in performance, [PAWN_pronoun] struggled with practical skills outside the arts.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Artistic>4</Artistic>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_StreetScavenger121</defName>
+  <title>street scavenger</title>
+  <titleShort>scavenger</titleShort>
+  <description>[PAWN_nameDef] grew up scavenging through garbage and refuse, searching for anything [PAWN_pronoun] could eat or sell. The harsh life taught [PAWN_pronoun] how to survive with very little but left [PAWN_pronoun] mistrusting of others. [PAWN_pronoun] became quick on [PAWN_possessive] feet to avoid confrontations over scraps.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>-2</Social>
+    <Shooting>3</Shooting>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Outcast122</defName>
+  <title>outcast</title>
+  <titleShort>outcast</titleShort>
+  <description>[PAWN_nameDef] was shunned by the other children in [PAWN_possessive] village for reasons [PAWN_pronoun] never fully understood. Forced to fend for [PAWN_objective], [PAWN_pronoun] spent [PAWN_possessive] days alone in the wilderness or on the village outskirts. [PAWN_pronoun] developed a deep sense of independence and distrust of others.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Animals>2</Animals>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Pickpocket123</defName>
+  <title>pickpocket</title>
+  <titleShort>thief</titleShort>
+  <description>[PAWN_nameDef] turned to petty theft as a way to survive in a world that had little use for [PAWN_objective]. [PAWN_pronoun] quickly learned to move unseen and snatch valuables without getting caught. While skilled at stealing, [PAWN_pronoun] earned a reputation for dishonesty and was never trusted by others.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>-2</Social>
+    <Melee>2</Melee>
+    <Crafting>3</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_RatCatcher124</defName>
+  <title>rat catcher</title>
+  <titleShort>rat catcher</titleShort>
+  <description>[PAWN_nameDef] was tasked with clearing vermin from food stores and homes, often wading into the dirtiest corners of the village. [PAWN_pronoun] developed quick reflexes and an uncanny knack for traps, but the work left [PAWN_pronoun] isolated and avoided by others. The smell of [PAWN_possessive] trade lingered wherever [PAWN_pronoun] went.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>3</Animals>
+    <Shooting>2</Shooting>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Troublemaker125</defName>
+  <title>troublemaker</title>
+  <titleShort>troublemaker</titleShort>
+  <description>[PAWN_nameDef] was known for causing mischief and stirring up chaos, often at the expense of others. [PAWN_pronoun] enjoyed playing pranks, picking fights, and pushing boundaries wherever possible. Though disliked by adults and peers alike, [PAWN_pronoun] developed sharp wits and quick reflexes to avoid punishment.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>-2</Social>
+    <Melee>3</Melee>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_BeggarChild126</defName>
+  <title>beggar child</title>
+  <titleShort>beggar</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] early years sitting in muddy streets, pleading for coins or scraps of food. The life taught [PAWN_pronoun] how to read people’s emotions and appeal to their sympathies, but it also made [PAWN_pronoun] deeply wary of rejection. Begging for survival left [PAWN_pronoun] resourceful but mistrusted.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>3</Social>
+    <Crafting>2</Crafting>
+    <Shooting>-2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ScrapHoarder127</defName>
+  <title>scrap hoarder</title>
+  <titleShort>hoarder</titleShort>
+  <description>[PAWN_nameDef] collected broken tools, discarded wood, and other castoffs, turning them into makeshift toys or tools. Though often teased for [PAWN_possessive] peculiar habits, [PAWN_pronoun] became adept at finding value in things others overlooked. [PAWN_pronoun] gained practical skills but struggled to connect with others.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Crafting>4</Crafting>
+    <Plants>2</Plants>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_AlleySneak128</defName>
+  <title>alley sneak</title>
+  <titleShort>sneak</titleShort>
+  <description>[PAWN_nameDef] spent most of [PAWN_possessive] childhood slipping through alleys and shadows, avoiding the attention of adults and bullies. The streets taught [PAWN_pronoun] how to move silently and blend into crowds. While stealthy and clever, [PAWN_pronoun] lacked trust in others and avoided forming connections.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>3</Shooting>
+    <Crafting>2</Crafting>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageScapegoat129</defName>
+  <title>village scapegoat</title>
+  <titleShort>scapegoat</titleShort>
+  <description>[PAWN_nameDef] was blamed for every broken tool, missing coin, or spoiled crop in the village, often regardless of [PAWN_possessive] involvement. The constant accusations taught [PAWN_pronoun] how to endure hardship and avoid confrontations. [PAWN_pronoun] grew to be resourceful but deeply mistrustful of authority.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>3</Plants>
+    <Melee>2</Melee>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_RuntOfThePack130</defName>
+  <title>runt of the pack</title>
+  <titleShort>runt</titleShort>
+  <description>[PAWN_nameDef] was the smallest and weakest of [PAWN_possessive] peers, often picked on by others. To survive, [PAWN_pronoun] learned to think fast and avoid direct conflicts, relying on cunning to outsmart [PAWN_possessive] tormentors. Though quick and clever, [PAWN_pronoun] grew up mistrustful and fiercely independent.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Intellectual>3</Intellectual>
+    <Shooting>2</Shooting>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FieldWorker131</defName>
+  <title>field worker</title>
+  <titleShort>worker</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] early years helping in the fields, learning to plant and harvest crops. The work was repetitive but rewarding, teaching [PAWN_pronoun] the value of patience and effort. [PAWN_pronoun] grew up strong and practical, with a deep appreciation for the land.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageHelper132</defName>
+  <title>village helper</title>
+  <titleShort>helper</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood running errands and helping with small tasks around the village. Whether delivering goods, fetching water, or mending fences, [PAWN_pronoun] was always willing to lend a hand. These simple chores instilled [PAWN_pronoun] with a strong work ethic and practical skills.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>2</Social>
+    <Construction>3</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_PlayfulExplorer133</defName>
+  <title>playful explorer</title>
+  <titleShort>explorer</titleShort>
+  <description>[PAWN_nameDef] loved wandering the woods and hills near the village, discovering hidden streams and climbing trees. [PAWN_pronoun] often returned with scratched knees and pockets full of interesting stones or berries. Though more playful than productive, [PAWN_pronoun] grew up with a keen sense of adventure and a connection to nature.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>3</Plants>
+    <Animals>2</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_HearthKeeper134</defName>
+  <title>hearth keeper</title>
+  <titleShort>keeper</titleShort>
+  <description>[PAWN_nameDef] grew up tending the hearth and helping prepare meals for the family. [PAWN_pronoun] learned the basics of cooking and the importance of keeping the fire burning through the night. Though the work was simple, it taught [PAWN_pronoun] the value of care and consistency.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Cooking>4</Cooking>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageGatherer135</defName>
+  <title>village gatherer</title>
+  <titleShort>gatherer</titleShort>
+  <description>[PAWN_nameDef] spent much of [PAWN_possessive] childhood collecting firewood, herbs, and other necessities for the village. The long days outdoors gave [PAWN_pronoun] an eye for useful plants and a steady hand for simple tools. [PAWN_pronoun] grew up practical and capable, well-suited to life in the countryside.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FjordFisher136</defName>
+  <title>fjord fisher</title>
+  <titleShort>fisher</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood fishing along the rocky fjords, learning to handle nets and row longboats in icy waters. The life taught [PAWN_pronoun] resilience and respect for the sea’s power. Though the work was cold and grueling, [PAWN_pronoun] grew up strong and capable in harsh conditions.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>3</Animals>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ShieldBearer137</defName>
+  <title>shield bearer</title>
+  <titleShort>shield bearer</titleShort>
+  <description>[PAWN_nameDef] was trained from a young age to carry shields and assist warriors during raids and battles. [PAWN_pronoun] learned to endure heavy loads and follow commands, watching closely as the older fighters honed their skills. The experience prepared [PAWN_pronoun] for a life of conflict and loyalty to [PAWN_possessive] clan.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>3</Melee>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FarmsteadHand138</defName>
+  <title>farmstead hand</title>
+  <titleShort>farmhand</titleShort>
+  <description>[PAWN_nameDef] grew up on a Viking farmstead, helping tend to livestock and till the soil during the short growing seasons. [PAWN_pronoun] learned the cycles of planting and harvest while preparing for the colder months. Life on the farm taught [PAWN_pronoun] hard work and how to endure nature’s challenges.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Animals>2</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_LongboatPaddler139</defName>
+  <title>longboat paddler</title>
+  <titleShort>paddler</titleShort>
+  <description>[PAWN_nameDef] was raised on tales of far-off lands and spent [PAWN_possessive] youth rowing Viking longboats. [PAWN_pronoun] gained strength and endurance from the endless paddling while learning the rhythms of the sea. Though not yet a raider, [PAWN_pronoun] was well-prepared for a life of exploration and adventure.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>2</Melee>
+    <Construction>3</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ClanStoryteller140</defName>
+  <title>clan storyteller</title>
+  <titleShort>storyteller</titleShort>
+  <description>[PAWN_nameDef] grew up learning the sagas and legends of [PAWN_possessive] ancestors, memorizing the stories that bound the clan together. [PAWN_pronoun] developed a gift for storytelling and inspiring others with words. Though not a warrior, [PAWN_pronoun] played an important role in preserving [PAWN_possessive] people’s history and culture.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Artistic>4</Artistic>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+</Defs>
