@@ -54,6 +54,20 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>VFEM2_ComplexWorkshops</defName>
+		<label>complex workshops</label>
+		<description>Learn to build various tools and devices to enhance the productivity of the workbenches.</description>
+		<baseCost>1800</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>1.35</researchViewY>
+		<prerequisites>
+			<li>ComplexFurniture</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 		<defName>VFEM2_Heraldry</defName>
 		<label>heraldry</label>
 		<description>Adorn the colors of your faction and construct decorative banners and heraldic rugs.</description>
