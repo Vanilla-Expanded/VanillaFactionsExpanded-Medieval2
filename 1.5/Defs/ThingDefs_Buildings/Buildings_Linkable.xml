@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="VFEM2_LinkableBase" Abstract="True">
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <pathCost>42</pathCost>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded> 
+    <researchPrerequisites>
+      <li>VFEM2_ComplexWorkshops</li>
+    </researchPrerequisites>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_SmithingAnvil</defName>
+    <label>smithing anvil</label>
+    <description>A heavy steel anvil used to shape metalwork with greater precision. Increases work speed when placed near a smithy. Items of awful and poor quality crafted on the linked workbench have a chance of being upgraded by one quality level. One workbench can only use one anvil.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/SmithingAnvil</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>120</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.02</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_ForgeBellows</defName>
+    <label>forge bellows</label>
+    <description>A manually operated bellows that boosts airflow to the smithy. Increases work speed when placed near a smithy. Bellows reduce the fuel consumption of the linked workbench by 20%. One workbench can only use one bellows.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/ForgeBellows</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>120</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <WoodLog>30</WoodLog>
+	  <VFEM2_HardLeather>30</VFEM2_HardLeather>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.02</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>
