@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="FueledSmithy" or defName="ElectricSmithy"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_SmithingAnvil</li>
+			<li>VFEM2_ForgeBellows</li>
+		</value>
+    </Operation>
+	
+</Patch>
