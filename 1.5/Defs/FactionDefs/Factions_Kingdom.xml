@@ -58,7 +58,7 @@
     </xenotypeSet>
     <techLevel>Medieval</techLevel>
     <backstoryCategories>
-      <li>Tribal</li>
+      <li>MedievalCommon</li>
     </backstoryCategories>
     <fixedLeaderKinds>
       <li>VFEM2_Medieval_King</li>
