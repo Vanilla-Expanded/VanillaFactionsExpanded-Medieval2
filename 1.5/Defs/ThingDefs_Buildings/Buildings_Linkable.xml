@@ -82,7 +82,7 @@
 	  <VFEM2_HardLeather>30</VFEM2_HardLeather>
     </costList>
     <building>
-      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <destroySound>BuildingDestroyed_Wood_Small</destroySound>
     </building>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <comps>
@@ -94,6 +94,525 @@
 		<maxDistance>3.9</maxDistance>
       </li>
     </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_TailoringLoom</defName>
+    <label>tailoring loom</label>
+    <description>A small loom for weaving thread. Increases work speed when placed near a tailoring bench. One workbench can only use one tailoring loom.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/TailoringLoom</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>50</costStuffCount>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.03</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_MannequinStand</defName>
+    <label>mannequin stand</label>
+    <description>A basic mannequin used to measure and shape garments for more refined results. Increases work speed when placed near a tailoring bench. Mannequin stand allows for more precise measurements, reducing the cost of crafting apparel by 10%. One workbench can only use one mannequin.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/MannequinStand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+	<uiIconScale>0.5</uiIconScale>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>50</costStuffCount>
+    <costList>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.02</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_ChiselRack</defName>
+    <label>chisel rack</label>
+    <description>A small rack filled with various chisels. Increases work speed when placed near a stonecutter’s table. One workbench can only use one chisel rack.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/ChiselRack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>40</costStuffCount>
+    <costList>
+      <Steel>10</Steel>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.03</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_StoneClamp</defName>
+    <label>stone clamp</label>
+    <description>A simple clamp for holding large stones in place. Increases work speed when placed near a stonecutter’s table. The clamp allows higher productivity, increasing resource yield from all recipes by 10%. One workbench can only use one stone clamp.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/StoneClamp</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>35</costStuffCount>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.02</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_CleaverRack</defName>
+    <label>cleaver rack</label>
+    <description>A sturdy rack holding sharp cleavers and knives. Increases work speed when placed near a butchering table. One workbench can only use one cleaver rack.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/CleaverRack</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>35</costStuffCount>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.03</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_CarvingBoard</defName>
+    <label>carving board</label>
+    <description>A thick, well-worn wooden board that allows for precision cuts. Increases work speed when placed near a butchering table. The sharp blades allow the butcher to extract 10% more meat and leather from any butchered creature. One workbench can only use one carving board.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/CarvingBoard</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>35</costStuffCount>
+    <costList>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.02</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_StonePolisher</defName>
+    <label>stone polisher</label>
+    <description>A polishing wheel that ensures sculptures have a smooth and refined finish. Increases work speed when placed near an art bench. Stone sculptures of awful and poor quality crafted on the linked art bench have a high chance of being upgraded by one quality level  One workbench can only use one stone polisher.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/StonePolisher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>45</costStuffCount>
+    <costList>
+      <Steel>10</Steel>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.02</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_ArtToolStand</defName>
+    <label>art tool stand</label>
+    <description>A rack with chisels, hammers, and other carving tools. Increases work speed when placed near an art bench. One workbench can only use one tool stand.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/ArtToolStand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>40</costStuffCount>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.03</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_NotesStack</defName>
+    <label>notes stack</label>
+    <description>A small desk stocked with numerous notes and pieces of paper. Increases work speed when placed near a research bench. One workbench can only use one notes stack.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/NotesStack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+		<li>Stony</li>
+    </stuffCategories>
+	<costStuffCount>50</costStuffCount>
+    <costList>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.03</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+		<maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_ResearchBoard</defName>
+    <label>research board</label>
+    <description>A slate or chalkboard for sketching diagrams and sharing ideas. Increases work speed when placed near a research bench. Up to two research benches can be linked to one chalkboard.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/ResearchChalkboard</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<uiIconScale>0.5</uiIconScale>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Stony</li>
+		<li>Woody</li>	
+    </stuffCategories>
+	<costStuffCount>60</costStuffCount>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.02</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+		<maxDistance>6.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEM2_LinkableBase">
+    <defName>VFEM2_SurgicalTools</defName>
+    <label>surgical tools</label>
+    <description>A small stand holding scalpels, clamps, and bone saws. Increases work speed when placed near a bed of any kind, including sleeping spots and hospital beds. One bed can only use one set of surgical tools.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/SurgicalTools</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+	  <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+	<rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <stuffCategories>
+		<li>Metallic</li>
+		<li>Woody</li>	
+		<li>Stony</li>
+    </stuffCategories>
+	<costStuffCount>30</costStuffCount>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <SurgerySuccessChanceFactor>0.05</SurgerySuccessChanceFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>3.9</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ShelfBase">
+    <defName>VFEM2_AilmentsShelf</defName>
+    <label>ailment's shelf</label>
+    <description>A small wooden cabinet that can be stocked with herbal remedies, tinctures, and basic medicinal tools. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/Linkables/AilmentsShelf</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <costStuffCount>10</costStuffCount>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+	  <MarketValue>100</MarketValue>
+      <Mass>10</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+	<uiIconScale>0.5</uiIconScale>
+    <thingClass>Building_Storage</thingClass>
+    <building>
+      <storageGroupTag>Shelf</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories>
+            <li>PlantFoodRaw</li>
+			<li>AnimalProductRaw</li>
+			<li>Medicine</li>
+			<li>PlantMatter</li>
+          </categories>
+          <thingDefs>
+		    <li>MedicineHerbal</li>
+			<li>MedicineIndustrial</li>
+			<li>MedicineUltratech</li>
+			<li>VFEM2_RafflesiaLeaves</li>
+			<li>VFEM2_AstragalusFlowers</li>
+			<li>VFEM2_CliviaPetals</li>
+			<li>VFEM2_AlocasiaLeaves</li>
+			<li>VFEM2_RawGlowstool</li>
+			<li>VFEM2_Honey</li>
+			<li>RawAgave</li>
+			<li>PsychoidLeaves</li>
+			<li>SmokeleafLeaves</li>
+		  </thingDefs>
+          <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+            <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+          </disallowedThingDefs>
+          <specialFiltersToDisallow>
+            <li>AllowLargeCorpses</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+        <filter>
+          <thingDefs>
+		    <li>MedicineHerbal</li>
+			<li>MedicineIndustrial</li>
+			<li>MedicineUltratech</li>
+			<li>VFEM2_RafflesiaLeaves</li>
+			<li>VFEM2_AstragalusFlowers</li>
+			<li>VFEM2_CliviaPetals</li>
+			<li>VFEM2_AlocasiaLeaves</li>
+			<li>VFEM2_RawGlowstool</li>
+			<li>VFEM2_Honey</li>
+			<li>RawAgave</li>
+			<li>PsychoidLeaves</li>
+			<li>SmokeleafLeaves</li>
+		  </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <designationHotKey>Misc12</designationHotKey>
   </ThingDef>
   
 </Defs>
