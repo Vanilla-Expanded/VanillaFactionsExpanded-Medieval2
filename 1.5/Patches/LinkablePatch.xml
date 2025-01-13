@@ -7,6 +7,60 @@
 		    <li>VFEM2_SmithingAnvil</li>
 			<li>VFEM2_ForgeBellows</li>
 		</value>
+    </Operation> 
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="HandTailoringBench" or defName="ElectricTailoringBench"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_TailoringLoom</li>
+			<li>VFEM2_MannequinStand</li>
+		</value>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="TableStonecutter"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_ChiselRack</li>
+			<li>VFEM2_StoneClamp</li>
+		</value>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="ButcherSpot" or defName="TableButcher"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_CleaverRack</li>
+			<li>VFEM2_CarvingBoard</li>
+		</value>
+    </Operation> 
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="TableSculpting"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_StonePolisher</li>
+			<li>VFEM2_ArtToolStand</li>
+		</value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="SimpleResearchBench" or defName="HiTechResearchBench"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_NotesStack</li>
+			<li>VFEM2_ResearchBoard</li>
+		</value>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="BasicBedBase"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_SurgicalTools</li>
+		</value>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="HospitalBed"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+		    <li>VFEM2_SurgicalTools</li>
+		</value>
     </Operation>
 	
 </Patch>
