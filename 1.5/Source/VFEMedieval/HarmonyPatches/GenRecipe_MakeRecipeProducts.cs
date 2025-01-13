@@ -14,7 +14,7 @@ namespace VFEMedieval
 {
 
 
-    /*
+   
 
         [HarmonyPatch(typeof(GenRecipe))]
         [HarmonyPatch("MakeRecipeProducts")]
@@ -28,21 +28,28 @@ namespace VFEMedieval
                 Building_WorkTable workbench;
                 if ((workbench = billGiver as Building_WorkTable) != null && recipeDef.products != null)
                 {
-                    if (workbench.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Contains(ANVIL_HERE) == true)
+                Log.Message("Recipe finished");
+                    if (workbench.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.ContainsAny(x => x.def==VFEM_DefOf.VFEM2_SmithingAnvil) == true)
                     {
-
-                        foreach (Thing thing in resultingList)
+                    Log.Message("Linkable detected");
+                    foreach (Thing thing in resultingList)
                         {
                             CompQuality compQuality = thing.TryGetComp<CompQuality>();
                             if (compQuality?.Quality < QualityCategory.Normal)
                             {
-                                if (Rand.Chance(0.2f))
+                            Log.Message("Quality detected");
+                            if (Rand.Chance(0.2f))
                                 {
                                     compQuality.SetQuality(compQuality.Quality + 1, null);
                                     Messages.Message("VFEM2_ItemImproved".Translate(thing.LabelCap, compQuality.Quality.ToString()), worker, MessageTypeDefOf.PositiveEvent, null, historical: false);
                                 }
-
+                            else
+                            {
+                                Log.Message("No luck");
                             }
+
+                        }
+                        
 
                         }
                     }
@@ -68,7 +75,7 @@ namespace VFEMedieval
 
         }
 
-        */
+        
 
 
 

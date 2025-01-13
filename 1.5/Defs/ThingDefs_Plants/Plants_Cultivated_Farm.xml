@@ -22,6 +22,7 @@
 			<harvestTag>Standard</harvestTag>
 			<harvestAfterGrowth>0.30</harvestAfterGrowth>
 			<harvestedThingDef>VFEM2_RawGrapes</harvestedThingDef>
+			<immatureGraphicPath>Things/Plant/GrapePlant_Immature</immatureGraphicPath>
 			<harvestYield>12</harvestYield>
 			<sowMinSkill>5</sowMinSkill>
 			<sowTags>
