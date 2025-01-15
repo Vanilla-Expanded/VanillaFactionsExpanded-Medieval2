@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\defof\\vfem_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:defof\\vfem_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillafactionsexpanded-medieval2\\1.5\\source\\vfemedieval\\buildings\\damagedcastlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:buildings\\damagedcastlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +19,8 @@
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:buildings\\castlewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\defof\\vfem_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:defof\\vfem_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\buildings\\building_apiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:buildings\\building_apiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|solutionrelative:harmonypatches\\genrecipe_makerecipeproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD0467CB-B509-496E-8755-C3B86D1EE432}|VFEMedieval.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\comps\\compcurehypothermia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -185,7 +185,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -193,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DamagedCastleWall.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Buildings\\DamagedCastleWall.cs",
               "RelativeDocumentMoniker": "Buildings\\DamagedCastleWall.cs",
@@ -206,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CastleWall.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Buildings\\CastleWall.cs",
               "RelativeDocumentMoniker": "Buildings\\CastleWall.cs",
@@ -218,15 +218,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GenRecipe_MakeRecipeProducts.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\GenRecipe_MakeRecipeProducts.cs",
               "RelativeDocumentMoniker": "HarmonyPatches\\GenRecipe_MakeRecipeProducts.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\HarmonyPatches\\GenRecipe_MakeRecipeProducts.cs",
               "RelativeToolTip": "HarmonyPatches\\GenRecipe_MakeRecipeProducts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwD4AAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T14:46:02.354Z"
+              "WhenOpened": "2025-01-09T14:46:02.354Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -254,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Building_Apiary.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\Buildings\\Building_Apiary.cs",
               "RelativeDocumentMoniker": "Buildings\\Building_Apiary.cs",
@@ -266,15 +267,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "VFEM_DefOf.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\DefOf\\VFEM_DefOf.cs",
               "RelativeDocumentMoniker": "DefOf\\VFEM_DefOf.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Medieval2\\1.5\\Source\\VFEMedieval\\DefOf\\VFEM_DefOf.cs",
               "RelativeToolTip": "DefOf\\VFEM_DefOf.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvxkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvx0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T12:54:28.25Z"
+              "WhenOpened": "2024-11-02T12:54:28.25Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

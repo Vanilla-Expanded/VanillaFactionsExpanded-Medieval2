@@ -14,57 +14,70 @@ namespace VFEMedieval
 {
 
 
-   
 
-        [HarmonyPatch(typeof(GenRecipe))]
-        [HarmonyPatch("MakeRecipeProducts")]
 
-        public static class VFEMedieval_GenRecipe_MakeRecipeProducts_Patch
+    [HarmonyPatch(typeof(GenRecipe))]
+    [HarmonyPatch("MakeRecipeProducts")]
+
+    public static class VFEMedieval_GenRecipe_MakeRecipeProducts_Patch
+    {
+
+        public static IEnumerable<Thing> Postfix(IEnumerable<Thing> values, RecipeDef recipeDef, Pawn worker, IBillGiver billGiver)
         {
-
-            public static IEnumerable<Thing> Postfix(IEnumerable<Thing> values, RecipeDef recipeDef, Pawn worker, IBillGiver billGiver)
+            List<Thing> resultingList = values.ToList();
+            Building_WorkTable workbench;
+            CompAffectedByFacilities comp;
+            if ((workbench = billGiver as Building_WorkTable) != null && recipeDef.products != null)
             {
-                List<Thing> resultingList = values.ToList();
-                Building_WorkTable workbench;
-                if ((workbench = billGiver as Building_WorkTable) != null && recipeDef.products != null)
+                if ((comp = workbench.TryGetComp<CompAffectedByFacilities>()) != null)
                 {
-                Log.Message("Recipe finished");
-                    if (workbench.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.ContainsAny(x => x.def==VFEM_DefOf.VFEM2_SmithingAnvil) == true)
+
+                    if (comp.LinkedFacilitiesListForReading.ContainsAny(x => x.def == VFEM_DefOf.VFEM2_SmithingAnvil) == true)
                     {
-                    Log.Message("Linkable detected");
-                    foreach (Thing thing in resultingList)
+                        foreach (Thing thing in resultingList)
                         {
+                            string labelOld = thing.LabelCap;
                             CompQuality compQuality = thing.TryGetComp<CompQuality>();
                             if (compQuality?.Quality < QualityCategory.Normal)
                             {
-                            Log.Message("Quality detected");
-                            if (Rand.Chance(0.2f))
+                                if (Rand.Chance(0.2f))
                                 {
                                     compQuality.SetQuality(compQuality.Quality + 1, null);
-                                    Messages.Message("VFEM2_ItemImproved".Translate(thing.LabelCap, compQuality.Quality.ToString()), worker, MessageTypeDefOf.PositiveEvent, null, historical: false);
+                                    Messages.Message("VFEM2_ItemImproved_Anvil".Translate(labelOld, compQuality.Quality.ToString()), worker, MessageTypeDefOf.PositiveEvent, null, historical: false);
                                 }
-                            else
-                            {
-                                Log.Message("No luck");
                             }
-
                         }
-                        
+                    }
 
+                    if (comp.LinkedFacilitiesListForReading.ContainsAny(x => x.def == VFEM_DefOf.VFEM2_StonePolisher) == true)
+                    {
+                        foreach (Thing thing in resultingList)
+                        {
+                            string labelOld = thing.LabelCap;
+                            CompQuality compQuality = thing.GetInnerIfMinified().TryGetComp<CompQuality>();
+                            if (compQuality?.Quality < QualityCategory.Normal)
+                            {
+                                if (Rand.Chance(0.25f))
+                                {
+                                    compQuality.SetQuality(compQuality.Quality + 1, null);
+                                    Messages.Message("VFEM2_ItemImproved_Polisher".Translate(labelOld, compQuality.Quality.ToString()), worker, MessageTypeDefOf.PositiveEvent, null, historical: false);
+                                }
+                            }
+                        }
+                    }
+
+                    if (comp.LinkedFacilitiesListForReading.ContainsAny(x => x.def == VFEM_DefOf.VFEM2_StoneClamp || x.def == VFEM_DefOf.VFEM2_CarvingBoard) == true)
+                    {
+                        foreach (Thing thing in resultingList)
+                        {
+                            thing.stackCount= (int)(thing.stackCount*1.1f);
                         }
                     }
 
 
 
 
-
-
                 }
-
-                return resultingList;
-
-
-
 
 
 
@@ -73,10 +86,18 @@ namespace VFEMedieval
 
             }
 
+            return resultingList;
+
+
+
+
         }
-
-        
-
-
-
+    }
 }
+
+
+
+
+
+
+

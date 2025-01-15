@@ -25,6 +25,9 @@ namespace VFEMedieval
         public static ThingDef VFEM2_DamagedCastleWall;
         public static ThingDef VFEM2_CastleWall;
         public static ThingDef VFEM2_SmithingAnvil;
+        public static ThingDef VFEM2_StoneClamp;
+        public static ThingDef VFEM2_CarvingBoard;
+        public static ThingDef VFEM2_StonePolisher;
 
         public static DamageDef VFEM2_DamageSting;
 
