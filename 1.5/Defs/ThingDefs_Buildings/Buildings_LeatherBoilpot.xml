@@ -46,6 +46,10 @@
 				<inProgressTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Working</inProgressTexture>
 				<finishedTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Finished</finishedTexture>
 			</li>
+			<li Class="PipeSystem.CompProperties_GlowerOnProcess">
+				<glowRadius>5</glowRadius>
+				<glowColor>(73,123,138,0)</glowColor>
+			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelConsumptionRate>80.0</fuelConsumptionRate>
 				<fuelCapacity>50.0</fuelCapacity>
