@@ -24,7 +24,6 @@
 		<minSafeTemperature>7</minSafeTemperature>
 		<maxSafeTemperature>32</maxSafeTemperature>
 	</PipeSystem.ProcessDef>
-	
 	<PipeSystem.ProcessDef>
 		<defName>VFEM2_PatchLeatherToHardleather</defName>
 		<label>Boil patch leather into hard leather</label>
@@ -46,9 +45,9 @@
 			</li>
 		</results>
 		<autoExtract>false</autoExtract>
-	
+		<sustainerWhenWorking>true</sustainerWhenWorking>
+		<sustainerDef>Recipe_Drug</sustainerDef>
 	</PipeSystem.ProcessDef>
-	
 	<PipeSystem.ProcessDef>
 		<defName>VFEM2_GrapeToAwfulWine</defName>
 		<label>Ferment grape must into wine (awful)</label>
@@ -231,6 +230,4 @@
 		<stopAtQuality>true</stopAtQuality>
 		<quality>Legendary</quality>
 	</PipeSystem.ProcessDef>
-	
-
 </Defs>
