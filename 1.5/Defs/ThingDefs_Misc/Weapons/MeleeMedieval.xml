@@ -260,6 +260,11 @@
       </skillRequirements>
       <displayPriority>331</displayPriority>
     </recipeMaker>
+	<modExtensions>
+		<li Class="VFECore.ThingDefExtension">
+			<meleeRangeOverride>2.84</meleeRangeOverride>
+		</li>
+	</modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
