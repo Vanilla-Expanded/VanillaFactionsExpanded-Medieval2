@@ -132,7 +132,7 @@
   </workDisables>
   <requiredWorkTags>
     <li>Social</li>
-    <li>Construction</li>
+    <li>Constructing</li>
   </requiredWorkTags>
 </BackstoryDef>
 
@@ -908,7 +908,7 @@
   <workDisables/>
   <requiredWorkTags>
     <li>Social</li>
-    <li>Construction</li>
+    <li>Constructing</li>
   </requiredWorkTags>
 </BackstoryDef>
 
@@ -969,7 +969,7 @@
   <workDisables/>
   <requiredWorkTags>
     <li>Social</li>
-    <li>Construction</li>
+    <li>Constructing</li>
   </requiredWorkTags>
 </BackstoryDef>
 
