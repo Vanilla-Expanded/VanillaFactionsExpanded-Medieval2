@@ -194,7 +194,7 @@
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Pike</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>2.0</drawSize>
+	  <drawSize>3.0</drawSize>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
@@ -210,7 +210,6 @@
     <equippedStatOffsets>
       <MoveSpeed>-0.4</MoveSpeed>
     </equippedStatOffsets>
-    <equippedAngleOffset>-65</equippedAngleOffset>
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
