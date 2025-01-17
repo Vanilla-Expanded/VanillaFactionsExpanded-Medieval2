@@ -14,7 +14,7 @@
     <renderPrecedence>240</renderPrecedence>
     <burnedDef>BurnedStrawMatting</burnedDef>
 	<tickerType>Normal</tickerType>
-    <pathCost>1</pathCost>
+    <pathCost>3</pathCost>
     <statBases>
       <Beauty>-2</Beauty>
       <Cleanliness>-0.1</Cleanliness>
