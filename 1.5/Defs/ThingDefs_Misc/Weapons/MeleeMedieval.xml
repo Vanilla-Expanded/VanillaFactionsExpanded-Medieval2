@@ -188,8 +188,8 @@
   </ThingDef>
   
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>VFEM2_MeleeWeapon_Pike</defName>
-    <label>pike</label>
+    <defName>VFEM2_MeleeWeapon_Halberd</defName>
+    <label>halberd</label>
     <description>A long, unwieldy polearm tipped with a sharp point for stabbing opponents. The reach of the pike allows to strike enemies much further away.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Pike</texPath>
