@@ -491,6 +491,7 @@
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <comps>
       <li Class="CompProperties_Facility">
+		<compClass>VFEMedieval.CompFacilityResearchBoard</compClass>
         <statOffsets>
           <ResearchSpeedFactor>0.02</ResearchSpeedFactor>
         </statOffsets>

@@ -299,6 +299,7 @@
     <Compile Include="Buildings\LowCastleWall.cs" />
     <Compile Include="Buildings\CastleWall.cs" />
     <Compile Include="Buildings\DamagedCastleWall.cs" />
+    <Compile Include="Comps\CompFacilityResearchBoard.cs" />
     <Compile Include="Comps\CompUseEffect_AddHediffWithSeverity.cs" />
     <Compile Include="Comps\CompUseEffect_AddInspiration.cs" />
     <Compile Include="Comps\CompUseEffect_ReduceAllInfections.cs" />

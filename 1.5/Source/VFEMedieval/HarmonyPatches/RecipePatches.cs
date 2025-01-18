@@ -75,6 +75,36 @@ namespace VFEMedieval
             }
         }
 
+        [HarmonyPatch(typeof(CompAffectedByFacilities), "LinkToNearbyFacilities")]
+        public static class CompAffectedByFacilities_LinkToNearbyFacilities_Patch
+        {
+            public static void Postfix(CompAffectedByFacilities __instance)
+            {
+                if (__instance.parent.IsLinkedTo(VFEM_DefOf.VFEM2_MannequinStand) && __instance.parent is Building_WorkTable workTable)
+                {
+                    foreach (var bill in workTable.billStack.bills)
+                    {
+                        bill.recipe = bill.recipe.ContractedRecipe();
+                    }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(CompAffectedByFacilities), "Notify_NewLink")]
+        public static class CompAffectedByFacilities_Notify_NewLink_Patch
+        {
+            public static void Postfix(CompAffectedByFacilities __instance)
+            {
+                if (__instance.parent.IsLinkedTo(VFEM_DefOf.VFEM2_MannequinStand) && __instance.parent is Building_WorkTable workTable)
+                {
+                    foreach (var bill in workTable.billStack.bills)
+                    {
+                        bill.recipe = bill.recipe.ContractedRecipe();
+                    }
+                }
+            }
+        }
+
         private static HashSet<RecipeDef> contractedRecipes = new HashSet<RecipeDef>();
 
         public static RecipeDef ContractedRecipe(this RecipeDef recipe)
