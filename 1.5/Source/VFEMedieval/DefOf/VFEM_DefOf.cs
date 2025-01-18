@@ -46,5 +46,7 @@ namespace VFEMedieval
         public static BodyPartDef Kidney;
 
         public static ThingDef VFEM2_ForgeBellows;
+
+        public static ThingDef VFEM2_MannequinStand;
     }
 }

@@ -318,6 +318,7 @@
     <Compile Include="HarmonyPatches\DrugPolicyDatabase_GenerateStartingDrugPolicies.cs" />
     <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts.cs" />
     <Compile Include="HarmonyPatches\PawnRenderUtility_DrawEquipmentAndApparelExtras.cs" />
+    <Compile Include="HarmonyPatches\RecipePatches.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_LearnRateFactor.cs" />
     <Compile Include="HarmonyPatches\Thought_Memory_DurationTicks.cs" />
     <Compile Include="HarmonyPatches\WatchBuildingUtility_EverPossibleToWatchFrom.cs" />
@@ -350,10 +351,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer">
+      <Version>2.3.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Lib.Harmony" ExcludeAssets="runtime">
       <Version>2.3.3</Version>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

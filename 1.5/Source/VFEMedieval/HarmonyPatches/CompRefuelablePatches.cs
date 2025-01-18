@@ -14,15 +14,24 @@ namespace VFEMedieval
     {
         public static float ModifyFuelConsumptionRate(float originalRate, CompRefuelable instance)
         {
-            var comp = instance.parent.TryGetComp<CompAffectedByFacilities>();
-            if (comp != null)
+            if (instance.parent.IsLinkedTo(VFEM_DefOf.VFEM2_ForgeBellows))
             {
-                if (comp.LinkedFacilitiesListForReading.Any(x => x.def == VFEM_DefOf.VFEM2_ForgeBellows))
-                {
-                    return originalRate * 0.8f;
-                }
+                return originalRate * 0.8f;
             }
             return originalRate;
+        }
+
+        public static bool IsLinkedTo(this ThingWithComps thingWithComps, ThingDef thingDef)
+        {
+            var comp = thingWithComps.TryGetComp<CompAffectedByFacilities>();
+            if (comp != null)
+            {
+                if (comp.LinkedFacilitiesListForReading.Any(x => x.def == thingDef))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static IEnumerable<MethodBase> TargetMethods()

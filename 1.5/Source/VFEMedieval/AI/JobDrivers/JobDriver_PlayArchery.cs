@@ -18,7 +18,7 @@ namespace VFEMedieval
     public class JobDriver_PlayArchery : JobDriver_WatchBuilding
     {
         Thing bow;
-        protected override void WatchTickAction()
+        public override void WatchTickAction()
         {
             if (pawn.IsHashIntervalTick(400))
             {
@@ -29,7 +29,7 @@ namespace VFEMedieval
 
         public delegate bool EverPossibleToWatchFrom(IntVec3 watchCell, IntVec3 buildingCenter, Map map, bool bedAllowed, ThingDef def);
         public static readonly EverPossibleToWatchFrom everPossibleToWatchFrom = AccessTools.MethodDelegate<EverPossibleToWatchFrom>(AccessTools.Method(typeof(WatchBuildingUtility), "EverPossibleToWatchFrom"));
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOn(() => everPossibleToWatchFrom(this.TargetB.Cell, this.TargetA.Cell, pawn.Map, false, TargetA.Thing.def) is false);
             return base.MakeNewToils();
