@@ -313,6 +313,7 @@
     <Compile Include="Comps\Properties\CompProperties_UseEffectReduceRest.cs" />
     <Compile Include="Defs\CobblestoneWallTemplateDef.cs" />
     <Compile Include="Defs\LeatherTerrainTemplateDef.cs" />
+    <Compile Include="HarmonyPatches\CompRefuelablePatches.cs" />
     <Compile Include="HarmonyPatches\DefGenerator_GenerateImpliedDefs_PreResolve.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyDatabase_GenerateStartingDrugPolicies.cs" />
     <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts.cs" />

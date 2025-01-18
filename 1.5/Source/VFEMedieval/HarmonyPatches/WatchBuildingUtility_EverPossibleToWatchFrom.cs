@@ -1,9 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using System.Reflection;
 using Verse;
 using UnityEngine;
-using System.Collections.Generic;
 using System.Linq;
 using Verse.AI;
 
@@ -11,8 +9,6 @@ using Verse.AI;
 
 namespace VFEMedieval
 {
-
-
     [HarmonyPatch(typeof(WatchBuildingUtility))]
     [HarmonyPatch("EverPossibleToWatchFrom")]
     public static class VFEMedieval_WatchBuildingUtility_EverPossibleToWatchFrom_Patch

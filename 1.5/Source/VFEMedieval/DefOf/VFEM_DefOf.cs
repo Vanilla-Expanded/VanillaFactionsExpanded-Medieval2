@@ -44,5 +44,7 @@ namespace VFEMedieval
         public static PawnKindDef VFEM_SellSword;
 
         public static BodyPartDef Kidney;
+
+        public static ThingDef VFEM2_ForgeBellows;
     }
 }

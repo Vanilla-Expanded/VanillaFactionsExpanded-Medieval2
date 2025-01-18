@@ -1,8 +1,0 @@
-E:\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Source\VFEMedieval\obj\Debug\VFEMedieval.csproj.AssemblyReference.cache
-E:\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Source\VFEMedieval\obj\Debug\VFEMedieval.csproj.CoreCompileInputs.cache
-E:\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Assemblies\VFEMedieval.dll
-E:\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Source\VFEMedieval\obj\Debug\VFEMedieval.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Source\VFEMedieval\obj\Debug\VFEMedieval.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Source\VFEMedieval\obj\Debug\VFEMedieval.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Source\VFEMedieval\obj\Debug\VFEMedieval.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Medieval2\1.5\Assemblies\VFEMedieval.dll
