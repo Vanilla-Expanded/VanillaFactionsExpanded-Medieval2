@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <FactionDef Name="VFEM2_MerchantGuildFactionBase" ParentName="FactionBase" Abstract="True">
+  <FactionDef ParentName="FactionBase">
+    <defName>VFEM2_MerchantGuild</defName>
+    <label>merchant's guild</label>
+    <description>These people have been here for a shorter period of time than their neolithic brethren. These wandering traders and skilled negotiators form a vast network of traveling caravans and temporary markets. Originating from a loose coalition of outlanders and former city-dwellers, they abandoned static settlements in favor of constant movement, seeking prosperity through commerce rather than conquest.\n\nUnlike most factions, the Guild operates on a pure barter economy—silver holds no value to them, only goods and services do. Their traders travel far and wide, setting up bustling market hubs wherever they stop, offering rare wares and exotic goods in exchange for what they deem useful.\n\nThough they avoid direct conflict and prefer diplomacy, their well-armed guards ensure that their caravans remain safe from opportunistic raiders.</description>
+    <colorSpectrum>
+      <li>(0.34, 0.73, 0.76)</li>
+      <li>(0.47, 1, 1)</li>
+      <!-- <li>(0.47, 1.05, 1.12)</li> -->
+    </colorSpectrum>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+	<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>30</configurationListOrderPriority>
     <pawnSingular>subject</pawnSingular>
     <pawnsPlural>subjects</pawnsPlural>
     <listOrderPriority>25</listOrderPriority>
-    <settlementGenerationWeight>1</settlementGenerationWeight>
-    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <hidden>true</hidden>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
     <canStageAttacks>true</canStageAttacks>
     <factionIconPath>MapIcons/CastleCivil</factionIconPath>
-    <settlementTexturePath>MapIcons/Expanding/CastleExpanding</settlementTexturePath>
     <factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
-    <settlementNameMaker>VFEM2_NamerSettlementMedieval</settlementNameMaker>
     <allowedCultures><li>VFEM2_Feudal</li></allowedCultures>
 	<leaderTitle>king</leaderTitle>
     <disallowedMemes>
@@ -223,18 +233,53 @@
     </modExtensions>-->
   </FactionDef>
 
-  <FactionDef ParentName="VFEM2_MerchantGuildFactionBase">
-    <defName>VFEM2_MerchantGuild</defName>
+  <WorldObjectDef>
+    <defName>VFEM2_MerchantGuildCaravan</defName>
     <label>merchant's guild</label>
-    <description>These people have been here for a shorter period of time than their neolithic brethren. These wandering traders and skilled negotiators form a vast network of traveling caravans and temporary markets. Originating from a loose coalition of outlanders and former city-dwellers, they abandoned static settlements in favor of constant movement, seeking prosperity through commerce rather than conquest.\n\nUnlike most factions, the Guild operates on a pure barter economy—silver holds no value to them, only goods and services do. Their traders travel far and wide, setting up bustling market hubs wherever they stop, offering rare wares and exotic goods in exchange for what they deem useful.\n\nThough they avoid direct conflict and prefer diplomacy, their well-armed guards ensure that their caravans remain safe from opportunistic raiders.</description>
-    <colorSpectrum>
-      <li>(0.34, 0.73, 0.76)</li>
-      <li>(0.47, 1, 1)</li>
-      <!-- <li>(0.47, 1.05, 1.12)</li> -->
-    </colorSpectrum>
-    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-	<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
-    <configurationListOrderPriority>30</configurationListOrderPriority>
-  </FactionDef>
-
+    <description>A group of traveling people.</description>
+    <worldObjectClass>VFEMedieval.MerchantCaravan</worldObjectClass>
+    <texture>MapIcons/TradingGuild</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>MapIcons/Expanding/TradingGuildExpanding</expandingIconTexture>
+    <expandingIconPriority>10</expandingIconPriority>
+  </WorldObjectDef>
+  
+  <PawnKindDef ParentName="OutlanderBase">
+    <defName>VFEM2_Medieval_Merchant</defName>
+    <label>merchant</label>
+    <trader>true</trader>
+    <combatPower>45</combatPower>
+    <isFighter>false</isFighter>
+    <gearHealthRange>1~1</gearHealthRange>
+    <itemQuality>Normal</itemQuality>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <weaponMoney>200~200</weaponMoney>
+    <apparelMoney>400~600</apparelMoney>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_BowlerHat</li>
+    </apparelRequired>
+    <techHediffsChance>0.15</techHediffsChance>
+    <techHediffsMoney>600~1500</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+      <li>Advanced</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>12~20</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Highmate MayRequire="Ludeon.RimWorld.Biotech">0.04</Highmate>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
 </Defs>

@@ -48,5 +48,9 @@ namespace VFEMedieval
         public static ThingDef VFEM2_ForgeBellows;
 
         public static ThingDef VFEM2_MannequinStand;
+
+        public static FactionDef VFEM2_MerchantGuild;
+
+        public static WorldObjectDef VFEM2_MerchantGuildCaravan;
     }
 }

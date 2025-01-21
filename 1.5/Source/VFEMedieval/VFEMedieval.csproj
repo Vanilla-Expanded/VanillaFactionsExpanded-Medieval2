@@ -345,6 +345,8 @@
     <Compile Include="Comps\Properties\CompProperties_CureHypothermia.cs" />
     <Compile Include="Comps\Properties\CompProperties_IngestedThoughtFromQuality.cs" />
     <Compile Include="DefOf\VFEM_DefOf.cs" />
+    <Compile Include="MerchantGuild\FactionGenerator_NewGeneratedFaction_Patch.cs" />
+    <Compile Include="MerchantGuild\MerchantCaravan.cs" />
     <Compile Include="Placeworkers\Placeworker_Apiary.cs" />
     <Compile Include="StaticCollections\StaticCollections.cs" />
     <Compile Include="StatParts\StatPart_Flammability.cs" />
