@@ -237,7 +237,7 @@
     <defName>VFEM2_MerchantGuildCaravan</defName>
     <label>merchant's guild</label>
     <description>A group of traveling people.</description>
-    <worldObjectClass>VFEMedieval.MerchantCaravan</worldObjectClass>
+    <worldObjectClass>VFEMedieval.MerchantGuild</worldObjectClass>
     <texture>MapIcons/TradingGuild</texture>
     <useDynamicDrawer>true</useDynamicDrawer>
     <expandingIcon>true</expandingIcon>
@@ -282,4 +282,12 @@
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
+  
+  <TraderKindDef>
+    <defName>VFEM2_MerchantGuildTrader</defName>
+    <label>merchant's guild</label>
+    <stockGenerators>
+		<li Class="VFEMedieval.StockGenerator_MerchantGuild"></li>
+    </stockGenerators>
+	</TraderKindDef>
 </Defs>

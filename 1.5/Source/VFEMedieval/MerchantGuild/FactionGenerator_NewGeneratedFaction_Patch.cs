@@ -25,13 +25,10 @@ namespace VFEMedieval
             var spawnCount = Mathf.RoundToInt(VFEMedievalSettings.merchantCaravanSpawnCount * Find.World.info.overallPopulation.GetScaleFactor());
             for (var i = 0; i < spawnCount; i++)
             {
-                var caravan = (MerchantCaravan)WorldObjectMaker.MakeWorldObject(VFEM_DefOf.VFEM2_MerchantGuildCaravan);
-                caravan.Tile = TileFinder.RandomSettlementTileFor(merchantFaction);
-                caravan.SetFaction(merchantFaction);
-                caravan.Name = CaravanNameGenerator.GenerateCaravanName(caravan);
-
-                caravan.SetUniqueId(Find.UniqueIDsManager.GetNextCaravanID());
-                Find.WorldObjects.Add(caravan);
+                var merchantGuild = (MerchantGuild)WorldObjectMaker.MakeWorldObject(VFEM_DefOf.VFEM2_MerchantGuildCaravan);
+                merchantGuild.Tile = TileFinder.RandomSettlementTileFor(merchantFaction);
+                merchantGuild.SetFaction(merchantFaction);
+                Find.WorldObjects.Add(merchantGuild);
             }
         }
     }

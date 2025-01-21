@@ -52,5 +52,7 @@ namespace VFEMedieval
         public static FactionDef VFEM2_MerchantGuild;
 
         public static WorldObjectDef VFEM2_MerchantGuildCaravan;
+
+        public static TraderKindDef VFEM2_MerchantGuildTrader;
     }
 }

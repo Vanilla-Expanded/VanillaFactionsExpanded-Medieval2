@@ -23,4 +23,6 @@
 	<VFEM2_ItemImproved_Anvil>{0} has been improved to {1} quality level due to the smithing anvil.</VFEM2_ItemImproved_Anvil>
 	<VFEM2_ItemImproved_Polisher>{0} has been improved to {1} quality level due to the stone polisher.</VFEM2_ItemImproved_Polisher>
 	<VFEM2_MerchantCaravanSpawnCount>Merchant caravan spawn count (scalable with world polulation size)</VFEM2_MerchantCaravanSpawnCount>
+	<VFEM2_MerchantCaravanStayPeriod>Merchant's Guild will pack and move in: {0}</VFEM2_MerchantCaravanStayPeriod>
+	<VFEM2_BarterWith>Barter with {0}</VFEM2_BarterWith>
 </LanguageData>
