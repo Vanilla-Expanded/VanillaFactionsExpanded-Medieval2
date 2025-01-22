@@ -89,17 +89,12 @@ namespace VFEMedieval
                 tradeable.InitPriceDataIfNeeded();
                 if (trans == Transactor.Colony)
                 {
-                    Log.Message("Colony: " + tradeable.ThingDef + " BEFORE: " + tradeable.pricePlayerSell);
                     tradeable.pricePlayerSell *= Rand.Range(0.1f, 2f);
-                    Log.Message("Colony: " + tradeable.ThingDef + " AFTER: " + tradeable.pricePlayerSell);
                 }
                 else
                 {
-                    Log.Message("Trader: " + tradeable.ThingDef + " BEFORE: " + tradeable.pricePlayerBuy);
                     tradeable.pricePlayerBuy *= Rand.Range(0.1f, 2f);
-                    Log.Message("Trader: " + tradeable.ThingDef + " AFTER: " + tradeable.pricePlayerBuy);
                 }
-                Log.ResetMessageCount();
                 Rand.PopState();
             }
         }

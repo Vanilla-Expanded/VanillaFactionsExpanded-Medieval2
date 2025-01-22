@@ -57,7 +57,7 @@ namespace VFEMedieval
         {
             get
             {
-                if (stock == null)
+                //if (stock == null)
                 {
                     RegenerateStock();
                 }
@@ -187,7 +187,7 @@ namespace VFEMedieval
 
         private void TryStartPathing()
         {
-            if (TileFinder.TryFindPassableTileWithTraversalDistance(Tile, 5, 30, out var result))
+            if (TileFinder.TryFindPassableTileWithTraversalDistance(Tile, 20, 30, out var result))
             {
                 int num = BestGotoDestNear(result);
                 if (num >= 0)

@@ -488,10 +488,80 @@ namespace VFEMedieval
                 TransferableUIUtility.DrawCaptiveTradeInfo(trad, TradeSession.trader, rect, ref width);
             }
             Rect idRect = new Rect(0f, 0f, width, rect.height);
-            TransferableUIUtility.DrawTransferableInfo(trad, idRect, trad.TraderWillTrade ? Color.white : TradeUI.NoTradeColor);
+            DrawTransferableInfo(trad, idRect, trad.TraderWillTrade ? Color.white : TradeUI.NoTradeColor, interactive is false);
             GenUI.ResetLabelAlign();
             Widgets.EndGroup();
         }
+
+        public static void DrawTransferableInfo(Transferable trad, Rect idRect, Color labelColor, 
+            bool drawCountToTransfer)
+        {
+            if (!trad.HasAnyThing && trad.IsThing)
+            {
+                return;
+            }
+            if (Mouse.IsOver(idRect))
+            {
+                Widgets.DrawHighlight(idRect);
+            }
+            Rect rect = new Rect(0f, 0f, 27f, 27f);
+            if (trad.IsThing)
+            {
+                try
+                {
+                    Widgets.ThingIcon(rect, trad.AnyThing);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error("Exception drawing thing icon for " + trad.AnyThing.def.defName + ": " + ex.ToString());
+                }
+            }
+            else
+            {
+                trad.DrawIcon(rect);
+            }
+            if (trad.IsThing)
+            {
+                Widgets.InfoCardButton(40f, 0f, trad.AnyThing);
+            }
+            Text.Anchor = TextAnchor.MiddleLeft;
+            Rect rect2 = new Rect(80f, 0f, idRect.width - 80f, idRect.height);
+            Text.WordWrap = false;
+            GUI.color = labelColor;
+            var label = drawCountToTransfer ? Mathf.Abs(trad.CountToTransfer)  + " " + trad.LabelCap : trad.LabelCap;
+            Widgets.Label(rect2, label);
+            GUI.color = Color.white;
+            Text.WordWrap = true;
+            if (!Mouse.IsOver(idRect))
+            {
+                return;
+            }
+            Transferable localTrad = trad;
+            TooltipHandler.TipRegion(idRect, new TipSignal(delegate
+            {
+                if (!localTrad.HasAnyThing && localTrad.IsThing)
+                {
+                    return "";
+                }
+                string text = localTrad.LabelCap;
+                string tipDescription = localTrad.TipDescription;
+                if (localTrad.AnyThing is Book)
+                {
+                    text = tipDescription;
+                }
+                else if (!tipDescription.NullOrEmpty())
+                {
+                    text = text + ": " + tipDescription + TransferableUIUtility.ContentSourceDescription(localTrad.AnyThing);
+                }
+                CompIngredients compIngredients;
+                if ((compIngredients = localTrad.AnyThing.TryGetComp<CompIngredients>()) != null)
+                {
+                    text = text + "\n\n" + compIngredients.CompInspectStringExtra();
+                }
+                return text;
+            }, localTrad.GetHashCode()));
+        }
+
 
 
         public override bool CausesMessageBackground()
