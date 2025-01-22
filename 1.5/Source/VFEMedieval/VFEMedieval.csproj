@@ -353,6 +353,7 @@
     <Compile Include="MerchantGuild\MerchantGuild_PathFollower.cs" />
     <Compile Include="MerchantGuild\MerchantGuild_Tweener.cs" />
     <Compile Include="MerchantGuild\StockGenerator_MerchantGuild.cs" />
+    <Compile Include="MerchantGuild\BarterDeal.cs" />
     <Compile Include="Placeworkers\Placeworker_Apiary.cs" />
     <Compile Include="StaticCollections\StaticCollections.cs" />
     <Compile Include="StatParts\StatPart_Flammability.cs" />
