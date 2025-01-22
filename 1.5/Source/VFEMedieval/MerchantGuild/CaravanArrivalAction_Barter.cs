@@ -5,6 +5,7 @@ using Verse;
 
 namespace VFEMedieval
 {
+
     public class CaravanArrivalAction_Barter : CaravanArrivalAction
     {
         private MerchantGuild merchantGuild;
@@ -41,7 +42,7 @@ namespace VFEMedieval
             CameraJumper.TryJumpAndSelect(caravan);
             Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, this.merchantGuild.Faction, 
                 this.merchantGuild.TraderKind);
-            Find.WindowStack.Add(new Dialog_Trade(playerNegotiator, this.merchantGuild));
+            Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, this.merchantGuild));
         }
 
         public override void ExposeData()

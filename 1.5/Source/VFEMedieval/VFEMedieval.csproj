@@ -346,6 +346,7 @@
     <Compile Include="Comps\Properties\CompProperties_IngestedThoughtFromQuality.cs" />
     <Compile Include="DefOf\VFEM_DefOf.cs" />
     <Compile Include="MerchantGuild\CaravanArrivalAction_Barter.cs" />
+    <Compile Include="MerchantGuild\Dialog_Barter.cs" />
     <Compile Include="MerchantGuild\FactionGenerator_NewGeneratedFaction_Patch.cs" />
     <Compile Include="MerchantGuild\MerchantGuild.cs" />
     <Compile Include="MerchantGuild\MerchantGuildTweenerUtility.cs" />
