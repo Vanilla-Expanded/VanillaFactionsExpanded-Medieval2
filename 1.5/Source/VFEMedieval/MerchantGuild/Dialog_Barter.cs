@@ -201,14 +201,11 @@ namespace VFEMedieval
 
         public Dialog_Barter(Pawn playerNegotiator, ITrader trader)
         {
-            var silver = ThingMaker.MakeThing(ThingDefOf.Silver);
-            silver.stackCount = 10000;
-            playerNegotiator.inventory.TryAddAndUnforbid(silver);
             TradeSession.SetupWith(trader, playerNegotiator, false);
             SetupPlayerCaravanVariables();
             deal = new BarterDeal();
             forcePause = true;
-            absorbInputAroundWindow = false;
+            absorbInputAroundWindow = true;
 
             soundAppear = SoundDefOf.CommsWindow_Open;
             soundClose = SoundDefOf.CommsWindow_Close;
