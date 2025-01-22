@@ -142,4 +142,72 @@
 			<Chemfuel>25</Chemfuel>
 		</products>
 	</RecipeDef>
+	<RecipeDef>
+		<defName>VFEM2_Make_Hardweave</defName>
+		<label>weave hardweave from smokeleaf leaves</label>
+		<description>Weave smokeleaf threads together to create resistant alternative to cloth.</description>
+		<targetCountAdjustment>50</targetCountAdjustment>
+		<jobString>Weaving hardweave.</jobString>
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<workAmount>900</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SmokeleafLeaves</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>SmokeleafLeaves</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<VFEM2_Hardweave>25</VFEM2_Hardweave>
+		</products>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>VFEM2_Make_Hayweave</defName>
+		<label>weave hayweave from hay</label>
+		<description>Weave hay strands together to create a brittle, inferior fabric known as hayweave.</description>
+		<targetCountAdjustment>50</targetCountAdjustment>
+		<jobString>Weaving hayweave.</jobString>
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<workAmount>450</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Hay</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Hay</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<VFEM2_Hardweave>30</VFEM2_Hardweave>
+		</products>
+	</RecipeDef>
 </Defs>
