@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,31 @@ using Verse.Sound;
 
 namespace VFEMedieval
 {
+    [HarmonyPatch(typeof(TradeDeal), "CurrencyTradeable", MethodType.Getter)]
+    public static class TradeDeal_CurrencyTradeable_Patch
+    {
+        public static void Postfix(TradeDeal __instance, ref Tradeable __result)
+        {
+            if (Find.WindowStack.IsOpen<Dialog_Barter>())
+            {
+                __result = null;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Tradeable), "IsCurrency", MethodType.Getter)]
+    public static class Tradeable_IsCurrency_Patch
+    {
+        public static void Postfix(Tradeable __instance, ref bool __result)
+        {
+            if (Find.WindowStack.IsOpen<Dialog_Barter>())
+            {
+                __result = false;
+            }
+        }
+    }
+
+    [HotSwappable]
     [StaticConstructorOnStartup]
     public class Dialog_Barter : Window
     {
@@ -17,11 +43,7 @@ namespace VFEMedieval
 
         private QuickSearchWidget quickSearchWidget = new QuickSearchWidget();
 
-        public static float lastCurrencyFlashTime = -100f;
-
         private List<Tradeable> cachedTradeables;
-
-        private Tradeable cachedCurrencyTradeable;
 
         private TransferableSorterDef sorter1;
 
@@ -63,24 +85,6 @@ namespace VFEMedieval
 
         private string cachedVisibilityExplanation;
 
-        private const float TitleAreaHeight = 45f;
-
-        private const float TopAreaHeight = 58f;
-
-        private const float ColumnWidth = 120f;
-
-        private const float FirstCommodityY = 6f;
-
-        private const float RowInterval = 30f;
-
-        private const float SpaceBetweenTraderNameAndTraderKind = 27f;
-
-        private const float ShowSellableItemsIconSize = 32f;
-
-        private const float GiftModeIconSize = 32f;
-
-        private const float TradeModeIconSize = 32f;
-
         protected static readonly Vector2 AcceptButtonSize = new Vector2(160f, 40f);
 
         protected static readonly Vector2 OtherBottomButtonSize = new Vector2(160f, 40f);
@@ -104,16 +108,7 @@ namespace VFEMedieval
                 if (massUsageDirty)
                 {
                     massUsageDirty = false;
-                    TradeSession.deal.UpdateCurrencyCount();
-                    if (cachedCurrencyTradeable != null)
-                    {
-                        cachedTradeables.Add(cachedCurrencyTradeable);
-                    }
                     cachedMassUsage = CollectionsMassCalculator.MassUsageLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, IgnorePawnsInventoryMode.Ignore);
-                    if (cachedCurrencyTradeable != null)
-                    {
-                        cachedTradeables.RemoveLast();
-                    }
                 }
                 return cachedMassUsage;
             }
@@ -126,18 +121,9 @@ namespace VFEMedieval
                 if (massCapacityDirty)
                 {
                     massCapacityDirty = false;
-                    TradeSession.deal.UpdateCurrencyCount();
-                    if (cachedCurrencyTradeable != null)
-                    {
-                        cachedTradeables.Add(cachedCurrencyTradeable);
-                    }
                     StringBuilder stringBuilder = new StringBuilder();
                     cachedMassCapacity = CollectionsMassCalculator.CapacityLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, stringBuilder);
                     cachedMassCapacityExplanation = stringBuilder.ToString();
-                    if (cachedCurrencyTradeable != null)
-                    {
-                        cachedTradeables.RemoveLast();
-                    }
                 }
                 return cachedMassCapacity;
             }
@@ -150,7 +136,6 @@ namespace VFEMedieval
                 if (tilesPerDayDirty)
                 {
                     tilesPerDayDirty = false;
-                    TradeSession.deal.UpdateCurrencyCount();
                     Caravan caravan = TradeSession.playerNegotiator.GetCaravan();
                     StringBuilder stringBuilder = new StringBuilder();
                     cachedTilesPerDay = TilesPerDayCalculator.ApproxTilesPerDayLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, MassUsage, MassCapacity, Tile, (caravan != null && caravan.pather.Moving) ? caravan.pather.nextTile : (-1), stringBuilder);
@@ -167,7 +152,6 @@ namespace VFEMedieval
                 if (daysWorthOfFoodDirty)
                 {
                     daysWorthOfFoodDirty = false;
-                    TradeSession.deal.UpdateCurrencyCount();
                     float first = DaysWorthOfFoodCalculator.ApproxDaysWorthOfFoodLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, Tile, IgnorePawnsInventoryMode.Ignore, Faction.OfPlayer);
                     cachedDaysWorthOfFood = new Pair<float, float>(first, DaysUntilRotCalculator.ApproxDaysUntilRotLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, Tile, IgnorePawnsInventoryMode.Ignore));
                 }
@@ -182,7 +166,6 @@ namespace VFEMedieval
                 if (foragedFoodPerDayDirty)
                 {
                     foragedFoodPerDayDirty = false;
-                    TradeSession.deal.UpdateCurrencyCount();
                     StringBuilder stringBuilder = new StringBuilder();
                     cachedForagedFoodPerDay = ForagedFoodPerDayCalculator.ForagedFoodPerDayLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, Biome, Faction.OfPlayer, stringBuilder);
                     cachedForagedFoodPerDayExplanation = stringBuilder.ToString();
@@ -198,7 +181,6 @@ namespace VFEMedieval
                 if (visibilityDirty)
                 {
                     visibilityDirty = false;
-                    TradeSession.deal.UpdateCurrencyCount();
                     StringBuilder stringBuilder = new StringBuilder();
                     cachedVisibility = CaravanVisibilityCalculator.VisibilityLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, cachedTradeables, stringBuilder);
                     cachedVisibilityExplanation = stringBuilder.ToString();
@@ -250,9 +232,9 @@ namespace VFEMedieval
 
         private void CacheTradeables()
         {
-            cachedCurrencyTradeable = TradeSession.deal.AllTradeables.FirstOrDefault((Tradeable x) => x.IsCurrency && (TradeSession.TradeCurrency != TradeCurrency.Favor || x.IsFavor));
             cachedTradeables = (from tr in TradeSession.deal.AllTradeables
-                                where !tr.IsCurrency && (tr.TraderWillTrade || !TradeSession.trader.TraderKind.hideThingsNotWillingToTrade)
+                                where (tr.TraderWillTrade 
+                                || !TradeSession.trader.TraderKind.hideThingsNotWillingToTrade)
                                 where quickSearchWidget.filter.Matches(tr.Label)
                                 orderby (!tr.TraderWillTrade) ? (-1) : 0 descending
                                 select tr).ThenBy((Tradeable tr) => tr, sorter1.Comparer).ThenBy((Tradeable tr) => tr, sorter2.Comparer).ThenBy((Tradeable tr) => TransferableUIUtility.DefaultListOrderPriority(tr))
@@ -260,6 +242,7 @@ namespace VFEMedieval
                 .ThenBy((Tradeable tr) => tr.AnyThing.TryGetQuality(out var qc) ? ((int)qc) : (-1))
                 .ThenBy((Tradeable tr) => tr.AnyThing.HitPoints)
                 .ToList();
+            Log.Message("cachedTradeables: " + cachedTradeables.Select(x => x.ThingDef).ToStringSafeEnumerable());
             quickSearchWidget.noResultsMatched = !cachedTradeables.Any();
         }
 
@@ -270,7 +253,6 @@ namespace VFEMedieval
                 CaravanUIUtility.DrawCaravanInfo(new CaravanUIUtility.CaravanInfo(MassUsage, MassCapacity, cachedMassCapacityExplanation, TilesPerDay, cachedTilesPerDayExplanation, DaysWorthOfFood, ForagedFoodPerDay, cachedForagedFoodPerDayExplanation, Visibility, cachedVisibilityExplanation), null, Tile, null, -9999f, new Rect(12f, 0f, inRect.width - 24f, 40f));
                 inRect.yMin += 52f;
             }
-            TradeSession.deal.UpdateCurrencyCount();
             Widgets.BeginGroup(inRect);
             inRect = inRect.AtZero();
             TransferableUIUtility.DoTransferableSorters(sorter1, sorter2, delegate (TransferableSorterDef x)
@@ -316,15 +298,6 @@ namespace VFEMedieval
 
             Widgets.EndGroup();
             float num2 = 0f;
-            if (cachedCurrencyTradeable != null)
-            {
-                float num3 = inRect.width - 16f;
-                TradeUI.DrawTradeableRow(new Rect(0f, 58f, num3, 30f), cachedCurrencyTradeable, 1);
-                GUI.color = Color.gray;
-                Widgets.DrawLineHorizontal(0f, 87f, num3);
-                GUI.color = Color.white;
-                num2 = 30f;
-            }
             Rect mainRect = new Rect(0f, 58f + num2, inRect.width, inRect.height - 58f - 38f - num2 - 20f);
             FillMainRect(mainRect);
             Text.Font = GameFont.Small;
@@ -353,7 +326,6 @@ namespace VFEMedieval
                 }
                 else
                 {
-                    FlashSilver();
                     SoundDefOf.ClickReject.PlayOneShotOnCamera();
                     Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ConfirmTraderShortFunds".Translate(), action));
                 }
@@ -403,7 +375,7 @@ namespace VFEMedieval
                 {
                     Rect rect = new Rect(0f, num, viewRect.width, 30f);
                     int countToTransfer = cachedTradeables[i].CountToTransfer;
-                    TradeUI.DrawTradeableRow(rect, cachedTradeables[i], num4);
+                    DrawTradeableRow(rect, cachedTradeables[i], num4);
                     if (countToTransfer != cachedTradeables[i].CountToTransfer)
                     {
                         CountToTransferChanged();
@@ -415,9 +387,67 @@ namespace VFEMedieval
             Widgets.EndScrollView();
         }
 
-        public void FlashSilver()
+
+        public static void DrawTradeableRow(Rect rect, Tradeable trad, int index)
         {
-            lastCurrencyFlashTime = Time.time;
+            if (index % 2 == 1)
+            {
+                Widgets.DrawLightHighlight(rect);
+            }
+            Text.Font = GameFont.Small;
+            Widgets.BeginGroup(rect);
+            float width = rect.width;
+            int num = trad.CountHeldBy(Transactor.Trader);
+            if (num != 0 && trad.IsThing)
+            {
+                Rect rect2 = new Rect(width - 75f, 0f, 75f, rect.height);
+                if (Mouse.IsOver(rect2))
+                {
+                    Widgets.DrawHighlight(rect2);
+                }
+                Text.Anchor = TextAnchor.MiddleRight;
+                Rect rect3 = rect2;
+                rect3.xMin += 5f;
+                rect3.xMax -= 5f;
+                Widgets.Label(rect3, num.ToStringCached());
+                TooltipHandler.TipRegionByKey(rect2, "TraderCount");
+            }
+            width -= 175f;
+            Rect rect5 = new Rect(width - 350f, 0f, 240f, rect.height);
+
+            TransferableUIUtility.DoCountAdjustInterface(rect5, trad, index, trad.GetMinimumToTransfer(),
+                trad.GetMaximumToTransfer(), false);
+            Log.Message(trad.ThingDef + " - trad.GetMinimumToTransfer(): " + trad.GetMinimumToTransfer()
+                + " - trad.GetMaximumToTransfer(): " + trad.GetMaximumToTransfer());
+            Log.ResetMessageCount();
+            width -= 240f;
+            int num2 = trad.CountHeldBy(Transactor.Colony);
+            if (num2 != 0 || trad.IsCurrency)
+            {
+                Rect rect6 = new Rect(width - 100f, 0f, 100f, rect.height);
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Rect rect7 = new Rect(rect6.x - 75f, 0f, 75f, rect.height);
+                if (Mouse.IsOver(rect7))
+                {
+                    Widgets.DrawHighlight(rect7);
+                }
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Rect rect8 = rect7;
+                rect8.xMin += 5f;
+                rect8.xMax -= 5f;
+                Widgets.Label(rect8, num2.ToStringCached());
+                TooltipHandler.TipRegionByKey(rect7, "ColonyCount");
+            }
+            width -= 175f;
+            TransferableUIUtility.DoExtraIcons(trad, rect, ref width);
+            if (ModsConfig.IdeologyActive)
+            {
+                TransferableUIUtility.DrawCaptiveTradeInfo(trad, TradeSession.trader, rect, ref width);
+            }
+            Rect idRect = new Rect(0f, 0f, width, rect.height);
+            TransferableUIUtility.DrawTransferableInfo(trad, idRect, trad.TraderWillTrade ? Color.white : TradeUI.NoTradeColor);
+            GenUI.ResetLabelAlign();
+            Widgets.EndGroup();
         }
 
         public override bool CausesMessageBackground()
