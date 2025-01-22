@@ -480,10 +480,7 @@ namespace VFEMedieval
             }
 
             TransferableUIUtility.DoExtraIcons(trad, rect, ref width);
-            if (ModsConfig.IdeologyActive)
-            {
-                TransferableUIUtility.DrawCaptiveTradeInfo(trad, TradeSession.trader, rect, ref width);
-            }
+
             Rect idRect = new Rect(0f, 0f, width, rect.height);
             DrawTransferableInfo(trad, idRect, trad.TraderWillTrade ? Color.white : TradeUI.NoTradeColor, interactive is false);
             GenUI.ResetLabelAlign();

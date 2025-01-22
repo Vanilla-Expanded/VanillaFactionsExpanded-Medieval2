@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace VFEMedieval
@@ -10,11 +11,11 @@ namespace VFEMedieval
     {
         public override IEnumerable<Thing> GenerateThings(int forTile, Faction faction = null)
         {
-            foreach (var def in DefDatabase<ThingDef>.AllDefs)
+            foreach (var traderKind in DefDatabase<TraderKindDef>.AllDefs.Where(x => x != VFEM_DefOf.VFEM2_MerchantGuildTrader))
             {
-                if (HandlesThingDef(def))
+                foreach (var generator in traderKind.stockGenerators)
                 {
-                    foreach (Thing item in StockGeneratorUtility.TryMakeForStock(def, Rand.RangeInclusive(1, 3), faction))
+                    foreach (Thing item in GetThingsFrom(generator, forTile, faction))
                     {
                         yield return item;
                     }
@@ -22,17 +23,26 @@ namespace VFEMedieval
             }
         }
 
+        public static List<Thing> GetThingsFrom(StockGenerator generator, int forTile, Faction faction = null)
+        {
+            List<Thing> things = new List<Thing>();
+            try
+            {
+                foreach (Thing item in generator.GenerateThings(forTile, faction))
+                {
+                    things.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Got exception from generating things from " + generator + " - " + ex);
+            }
+            return things;
+        }
+
         public override bool HandlesThingDef(ThingDef thingDef)
         {
-            if (thingDef != null && thingDef.tradeability.TraderCanSell() && thingDef.category == ThingCategory.Item)
-            {
-                if (typeof(GeneSetHolderBase).IsAssignableFrom(thingDef.thingClass) || thingDef.BaseMarketValue <= 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }

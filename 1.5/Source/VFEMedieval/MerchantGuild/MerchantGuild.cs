@@ -27,8 +27,6 @@ namespace VFEMedieval
 
         private bool everGeneratedStock;
 
-        protected virtual int RegenerateStockEveryDays => 30;
-
         private List<Pawn> tmpSavedPawns = new List<Pawn>();
 
         public MerchantGuild()
@@ -57,7 +55,7 @@ namespace VFEMedieval
         {
             get
             {
-                //if (stock == null)
+                if (stock == null)
                 {
                     RegenerateStock();
                 }
@@ -187,6 +185,7 @@ namespace VFEMedieval
 
         private void TryStartPathing()
         {
+            TryDestroyStock();
             if (TileFinder.TryFindPassableTileWithTraversalDistance(Tile, 20, 30, out var result))
             {
                 int num = BestGotoDestNear(result);
@@ -287,11 +286,6 @@ namespace VFEMedieval
         {
             if (stock == null)
             {
-                return;
-            }
-            if (Find.TickManager.TicksGame - lastStockGenerationTicks > RegenerateStockEveryDays * 60000)
-            {
-                TryDestroyStock();
                 return;
             }
             for (int num = stock.Count - 1; num >= 0; num--)
