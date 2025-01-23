@@ -266,7 +266,6 @@
       <texPath>Things/Building/Production/Linkables/CleaverRack</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(1,1)</drawSize>
-	  <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>0.5</fillPercent>
