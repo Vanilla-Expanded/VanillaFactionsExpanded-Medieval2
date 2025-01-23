@@ -462,7 +462,10 @@
     <possessionCount>1</possessionCount>
     <recipeMaker>
       <researchPrerequisite>ComplexClothing</researchPrerequisite>
-      <displayPriority>100</displayPriority>
+      <displayPriority>101</displayPriority>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
     </recipeMaker>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Chaperon/Chaperon</texPath>
