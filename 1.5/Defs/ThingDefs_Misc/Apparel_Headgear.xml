@@ -454,4 +454,78 @@
     </apparel>
   </ThingDef>
 
+<!--================= New =================-->
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_Chaperon</defName>
+    <label>chaperon</label>
+    <description>A stylish and versatile hood with a wrapped tail, favored by diplomats and merchants. It lends an air of authority, subtly improving negotiation skills.</description>
+    <possessionCount>1</possessionCount>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>100</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Chaperon/Chaperon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>2600</WorkToMake>
+      <Mass>0.16</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.45</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <NegotiationAbility>0.05</NegotiationAbility>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Chaperon/Chaperon</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>VFEM2_Trader</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.54,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.9,0.6,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.9,0.42,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <tradeTags>
+      <li>BasicClothing</li>
+    </tradeTags>
+  </ThingDef>
+
+
+
+
 </Defs>
