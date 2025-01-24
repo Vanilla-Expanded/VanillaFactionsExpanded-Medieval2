@@ -68,6 +68,20 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>VFEM2_Matchlocks</defName>
+		<label>matchlocks</label>
+		<description>Craft ancient, chempowder operated ranged weapons that utilise the matchlock mechanics, such as arquebuses and hand cannons.</description>
+		<baseCost>600</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>1.35</researchViewY>
+		<prerequisites>
+			<li>Smithing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 		<defName>VFEM2_Heraldry</defName>
 		<label>heraldry</label>
 		<description>Adorn the colors of your faction and construct decorative banners and heraldic rugs.</description>
