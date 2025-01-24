@@ -345,6 +345,7 @@
     <Compile Include="Comps\Properties\CompProperties_CureHypothermia.cs" />
     <Compile Include="Comps\Properties\CompProperties_IngestedThoughtFromQuality.cs" />
     <Compile Include="DefOf\VFEM_DefOf.cs" />
+    <Compile Include="Matchlocks\MatchlockProjectile.cs" />
     <Compile Include="MerchantGuild\CaravanArrivalAction_Barter.cs" />
     <Compile Include="MerchantGuild\Dialog_Barter.cs" />
     <Compile Include="MerchantGuild\FactionGenerator_NewGeneratedFaction_Patch.cs" />

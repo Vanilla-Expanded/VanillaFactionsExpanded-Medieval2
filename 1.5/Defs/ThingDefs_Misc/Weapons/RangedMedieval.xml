@@ -172,6 +172,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>VFEM2_Bullet_Arquebus</defName>
     <label>arquebus grapeshot</label>
+	<thingClass>VFEMedieval.MatchlockProjectile</thingClass>
     <projectile>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>14</damageAmountBase>
@@ -226,7 +227,7 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
+        <defaultProjectile>VFEM2_Bullet_ArquebusDuplicate</defaultProjectile>
         <warmupTime>2.0</warmupTime>
         <range>15.9</range>
         <soundCast>Shot_BoltActionRifle</soundCast>
@@ -258,8 +259,9 @@
   </ThingDef>
   
   <ThingDef ParentName="BaseBullet">
-    <defName>VFEM2_Bullet_Arquebus</defName>
+    <defName>VFEM2_Bullet_ArquebusDuplicate</defName>
     <label>arquebus grapeshot</label>
+	<thingClass>VFEMedieval.MatchlockProjectile</thingClass>
     <projectile>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>10</damageAmountBase>
