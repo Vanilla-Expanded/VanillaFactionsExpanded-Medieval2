@@ -173,11 +173,12 @@
     <defName>VFEM2_Bullet_Arquebus</defName>
     <label>arquebus grapeshot</label>
 	<thingClass>VFEMedieval.MatchlockProjectile</thingClass>
-    <projectile>
+    <projectile Class="VFEMedieval.ProjectilePropertiesMatchLock">
       <damageDef>Bullet</damageDef>
       <damageAmountBase>14</damageAmountBase>
       <stoppingPower>2.0</stoppingPower>
       <speed>65</speed>
+	  <armorPenetrationBase>-0.15</armorPenetrationBase>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
@@ -262,11 +263,12 @@
     <defName>VFEM2_Bullet_ArquebusDuplicate</defName>
     <label>arquebus grapeshot</label>
 	<thingClass>VFEMedieval.MatchlockProjectile</thingClass>
-    <projectile>
+    <projectile Class="VFEMedieval.ProjectilePropertiesMatchLock">
       <damageDef>Bullet</damageDef>
       <damageAmountBase>10</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
       <speed>65</speed>
+	  <armorPenetrationBase>-0.15</armorPenetrationBase>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
