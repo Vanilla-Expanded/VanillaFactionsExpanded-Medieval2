@@ -94,5 +94,182 @@
 			<speed>45</speed>
 		</projectile>
 	</ThingDef>
+	
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>VFEM2_Gun_Arquebus</defName>
+    <label>arquebus</label>
+    <description>An ancient firearm with a smoothbore barrel, the arquebus delivers powerful shots at decent range. The lead balls lose velocity and damage with distance, and are extremely ineffective against armor. Due to the chempowder reaction when firing the arquebus, plumes of blindsmoke are ejected from the barrel.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Arquebus</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3.7</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
+	  <MarketValue>165</MarketValue>
+    </statBases>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <costList>
+      <WoodLog>60</WoodLog>
+      <Steel>20</Steel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>VFEM2_Matchlocks</researchPrerequisite>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <displayPriority>416</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
+        <warmupTime>2.2</warmupTime>
+        <range>36.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+		<armorPenetrationBase>0.13</armorPenetrationBase>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+		<armorPenetrationBase>0.13</armorPenetrationBase>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFEM2_Bullet_Arquebus</defName>
+    <label>arquebus grapeshot</label>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+      <stoppingPower>2.0</stoppingPower>
+      <speed>65</speed>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>VFEM2_Gun_HandCannon</defName>
+    <label>hand cannon</label>
+    <description>An ancient crude but deadly firearm, the hand cannon fires a devastating grapeshot over a short distance. The lead balls lose velocity and damage with distance, and are extremely ineffective against armor. Due to the chempowder reaction when firing the arquebus, plumes of blindsmoke are ejected from the barrel.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/HandCannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>13000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.87</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>4.6</RangedWeapon_Cooldown>
+	  <MarketValue>180</MarketValue>
+    </statBases>
+    <costList>
+      <WoodLog>50</WoodLog>
+      <Steel>30</Steel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>VFEM2_Matchlocks</researchPrerequisite>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <displayPriority>417</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>15.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+		<armorPenetrationBase>0.13</armorPenetrationBase>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+		<armorPenetrationBase>0.13</armorPenetrationBase>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFEM2_Bullet_Arquebus</defName>
+    <label>arquebus grapeshot</label>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>65</speed>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
 
 </Defs>
