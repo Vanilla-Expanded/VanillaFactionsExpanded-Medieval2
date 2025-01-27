@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  
+ 
+
+  
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>VFEM2_Viking_RitualSustainer</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Rituals/VFEM2_VikingRitualSustainer</clipPath>
+          </li>
+        </grains>
+        <volumeRange>22</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>5.0</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+
+  
+</Defs>
