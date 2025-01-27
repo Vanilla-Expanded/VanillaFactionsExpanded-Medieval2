@@ -103,9 +103,10 @@
       <texPath>Things/Item/Equipment/WeaponRanged/Arquebus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <soundInteract>Interact_Rifle</soundInteract>
+    <soundInteract>VFEM2_Interact_MatchlockWeapon</soundInteract>
     <weaponClasses>
       <li>LongShots</li>
+	  <li>VFEM2_Medieval</li>
     </weaponClasses>
     <statBases>
       <WorkToMake>12000</WorkToMake>
@@ -141,7 +142,7 @@
         <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
         <warmupTime>2.2</warmupTime>
         <range>36.9</range>
-        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCast>VFEM2_Shot_Arquebus</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -194,9 +195,10 @@
       <texPath>Things/Item/Equipment/WeaponRanged/HandCannon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <soundInteract>Interact_Rifle</soundInteract>
+    <soundInteract>VFEM2_Interact_MatchlockWeapon</soundInteract>
     <weaponClasses>
       <li>Ranged</li>
+	  <li>VFEM2_Medieval</li>
     </weaponClasses>
     <statBases>
       <WorkToMake>13000</WorkToMake>
@@ -231,7 +233,7 @@
         <defaultProjectile>VFEM2_Bullet_ArquebusDuplicate</defaultProjectile>
         <warmupTime>2.0</warmupTime>
         <range>15.9</range>
-        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCast>VFEM2_Shot_HandCannon</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -274,6 +276,181 @@
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>VFEM2_Arbalest</defName>
+    <label>arbalest</label>
+    <description>A powerful crossbow. Fires a heavy bolt over extreme distances, but takes a long time to cock it due to the need to use the cranequin.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Arbalest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+	<techLevel>Medieval</techLevel>
+    <costList>
+      <WoodLog>70</WoodLog>
+	  <Steel>20</Steel>
+    </costList>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>11200</WorkToMake>
+      <Mass>7.0</Mass>
+      <AccuracyTouch>0.69</AccuracyTouch>
+      <AccuracyShort>0.82</AccuracyShort>
+      <AccuracyMedium>0.79</AccuracyMedium>
+      <AccuracyLong>0.63</AccuracyLong>
+      <RangedWeapon_Cooldown>4.7</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>VFEM2_Arbalest</li>
+    </weaponTags>
+    <weaponClasses inherit="False">
+      <li>Ranged</li>
+      <li>RangedHeavy</li>
+	  <li>VFEM2_Medieval</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bolt_Arbalest</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>39.9</range>
+        <soundCast>VFEM2_Shot_Arbalest</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>0.13</armorPenetration>
+      </li>
+    </tools>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>Greatbow</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <displayPriority>531</displayPriority>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    </recipeMaker>
+    <rotateInShelves>false</rotateInShelves>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.2</MoveSpeed>
+    </equippedStatOffsets>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>VFEM2_Bolt_Arbalest</defName>
+    <label>arbalest bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/ArbalestBolt/ArbalestBolt_Projectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <stoppingPower>2</stoppingPower>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>56</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>VFEM2_Warbow</defName>
+    <label>warbow</label>
+    <description>A powerful, long variant of the greatbow. While it doesn’t excel at hitting nearby enemies, arrows fired from the warbow curve over walls and can be fired without requiring line of sight.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/WarBow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+    <costList>
+      <WoodLog>70</WoodLog>
+    </costList>
+	<!--<equippedAngleOffset>45</equippedAngleOffset>-->
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>12600</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.5</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.86</AccuracyMedium>
+      <AccuracyLong>0.88</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+	  <MarketValue>135</MarketValue>
+    </statBases>
+    <weaponTags>
+      <li>VFEM2_Warbow</li>
+    </weaponTags>
+    <weaponClasses inherit="False">
+      <li>Ranged</li>
+      <li>RangedHeavy</li>
+	  <li>VFEM2_Medieval</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bolt_Arbalest</defaultProjectile>
+        <warmupTime>2.3</warmupTime>
+        <range>44.9</range>
+        <soundCast>VFEM2_Shot_Warbow</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>0.13</armorPenetration>
+      </li>
+    </tools>
+    <recipeMaker>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>Greatbow</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <displayPriority>532</displayPriority>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    </recipeMaker>
+    <rotateInShelves>false</rotateInShelves>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>VFEM2_Arrow_Warbow</defName>
+    <label>arbalest bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/ArbalestBolt/ArbalestBolt_Projectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <speed>49</speed>
+    </projectile>
   </ThingDef>
 
 </Defs>

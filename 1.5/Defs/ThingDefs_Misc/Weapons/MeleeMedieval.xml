@@ -30,6 +30,9 @@
     <weaponTags>
       <li>MedievalMeleeDecent</li>
     </weaponTags>
+    <weaponClasses>
+	  <li>VFEM2_Medieval</li>
+    </weaponClasses>
     <tools>
       <li>
         <label>handle</label>
@@ -127,8 +130,11 @@
     <techLevel>Medieval</techLevel>
     <weaponTags>
       <li>MedievalMeleeAdvanced</li>
-      <li>Claymore</li>
+      <li>VFEM2_Claymore</li>
     </weaponTags>
+    <weaponClasses>
+	  <li>VFEM2_Medieval</li>
+    </weaponClasses>
     <costStuffCount>125</costStuffCount>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
@@ -201,6 +207,9 @@
       <li>MedievalMeleeAdvanced</li>
       <li>VFEM2_Pike</li>
     </weaponTags>
+    <weaponClasses>
+	  <li>VFEM2_Medieval</li>
+    </weaponClasses>
     <costStuffCount>100</costStuffCount>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
@@ -280,6 +289,9 @@
     <weaponTags>
       <li>VFEM2_Standard</li>
     </weaponTags>
+    <weaponClasses>
+	  <li>VFEM2_Medieval</li>
+    </weaponClasses>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
       <WorkToMake>10000</WorkToMake>
