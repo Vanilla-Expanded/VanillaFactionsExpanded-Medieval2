@@ -157,7 +157,7 @@
 			<texPath>VikingStyle/VikingTable1x1</texPath>
 		</graphicData>
 	</ThingStyleDef>
-	<ThingStyleDef ParentName="AM_RotateWeapons">
+	<ThingStyleDef ParentName="VFEM2_RotateWeapons">
 		<defName>VFEM2_Viking_WarMask</defName>
 		<wornGraphicPath>VikingStyle/WarMaskViking</wornGraphicPath>
 		<graphicData>
