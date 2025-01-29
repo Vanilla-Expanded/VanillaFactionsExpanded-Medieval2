@@ -137,7 +137,7 @@
     </recipeMaker>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
         <warmupTime>2.2</warmupTime>
@@ -180,6 +180,7 @@
       <stoppingPower>2.0</stoppingPower>
       <speed>65</speed>
 	  <armorPenetrationBase>-0.15</armorPenetrationBase>
+	  <shotCount>3</shotCount>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
@@ -228,7 +229,7 @@
     </recipeMaker>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>VFEM2_Bullet_ArquebusDuplicate</defaultProjectile>
         <warmupTime>2.0</warmupTime>
@@ -271,6 +272,7 @@
       <stoppingPower>1.5</stoppingPower>
       <speed>65</speed>
 	  <armorPenetrationBase>-0.15</armorPenetrationBase>
+	  <shotCount>9</shotCount>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>

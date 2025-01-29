@@ -54,5 +54,7 @@ namespace VFEMedieval
         public static WorldObjectDef VFEM2_MerchantGuildCaravan;
 
         public static TraderKindDef VFEM2_MerchantGuildTrader;
+
+        public static ThingDef Grimworld_FlintlockSmoke;
     }
 }

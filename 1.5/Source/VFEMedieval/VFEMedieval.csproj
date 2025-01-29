@@ -347,7 +347,13 @@
     <Compile Include="Comps\Properties\CompProperties_IngestedThoughtFromQuality.cs" />
     <Compile Include="DefOf\VFEM_DefOf.cs" />
     <Compile Include="Matchlocks\MatchlockProjectile.cs" />
+    <Compile Include="Matchlocks\ProjectilePropertiesMatchLock.cs" />
+    <Compile Include="Matchlocks\ProjectileProperties_GetArmorPenetration_Patch.cs" />
+    <Compile Include="Matchlocks\Verb_ShootWithSmoke.cs" />
     <Compile Include="MerchantGuild\CaravanArrivalAction_Barter.cs" />
+    <Compile Include="MerchantGuild\Caravan_PathFollower_ExposeData_Patch.cs" />
+    <Compile Include="MerchantGuild\Caravan_PathFollower_PatherTick_Patch.cs" />
+    <Compile Include="MerchantGuild\Caravan_PathFollower_StartPath_Patch.cs" />
     <Compile Include="MerchantGuild\Dialog_Barter.cs" />
     <Compile Include="MerchantGuild\FactionGenerator_NewGeneratedFaction_Patch.cs" />
     <Compile Include="MerchantGuild\MerchantGuild.cs" />
