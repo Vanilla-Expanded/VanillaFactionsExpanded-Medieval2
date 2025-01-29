@@ -76,6 +76,10 @@
 				<styleDef>VFEM2_Viking_Shelf</styleDef>
 			</li>
 			<li>
+				<thingDef>ShelfSmall</thingDef>
+				<styleDef>VFEM2_Viking_ShelfSmall</styleDef>
+			</li>
+			<li>
 				<thingDef>Stool</thingDef>
 				<styleDef>VFEM2_Viking_Stool</styleDef>
 			</li>
@@ -87,6 +91,49 @@
 				<thingDef>Apparel_WarMask</thingDef>
 				<styleDef>VFEM2_Viking_WarMask</styleDef>
 			</li>
+			<li>
+				<thingDef>Ideogram</thingDef>
+				<styleDef>VFEM2_Viking_IdeogramA</styleDef>
+			</li>
+			<li>
+				<thingDef>Ideogram</thingDef>
+				<styleDef>VFEM2_Viking_IdeogramB</styleDef>
+			</li>
+			<li>
+				<thingDef>StandingLamp</thingDef>
+				<styleDef>VFEM2_Viking_StandingLamp</styleDef>
+			</li>
+			<li>
+				<thingDef>SunLamp</thingDef>
+				<styleDef>VFEM2_Viking_SunLamp</styleDef>
+			</li>
+			<li>
+				<thingDef>FloodLight</thingDef>
+				<styleDef>VFEM2_Viking_FloodLight</styleDef>
+			</li>
+			<li>
+				<thingDef>Dresser</thingDef>
+				<styleDef>VFEM2_Viking_Dresser</styleDef>
+			</li>
+		
+			<li>
+				<thingDef>EndTable</thingDef>
+				<styleDef>VFEM2_Viking_EndTable</styleDef>
+			</li>
+			<li>
+				<thingDef>Door</thingDef>
+				<styleDef>VFEM2_Viking_Door</styleDef>
+			</li>
+			<li>
+				<thingDef>Autodoor</thingDef>
+				<styleDef>VFEM2_Viking_Autodoor</styleDef>
+			</li>
 		</thingDefStyles>
+		<addDesignators>
+			
+			<li>VFEM2_Viking_Slab_Medium</li>
+			<li>VFEM2_Viking_Slab_Broad</li>
+			
+		</addDesignators>
 	</StyleCategoryDef>
 </Defs>

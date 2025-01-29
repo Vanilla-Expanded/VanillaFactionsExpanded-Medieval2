@@ -31,7 +31,7 @@
 		<defName>VFEM2_Viking_Column</defName>
 		<graphicData>
 			<texPath>VikingStyle/Column_Viking</texPath>
-			<drawSize>(0.625,1.25)</drawSize>
+			<drawSize>(1,1.25)</drawSize>
 		</graphicData>
 	</ThingStyleDef>
 	<ThingStyleDef ParentName="VFEM2_RotateWeapons">
@@ -132,6 +132,14 @@
 		</graphicData>
 	</ThingStyleDef>
 	<ThingStyleDef>
+		<defName>VFEM2_Viking_ShelfSmall</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingSmallShelf</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
 		<defName>VFEM2_Viking_Stool</defName>
 		<graphicData>
 			<texPath>VikingStyle/VikingStool</texPath>
@@ -164,5 +172,83 @@
 			<texPath>VikingStyle/WarMaskViking</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_IdeogramA</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingIdeogram/VikingIdeogramA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_IdeogramB</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingIdeogram/VikingIdeogramB</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_SunLamp</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingSunlamp</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_FloodLight</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingFloodlight</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.5</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_StandingLamp</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingStandingLight</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_Dresser</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingDresser</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,1)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+	
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_EndTable</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingEndTable</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_Door</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingDoor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>VikingStyle/VikingDoor_Icon</uiIconPath>
+	</ThingStyleDef>
+	<ThingStyleDef>
+		<defName>VFEM2_Viking_Autodoor</defName>
+		<graphicData>
+			<texPath>VikingStyle/VikingAutodoor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+			
+		</graphicData>
+		<uiIconPath>VikingStyle/VikingAutodoor_Icon</uiIconPath>
 	</ThingStyleDef>
 </Defs>
