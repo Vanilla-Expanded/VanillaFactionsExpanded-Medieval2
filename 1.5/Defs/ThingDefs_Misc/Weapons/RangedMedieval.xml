@@ -231,7 +231,7 @@
       <li>
         <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>VFEM2_Bullet_ArquebusDuplicate</defaultProjectile>
+        <defaultProjectile>VFEM2_Bullet_HandCannon</defaultProjectile>
         <warmupTime>2.0</warmupTime>
         <range>15.9</range>
         <soundCast>VFEM2_Shot_HandCannon</soundCast>
@@ -263,8 +263,8 @@
   </ThingDef>
   
   <ThingDef ParentName="BaseBullet">
-    <defName>VFEM2_Bullet_ArquebusDuplicate</defName>
-    <label>arquebus grapeshot</label>
+    <defName>VFEM2_Bullet_HandCannon</defName>
+    <label>handcannon grapeshot</label>
 	<thingClass>VFEMedieval.MatchlockProjectile</thingClass>
     <projectile Class="VFEMedieval.ProjectilePropertiesMatchLock">
       <damageDef>Bullet</damageDef>
