@@ -14,10 +14,17 @@ namespace VFEMedieval
         {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
             this.equipment = equipment;
-            GasUtility.AddGas(launcher.Position, launcher.Map, GasType.BlindSmoke, 255);
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            curProjectile = this;
         }
 
         public static bool isImpacting;
+
+        public static MatchlockProjectile curProjectile;
 
         public override void Impact(Thing hitThing, bool blockedByShield = false)
         {
