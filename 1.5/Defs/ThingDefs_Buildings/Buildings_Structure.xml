@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-
   
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM2_ClothWall</defName>
@@ -212,8 +210,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <linkType>Basic</linkType>
       <linkFlags>
-        <li>Wall</li>
-        <li>Rock</li>
+        <li>Fences</li>
       </linkFlags>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
@@ -430,7 +427,7 @@
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
-	<pathCost>55</pathCost>
+	<pathCost>110</pathCost>
     <blockWind>true</blockWind>
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>0.55</fillPercent>
@@ -443,7 +440,6 @@
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded> <!-- Best affordance needed for stone -->
     <holdsRoof>false</holdsRoof>
- 
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>
@@ -460,7 +456,6 @@
       <blueprintGraphicData>
         <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
-    
     </building>
     <comps>
       <li Class="CompProperties_MeditationFocus">
