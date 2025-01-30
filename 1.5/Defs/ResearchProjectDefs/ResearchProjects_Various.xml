@@ -12,6 +12,17 @@
 		<prerequisites>
 			<li>Pemmican</li>
 		</prerequisites>
+	<generalRules>
+        <rulesStrings>
+            <li>subject->apiculture</li>
+
+            <li>subject_story->studied the intricate social structures of bees</li>
+            <li>subject_story->cultivated vast apiaries, supplying nobles with the finest honey</li>
+            <li>subject_story->perfected the art of mead-making, becoming a renowned brewer</li>
+
+            <li>subject_gerund->tending to beehives</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -23,6 +34,17 @@
 		<techLevel>Medieval</techLevel>
 		<researchViewX>3.00</researchViewX>
 		<researchViewY>0.15</researchViewY>
+    <generalRules>
+        <rulesStrings>
+            <li>subject->viniculture</li>
+
+            <li>subject_story->established a flourishing vineyard on the sun-kissed slopes</li>
+            <li>subject_story->experimented with fermentation techniques, crafting exquisite vintages</li>
+            <li>subject_story->became infamous for a revelry-fueled dynasty of wine merchants</li>
+
+            <li>subject_gerund->cultivating grapes and fermenting wine</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -37,6 +59,17 @@
 		<prerequisites>
 			<li>PsychoidBrewing</li>
 		</prerequisites>
+    <generalRules>
+        <rulesStrings>
+            <li>subject->alchemical studies</li>
+
+            <li>subject_story->unlocked the mysteries of transmutation and concocted potent elixirs</li>
+            <li>subject_story->discovered a rare herb, rumored to grant eternal youth</li>
+            <li>subject_story->became a feared poisoner, selling deadly brews to the highest bidder</li>
+
+            <li>subject_gerund->brewing alchemical draughts</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -51,6 +84,17 @@
 		<prerequisites>
 			<li>Stonecutting</li>
 		</prerequisites>
+    <generalRules>
+        <rulesStrings>
+            <li>subject->medieval construction</li>
+
+            <li>subject_story->oversaw the construction of towering castles and bustling townships</li>
+            <li>subject_story->engineered grand cathedrals, marvels of medieval craftsmanship</li>
+            <li>subject_story->developed secret passages and fortifications for clandestine schemes</li>
+
+            <li>subject_gerund->designing medieval structures</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -65,6 +109,17 @@
 		<prerequisites>
 			<li>ComplexFurniture</li>
 		</prerequisites>
+    <generalRules>
+        <rulesStrings>
+            <li>subject->advanced craftsmanship</li>
+
+            <li>subject_story->refined blacksmithing techniques, crafting tools of unmatched quality</li>
+            <li>subject_story->introduced mechanical innovations that revolutionized production</li>
+            <li>subject_story->formed a powerful guild, controlling the flow of masterwork goods</li>
+
+            <li>subject_gerund->improving workshop efficiency</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -79,6 +134,16 @@
 		<prerequisites>
 			<li>Smithing</li>
 		</prerequisites>
+        <rulesStrings>
+            <li>subject->early firearms</li>
+
+            <li>subject_story->perfected the art of matchlock guns, bringing an age of gunpowder warfare</li>
+            <li>subject_story->supplied mercenaries with devastating ranged weaponry</li>
+            <li>subject_story->unleashed fire and thunder on the battlefield, changing warfare forever</li>
+
+            <li>subject_gerund->crafting matchlock firearms</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -93,6 +158,17 @@
 		<prerequisites>
 			<li>VFEM2_MedievalArchitecture</li>
 		</prerequisites>
+    <generalRules>
+        <rulesStrings>
+            <li>subject->heraldic traditions</li>
+
+            <li>subject_story->designed banners that struck fear or awe into the hearts of foes</li>
+            <li>subject_story->crafted family crests, immortalizing legacies in fabric and stone</li>
+            <li>subject_story->led the creation of a grand hall adorned with noble insignia</li>
+
+            <li>subject_gerund->designing heraldic symbols</li>
+        </rulesStrings>
+    </generalRules>
 	</ResearchProjectDef>
 	
 </Defs>

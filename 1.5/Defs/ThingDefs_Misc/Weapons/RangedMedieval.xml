@@ -183,7 +183,7 @@
 	  <shotCount>3</shotCount>
     </projectile>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_big</texPath>
+      <texPath>Things/Projectile/MatchlockShot/MatchlockShot_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
@@ -275,7 +275,7 @@
 	  <shotCount>9</shotCount>
     </projectile>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_big</texPath>
+      <texPath>Things/Projectile/MatchlockShot/MatchlockShot_Large</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
