@@ -52,6 +52,11 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+	<modExtensions>
+		<li Class="VFEMedieval.ApparelExtension">
+			<showOpenWhenNotShowingWeapons>True</showOpenWhenNotShowingWeapons>
+		</li>
+	</modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="HatMakeableBase">

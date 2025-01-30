@@ -521,13 +521,14 @@
         <cooldownTime>2</cooldownTime>
 		<armorPenetration>0.13</armorPenetration>
       </li>
-      <li>
+      <li Class="VFEMedieval.ToolExtended">
         <label>head</label>
         <labelUsedInLogging>false</labelUsedInLogging>
         <capacities>
           <li>Blunt</li>
         </capacities>
         <power>18.7</power>
+		<powerMultiplierRange>0.5~1.5</powerMultiplierRange>
         <cooldownTime>2.2</cooldownTime>
 		<armorPenetration>0.24</armorPenetration>
       </li>

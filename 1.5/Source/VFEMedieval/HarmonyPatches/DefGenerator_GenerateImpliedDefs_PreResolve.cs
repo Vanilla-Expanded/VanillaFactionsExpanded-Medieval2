@@ -12,7 +12,6 @@ using Verse.AI;
 namespace VFEMedieval
 {
 
-
     [HarmonyPatch(typeof(DefGenerator))]
     [HarmonyPatch("GenerateImpliedDefs_PreResolve")]
     public static class VFEMedieval_DefGenerator_GenerateImpliedDefs_PreResolve_Patch
