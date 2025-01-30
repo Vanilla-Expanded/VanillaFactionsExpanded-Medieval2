@@ -344,7 +344,7 @@
     <label>pike</label>
     <description>A long, unwieldy polearm tipped with a sharp point for stabbing opponents. The reach of the pike allows to strike enemies much further away.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponMelee/Pike</texPath>
+      <texPath>Things/Item/Equipment/WeaponMelee/LongSpear</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 	  <drawSize>2.0</drawSize>
     </graphicData>
