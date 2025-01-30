@@ -5,7 +5,6 @@ using Verse;
 
 namespace VFEMedieval
 {
-
     public class CaravanArrivalAction_Barter : CaravanArrivalAction
     {
         private MerchantGuild merchantGuild;
@@ -42,6 +41,7 @@ namespace VFEMedieval
             CameraJumper.TryJumpAndSelect(caravan);
             Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, this.merchantGuild.Faction, 
                 this.merchantGuild.TraderKind);
+            Caravan_PathFollower_ExposeData_Patch.merchantsToFollow.Remove(caravan.pather);
             Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, this.merchantGuild));
         }
 
@@ -73,7 +73,12 @@ namespace VFEMedieval
         public static IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan, MerchantGuild merchantGuild)
         {
             return CaravanArrivalActionUtility.GetFloatMenuOptions(() => CanTradeWith(caravan, merchantGuild), 
-                () => new CaravanArrivalAction_Barter(merchantGuild), "VFEM2_BarterWith".Translate(merchantGuild.Label), caravan, merchantGuild.Tile, merchantGuild);
+                () => new CaravanArrivalAction_Barter(merchantGuild), 
+                "VFEM2_BarterWith".Translate(merchantGuild.Label), caravan, merchantGuild.Tile, merchantGuild,
+                delegate
+                {
+                    Caravan_PathFollower_ExposeData_Patch.merchantsToFollow[caravan.pather] = merchantGuild;
+                });
         }
     }
 }

@@ -47,7 +47,7 @@ namespace VFEMedieval
             }
         }
 
-        public override Texture2D ExpandingIcon => ContentFinder<Texture2D>.Get(base.def.texture);
+        public override Texture2D ExpandingIcon => pather.Moving ? base.ExpandingIcon : ContentFinder<Texture2D>.Get(base.def.texture);
 
         public TraderKindDef TraderKind => VFEM_DefOf.VFEM2_MerchantGuildTrader;
 
@@ -145,12 +145,9 @@ namespace VFEMedieval
             {
                 yield return floatMenuOption;
             }
-            if (pather.MovingNow is false)
+            foreach (FloatMenuOption floatMenuOption3 in CaravanArrivalAction_Barter.GetFloatMenuOptions(caravan, this))
             {
-                foreach (FloatMenuOption floatMenuOption3 in CaravanArrivalAction_Barter.GetFloatMenuOptions(caravan, this))
-                {
-                    yield return floatMenuOption3;
-                }
+                yield return floatMenuOption3;
             }
         }
 
