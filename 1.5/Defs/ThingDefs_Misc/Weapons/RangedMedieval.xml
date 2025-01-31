@@ -118,6 +118,9 @@
       <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
 	  <MarketValue>165</MarketValue>
     </statBases>
+	<weaponTags>
+		<li>VFEM2_MedievalRangedChempowder</li>
+	</weaponTags>
 	<equippedAngleOffset>45</equippedAngleOffset>
     <costList>
       <WoodLog>60</WoodLog>
@@ -211,6 +214,9 @@
       <RangedWeapon_Cooldown>4.6</RangedWeapon_Cooldown>
 	  <MarketValue>180</MarketValue>
     </statBases>
+	<weaponTags>
+		<li>VFEM2_MedievalRangedChempowder</li>
+	</weaponTags>
     <costList>
       <WoodLog>50</WoodLog>
       <Steel>30</Steel>
