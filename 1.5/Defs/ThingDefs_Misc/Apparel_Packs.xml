@@ -142,7 +142,7 @@
         <li>Belt</li>
       </layers>
       <tags>
-        <li>GrenadeDestructiveBelt</li>
+        <li>VFEM2_GrenadeDestructiveBelt</li>
       </tags>
     </apparel>
   </ThingDef>

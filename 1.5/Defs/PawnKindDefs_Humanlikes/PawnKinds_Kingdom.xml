@@ -59,8 +59,6 @@
     <apparelRequired>
       <li>VFEM2_Apparel_PaddedArmor</li>
 	  <li>VFEM2_Apparel_PaddedHelmet</li>
-	  <li>Apparel_CollarShirt</li>
-	  <li>Apparel_Pants</li>
     </apparelRequired>
     <techHediffsMoney>50~50</techHediffsMoney>
     <techHediffsTags>
@@ -88,8 +86,6 @@
       <li>VFEM2_Apparel_PaddedArmor</li>
 	  <li>VFEM2_Apparel_PaddedHelmet</li>
 	  <li>VFEM2_Apparel_Mantle</li>
-	  <li>Apparel_CollarShirt</li>
-	  <li>Apparel_Pants</li>
     </apparelRequired>
     <techHediffsMoney>50~50</techHediffsMoney>
     <techHediffsTags>
@@ -223,8 +219,6 @@
       <li>VFEM2_Apparel_PaddedArmor</li>
 	  <li>VFEM2_Apparel_PaddedHelmet</li>
 	  <li>VFEM2_Apparel_Tabard</li>
-	  <li>Apparel_CollarShirt</li>
-	  <li>Apparel_Pants</li>
     </apparelRequired>
     <techHediffsMoney>50~50</techHediffsMoney>
     <techHediffsTags>

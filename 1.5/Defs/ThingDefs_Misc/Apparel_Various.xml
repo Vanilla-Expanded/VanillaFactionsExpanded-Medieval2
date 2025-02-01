@@ -526,8 +526,7 @@
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Mantle/Mantle</wornGraphicPath>
       <layers>
-        <li>OnSkin</li>
-		<li>Middle</li>
+		<li>VFEC_OuterShell</li>
       </layers>
       <tags>
         <li>VFEM2_Medieval</li>
