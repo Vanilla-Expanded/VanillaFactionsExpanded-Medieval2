@@ -136,7 +136,7 @@
     <combatPower>65</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Good</itemQuality>
     <gearHealthRange>0.3~1.1</gearHealthRange>
     <apparelMoney>200~500</apparelMoney>
     <weaponMoney>100~240</weaponMoney>
@@ -174,7 +174,7 @@
     <combatPower>100</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Good</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>750~1000</apparelMoney>
     <weaponMoney>250~350</weaponMoney>
@@ -212,7 +212,7 @@
     <combatPower>75</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>300~550</apparelMoney>
     <weaponMoney>250~250</weaponMoney>
@@ -241,7 +241,7 @@
     <combatPower>85</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
     <weaponMoney>500~750</weaponMoney>
@@ -270,7 +270,7 @@
     <combatPower>75</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
     <weaponMoney>500~750</weaponMoney>
@@ -299,7 +299,7 @@
     <combatPower>80</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
     <weaponMoney>500~750</weaponMoney>
@@ -330,7 +330,7 @@
     <combatPower>90</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
     <weaponMoney>500~750</weaponMoney>
@@ -359,7 +359,7 @@
     <combatPower>100</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
     <weaponMoney>500~900</weaponMoney>
@@ -396,7 +396,7 @@
     <combatPower>100</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
     <weaponMoney>500~900</weaponMoney>
@@ -432,7 +432,7 @@
     <combatPower>115</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
     <weaponMoney>500~900</weaponMoney>
@@ -468,7 +468,7 @@
     <combatPower>120</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
-    <itemQuality>Poor</itemQuality>
+    <itemQuality>Good</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
     <weaponMoney>500~900</weaponMoney>

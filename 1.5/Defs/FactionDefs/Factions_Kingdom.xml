@@ -97,59 +97,75 @@
     </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
       <li>
-        <!-- Normal fights, melee with ranged mix-ins -->
+        <!-- Normal -->
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
-          <!--<VFEM2_Medieval_Peasant>20</VFEM2_Medieval_Peasant>
-          <VFEM2_Medieval_Squire>40</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>50</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>20</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>-->
-		  <Drifter>10</Drifter>
+          <VFEM2_Militia>40</VFEM2_Militia>
+          <VFEM2_Archer>25</VFEM2_Archer>
+          <VFEM2_Hunter>15</VFEM2_Hunter>
+		  <VFEM2_Halberdier>8</VFEM2_Halberdier>
+		  <VFEM2_ManAtArms>5</VFEM2_ManAtArms>
+		  <VFEM2_Bannerman>3</VFEM2_Bannerman>
         </options>
       </li>
       <li>
-        <!-- Normal fights, ranged only -->
+        <!-- Normal, higher tier troops -->
+        <kindDef>Combat</kindDef>
+        <commonality>50</commonality>
+        <options>
+          <VFEM2_Militia>30</VFEM2_Militia>
+          <VFEM2_Archer>20</VFEM2_Archer>
+          <VFEM2_Hunter>20</VFEM2_Hunter>
+		  <VFEM2_Halberdier>10</VFEM2_Halberdier>
+		  <VFEM2_ManAtArms>8</VFEM2_ManAtArms>
+		  <VFEM2_Bannerman>3</VFEM2_Bannerman>
+          <VFEM2_Knight>3</VFEM2_Knight>
+          <VFEM2_Greatsword>3</VFEM2_Greatsword>
+          <VFEM2_Handgunner>3</VFEM2_Handgunner>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, mostly ranged -->
+        <kindDef>Combat</kindDef>
+        <commonality>15</commonality>
+        <options>
+          <VFEM2_Militia>10</VFEM2_Militia>
+		  <VFEM2_Archer>15</VFEM2_Archer>
+		  <VFEM2_Hunter>20</VFEM2_Hunter>
+		  <VFEM2_Handgunner>3</VFEM2_Handgunner>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, mostly melee -->
         <kindDef>Combat</kindDef>
         <commonality>30</commonality>
         <options>
-          <!--<VFEM2_Medieval_Bowman>100</VFEM2_Medieval_Bowman>-->
-		  <Drifter>10</Drifter>
-        </options>
-      </li>
-      <li>
-        <!-- Normal fights, melee only -->
-        <kindDef>Combat</kindDef>
-        <commonality>60</commonality>
-        <options>
-          <!--<VFEM2_Medieval_Peasant>15</VFEM2_Medieval_Peasant>
-          <VFEM2_Medieval_Squire>40</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>40</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Knight>25</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>-->
-		  <Drifter>10</Drifter>
+          <VFEM2_Militia>35</VFEM2_Militia>
+          <VFEM2_Archer>8</VFEM2_Archer>
+          <VFEM2_Hunter>5</VFEM2_Hunter>
+		  <VFEM2_Halberdier>15</VFEM2_Halberdier>
+		  <VFEM2_ManAtArms>10</VFEM2_ManAtArms>
+		  <VFEM2_Bannerman>3</VFEM2_Bannerman>
+          <VFEM2_Knight>3</VFEM2_Knight>
+          <VFEM2_Greatsword>5</VFEM2_Greatsword>
+          <VFEM2_Handgunner>3</VFEM2_Handgunner>
         </options>
       </li>
       <li>
         <!-- Peaceful -->
         <kindDef>Peaceful</kindDef>
         <options>
-          <!--<VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>40</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>20</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>
-          <VFEM2_Medieval_Jester>25</VFEM2_Medieval_Jester>
-          <VFEM2_Medieval_Dame>20</VFEM2_Medieval_Dame>-->
-		  <Drifter>10</Drifter>
+		  <VFEM2_Peasant>30</VFEM2_Peasant>
+          <VFEM2_Militia>5</VFEM2_Militia>
+          <VFEM2_Archer>3</VFEM2_Archer>
+          <VFEM2_Hunter>1</VFEM2_Hunter>
         </options>
       </li>
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <VFEM2_Medieval_Merchant>1</VFEM2_Medieval_Merchant>
+          <VFEM2_Trader>1</VFEM2_Trader>
         </traders>
         <carriers>
           <Muffalo>6</Muffalo>
@@ -158,26 +174,28 @@
           <Elephant>2</Elephant>
         </carriers>
         <guards>
-          <!--<VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>40</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>10</VFEM2_Medieval_Knight>-->
-		  <Drifter>10</Drifter>
+          <VFEM2_Militia>15</VFEM2_Militia>
+          <VFEM2_Archer>10</VFEM2_Archer>
+          <VFEM2_Hunter>5</VFEM2_Hunter>
+		  <VFEM2_Halberdier>8</VFEM2_Halberdier>
+		  <VFEM2_ManAtArms>8</VFEM2_ManAtArms>
+		  <VFEM2_Bannerman>3</VFEM2_Bannerman>
         </guards>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
         <options>
-          <!--<VFEM2_Medieval_Peasant>30</VFEM2_Medieval_Peasant>
-          <VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>50</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>25</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>
-          <VFEM2_Medieval_King>60</VFEM2_Medieval_King>
-          <VFEM2_Medieval_Jester>25</VFEM2_Medieval_Jester>
-          <VFEM2_Medieval_Dame>20</VFEM2_Medieval_Dame>-->
-		  <Drifter>10</Drifter>
+		  <VFEM2_Peasant>40</VFEM2_Peasant>
+          <VFEM2_Militia>35</VFEM2_Militia>
+          <VFEM2_Archer>8</VFEM2_Archer>
+          <VFEM2_Hunter>5</VFEM2_Hunter>
+		  <VFEM2_Halberdier>15</VFEM2_Halberdier>
+		  <VFEM2_ManAtArms>10</VFEM2_ManAtArms>
+		  <VFEM2_Bannerman>3</VFEM2_Bannerman>
+          <VFEM2_Knight>3</VFEM2_Knight>
+          <VFEM2_Greatsword>5</VFEM2_Greatsword>
+          <VFEM2_Handgunner>3</VFEM2_Handgunner>
+		  <VFEM2_Lord>1</VFEM2_Lord>
         </options>
       </li>
       <li MayRequire="Ludeon.RimWorld.Ideology">
