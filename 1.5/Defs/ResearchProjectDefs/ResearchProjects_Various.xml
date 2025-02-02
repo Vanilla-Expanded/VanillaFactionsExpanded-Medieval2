@@ -134,6 +134,7 @@
 		<prerequisites>
 			<li>Smithing</li>
 		</prerequisites>
+    <generalRules>
         <rulesStrings>
             <li>subject->early firearms</li>
 
