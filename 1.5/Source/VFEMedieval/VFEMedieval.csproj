@@ -321,6 +321,7 @@
     <Compile Include="HarmonyPatches\DefGenerator_GenerateImpliedDefs_PreResolve.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyDatabase_GenerateStartingDrugPolicies.cs" />
     <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts.cs" />
+    <Compile Include="MerchantGuild\FactionUIUtility_DoWindowContents_Patch.cs" />
     <Compile Include="Warbow\VerbProperties_Warbow.cs" />
     <Compile Include="Warbow\Verb_CanHitCellFromCellIgnoringRange_Patch.cs" />
     <Compile Include="Warbow\WarbowArrow.cs" />
