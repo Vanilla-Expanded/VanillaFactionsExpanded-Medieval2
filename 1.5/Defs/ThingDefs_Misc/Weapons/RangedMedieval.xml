@@ -118,7 +118,7 @@
       <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
 	  <MarketValue>165</MarketValue>
     </statBases>
-	<weaponTags>
+	<weaponTags inherit="False">
 		<li>VFEM2_MedievalRangedChempowder</li>
 	</weaponTags>
 	<equippedAngleOffset>45</equippedAngleOffset>
@@ -214,7 +214,7 @@
       <RangedWeapon_Cooldown>4.6</RangedWeapon_Cooldown>
 	  <MarketValue>180</MarketValue>
     </statBases>
-	<weaponTags>
+	<weaponTags inherit="False">
 		<li>VFEM2_MedievalRangedChempowder</li>
 	</weaponTags>
     <costList>
