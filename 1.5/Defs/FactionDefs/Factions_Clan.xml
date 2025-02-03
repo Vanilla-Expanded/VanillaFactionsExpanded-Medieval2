@@ -185,6 +185,14 @@
           <li>Tundra</li>
         </allowedBiomes>
       </li>
+	  
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromSettlements>
+          <li>VFEM2_VikingFactionBase</li>
+        </chooseFromSettlements>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+  
     </modExtensions>
   </FactionDef>
 

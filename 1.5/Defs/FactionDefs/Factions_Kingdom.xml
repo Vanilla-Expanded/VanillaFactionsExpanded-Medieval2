@@ -227,18 +227,14 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <!--<modExtensions>
+    <modExtensions>
       <li Class="KCSG.CustomGenOption">
-        <chooseFromlayouts>
-          <li>VFEM2_Castle1</li>
-          <li>VFEM2_Castle2</li>
-          <li>VFEM2_Castle3</li>
-          <li>VFEM2_Castle4</li>
-          <li>VFEM2_Castle5</li>
-          <li>VFEM2_Castle6</li>
-        </chooseFromlayouts>
+        <chooseFromSettlements>
+          <li>VFEM2_MedievalFactionBase</li>
+        </chooseFromSettlements>
+        <preventBridgeable>true</preventBridgeable>
       </li>
-    </modExtensions>-->
+    </modExtensions>
   </FactionDef>
 
   <FactionDef ParentName="VFEM2_MedievalFactionBase">

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<KCSG.SettlementLayoutDef>
+		<defName>VFEM2_MerchantFactionBase</defName>
+		<settlementSize>86,86</settlementSize>
+		<avoidBridgeable>true</avoidBridgeable>
+		<avoidMountains>true</avoidMountains>
+		<centerBuildings>
+			<centerSize>85,85</centerSize>
+			<forceClean>true</forceClean>
+			<allowedStructures>
+				<li>
+					<count>16~16</count>
+					<tag>VFEM2_MedievalTents</tag>
+				</li>
+			</allowedStructures>
+			<centralBuildingTags>
+				<li>VFEM2_MedievalTents</li>
+			</centralBuildingTags>
+		</centerBuildings>
+	</KCSG.SettlementLayoutDef>
+</Defs>
