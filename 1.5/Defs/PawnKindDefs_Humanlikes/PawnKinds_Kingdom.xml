@@ -8,9 +8,9 @@
     <chemicalAddictionChance>0.05</chemicalAddictionChance>
     <invNutrition>2.55</invNutrition>
     <invFoodDef>Pemmican</invFoodDef>
-    <!--<apparelTags>
-      <li>Neolithic</li>
-    </apparelTags>-->
+    <apparelTags>
+      <li>VFEM2_Medieval</li>
+    </apparelTags>
   </PawnKindDef>
 
   <PawnKindDef ParentName="VFEM2_KingdomBase">

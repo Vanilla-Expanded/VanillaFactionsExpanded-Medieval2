@@ -12,6 +12,9 @@
 	<settlementTexturePath>MapIcons/Expanding/ClanExpanding</settlementTexturePath>
     <factionNameMaker>VFEM2_NamerFactionViking</factionNameMaker>
     <settlementNameMaker>VFEM2_NamerSettlementViking</settlementNameMaker>
+    <fixedLeaderKinds>
+      <li>VFEM2_Jarl</li>
+    </fixedLeaderKinds>
     <techLevel>Medieval</techLevel>
 	<leaderTitle>jarl</leaderTitle>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
