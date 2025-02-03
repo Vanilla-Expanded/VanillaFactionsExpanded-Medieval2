@@ -88,7 +88,7 @@
       <li>VFEM2_Apparel_LeatherArmor</li>
 	  <li>Apparel_CollarShirt</li>
 	  <li>Apparel_Pants</li>
-	  <li>VFEM2_GrenadeDestructiveBelt</li>
+	  <li>VFEM2_Apparel_TorchBelt</li>
     </apparelRequired>
     <techHediffsMoney>50~50</techHediffsMoney>
     <techHediffsTags>

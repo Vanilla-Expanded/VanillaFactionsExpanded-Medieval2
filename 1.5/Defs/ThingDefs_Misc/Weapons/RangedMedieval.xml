@@ -388,7 +388,7 @@
     <costList>
       <WoodLog>70</WoodLog>
     </costList>
-	<!--<equippedAngleOffset>45</equippedAngleOffset>-->
+	<equippedAngleOffset>-45</equippedAngleOffset>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
       <WorkToMake>12600</WorkToMake>

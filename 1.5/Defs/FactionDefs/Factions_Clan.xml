@@ -125,7 +125,6 @@
         <options>
           <VFEM2_Thrall>10</VFEM2_Thrall>
           <VFEM2_Bowman>20</VFEM2_Bowman>
-          <VFEM2_Ravager>10</VFEM2_Ravager>
           <VFEM2_Skirmisher>10</VFEM2_Skirmisher>
           <VFEM2_Raider>5</VFEM2_Raider>
           <VFEM2_HeavyBowman>3</VFEM2_HeavyBowman>
@@ -138,7 +137,6 @@
         <options>
           <VFEM2_Thrall>20</VFEM2_Thrall>
           <VFEM2_Bowman>10</VFEM2_Bowman>
-          <VFEM2_Ravager>15</VFEM2_Ravager>
           <VFEM2_Skirmisher>10</VFEM2_Skirmisher>
           <VFEM2_Raider>10</VFEM2_Raider>
 		  <VFEM2_Berserker>3</VFEM2_Berserker>
