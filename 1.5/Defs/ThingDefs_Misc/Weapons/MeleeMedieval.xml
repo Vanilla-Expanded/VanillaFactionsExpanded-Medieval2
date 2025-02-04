@@ -209,7 +209,6 @@
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
-      <li>MedievalMeleeAdvanced</li>
       <li>VFEM2_Halberd</li>
     </weaponTags>
     <weaponClasses>
@@ -355,7 +354,6 @@
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
-      <li>MedievalMeleeAdvanced</li>
       <li>VFEM2_Pike</li>
     </weaponTags>
     <weaponClasses>
