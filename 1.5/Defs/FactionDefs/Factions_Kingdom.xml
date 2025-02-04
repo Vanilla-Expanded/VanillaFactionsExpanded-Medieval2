@@ -153,6 +153,23 @@
         </options>
       </li>
       <li>
+        <!-- breach-capable fights, breachers plus melee with ranged mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <VFEM2_Militia>30</VFEM2_Militia>
+		  <VFEM2_Wallbreaker>5</VFEM2_Wallbreaker>
+          <VFEM2_Archer>8</VFEM2_Archer>
+          <VFEM2_Hunter>5</VFEM2_Hunter>
+		  <VFEM2_Halberdier>15</VFEM2_Halberdier>
+		  <VFEM2_ManAtArms>10</VFEM2_ManAtArms>
+		  <VFEM2_Bannerman>3</VFEM2_Bannerman>
+          <VFEM2_Knight>3</VFEM2_Knight>
+          <VFEM2_Greatsword>5</VFEM2_Greatsword>
+          <VFEM2_Handgunner>3</VFEM2_Handgunner>
+      </options>
+      </li>
+      <li>
         <!-- Peaceful -->
         <kindDef>Peaceful</kindDef>
         <options>

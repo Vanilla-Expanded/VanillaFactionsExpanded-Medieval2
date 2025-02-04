@@ -319,6 +319,37 @@
   </PawnKindDef>
   
   <PawnKindDef ParentName="VFEM2_KingdomBase">
+    <defName>VFEM2_Wallbreaker</defName>
+    <label>wall-breaker</label>
+    <combatPower>80</combatPower>
+    <chemicalAddictionChance>0.10</chemicalAddictionChance>
+    <invNutrition>0</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.2~1.1</gearHealthRange>
+    <apparelMoney>450~750</apparelMoney>
+    <weaponMoney>500~750</weaponMoney>
+    <canBeSapper>true</canBeSapper>
+    <isGoodBreacher>true</isGoodBreacher>
+    <weaponTags>
+	  <li>NeolithicMeleeDestructive</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>Apparel_PlateArmor</li>
+	  <li>VFEM2_Apparel_PaddedHelmet</li>
+	  <li>VFEM2_Apparel_Tabard</li>
+	  <li>Apparel_CollarShirt</li>
+	  <li>Apparel_Pants</li>
+    </apparelRequired>
+    <techHediffsMoney>50~100</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.15</techHediffsChance>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>14~22</initialResistanceRange>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="VFEM2_KingdomBase">
     <defName>VFEM2_Bannerman</defName>
     <label>bannerman</label>
     <combatPower>90</combatPower>

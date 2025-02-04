@@ -219,6 +219,36 @@
   </PawnKindDef>
   
   <PawnKindDef ParentName="VFEM2_ClanBase">
+    <defName>VFEM2_SiegeRaider</defName>
+    <label>siege raider</label>
+    <combatPower>80</combatPower>
+    <chemicalAddictionChance>0.10</chemicalAddictionChance>
+    <invNutrition>0</invNutrition>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.2~1.1</gearHealthRange>
+    <apparelMoney>450~750</apparelMoney>
+    <weaponMoney>500~750</weaponMoney>
+    <weaponTags>
+	  <li>NeolithicMeleeDestructive</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>VFEM2_Apparel_LeatherHelmet</li>
+	  <li>VFEM2_Apparel_Mantle</li>
+	  <li>VFEM2_Apparel_LeatherArmor</li>
+	  <li>VFEM2_Shield_Round</li>
+	  <li>Apparel_CollarShirt</li>
+	  <li>Apparel_Pants</li>
+    </apparelRequired>
+    <techHediffsMoney>50~100</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.15</techHediffsChance>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>14~22</initialResistanceRange>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="VFEM2_ClanBase">
     <defName>VFEM2_HeavyBowman</defName>
     <label>heavy bowman</label>
     <combatPower>75</combatPower>

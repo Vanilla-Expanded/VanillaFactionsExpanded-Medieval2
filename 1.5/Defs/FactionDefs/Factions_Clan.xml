@@ -134,6 +134,19 @@
         </options>
       </li>
       <li>
+        <!-- Breacher -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <VFEM2_Thrall>10</VFEM2_Thrall>
+		  <VFEM2_SiegeRaider>5</VFEM2_SiegeRaider>
+          <VFEM2_Bowman>20</VFEM2_Bowman>
+          <VFEM2_Skirmisher>10</VFEM2_Skirmisher>
+          <VFEM2_Raider>5</VFEM2_Raider>
+          <VFEM2_HeavyBowman>3</VFEM2_HeavyBowman>
+        </options>
+      </li>
+      <li>
         <!-- Normal fights, mainly melee -->
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
