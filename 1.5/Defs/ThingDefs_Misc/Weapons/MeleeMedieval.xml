@@ -115,6 +115,11 @@
         <Crafting>5</Crafting>
       </skillRequirements>
     </recipeMaker>
+	<modExtensions>
+     <li Class="VFECore.ThingDefExtension">
+        <usableWithShields>true</usableWithShields>
+      </li>
+	</modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -409,6 +414,9 @@
 	  <li Class="VFECore.ThingDefExtension">
 		<meleeRangeOverride>2.84</meleeRangeOverride>
 	  </li>
+     <li Class="VFECore.ThingDefExtension">
+        <usableWithShields>true</usableWithShields>
+      </li>
 	</modExtensions>
   </ThingDef>
 
@@ -474,6 +482,11 @@
       </skillRequirements>
       <displayPriority>411</displayPriority>
     </recipeMaker>
+	<modExtensions>
+     <li Class="VFECore.ThingDefExtension">
+        <usableWithShields>true</usableWithShields>
+      </li>
+	</modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
@@ -533,6 +546,11 @@
 		<armorPenetration>0.24</armorPenetration>
       </li>
     </tools>
+	<modExtensions>
+     <li Class="VFECore.ThingDefExtension">
+        <usableWithShields>true</usableWithShields>
+      </li>
+	</modExtensions>
   </ThingDef>
   
 </Defs>
