@@ -11,6 +11,7 @@
 		<workAmount>840</workAmount>
 		<recipeUsers>
 			<li>VFEM2_AlchemicalWorkbench</li>
+			<li>VFEM2_AlchemicalWorkbench_Electric</li>
 		</recipeUsers>
 		<ingredients>
 			<li>
@@ -57,6 +58,7 @@
 		<jobString>Refining chemfuel from wood.</jobString>
 		<recipeUsers>
 			<li>VFEM2_AlchemicalWorkbench</li>
+			<li>VFEM2_AlchemicalWorkbench_Electric</li>
 		</recipeUsers>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
@@ -93,6 +95,7 @@
 		<allowMixingIngredients>true</allowMixingIngredients>
 		<recipeUsers>
 			<li>VFEM2_AlchemicalWorkbench</li>
+			<li>VFEM2_AlchemicalWorkbench_Electric</li>
 		</recipeUsers>
 		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
 		<ingredients>

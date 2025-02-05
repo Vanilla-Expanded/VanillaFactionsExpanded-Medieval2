@@ -12,6 +12,12 @@
 						<li>VFE_DrugCabinet</li>
 					</value>
 				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFEM2_AlchemicalWorkbench_Electric"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+					<value>
+						<li>VFE_DrugCabinet</li>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>

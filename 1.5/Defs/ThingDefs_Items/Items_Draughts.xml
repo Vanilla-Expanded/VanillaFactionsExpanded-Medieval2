@@ -59,6 +59,7 @@
 			<workSkill>Crafting</workSkill>
 			<recipeUsers>
 				<li>VFEM2_AlchemicalWorkbench</li>
+				<li>VFEM2_AlchemicalWorkbench_Electric</li>
 			</recipeUsers>
 		</recipeMaker>
 	</ThingDef>
