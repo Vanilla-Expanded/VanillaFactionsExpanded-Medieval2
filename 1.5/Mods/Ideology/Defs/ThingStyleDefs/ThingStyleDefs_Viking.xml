@@ -58,6 +58,20 @@
 		</graphicData>
 	</ThingStyleDef>
 	<ThingStyleDef ParentName="VFEM2_RotateWeapons">
+		<defName>VFEM2_Viking_Pike</defName>
+		<graphicData>
+			<texPath>VikingStyle/LongSpearViking</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="VFEM2_RotateWeapons">
+		<defName>VFEM2_Viking_Shortsword</defName>
+		<graphicData>
+			<texPath>VikingStyle/ShortswordViking</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="VFEM2_RotateWeapons">
 		<defName>VFEM2_Viking_Pila</defName>
 		<graphicData>
 			<texPath>VikingStyle/PilaViking</texPath>
