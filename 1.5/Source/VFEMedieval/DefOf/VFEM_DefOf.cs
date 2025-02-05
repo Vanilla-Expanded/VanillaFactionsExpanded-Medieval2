@@ -56,5 +56,7 @@ namespace VFEMedieval
         public static TraderKindDef VFEM2_MerchantGuildTrader;
 
         public static ThingDef Grimworld_FlintlockSmoke;
+
+        public static ThingCategoryDef ResourcesRaw;
     }
 }

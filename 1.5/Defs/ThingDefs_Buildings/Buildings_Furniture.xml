@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<ThingDef ParentName="BedWithQualityBase">
 		<defName>VFEM2_FurBed</defName>
 		<label>fur bed</label>
@@ -34,9 +33,9 @@
 			<WoodLog>25</WoodLog>
 		</costList>
 		<costStuffCount>35</costStuffCount>
-        <researchPrerequisites>
-            <li>ComplexFurniture</li>
-        </researchPrerequisites>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
 		<building>
 			<bed_showSleeperBody>False</bed_showSleeperBody>
 			<bed_healPerDay>4</bed_healPerDay>
@@ -63,7 +62,6 @@
 			<li Class="VFEMedieval.CompProperties_CureHypothermia"/>
 		</comps>
 	</ThingDef>
-	
 	<ThingDef ParentName="BedWithQualityBase">
 		<defName>VFEM2_DoubleFurBed</defName>
 		<label>double fur bed</label>
@@ -94,9 +92,9 @@
 			<li>Leathery</li>
 		</stuffCategories>
 		<costStuffCount>75</costStuffCount>
-        <researchPrerequisites>
-            <li>ComplexFurniture</li>
-        </researchPrerequisites>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
 		<costList>
 			<WoodLog>45</WoodLog>
 		</costList>
@@ -126,7 +124,6 @@
 			<li Class="VFEMedieval.CompProperties_CureHypothermia"/>
 		</comps>
 	</ThingDef>
-	
 	<ThingDef ParentName="FurnitureBase">
 		<defName>VFEM2_Hearth</defName>
 		<label>hearth</label>
@@ -243,7 +240,6 @@
 			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 	</ThingDef>
-	
 	<!-- Heraldry -->
 	<ThingDef ParentName="FurnitureBase">
 		<defName>VFEM2_StandingBanner</defName>
@@ -295,5 +291,25 @@
 			<li>VFEM2_Heraldry</li>
 		</researchPrerequisites>
 	</ThingDef>
-	
+	<ThingDef ParentName="StorageShelfBase">
+		<defName>VFEM2_AutofillShelf</defName>
+		<label>shelf</label>
+		<thingClass>VFEMedieval.Autofilling_Shelf</thingClass>
+		<description>A triple-stack shelf that holds three times as much as empty ground. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.\n\nSince shelf space is limited, shelves cannot hold chunks, buildings, plants and large corpses.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Shelf</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,2)</drawSize>
+		</graphicData>
+		<minifiedDef/>
+		<thingCategories Inherit="false"></thingCategories>
+		<costStuffCount>20</costStuffCount>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>500</WorkToBuild>
+			<StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+		</statBases>
+		<size>(2,1)</size>
+		<designationHotKey>Misc12</designationHotKey>
+	</ThingDef>
 </Defs>

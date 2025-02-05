@@ -713,4 +713,32 @@
   <thing>VFEM2_ClothWall</thing>
   <stuff>Leather_Camel</stuff>
 </KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VFEM2_AutofillShelf_WoodLog_South</defName>
+  <thing>VFEM2_AutofillShelf</thing>
+  <stuff>WoodLog</stuff>
+  <rotation>South</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VFEM2_AutofillShelf_WoodLog_West</defName>
+  <thing>VFEM2_AutofillShelf</thing>
+  <stuff>WoodLog</stuff>
+  <rotation>West</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VFEM2_AutofillShelf_WoodLog_East</defName>
+  <thing>VFEM2_AutofillShelf</thing>
+  <stuff>WoodLog</stuff>
+  <rotation>East</rotation>
+</KCSG.SymbolDef>
+
+
+<KCSG.SymbolDef>
+  <defName>VFEM2_AutofillShelf_WoodLog_North</defName>
+  <thing>VFEM2_AutofillShelf</thing>
+  <stuff>WoodLog</stuff>
+</KCSG.SymbolDef>
 </Defs>

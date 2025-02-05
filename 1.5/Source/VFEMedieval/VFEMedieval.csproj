@@ -296,6 +296,7 @@
     <Compile Include="AI\JobDrivers\JobDriver_TakeHoneyOutOfApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TendToApiary.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_TrainAtDummy.cs" />
+    <Compile Include="Buildings\Autofilling_Shelf.cs" />
     <Compile Include="Buildings\CastleGate.cs" />
     <Compile Include="Buildings\DamagedLowCastleWall.cs" />
     <Compile Include="Buildings\LowCastleWall.cs" />
