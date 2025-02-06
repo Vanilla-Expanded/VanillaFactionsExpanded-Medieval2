@@ -36,6 +36,16 @@
 				<styleDef>VFEM2_Viking_Halberd</styleDef>
 			</li>
 			<li>
+				<thingDef>VFEM2_MeleeWeapon_Pike</thingDef>
+				<styleDef>VFEM2_Viking_Pike</styleDef>
+			</li>
+			<li>
+				<thingDef>VFEM2_MeleeWeapon_Shortsword</thingDef>
+				<styleDef>VFEM2_Viking_Shortsword</styleDef>
+			</li>
+			
+			
+			<li>
 				<thingDef>Pila</thingDef>
 				<styleDef>VFEM2_Viking_Pila</styleDef>
 			</li>
