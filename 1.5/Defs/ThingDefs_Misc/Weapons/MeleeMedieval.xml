@@ -208,6 +208,7 @@
 	  <drawSize>3.0</drawSize>
     </graphicData>
     <techLevel>Medieval</techLevel>
+	<uiIconScale>0.8</uiIconScale>
     <weaponTags>
       <li>VFEM2_Halberd</li>
     </weaponTags>
@@ -352,6 +353,7 @@
       <graphicClass>Graphic_Single</graphicClass>
 	  <drawSize>2.0</drawSize>
     </graphicData>
+	<uiIconScale>0.8</uiIconScale>
     <techLevel>Medieval</techLevel>
     <weaponTags>
       <li>VFEM2_Pike</li>
