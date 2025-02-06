@@ -372,7 +372,6 @@
     <Compile Include="Placeworkers\Placeworker_Apiary.cs" />
     <Compile Include="StaticCollections\StaticCollections.cs" />
     <Compile Include="StatParts\StatPart_Flammability.cs" />
-    <Compile Include="StockGenerators\StockGenerator_MedievalMercs.cs" />
     <Compile Include="VFEMedieval.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
