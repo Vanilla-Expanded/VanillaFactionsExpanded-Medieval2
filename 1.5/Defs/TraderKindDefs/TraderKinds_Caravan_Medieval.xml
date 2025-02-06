@@ -284,7 +284,7 @@
   </TraderKindDef>
 
 
-  <TraderKindDef>
+  <!--<TraderKindDef>
     <defName>VFEM2_Caravan_Medieval_Sellswords</defName>
     <label>sellswords</label>
     <commonality>1</commonality>
@@ -333,6 +333,6 @@
       </li>
       <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
     </stockGenerators>
-  </TraderKindDef>
+  </TraderKindDef>-->
 
 </Defs>
