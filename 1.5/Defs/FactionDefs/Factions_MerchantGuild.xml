@@ -5,9 +5,8 @@
 		<label>merchant's guild</label>
 		<description>These people have been here for a shorter period of time than their neolithic brethren. These wandering traders and skilled negotiators form a vast network of traveling caravans and temporary markets. Originating from a loose coalition of outlanders and former city-dwellers, they abandoned static settlements in favor of constant movement, seeking prosperity through commerce rather than conquest.\n\nUnlike most factions, the Guild operates on a pure barter economy—silver holds no value to them, only goods and services do. Their traders travel far and wide, setting up bustling market hubs wherever they stop, offering rare wares and exotic goods in exchange for what they deem useful.\n\nThough they avoid direct conflict and prefer diplomacy, their well-armed guards ensure that their caravans remain safe from opportunistic raiders.</description>
 		<colorSpectrum>
-			<li>(0.34, 0.73, 0.76)</li>
-			<li>(0.47, 1, 1)</li>
-			<!-- <li>(0.47, 1.05, 1.12)</li> -->
+			<li>(0.34, 0.76, 0.47)/li>
+			<li>(0.47, 1, 0.47)</li>
 		</colorSpectrum>
 		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
 		<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
@@ -25,7 +24,7 @@
 		<allowedCultures>
 			<li>VFEM2_Feudal</li>
 		</allowedCultures>
-		<leaderTitle>king</leaderTitle>
+		<leaderTitle>guildmaster</leaderTitle>
 		<disallowedMemes>
 			<li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
@@ -108,60 +107,29 @@
 			</points>
 		</maxPawnCostPerTotalPointsCurve>
 		<pawnGroupMakers>
-			<li>
-				<!-- Normal fights, melee with ranged mix-ins -->
+				<!-- Normal fights, ranged only -->
 				<kindDef>Combat</kindDef>
 				<commonality>100</commonality>
 				<options>
-					<!--<VFEM2_Medieval_Peasant>20</VFEM2_Medieval_Peasant>
-          <VFEM2_Medieval_Squire>40</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>50</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>20</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>-->
-					<Drifter>10</Drifter>
+					<VFEM2_Knight>3</VFEM2_Knight>
+					<VFEM2_Handgunner>5</VFEM2_Handgunner>
+					<VFEM2_Raider>10</VFEM2_Raider>
+					<VFEM2_Trader>1</VFEM2_Trader>
 				</options>
 			</li>
-			<li>
-				<!-- Normal fights, ranged only -->
-				<kindDef>Combat</kindDef>
-				<commonality>30</commonality>
-				<options>
-					<!--<VFEM2_Medieval_Bowman>100</VFEM2_Medieval_Bowman>-->
-					<Drifter>10</Drifter>
-				</options>
-			</li>
-			<li>
-				<!-- Normal fights, melee only -->
-				<kindDef>Combat</kindDef>
-				<commonality>60</commonality>
-				<options>
-					<!--<VFEM2_Medieval_Peasant>15</VFEM2_Medieval_Peasant>
-          <VFEM2_Medieval_Squire>40</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>40</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Knight>25</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>-->
-					<Drifter>10</Drifter>
-				</options>
-			</li>
-			<li>
 				<!-- Peaceful -->
 				<kindDef>Peaceful</kindDef>
 				<options>
-					<!--<VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>40</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>20</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>
-          <VFEM2_Medieval_Jester>25</VFEM2_Medieval_Jester>
-          <VFEM2_Medieval_Dame>20</VFEM2_Medieval_Dame>-->
-					<Drifter>10</Drifter>
+					<VFEM2_Knight>3</VFEM2_Knight>
+					<VFEM2_Handgunner>5</VFEM2_Handgunner>
+					<VFEM2_Raider>10</VFEM2_Raider>
+					<VFEM2_Trader>1</VFEM2_Trader>
 				</options>
 			</li>
 			<li>
 				<kindDef>Trader</kindDef>
 				<traders>
-					<VFEM2_Medieval_Merchant>1</VFEM2_Medieval_Merchant>
+					<VFEM2_Trader>1</VFEM2_Trader>
 				</traders>
 				<carriers>
 					<Muffalo>6</Muffalo>
@@ -170,25 +138,19 @@
 					<Elephant>2</Elephant>
 				</carriers>
 				<guards>
-					<!--<VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>40</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>10</VFEM2_Medieval_Knight>-->
-					<Drifter>10</Drifter>
+					<VFEM2_Knight>3</VFEM2_Knight>
+					<VFEM2_Handgunner>5</VFEM2_Handgunner>
+					<VFEM2_Raider>10</VFEM2_Raider>
 				</guards>
 			</li>
 			<li>
 				<kindDef>Settlement</kindDef>
 				<options>
-					<!--<VFEM2_Medieval_Peasant>30</VFEM2_Medieval_Peasant>
-          <VFEM2_Medieval_Squire>30</VFEM2_Medieval_Squire>
-          <VFEM2_Medieval_Footsoldier>30</VFEM2_Medieval_Footsoldier>
-          <VFEM2_Medieval_Bowman>50</VFEM2_Medieval_Bowman>
-          <VFEM2_Medieval_Knight>25</VFEM2_Medieval_Knight>
-          <VFEM2_Medieval_Lord>10</VFEM2_Medieval_Lord>
-          <VFEM2_Medieval_King>60</VFEM2_Medieval_King>
-          <VFEM2_Medieval_Jester>25</VFEM2_Medieval_Jester>
-          <VFEM2_Medieval_Dame>20</VFEM2_Medieval_Dame>-->
+					<VFEM2_Knight>3</VFEM2_Knight>
+					<VFEM2_Handgunner>5</VFEM2_Handgunner>
+					<VFEM2_Raider>10</VFEM2_Raider>
+					<VFEM2_Trader>1</VFEM2_Trader>
+					<VFEM2_Guildmaster>1</VFEM2_Guildmaster>
 					<Drifter>10</Drifter>
 				</options>
 			</li>
@@ -241,43 +203,6 @@
 		<expandingIconTexture>MapIcons/Expanding/TradingGuildExpanding</expandingIconTexture>
 		<expandingIconPriority>10</expandingIconPriority>
 	</WorldObjectDef>
-	<PawnKindDef ParentName="OutlanderBase">
-		<defName>VFEM2_Medieval_Merchant</defName>
-		<label>merchant</label>
-		<trader>true</trader>
-		<combatPower>45</combatPower>
-		<isFighter>false</isFighter>
-		<gearHealthRange>1~1</gearHealthRange>
-		<itemQuality>Normal</itemQuality>
-		<weaponTags>
-			<li>Gun</li>
-		</weaponTags>
-		<weaponMoney>200~200</weaponMoney>
-		<apparelMoney>400~600</apparelMoney>
-		<apparelTags>
-			<li>IndustrialMilitaryBasic</li>
-			<li>IndustrialMilitaryAdvanced</li>
-			<li>BeltDefensePop</li>
-		</apparelTags>
-		<apparelRequired>
-			<li>Apparel_BowlerHat</li>
-		</apparelRequired>
-		<techHediffsChance>0.15</techHediffsChance>
-		<techHediffsMoney>600~1500</techHediffsMoney>
-		<techHediffsTags>
-			<li>Poor</li>
-			<li>Simple</li>
-			<li>Advanced</li>
-			<li>ImplantEmpireCommon</li>
-		</techHediffsTags>
-		<initialWillRange>2~4</initialWillRange>
-		<initialResistanceRange>12~20</initialResistanceRange>
-		<xenotypeSet>
-			<xenotypeChances>
-				<Highmate MayRequire="Ludeon.RimWorld.Biotech">0.04</Highmate>
-			</xenotypeChances>
-		</xenotypeSet>
-	</PawnKindDef>
 	<TraderKindDef>
 		<defName>VFEM2_MerchantGuildTrader</defName>
 		<label>merchant's guild</label>
