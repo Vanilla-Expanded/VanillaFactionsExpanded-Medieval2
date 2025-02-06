@@ -302,6 +302,8 @@
 			<drawSize>(3,2)</drawSize>
 		</graphicData>
 		<minifiedDef/>
+				<designationCategory Inherit="false"></designationCategory>
+
 		<thingCategories Inherit="false"></thingCategories>
 		<costStuffCount>20</costStuffCount>
 		<statBases>
