@@ -33,6 +33,7 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/CobblestoneWall/CobblestoneWall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<supportsWallAttachments>true</supportsWallAttachments>
 			<paintable>true</paintable>
 		</building>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
