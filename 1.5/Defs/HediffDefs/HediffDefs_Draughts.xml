@@ -493,6 +493,32 @@
 		</stages>
 	</HediffDef>
 	<HediffDef>
+		<defName>VFEM2_PoisonDraughtDumbHediff</defName>
+		<label>poison draught</label>
+		<description>A draught is shutting down the user, reducing their consciousness into a state of chemically inducing coma that causes organ decay and will inevitably lead to death.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1000</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				
+				
+			</li>
+			
+		</stages>
+	</HediffDef>
+	<HediffDef>
 		<defName>VFEM2_AntitoxDraught</defName>
 		<label>antitox draught</label>
 		<description>A draught is improving the toxic resistance of the user.</description>

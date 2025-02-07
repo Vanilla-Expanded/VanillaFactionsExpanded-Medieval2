@@ -28,6 +28,13 @@ namespace VFEMedieval
                         hediff.Severity += adjustedSeverity;
                     }
                 }
+                else
+                {
+                    if(hediff!=null)
+                    {
+                        hediff.Severity += adjustedSeverity;
+                    }
+                }
             }
             
             

@@ -25,6 +25,10 @@
 				<hediffDef>ToxicBuildup</hediffDef>
 				<severity>0.2</severity>
 			</li>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_HemogenDraughtDumbHediff</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
 		</comps>
 		<costList>
 			<VFEM2_RawGlowstool>2</VFEM2_RawGlowstool>
@@ -37,6 +41,7 @@
 				<li Class="IngestionOutcomeDoer_OffsetHemogen">
 					<offset>0.1</offset>
 				</li>
+				
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>

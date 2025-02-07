@@ -261,7 +261,7 @@
 		</statBases>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
-				<hediffDef>VFEM2_PainkillerDraught</hediffDef>
+				<hediffDef>VFEM2_TorturerDraught</hediffDef>
 				<allowRepeatedUse>true</allowRepeatedUse>
 			</li>
 			<li Class="CompProperties_UseEffectPlaySound">
@@ -539,7 +539,10 @@
 				<severity>0.01</severity>
 				<scaleSeverityByToxResistance>false</scaleSeverityByToxResistance>
 			</li>
-			
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_PoisonDraughtDumbHediff</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
 			
 		</comps>
 		<costList>

@@ -7,7 +7,7 @@
         <xpath>Defs/HediffDef[defName="VFEM2_FertilityDraught"]/stages/li[@Name="fading"]</xpath>
         <value>
             <statFactors>
-				<Fertility>0.1</Fertility>
+				<Fertility>1.1</Fertility>
 			</statFactors>
         </value>
     </Operation>
@@ -16,7 +16,7 @@
         <xpath>Defs/HediffDef[defName="VFEM2_FertilityDraught"]/stages/li[@Name="potent"]/statFactors</xpath>
         <value>
             
-				<Fertility>0.2</Fertility>
+				<Fertility>1.2</Fertility>
 			
         </value>
     </Operation>
