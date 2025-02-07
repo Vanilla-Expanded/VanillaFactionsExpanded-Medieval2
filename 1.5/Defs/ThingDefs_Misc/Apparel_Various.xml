@@ -57,7 +57,7 @@
       </defaultOutfitTags>
     </apparel>
   </ThingDef>
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>VFEM2_Apparel_JesterOutfit</defName>
     <label>jester outfit</label>
@@ -89,9 +89,9 @@
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
-		<li>Neck</li>
-		<li>Arms</li>
-		<li>Shoulders</li>
+        <li>Neck</li>
+        <li>Arms</li>
+        <li>Shoulders</li>
         <li>Legs</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/JesterOutfit/JesterOutfit</wornGraphicPath>
@@ -102,22 +102,22 @@
         <li>Worker</li>
       </defaultOutfitTags>
       <tags>
-		<li>Jester</li>
+        <li>Jester</li>
       </tags>
     </apparel>
     <equippedStatOffsets>
       <SocialImpact>0.25</SocialImpact>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.5</SlaveSuppressionOffset>
-	  <GlobalLearningFactor>-1.0</GlobalLearningFactor>
+      <GlobalLearningFactor>-1.0</GlobalLearningFactor>
     </equippedStatOffsets>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
-	<modExtensions>
-		<li Class="VanillaApparelExpanded.ApparelExtension">
-			<skillGainModifier>0</skillGainModifier>
-		</li>
-	</modExtensions>
+    <modExtensions>
+      <li Class="VanillaApparelExpanded.ApparelExtension">
+        <skillGainModifier>0</skillGainModifier>
+      </li>
+    </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>VFEM2_Apparel_DameDress</defName>
     <label>dame dress</label>
@@ -149,38 +149,39 @@
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
-		<li>Shoulders</li>
-		<li>Arms</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/DameDress/DameDress</wornGraphicPath>
       <layers>
         <li>OnSkin</li>
-		<li>Shell</li>
+        <li>Shell</li>
       </layers>
       <defaultOutfitTags>
         <li>Worker</li>
       </defaultOutfitTags>
       <tags>
         <li>MedievalApparelNoble</li>
-		<li>Dame</li>
+        <li>Dame</li>
+        <li>Aristocrat</li>
       </tags>
-	  <gender>Female</gender>
+      <gender>Female</gender>
     </apparel>
     <equippedStatOffsets>
       <SocialImpact>0.2</SocialImpact>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
     </equippedStatOffsets>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
-	<modExtensions>
-		<li Class="VanillaApparelExpanded.ApparelExtension">
-			<workDisables>
-				<li>ManualDumb</li>
-			</workDisables>
-		</li>
-	</modExtensions>
+    <modExtensions>
+      <li Class="VanillaApparelExpanded.ApparelExtension">
+        <workDisables>
+          <li>ManualDumb</li>
+        </workDisables>
+      </li>
+    </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>VFEM2_Apparel_KingsRobes</defName>
     <label>king’s robes</label>
@@ -188,7 +189,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/KingsRobe/KingsRobe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <shaderType>CutoutComplex</shaderType>
+      <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <costStuffCount>40</costStuffCount>
     <costList>
@@ -216,22 +217,22 @@
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
-		<li>Legs</li>
-		<li>Shoulders</li>
+        <li>Legs</li>
+        <li>Shoulders</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/KingsRobe/KingsRobe</wornGraphicPath>
       <layers>
-		<li>Shell</li>
+        <li>Shell</li>
       </layers>
       <defaultOutfitTags>
         <li>Worker</li>
       </defaultOutfitTags>
       <tags>
         <li>MedievalApparelNoble</li>
-		<li>King</li>
-		<li>RoyalTier6</li>
+        <li>King</li>
+        <li>RoyalTier6</li>
       </tags>
-	  <useWornGraphicMask>true</useWornGraphicMask>
+      <useWornGraphicMask>true</useWornGraphicMask>
     </apparel>
     <equippedStatOffsets>
       <SocialImpact>0.3</SocialImpact>
@@ -239,125 +240,125 @@
     </equippedStatOffsets>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
   </ThingDef>
-  
+
   <!--====================================== Vikings ======================================-->
-  
-	<ThingDef ParentName="ArmorSmithableBase">
-		<defName>VFEM2_Apparel_HeavyLeatherArmor</defName>
-		<label>heavy leather armor</label>
-		<description>A heavy leather breastplate meant to provide warmth and protection to heavy infantry during battles in frigid tundras. Unfortunately, this armor leaves one slowed and more vulnerable to melee attacks.</description>
-		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<techLevel>Medieval</techLevel>
-		<recipeMaker>
-			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-			<researchPrerequisite>PlateArmor</researchPrerequisite>
-			<skillRequirements>
-				<Crafting>9</Crafting>
-			</skillRequirements>
-		</recipeMaker>
-		<stuffCategories>
-			<li>Leathery</li>
-		</stuffCategories>
-		<costStuffCount>220</costStuffCount>
-		<statBases>
-			<WorkToMake>38000</WorkToMake>
-			<MaxHitPoints>280</MaxHitPoints>
-			<Mass>18</Mass>
-            <StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>2.0</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-			<EquipDelay>20</EquipDelay>
-		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.8</MoveSpeed>
-			<MeleeDodgeChance>-8</MeleeDodgeChance>
-		</equippedStatOffsets>
-		<thingCategories>
-			<li>ApparelArmor</li>
-		</thingCategories>
-		<apparel>
-			<bodyPartGroups>
-				<li>Torso</li>
-				<li>Neck</li>
-				<li>Shoulders</li>
-				<li>Arms</li>
-				<li>Legs</li>
-			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</wornGraphicPath>
-			<layers>
-				<li>Middle</li>
-				<li>Shell</li>
-			</layers>
-			<tags Inherit="False">
-				<li>Apparel_Viking</li>
-				<li>Apparel_VikingGuardian</li>
-			</tags>
-			<defaultOutfitTags>
-				<li>Soldier</li>
-			</defaultOutfitTags>
-		</apparel>
-		<colorGenerator Class="ColorGenerator_StandardApparel" />
-	</ThingDef>
-	
-	<ThingDef ParentName="ApparelMakeableBase">
-		<defName>VFEM2_Apparel_LeatherArmor</defName>
-		<label>leather armor</label>
-		<description>This armor is made much more carefully and tightly out of processed leathers, sacrificing some insulation in favor of extra protection against damage. Intended to be worn by front-line troops and often accompanied by a shield.</description>
-		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/LeatherArmor/LeatherArmor</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<techLevel>Medieval</techLevel>
-		<costStuffCount>180</costStuffCount>
-		<recipeMaker>
-			<skillRequirements>
-				<Crafting>8</Crafting>
-			</skillRequirements>
-			<researchPrerequisite>Smithing</researchPrerequisite>
-		</recipeMaker>
-		<stuffCategories>
-			<li>Leathery</li>
-		</stuffCategories>
-		<thingCategories>
-			<li>ApparelArmor</li>
-		</thingCategories>
-		<statBases>
-			<MaxHitPoints>200</MaxHitPoints>
-			<WorkToMake>38000</WorkToMake>
-			<Mass>14</Mass>
-			<StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>1.5</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
-			<EquipDelay>15</EquipDelay>
-		</statBases>
-		<equippedStatOffsets>
-			<PainShockThreshold>0.10</PainShockThreshold>
-			<MoveSpeed>-0.1</MoveSpeed>
-		</equippedStatOffsets>
-		<apparel>
-			<bodyPartGroups>
-				<li>Shoulders</li>
-				<li>Arms</li>
-				<li>Torso</li>
-				<li>Legs</li>
-			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/LeatherArmor/LeatherArmor</wornGraphicPath>
-			<layers>
-				<li>Middle</li>
-				<li>Shell</li>
-			</layers>
-			<tags Inherit="False">
-				<li>Apparel_VikingRavager</li>
-			</tags>
-			<defaultOutfitTags>
-				<li>Soldier</li>
-			</defaultOutfitTags>
-		</apparel>
-		<colorGenerator Class="ColorGenerator_StandardApparel" />
-	</ThingDef>
+
+  <ThingDef ParentName="ArmorSmithableBase">
+    <defName>VFEM2_Apparel_HeavyLeatherArmor</defName>
+    <label>heavy leather armor</label>
+    <description>A heavy leather breastplate meant to provide warmth and protection to heavy infantry during battles in frigid tundras. Unfortunately, this armor leaves one slowed and more vulnerable to melee attacks.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PlateArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <stuffCategories>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>220</costStuffCount>
+    <statBases>
+      <WorkToMake>38000</WorkToMake>
+      <MaxHitPoints>280</MaxHitPoints>
+      <Mass>18</Mass>
+      <StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>2.0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>20</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.8</MoveSpeed>
+      <MeleeDodgeChance>-8</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherArmor/HeavyLeatherArmor</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <tags Inherit="False">
+        <li>Apparel_Viking</li>
+        <li>Apparel_VikingGuardian</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>VFEM2_Apparel_LeatherArmor</defName>
+    <label>leather armor</label>
+    <description>This armor is made much more carefully and tightly out of processed leathers, sacrificing some insulation in favor of extra protection against damage. Intended to be worn by front-line troops and often accompanied by a shield.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LeatherArmor/LeatherArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>180</costStuffCount>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+    <stuffCategories>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToMake>38000</WorkToMake>
+      <Mass>14</Mass>
+      <StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>1.5</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>15</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PainShockThreshold>0.10</PainShockThreshold>
+      <MoveSpeed>-0.1</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Torso</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LeatherArmor/LeatherArmor</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <tags Inherit="False">
+        <li>Apparel_VikingRavager</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
 
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>VFEM2_Apparel_Tabard</defName>
@@ -388,7 +389,7 @@
         <li>ElectricTailoringBench</li>
         <li>HandTailoringBench</li>
       </recipeUsers>
-	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     </recipeMaker>
     <costList>
       <Cloth>20</Cloth>
@@ -401,6 +402,122 @@
         <li>Torso</li>
         <li>Neck</li>
       </bodyPartGroups>
+      <renderNodeProperties>
+        <li Class="VFECore.PawnRenderNodeProperties_Omni">
+          <nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+          <workerClass>VFECore.PawnRenderNodeWorker_OmniBodyApparel</workerClass>
+          <parentTagDef>ApparelBody</parentTagDef>
+          <baseLayer>36</baseLayer>
+          <autoBodyTypePaths>true</autoBodyTypePaths>
+          <autoBodyTypeMasks>true</autoBodyTypeMasks>
+          <conditionalGraphics>
+            <useFactionRNGSeed>true</useFactionRNGSeed>
+            <!-- Mostly relevant if spawned by a faction that doesn't support Heraldry or was added mid-game, etc. -->
+            <texPath>Things/Pawn/Humanlike/Apparel/Tabard/Tabard</texPath>
+            <maskPaths>
+              <li>Things/Heraldics/Masks/Barry/Tabard</li>
+              <li>Things/Heraldics/Masks/BarryDancetty/Tabard</li>
+              <li>Things/Heraldics/Masks/Bordure/Tabard</li>
+              <li>Things/Heraldics/Masks/Cross/Tabard</li>
+              <li>Things/Heraldics/Masks/PerBend/Tabard</li>
+              <li>Things/Heraldics/Masks/PerChevron/Tabard</li>
+              <li>Things/Heraldics/Masks/PerCross/Tabard</li>
+              <li>Things/Heraldics/Masks/PerFess/Tabard</li>
+              <li>Things/Heraldics/Masks/PerPale/Tabard</li>
+              <li>Things/Heraldics/Masks/PerSaltier/Tabard</li>
+            </maskPaths>
+            <colorA>
+              <primaryFactionIdeoColor>true</primaryFactionIdeoColor>
+            </colorA>
+            <colorB>
+              <primaryFactionIdeoColor>true</primaryFactionIdeoColor>
+              <hueRotate>-0.41</hueRotate>
+              <invertValueIfBelow>0.5</invertValueIfBelow>
+              <invertValueIfAbove>0.8</invertValueIfAbove>
+              <minBrightness>0.35</minBrightness>
+            </colorB>
+            <alts>
+              <li>
+                <tagRequirements>
+                  <li>HeraldryColorA</li>
+                </tagRequirements>
+                <texPath>Things/Pawn/Humanlike/Apparel/Tabard/Tabard</texPath>
+                <maskPath>HeraldryPattern+/Tabard</maskPath>
+                <colorA>
+                  <taggedColor>HeraldryColorA</taggedColor>
+                </colorA>
+                <colorB>
+                  <taggedColor>HeraldryColorB</taggedColor>
+                </colorB>
+              </li>
+            </alts>
+          </conditionalGraphics>
+          <visibleFacing>
+            <li>South</li>
+            <li>North</li>
+          </visibleFacing>
+          <drawData>
+            <dataNorth>
+              <layer>88.5</layer>
+            </dataNorth>
+          </drawData>
+        </li>
+        <li Class="VFECore.PawnRenderNodeProperties_Omni">
+          <nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+          <workerClass>VFECore.PawnRenderNodeWorker_OmniBodyApparel</workerClass>
+          <parentTagDef>ApparelBody</parentTagDef>
+          <baseLayer>38</baseLayer>
+          <conditionalGraphics>
+            <useFactionRNGSeed>true</useFactionRNGSeed>
+            <!-- Mostly relevant if spawned by a faction that doesn't support Heraldry, temporary, was added mid-game, etc. -->
+            <texPaths>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_None</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Shield</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Crown</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Eagle</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Castle</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Sun</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Temple</li>
+              <li>Things/Heraldics/Symbols/HeraldrySymbol_Anchor</li>
+            </texPaths>
+            <colorA>
+              <color>(0.35,0.35,0.35)</color>
+            </colorA>
+            <shader>Cutout</shader>
+            <alts>
+              <li>
+                <tagRequirements>
+                  <li>HeraldryColorA</li>
+                </tagRequirements>
+                <texPath>HeraldrySymbol</texPath>
+                <colorA>
+                  <taggedColor>HeraldrySymbolColor</taggedColor>
+                </colorA>
+                <shader>Cutout</shader>
+              </li>
+            </alts>
+          </conditionalGraphics>
+          <visibleFacing>
+            <li>South</li>
+            <li>North</li>
+          </visibleFacing>
+          <drawData>
+            <scale>0.195</scale>
+            <defaultData>
+              <offset>(0,0,-0.20)</offset>
+            </defaultData>
+            <dataNorth>
+              <layer>90</layer>
+              <offset>(0,0,-0.12)</offset>
+            </dataNorth>
+            <bodyTypeScales>
+              <Hulk>1.35</Hulk>
+              <Fat>1.1</Fat>
+              <Thin>0.9</Thin>
+            </bodyTypeScales>
+          </drawData>
+        </li>
+      </renderNodeProperties>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Tabard/Tabard</wornGraphicPath>
       <layers>
         <li>VFEC_OuterShell</li>
@@ -414,7 +531,7 @@
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
   </ThingDef>
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>VFEM2_Apparel_PaddedArmor</defName>
     <label>padded armor</label>
@@ -453,7 +570,7 @@
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PaddedArmor/PaddedArmor</wornGraphicPath>
       <layers>
         <li>OnSkin</li>
-		<li>Middle</li>
+        <li>Middle</li>
       </layers>
       <tags>
         <li>MedievalMilitary</li>
@@ -490,7 +607,7 @@
       <li>Armor</li>
     </tradeTags>
   </ThingDef>
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>VFEM2_Apparel_Mantle</defName>
     <label>mantle</label>
@@ -526,10 +643,11 @@
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Mantle/Mantle</wornGraphicPath>
       <layers>
-		<li>VFEC_OuterShell</li>
+        <li>VFEC_OuterShell</li>
       </layers>
       <tags>
         <li>VFEM2_Medieval</li>
+        <li>MedievalWorker</li>
       </tags>
       <defaultOutfitTags>
         <li>Worker</li>
@@ -562,5 +680,5 @@
       <li>Clothing</li>
     </tradeTags>
   </ThingDef>
-  
+
 </Defs>

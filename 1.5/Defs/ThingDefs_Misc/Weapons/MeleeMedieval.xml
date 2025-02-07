@@ -279,23 +279,25 @@
 		</li>
 	</modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Standard</defName>
     <label>standard</label>
     <description>A long wooden pole adorned with a flag bearing the heraldry of its bearer. While it inspires unity and bolsters morale as a rallying point for soldiers, the standard itself is poorly suited for combat, offering little in terms of offense or defense.</description>
+    <thingClass>VFECore.DynamicGraphicThing</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
     <graphicData>
       <texPath>Things/Building/Misc/Standard</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>2.0</drawSize>
-	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>2.0</drawSize>
+      <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
       <li>VFEM2_Standard</li>
     </weaponTags>
     <weaponClasses>
-	  <li>VFEM2_Medieval</li>
+      <li>VFEM2_Medieval</li>
     </weaponClasses>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
@@ -318,7 +320,7 @@
         </capacities>
         <power>10</power>
         <cooldownTime>4.0</cooldownTime>
-		<armorPenetration>0</armorPenetration>
+        <armorPenetration>0</armorPenetration>
       </li>
       <li>
         <label>shaft</label>
@@ -335,13 +337,33 @@
       <recipeUsers>
         <li>ElectricSmithy</li>
         <li>FueledSmithy</li>
-		<li>CraftingSpot</li>
+        <li>CraftingSpot</li>
       </recipeUsers>
       <skillRequirements>
         <Crafting>6</Crafting>
       </skillRequirements>
       <displayPriority>332</displayPriority>
     </recipeMaker>
+    <modExtensions>
+      <li Class="VFECore.DynamicGraphicProps">
+        <dataList>
+          <li>
+            <texPath>Things/Building/Misc/Standard</texPath>
+            <shaderType>CutoutComplex</shaderType>
+            <taggedColorA>HeraldryColorA</taggedColorA>
+            <taggedColorB>HeraldryColorB</taggedColorB>
+            <taggedMaskPath>HeraldryPattern+/Standard</taggedMaskPath>
+          </li>
+          <li>
+            <taggedTexPath>HeraldrySymbol</taggedTexPath>
+            <taggedColorA>HeraldrySymbolColor</taggedColorA>
+            <shaderType>Cutout</shaderType>
+            <drawSizeAbsolute>(0.5,0.5)</drawSizeAbsolute>
+						<drawOffset>(0,0,0.24)</drawOffset>
+          </li>
+        </dataList>
+      </li>
+    </modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">

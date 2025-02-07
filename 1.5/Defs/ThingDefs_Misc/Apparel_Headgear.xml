@@ -52,13 +52,13 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
-	<modExtensions>
-		<li Class="VFEMedieval.ApparelExtension">
-			<showOpenWhenNotShowingWeapons>True</showOpenWhenNotShowingWeapons>
-		</li>
-	</modExtensions>
+    <modExtensions>
+      <li Class="VFEMedieval.ApparelExtension">
+        <showOpenWhenNotShowingWeapons>True</showOpenWhenNotShowingWeapons>
+      </li>
+    </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="HatMakeableBase">
     <defName>VFEM2_Apparel_JesterHat</defName>
     <label>jester hat</label>
@@ -100,7 +100,7 @@
         <li>Overhead</li>
       </layers>
       <tags>
-		<li>Jester</li>
+        <li>Jester</li>
       </tags>
       <defaultOutfitTags>
         <li>Worker</li>
@@ -123,7 +123,7 @@
       </options>
     </colorGenerator>
   </ThingDef>
-  
+
   <ThingDef ParentName="HatMakeableBase">
     <defName>VFEM2_Apparel_DameHat</defName>
     <label>dame hat</label>
@@ -166,12 +166,13 @@
       </layers>
       <tags>
         <li>MedievalApparelNoble</li>
-		<li>Dame</li>
+        <li>Dame</li>
+        <li>Aristocrat</li>
       </tags>
       <defaultOutfitTags>
         <li>Worker</li>
       </defaultOutfitTags>
-	  <gender>Female</gender>
+      <gender>Female</gender>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -190,7 +191,7 @@
       </options>
     </colorGenerator>
   </ThingDef>
-  
+
   <ThingDef ParentName="HatMakeableBase">
     <defName>VFEM2_Apparel_KingsCrown</defName>
     <label>king's crown</label>
@@ -205,13 +206,13 @@
         <li>ElectricSmithy</li>
         <li>FueledSmithy</li>
       </recipeUsers>
-	  <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
     </recipeMaker>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/KingsCrown/KingsCrown</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(0.9, 0.9)</drawSize>
-	  <shaderType>CutoutComplex</shaderType>
+      <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <costList>
       <Gold>2</Gold>
@@ -225,15 +226,15 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>1.0</Mass>
       <EquipDelay>0.8</EquipDelay>
-	  <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
-	  <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-	  <ArmorRating_Heat>0.10</ArmorRating_Heat>
-	  <Insulation_Cold>2</Insulation_Cold>
-	  <Insulation_Heat>4</Insulation_Heat>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Insulation_Heat>4</Insulation_Heat>
     </statBases>
     <techLevel>Medieval</techLevel>
     <equippedStatOffsets>
-	  <NegotiationAbility>0.25</NegotiationAbility>
+      <NegotiationAbility>0.25</NegotiationAbility>
       <SocialImpact>0.25</SocialImpact>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
       <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">0.083</PsychicEntropyRecoveryRate>
@@ -248,8 +249,8 @@
         <li>Overhead</li>
       </layers>
       <tags>
-		<li>King</li>
-		<li>RoyalTier6</li>
+        <li>King</li>
+        <li>RoyalTier6</li>
       </tags>
       <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -257,33 +258,33 @@
       <defaultOutfitTags>
         <li>Worker</li>
       </defaultOutfitTags>
-	  <useDeflectMetalEffect>true</useDeflectMetalEffect>
-	  <useWornGraphicMask>true</useWornGraphicMask>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+      <useWornGraphicMask>true</useWornGraphicMask>
     </apparel>
-	<modExtensions>
-		<li Class="VanillaApparelExpanded.ApparelExtension">
-			<workDisables>
-				<li>ManualDumb</li>
-				<li>ManualSkilled</li>
-				<li>Violent</li>
-				<li>Caring</li>
-				<li>Commoner</li>
-				<li>Intellectual</li>
-				<li>Animals</li>
-				<li>Artistic</li>
-				<li>Crafting</li>
-				<li>Cooking</li>
-				<li>Firefighting</li>
-				<li>Cleaning</li>
-				<li>Hauling</li>
-				<li>PlantWork</li>
-				<li>Mining</li>
-				<li>Hunting</li>
-				<li>Constructing</li>
-				<li>Shooting</li>
-			</workDisables>
-		</li>
-	</modExtensions>
+    <modExtensions>
+      <li Class="VanillaApparelExpanded.ApparelExtension">
+        <workDisables>
+          <li>ManualDumb</li>
+          <li>ManualSkilled</li>
+          <li>Violent</li>
+          <li>Caring</li>
+          <li>Commoner</li>
+          <li>Intellectual</li>
+          <li>Animals</li>
+          <li>Artistic</li>
+          <li>Crafting</li>
+          <li>Cooking</li>
+          <li>Firefighting</li>
+          <li>Cleaning</li>
+          <li>Hauling</li>
+          <li>PlantWork</li>
+          <li>Mining</li>
+          <li>Hunting</li>
+          <li>Constructing</li>
+          <li>Shooting</li>
+        </workDisables>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="HatMakeableBase">
@@ -304,21 +305,21 @@
       <WorkToMake>5000</WorkToMake>
       <Mass>1.0</Mass>
       <EquipDelay>0.8</EquipDelay>
-	  <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
-	  <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-	  <ArmorRating_Heat>0.10</ArmorRating_Heat>
-	  <Insulation_Cold>4</Insulation_Cold>
-	  <Insulation_Heat>6</Insulation_Heat>
+      <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>6</Insulation_Heat>
     </statBases>
     <techLevel>Medieval</techLevel>
     <equippedStatOffsets>
-	  <ToxicResistance>0.2</ToxicResistance>
+      <ToxicResistance>0.2</ToxicResistance>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">+0.1</SlaveSuppressionOffset>
     </equippedStatOffsets>
-	<tickerType>Normal</tickerType>
+    <tickerType>Normal</tickerType>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
-	  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Sculpt</effectWorking>
@@ -330,7 +331,7 @@
         <li>FullHead</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlagueMask/PlagueMask</wornGraphicPath>
-     
+
       <layers>
         <li>Overhead</li>
       </layers>
@@ -341,17 +342,17 @@
         <li>Worker</li>
       </defaultOutfitTags>
     </apparel>
-	<comps>
-		<li Class="VFECore.CompProperties_ApparelHediffs">
-			<hediffDefnames>
-				<li>VFEM2_PlagueMask</li>
-			</hediffDefnames>
-		</li>
-	</comps>
+    <comps>
+      <li Class="VFECore.CompProperties_ApparelHediffs">
+        <hediffDefnames>
+          <li>VFEM2_PlagueMask</li>
+        </hediffDefnames>
+      </li>
+    </comps>
   </ThingDef>
-  
+
   <!--====================================== Vikings ======================================-->
-  
+
   <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>VFEM2_Apparel_HeavyLeatherHelmet</defName>
     <label>heavy leather helmet</label>
@@ -391,7 +392,7 @@
     <apparel>
       <bodyPartGroups>
         <li>FullHead</li>
-		<li>Neck</li>
+        <li>Neck</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherHelmet/HeavyLeatherHelmet</wornGraphicPath>
       <layers>
@@ -405,7 +406,7 @@
       </defaultOutfitTags>
     </apparel>
   </ThingDef>
-  
+
   <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>VFEM2_Apparel_LeatherHelmet</defName>
     <label>leather helmet</label>
@@ -459,7 +460,7 @@
     </apparel>
   </ThingDef>
 
-<!--================= New =================-->
+  <!--================= New =================-->
 
   <ThingDef ParentName="HatMakeableBase">
     <defName>VFEM2_Apparel_PaddedHelmet</defName>
@@ -472,7 +473,7 @@
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
-	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     </recipeMaker>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PaddedHelmet/PaddedHelmet</texPath>
@@ -507,6 +508,7 @@
       </layers>
       <tags>
         <li>MedievalMilitary</li>
+        <li>MedievalLevy</li>
       </tags>
       <defaultOutfitTags>
         <li>Soldier</li>
@@ -545,7 +547,7 @@
       <skillRequirements>
         <Crafting>5</Crafting>
       </skillRequirements>
-	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     </recipeMaker>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Chaperon/Chaperon</texPath>
@@ -582,6 +584,7 @@
       </layers>
       <tags>
         <li>VFEM2_Trader</li>
+        <li>Aristocrat</li>
       </tags>
       <defaultOutfitTags>
         <li>Worker</li>
@@ -607,8 +610,8 @@
       <li>Clothing</li>
     </tradeTags>
   </ThingDef>
-  
-  
+
+
   <ThingDef ParentName="HatMakeableBase">
     <defName>VFEM2_Apparel_Cap</defName>
     <label>cap</label>
@@ -620,7 +623,7 @@
       <skillRequirements>
         <Crafting>5</Crafting>
       </skillRequirements>
-	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     </recipeMaker>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Cap/Cap</texPath>

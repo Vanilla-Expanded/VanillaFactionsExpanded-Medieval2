@@ -186,6 +186,17 @@
 			</li>
 		</pawnGroupMakers>
 		<modExtensions>
+			<li Class="VFECore.TaggedDefProperties">
+        <taggedColors>
+          <HeraldryColorA>(1.0, 0.8, 0.8)</HeraldryColorA>
+          <HeraldryColorB>(1, 1, 1)</HeraldryColorB>
+          <HeraldrySymbolColor>(0.28, 0.20, 0.20)</HeraldrySymbolColor> 
+        </taggedColors>
+        <taggedStrings>
+          <HeraldrySymbol>Things/Heraldics/Symbols/HeraldrySymbol_Anchor</HeraldrySymbol>
+          <HeraldryPattern>Things/Heraldics/Masks/Barry</HeraldryPattern>
+        </taggedStrings>
+      </li>
 			<li Class="KCSG.CustomGenOption">
 				<chooseFromSettlements>
 					<li>VFEM2_MerchantFactionBase</li>
