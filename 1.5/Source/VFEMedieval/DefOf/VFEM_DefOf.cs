@@ -33,6 +33,7 @@ namespace VFEMedieval
         public static ThingDef VFEM2_CarvingBoard;
         public static ThingDef VFEM2_StonePolisher;
         public static ThingDef VFEM2_ArcheryTarget;
+        public static ThingDef VFEM2_HeraldicRugGrand;
 
         public static DamageDef VFEM2_DamageSting;
 

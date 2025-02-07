@@ -245,6 +245,8 @@
 		<defName>VFEM2_StandingBanner</defName>
 		<label>standing banner</label>
 		<description>A tall fabric banner mounted on a sturdy wooden frame, proudly displaying the heraldry of the faction.</description>
+		<thingClass>VFECore.DynamicGraphicBuilding</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
 		<graphicData>
 			<drawSize>(2,2)</drawSize>
 			<texPath>Things/Building/Misc/StandingBanner</texPath>
@@ -252,7 +254,7 @@
 			<shaderType>CutoutComplex</shaderType>
 			<shadowData>
 				<volume>(1,0.6,0.3)</volume>
-				<offset>(0,0,0</offset>
+				<offset>(0,0,0)</offset>
 			</shadowData>
 			<damageData>
 				<rectN>(0.1, 0.1, 0.8, 0.5)</rectN>
@@ -290,6 +292,26 @@
 		<researchPrerequisites>
 			<li>VFEM2_Heraldry</li>
 		</researchPrerequisites>
+		<modExtensions>
+      <li Class="VFECore.DynamicGraphicProps">
+        <dataList>
+          <li>
+            <texPath>Things/Building/Misc/StandingBanner</texPath>
+            <shaderType>CutoutComplex</shaderType>
+            <taggedColorA>HeraldryColorA</taggedColorA>
+            <taggedColorB>HeraldryColorB</taggedColorB>
+            <taggedMaskPath>HeraldryPattern+/StandingBanner</taggedMaskPath>
+          </li>
+          <li>
+            <taggedTexPath>HeraldrySymbol</taggedTexPath>
+            <taggedColorA>HeraldrySymbolColor</taggedColorA>
+            <shaderType>Cutout</shaderType>
+            <drawSizeAbsolute>(0.6,0.6)</drawSizeAbsolute>
+						<drawOffset>(0,0,0.24)</drawOffset>
+          </li>
+        </dataList>
+      </li>
+    </modExtensions>
 	</ThingDef>
 	<ThingDef ParentName="StorageShelfBase">
 		<defName>VFEM2_AutofillShelf</defName>

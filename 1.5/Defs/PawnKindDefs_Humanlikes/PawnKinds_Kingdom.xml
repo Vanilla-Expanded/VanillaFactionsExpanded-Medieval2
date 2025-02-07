@@ -415,7 +415,7 @@
     </backstoryFiltersOverride>
   </PawnKindDef>
   
-  <PawnKindDef ParentName="VFEM2_KingdomBase">
+  <PawnKindDef ParentName="VFEM2_KingdomBase" Name="VFEM2_Greatsword">
     <defName>VFEM2_Greatsword</defName>
     <label>greatsword</label>
     <combatPower>100</combatPower>
@@ -449,6 +449,12 @@
           </categories>
         </li>
     </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <!-- Temp implement so the game will stop sending errors about it being missing. -->
+  <PawnKindDef ParentName="VFEM2_Greatsword">
+    <defName>VFEM_SellSword</defName>
+    <label>sellsword</label>
   </PawnKindDef>
   
   <PawnKindDef ParentName="VFEM2_KingdomBase">

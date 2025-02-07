@@ -18,6 +18,11 @@
 	<!-- Leather boil pot -->
 	<VFEM2_BoilPotNotWorking>This boil pot is not working at the moment</VFEM2_BoilPotNotWorking>
 	
+	<!-- Heraldic -->
+	<VFEM2_StyleHeraldics>Edit Heraldry</VFEM2_StyleHeraldics>
+	<VFEM2_SetPattern>Pattern</VFEM2_SetPattern>
+	<VFEM2_SetSymbol>Symbol</VFEM2_SetSymbol>
+
 	<!-- Misc -->
 	<VFEM2_StatsReport_Flammability>Timbered wall: +50%</VFEM2_StatsReport_Flammability>
 	<VFEM2_ItemImproved_Anvil>{0} has been improved to {1} quality level due to the smithing anvil.</VFEM2_ItemImproved_Anvil>
