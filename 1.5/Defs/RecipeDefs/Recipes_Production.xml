@@ -210,7 +210,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<VFEM2_Hardweave>30</VFEM2_Hardweave>
+			<VFEM2_Hayweave>30</VFEM2_Hayweave>
 		</products>
 	</RecipeDef>
 </Defs>
