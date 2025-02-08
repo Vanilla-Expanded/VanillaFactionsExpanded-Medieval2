@@ -42,9 +42,10 @@
 				<processes>
 					<li>VFEM2_PatchLeatherToHardleather</li>
 				</processes>
-				<progressBarOffset>(0,0,-1)</progressBarOffset>
+				<progressBarOffset>(0,0,-0.75)</progressBarOffset>
 				<inProgressTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Working</inProgressTexture>
 				<finishedTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Finished</finishedTexture>
+				<hideSettings>true</hideSettings>
 			</li>
 			<li Class="PipeSystem.CompProperties_GlowerOnProcess">
 				<glowRadius>5</glowRadius>

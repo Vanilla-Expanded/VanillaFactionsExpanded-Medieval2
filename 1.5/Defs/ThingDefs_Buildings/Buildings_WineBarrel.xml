@@ -49,6 +49,7 @@
 					<li>VFEM2_GrapeToLegendaryWine</li>
 				</processes>
 				<progressBarOffset>(0,0,-0.5)</progressBarOffset>
+				<hideSettings>true</hideSettings>
 			</li>
 		</comps>
 		<tickerType>Rare</tickerType>

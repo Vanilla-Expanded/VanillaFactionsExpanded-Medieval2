@@ -19,7 +19,7 @@
 		<joyDuration>4000</joyDuration>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Shooting</joySkill>
-		<joyXpPerTick>0.003</joyXpPerTick>
+		<joyXpPerTick>0.03</joyXpPerTick>
 		<joyKind>Gaming_Dexterity</joyKind>
 		<taleOnCompletion>PlayedGame</taleOnCompletion>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>

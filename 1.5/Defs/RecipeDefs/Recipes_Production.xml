@@ -157,6 +157,7 @@
 			<li>CraftingSpot</li>
 		</recipeUsers>
 		<effectWorking>Tailor</effectWorking>
+		<workSkill>Crafting</workSkill>
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<workAmount>900</workAmount>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -190,6 +191,7 @@
 			<li>HandTailoringBench</li>
 			<li>CraftingSpot</li>
 		</recipeUsers>
+		<workSkill>Crafting</workSkill>
 		<effectWorking>Tailor</effectWorking>
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<workAmount>450</workAmount>

@@ -38,7 +38,8 @@
 				<processes>
 					<li>VFEM2_HoneyToMead</li>
 				</processes>
-				<progressBarOffset>(0,0,-1)</progressBarOffset>
+				<progressBarOffset>(0,0,-0.5)</progressBarOffset>
+				<hideSettings>true</hideSettings>
 			</li>
 		</comps>
 		<inspectorTabs>
