@@ -295,6 +295,7 @@
     </Reference>
     <Reference Include="VFECore">
       <HintPath>..\..\..\..\VanillaExpandedFramework\1.5\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
