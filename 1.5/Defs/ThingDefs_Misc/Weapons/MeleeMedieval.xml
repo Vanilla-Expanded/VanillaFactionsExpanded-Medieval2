@@ -147,7 +147,7 @@
       <Mass>3</Mass>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>-0.4</MoveSpeed>
+      <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
     <relicChance>2</relicChance>
     <equippedAngleOffset>-25</equippedAngleOffset>
@@ -222,7 +222,7 @@
       <Mass>8</Mass>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>-0.4</MoveSpeed>
+      <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
     <stuffCategories>
       <li>Metallic</li>
@@ -305,7 +305,7 @@
       <Mass>6</Mass>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>-0.4</MoveSpeed>
+      <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
     <equippedAngleOffset>-25</equippedAngleOffset>
     <costList>
@@ -390,7 +390,7 @@
       <Mass>6.5</Mass>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>-0.3</MoveSpeed>
+      <MoveSpeed>-0.15</MoveSpeed>
     </equippedStatOffsets>
     <stuffCategories>
       <li>Metallic</li>
