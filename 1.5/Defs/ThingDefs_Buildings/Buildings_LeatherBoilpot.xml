@@ -21,6 +21,7 @@
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.45</fillPercent>
 		<pathCost>42</pathCost>
+		<rotatable>false</rotatable>
 		<uiIconScale>0.75</uiIconScale>
 		<thingCategories>
 			<li>BuildingsProduction</li>
@@ -67,7 +68,7 @@
 			<li>PipeSystem.ITab_Processor</li>
 		</inspectorTabs>
 		<tickerType>Rare</tickerType>
-		<rotatable>true</rotatable>
+	
 		<designationCategory>Production</designationCategory>
 		<constructEffect>ConstructWood</constructEffect>
 		<building>
