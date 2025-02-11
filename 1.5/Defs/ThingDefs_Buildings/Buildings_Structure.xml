@@ -290,9 +290,7 @@
         <multiplier>2</multiplier>
       </li>
     </damageMultipliers>
-    <researchPrerequisites>
-      <li>VFEM2_MedievalArchitecture</li>
-    </researchPrerequisites>
+   
   </ThingDef>  
   
   <ThingDef ParentName="BuildingBase">
