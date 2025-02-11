@@ -292,6 +292,9 @@
 		<researchPrerequisites>
 			<li>VFEM2_Heraldry</li>
 		</researchPrerequisites>
+		<comps>
+      <li Class="VFEMedieval.CompProperties_EditHeraldic"/>
+    </comps>
 		<modExtensions>
       <li Class="VFECore.DynamicGraphicProps">
         <dataList>

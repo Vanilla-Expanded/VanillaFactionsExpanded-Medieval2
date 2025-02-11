@@ -10,6 +10,8 @@ using Verse.Sound;
 using VFECore;
 using GraphicCustomization;
 using static HarmonyLib.Code;
+using System.IO;
+using System.Diagnostics;
 
 namespace VFEMedieval
 {
@@ -34,7 +36,7 @@ namespace VFEMedieval
                     defaultLabel = string.Format("VFEM2_StyleHeraldics".Translate(), parent.def.label),
                     action = delegate
                     {
-                        var window = new Dialog_Heraldic(parent as Pawn);
+                        var window = new Dialog_Heraldic(parent);
                         Find.WindowStack.Add(window);
                     }
                 };
@@ -44,21 +46,34 @@ namespace VFEMedieval
 
     public class Dialog_Heraldic : Window
     {
-        private Pawn pawn;
-        private static readonly Vector2 ButSize = new Vector2(200f, 40f);
+        private enum Mode
+        {
+            VFEM2_EditThingHeraldry,
+            VFEM2_EditFactionHeraldry,
+        }
+
+        
+        private readonly ILoadReferenceable target;
+        private static readonly Vector2 ButSize = new(200f, 40f);
         private List<HeraldicBase> heraldicPatterns;
         private List<HeraldicBase> heraldicSymbols;
         private int currentSymbolIndex = 0;
         private int currentPatternIndex = 0;
-        private HeraldicSettings heraldic;
+        private HeraldicSettings sharedHeraldry;
+        private HeraldicSettings individualHeraldry;
 
-        private List<TabRecord> tabs = new List<TabRecord>();
+        private Mode heraldicEditMode;
+        private bool noFaction;
 
         private float viewRectHeight;
         private Vector2 apparelColorScrollPosition;
 
-        public override Vector2 InitialSize => new Vector2(900f, 580f);
+        public override Vector2 InitialSize => new(470f, 780f);
 
+        private Pawn Pawn => target as Pawn;
+
+        public ILoadReferenceable ActiveTarget =>
+            heraldicEditMode == Mode.VFEM2_EditFactionHeraldry && target is Thing t ? t.Faction : target;
         private List<Color> allColors;
         private List<Color> AllColors
         {
@@ -66,35 +81,43 @@ namespace VFEMedieval
             {
                 if (allColors == null)
                 {
-                    allColors = new List<Color>
-                    {
-                        new Color(0.05f, 0.05f, 0.05f),
-                        new Color(0.15f, 0.15f, 0.15f),
-                        new Color(0.9f, 0.9f, 0.9f),
-                        new Color(1, 1, 1),
+                    allColors =
+                    [
+                        new(0.08f, 0.8f, 0.08f),
+                        new(0.15f, 0.15f, 0.15f),
+                        new(0.9f, 0.9f, 0.9f),
+                        Color.white,
 
                         // More Yellows
-                        new Color(0.5f, 0.5f, 0.25f),
-                        new Color(0.9f, 0.9f, 0.5f),
-                        new Color(0.9f, 0.8f, 0.5f),
+                        new(0.5f, 0.5f, 0.25f),
+                        new(0.9f, 0.9f, 0.5f),
+                        new(0.9f, 0.8f, 0.5f),
 
                         // Reds
-                        new Color(0.45f, 0.2f, 0.2f),
-                        new Color(0.5f, 0.25f, 0.25f),
-                        new Color(0.9f, 0.5f, 0.5f),
+                        new(0.45f, 0.2f, 0.2f),
+                        new(0.5f, 0.25f, 0.25f),
+                        new(0.9f, 0.5f, 0.5f),
 
                         // Blues
-                        new Color(0.15f, 0.28f, 0.43f),
-                    };
-                    if (ModsConfig.IdeologyActive && pawn.Ideo != null && !Find.IdeoManager.classicMode)
+                        new(0.15f, 0.28f, 0.43f),
+
+                        // Some Pastel Colors
+                        new(0.98f, 0.92f, 0.84f),
+                        new(0.87f, 0.96f, 0.91f),
+                        new(0.94f, 0.87f, 0.96f),
+                        new(0.96f, 0.87f, 0.87f),
+                        new(0.87f, 0.94f, 0.96f),
+                    ];
+                    if (ModsConfig.IdeologyActive && Pawn?.Ideo != null && !Find.IdeoManager.classicMode)
                     {
-                        allColors.Add(pawn.Ideo.ApparelColor);
+                        allColors.Add(Pawn.Ideo.ApparelColor);
                     }
-                    if (ModsConfig.IdeologyActive && pawn.story != null && !pawn.DevelopmentalStage.Baby() && pawn.story.favoriteColor.HasValue && !allColors.Any((Color c) => pawn.story.favoriteColor.Value.IndistinguishableFrom(c)))
+                    if (ModsConfig.IdeologyActive && Pawn?.story != null && !Pawn.DevelopmentalStage.Baby() && Pawn.story.favoriteColor.HasValue && !allColors.Any((Color c) => Pawn.story.favoriteColor.Value.IndistinguishableFrom(c)))
                     {
-                        allColors.Add(pawn.story.favoriteColor.Value);
+                        allColors.Add(Pawn.story.favoriteColor.Value);
                     }
-                    foreach (ColorDef colDef in DefDatabase<ColorDef>.AllDefs.Where((ColorDef x) => x.colorType == ColorType.Ideo || x.colorType == ColorType.Misc))
+                    foreach (ColorDef colDef in DefDatabase<ColorDef>.AllDefs
+                        .Where((ColorDef x) => x.colorType == ColorType.Ideo || x.colorType == ColorType.Misc))
                     {
                         if (!allColors.Any((Color x) => x.IndistinguishableFrom(colDef.color)))
                         {
@@ -107,77 +130,132 @@ namespace VFEMedieval
             }
         }
 
-        public Dialog_Heraldic(Pawn pawn)
+
+        public override void SetInitialSizeAndPosition()
         {
-            this.pawn = pawn;
-            forcePause = true;
+            base.SetInitialSizeAndPosition();
+            windowRect.x = windowRect.x - InitialSize.x;
+        }
+
+        public Dialog_Heraldic(ILoadReferenceable target)
+        {
+            heraldicEditMode = Mode.VFEM2_EditThingHeraldry;
+            noFaction = false;
+            this.target = target;
+            Faction faction;
+            if (target is Thing thing)
+            {
+                faction = thing.Faction;
+                individualHeraldry = new HeraldicSettings(thing);
+                if (faction == null)
+                {
+                    faction = Faction.OfPlayer;
+                    noFaction = true;
+                    if (!individualHeraldry.HasAllTags())
+                    {
+                        sharedHeraldry = new HeraldicSettings(faction);
+                        sharedHeraldry.SaveTagsTo(thing);  // Save the player tags to it so it has something to load.
+                    }
+                }
+                else
+                {
+                    sharedHeraldry = new HeraldicSettings(faction);
+                }
+                individualHeraldry = new HeraldicSettings(thing);
+            }
+            else if (target is Faction factionTarget)
+            {
+                faction = factionTarget;
+                sharedHeraldry = new HeraldicSettings(faction);
+                heraldicEditMode = Mode.VFEM2_EditFactionHeraldry;
+            }
+            else
+            {
+                throw new NotImplementedException($"{target.GetType()} is not supported.");
+            }
+
+            forcePause = false;
             closeOnAccept = false;
             closeOnCancel = false;
-            heraldic = new HeraldicSettings(pawn.Faction);
-            string truePatternName = pawn.GetStringByTag(Heraldic.MASK_PATH)?.value;
-            string trueSymbolName = pawn.GetStringByTag(Heraldic.SYMBOL_PATH)?.value;
+            absorbInputAroundWindow = true;
+            preventCameraMotion = false;
+            GetPathIndices(target);
+        }
 
+        private void GetPathIndices(ILoadReferenceable target)
+        {
             heraldicPatterns = DefDatabase<HeraldicPattern>.AllDefsListForReading.Cast<HeraldicBase>().ToList();
             heraldicSymbols = DefDatabase<HeraldicSymbol>.AllDefsListForReading.Cast<HeraldicBase>().ToList();
-
-            currentSymbolIndex = heraldicSymbols.FindIndex(x => x.path == trueSymbolName);
-            currentPatternIndex = heraldicPatterns.FindIndex(x => x.path == truePatternName);
-
-            if (currentSymbolIndex == -1)
-            {
-                currentSymbolIndex = 0;
-                Log.Error($"Symbol not found {trueSymbolName} in symbol list. The listed items are:\n" +
-                    $"{string.Join("\n", heraldicSymbols.Select(x => $"{x.defName} ({x.path})"))}\n"
-                    );
-            }
-            if (currentPatternIndex == -1)
-            {
-                currentPatternIndex = 0;
-                Log.Error($"Pattern not found {trueSymbolName} in symbol list. The listed items are:\n" +
-                    $"{string.Join("\n", heraldicPatterns.Select(x => $"{x.defName} ({x.path})"))}\n"
-                    );
-            }
+            currentSymbolIndex = heraldicSymbols.FindIndex(x => x.path == target.GetStringByTag(Heraldic.SYMBOL_PATH)?.value);
+            currentPatternIndex = heraldicPatterns.FindIndex(x => x.path == target.GetStringByTag(Heraldic.MASK_PATH)?.value);
         }
 
         public override void DoWindowContents(Rect inRect)
         {
             Text.Font = GameFont.Medium;
-            Rect rect = new Rect(inRect)
+            Rect rect = new(inRect)
             {
                 height = Text.LineHeight * 2f
             };
-            Widgets.Label(rect, "VFEM2_StyleHeraldics".Translate().CapitalizeFirst() + ": " + Find.ActiveLanguageWorker.WithDefiniteArticle(pawn.Name.ToStringShort, pawn.gender, plural: false, name: true).ApplyTag(TagType.Name));
+            string title = "";
+            if (target is Pawn p) title = p.Name.ToStringShort;
+            else if (target is Thing t) title = t.LabelCap;
+            else if (target is Faction f) title = f.Name.ToString();
+            Widgets.Label(rect, "VFEM2_StyleHeraldics".Translate().CapitalizeFirst() + ": " + title);
             Text.Font = GameFont.Small;
             inRect.yMin = rect.yMax + 4f;
-            Rect rect2 = inRect;
-            rect2.width *= 0.3f;
-            rect2.yMax -= ButSize.y + 4f;
-            DrawPawn(rect2);
+
+            // Draw top buttons
+            DrawTopButtons(inRect);
+            inRect.yMin += ButSize.y + 10f;
+
             Rect rect3 = inRect;
-            rect3.xMin = rect2.xMax + 10f;
-            rect3.yMax -= ButSize.y + 4f;
+            rect3.xMin = 10f;
+            rect3.yMax -= ButSize.y * 3 + 4f;
             DrawMainUI(rect3);
             DrawBottomButtons(inRect);
         }
-
-        private void DrawPawn(Rect rect)
+        private void DrawTopButtons(Rect inRect)
         {
-            Rect rect2 = rect;
-            rect2.yMin = rect.yMax - Text.LineHeight * 2f;
-            rect.yMax = rect2.yMin - 4f;
-            Widgets.BeginGroup(rect);
-            for (int i = 0; i < 3; i++)
+            if (noFaction) return;
+            var modePickRect = new Rect(inRect.x + 10f, inRect.y, inRect.width - 20f, ButSize.y);
+            if (target is not Faction && Widgets.ButtonText(modePickRect, heraldicEditMode.ToString().Translate()))
             {
-                Rect position = new Rect(0f, rect.height / 3f * (float)i, rect.width, rect.height / 3f).ContractedBy(4f);
-                RenderTexture image = PortraitsCache.Get(pawn, new Vector2(position.width, position.height), new Rot4(2 - i), new Vector3(0f, 0f, 0.15f), 1.1f, supersample: true, compensateForUIScale: true, true, true, stylingStation: true);
-                GUI.DrawTexture(position, image);
+                var names = Enum.GetNames(typeof(Mode)).ToList();
+                //if (noFaction) names.Remove(Mode.VFEM2_EditFactionHeraldry.ToString());
+                FloatMenuUtility.MakeMenu(names, (string entry) => entry.Translate(), (string variant) => delegate
+                {
+                    heraldicEditMode = (Mode)Enum.Parse(typeof(Mode), variant);
+                    GetPathIndices(ActiveTarget);
+                });
             }
-            Widgets.EndGroup();
         }
 
         private void DrawBottomButtons(Rect inRect)
         {
-            if (Widgets.ButtonText(new Rect(inRect.xMax - ButSize.x, inRect.yMax - ButSize.y, ButSize.x, ButSize.y), "Close".Translate()))
+            float buttonHeight = ButSize.y;
+            float buttonWidth = inRect.width - 20f; 
+
+            float yOffset = inRect.yMax - buttonHeight*2 - 30f;
+
+            bool resetActive = heraldicEditMode != Mode.VFEM2_EditFactionHeraldry && !noFaction;
+            if (resetActive)
+            {
+                if (Widgets.ButtonText(new Rect(inRect.x + 10f, yOffset, buttonWidth, buttonHeight), "VFEM2_ResetToFaction".Translate(), active: resetActive))
+                {
+                    target.RemoveColorTag(Heraldic.MASK_CLR_A);
+                    target.RemoveColorTag(Heraldic.MASK_CLR_B);
+                    target.RemoveStringTag(Heraldic.MASK_PATH);
+                    target.RemoveColorTag(Heraldic.SYMBOL_CLR);
+                    target.RemoveStringTag(Heraldic.SYMBOL_PATH);
+                    GetPathIndices(ActiveTarget);
+                    RefreshAllGraphics();
+                    Close(); return;
+                }
+            }
+            yOffset += buttonHeight + 10f;
+
+            if (Widgets.ButtonText(new Rect(inRect.x + 10f, yOffset, buttonWidth, buttonHeight), "Close".Translate()))
             {
                 Close();
             }
@@ -186,7 +264,6 @@ namespace VFEMedieval
         private void DrawMainUI(Rect rect)
         {
             Widgets.DrawMenuSection(rect);
-            TabDrawer.DrawTabs(rect, tabs);
             rect = rect.ContractedBy(18f);
             DrawHeraldicSetup(rect);
         }
@@ -194,46 +271,52 @@ namespace VFEMedieval
         private void DrawHeraldicSetup(Rect rect)
         {
             var iconItem = VFEM_DefOf.VFEM2_HeraldicRugGrand;
-            Rect viewRect = new Rect(rect.x, rect.y, rect.width - 16f, viewRectHeight);
+            Rect viewRect = new(rect.x, rect.y, rect.width - 34f, viewRectHeight);
             Widgets.BeginScrollView(rect, ref apparelColorScrollPosition, viewRect);
-            int num = 0;
             float curY = rect.y;
+            HeraldicSettings activeHeraldry;
+            if (heraldicEditMode == Mode.VFEM2_EditFactionHeraldry && target is Thing t)
+            {
+                activeHeraldry = sharedHeraldry;
+            }
+            else
+            {
+                activeHeraldry = individualHeraldry;
+            }
 
-            foreach ((string type, var heraldicPart) in heraldic.Items)
+            foreach ((string type, var heraldicPart) in activeHeraldry.Items)
             {
                 if (heraldicPart is TaggedColor tColor)
                 {
                     Color color = tColor.value;
 
-                    Rect rect2 = new Rect(rect.x, curY, viewRect.width, 92f);
-                    curY += rect2.height + 0f;
+                    Rect colorRect = new(rect.x, curY, viewRect.width, 140);
+                    curY += colorRect.height + 0f;
 
-                    Widgets.ColorSelector(rect2, ref color, AllColors, out var _, null, 22, 2, ColorSelecterExtraOnGUI);
-                    float num2 = rect2.x;
-                    if (pawn.Ideo != null && !Find.IdeoManager.classicMode)
+                    Widgets.ColorSelector(colorRect, ref color, AllColors, out var _, null, 22, 2, ColorSelecterExtraOnGUI);
+                    float num2 = colorRect.x;
+                    if (Pawn?.Ideo is Ideo pawnIdeo && !Find.IdeoManager.classicMode)
                     {
-                        rect2 = new Rect(num2, curY, 180f, 24f);
-                        if (Widgets.ButtonText(rect2, "SetIdeoColor".Translate()))
+                        colorRect = new Rect(num2, curY, 160f, 24f);
+                        if (Widgets.ButtonText(colorRect, "SetIdeoColor".Translate()))
                         {
-                            color = pawn.Ideo.ApparelColor;
+                            color = pawnIdeo.ApparelColor;
                             SoundDefOf.Tick_Low.PlayOneShotOnCamera();
                         }
                         num2 += 210f;
                     }
-                    Pawn_StoryTracker story = pawn.story;
-                    if (story != null && story.favoriteColor.HasValue)
+                    if (Pawn?.story is Pawn_StoryTracker story && story.favoriteColor.HasValue)
                     {
-                        rect2 = new Rect(num2, curY, 180f, 24f);
-                        if (Widgets.ButtonText(rect2, "SetFavoriteColor".Translate()))
+                        colorRect = new Rect(num2, curY, 160f, 24f);
+                        if (Widgets.ButtonText(colorRect, "SetFavoriteColor".Translate()))
                         {
-                            color = pawn.story.favoriteColor.Value;
+                            color = Pawn.story.favoriteColor.Value;
                             SoundDefOf.Tick_Low.PlayOneShotOnCamera();
                         }
                     }
                     if (!tColor.value.IndistinguishableFrom(color))
                     {
-                        tColor.value = color;
-                        RefreshAllGraphics();
+                        SetColorTag(ActiveTarget, type, tColor, color);
                     }
                 }
                 else if (heraldicPart is TaggedText tText)
@@ -243,16 +326,18 @@ namespace VFEMedieval
 
                     var currentDef = targetList[currentIdx];
 
-                    Rect rect2 = new Rect(rect.x, curY, viewRect.width, 34f);
-                    Widgets.Label(rect2, (type == Heraldic.MASK_PATH ?
+                    Rect titleRect = new(rect.x, curY, viewRect.width, 34f);
+                    Text.Font = GameFont.Medium;
+                    Widgets.Label(titleRect, (type == Heraldic.MASK_PATH ?
                           "VFEM2_SetPattern".Translate()
                         : "VFEM2_SetSymbol".Translate()).CapitalizeFirst());
+                    Text.Font = GameFont.Small;
 
-                    curY += rect2.height + 8;
-                    Rect rect3 = new Rect(rect.x, curY, viewRect.width, 38f);
+                    curY += titleRect.height + 8;
+                    Rect symbolRect = new(rect.x, curY, viewRect.width, 38f);
 
-                    curY += rect3.height + 0f;
-                    MakeFloatOptionButtons(rect3, delegate
+                    curY += symbolRect.height + 0f;
+                    MakeFloatOptionButtons(symbolRect, delegate
                     {
                         currentIdx--;
                     }, delegate
@@ -264,10 +349,10 @@ namespace VFEMedieval
                             if (currentIdx == -1)
                             {
                                 Log.Error($"Could not find {variant.defName} ({variant.path}) in {type} list. The listed items are:\n" +
-                                $"{string.Join("\n", targetList.Select(x => $"{x.defName} ({x.path})" ))}\n"
+                                $"{string.Join("\n", targetList.Select(x => $"{x.defName} ({x.path})"))}\n"
                                 );
                             }
-                            SetHeraldicMask(type, tText, currentIdx, variant.path);
+                            SetHeraldicMask(ActiveTarget, type, tText, currentIdx, variant.path);
                         });
                     }, currentDef.LabelCap, delegate
                     {
@@ -279,7 +364,7 @@ namespace VFEMedieval
                     currentDef = targetList[currentIdx];
                     if (tText.value != currentDef.path)
                     {
-                        SetHeraldicMask(type, tText, currentIdx, currentDef.path);
+                        SetHeraldicMask(ActiveTarget, type, tText, currentIdx, currentDef.path);
                     }
                 }
 
@@ -292,11 +377,33 @@ namespace VFEMedieval
             Widgets.EndScrollView();
         }
 
-        private void SetHeraldicMask(string type, TaggedText tText, int currentIdx, string path)
+        private void SetColorTag(ILoadReferenceable activeTarget, string type, TaggedColor tColor, Color color)
+        {
+            activeTarget.SetColorTag(tColor.tag, color);
+            if (heraldicEditMode == Mode.VFEM2_EditFactionHeraldry)
+            {
+                sharedHeraldry.Refresh();
+            }
+            else
+            {
+                individualHeraldry.Refresh();
+            }
+            RefreshAllGraphics();
+        }
+
+        private void SetHeraldicMask(ILoadReferenceable activeTarget, string type, TaggedText tText, int currentIdx, string path)
         {
             if (type == Heraldic.MASK_PATH) currentPatternIndex = currentIdx;
             else currentSymbolIndex = currentIdx;
-            tText.value = path;
+            activeTarget.SetStringTag(tText.tag, path);
+            if (heraldicEditMode == Mode.VFEM2_EditFactionHeraldry)
+            {
+                sharedHeraldry.Refresh();
+            }
+            else
+            {
+                individualHeraldry.Refresh();
+            }
             RefreshAllGraphics();
         }
 
@@ -349,9 +456,9 @@ namespace VFEMedieval
         public void MakeFloatOptionButtons(Rect floatMenuButtonsRect, Action leftAction, Action centerAction, string centerButtonName, Action rightAction)
         {
             Widgets.DrawHighlight(floatMenuButtonsRect);
-            Rect rect = new Rect(floatMenuButtonsRect.x, floatMenuButtonsRect.y, 32f, 32f);
-            Rect rect2 = new Rect(floatMenuButtonsRect.xMax - 32f, floatMenuButtonsRect.y, 32f, 32f);
-            Rect rect3 = new Rect(floatMenuButtonsRect.x + 32f, floatMenuButtonsRect.y, floatMenuButtonsRect.width - 64f, 32f);
+            Rect rect = new(floatMenuButtonsRect.x, floatMenuButtonsRect.y, 32f, 32f);
+            Rect rect2 = new(floatMenuButtonsRect.xMax - 32f, floatMenuButtonsRect.y, 32f, 32f);
+            Rect rect3 = new(floatMenuButtonsRect.x + 32f, floatMenuButtonsRect.y, floatMenuButtonsRect.width - 64f, 32f);
             if (Dialog_GraphicCustomization.ButtonTextSubtleCentered(rect, "<"))
             {
                 leftAction();

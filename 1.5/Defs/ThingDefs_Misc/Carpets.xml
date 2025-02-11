@@ -22,6 +22,9 @@
   <ThingDef Name="HeraldicRugBase" Abstract="True" ParentName="VFEM2_BuildingFloorBase">
     <thingClass>VFECore.DynamicGraphicBuilding</thingClass>
     <drawerType>RealtimeOnly</drawerType>
+    <comps>
+      <li Class="VFEMedieval.CompProperties_EditHeraldic"/>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="HeraldicRugBase">

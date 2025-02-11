@@ -22,6 +22,9 @@
 	<VFEM2_StyleHeraldics>Edit Heraldry</VFEM2_StyleHeraldics>
 	<VFEM2_SetPattern>Pattern</VFEM2_SetPattern>
 	<VFEM2_SetSymbol>Symbol</VFEM2_SetSymbol>
+	<VFEM2_EditFactionHeraldry>Edit Faction</VFEM2_EditFactionHeraldry>
+	<VFEM2_EditThingHeraldry>Edit Target</VFEM2_EditThingHeraldry>
+	<VFEM2_ResetToFaction>Reset</VFEM2_ResetToFaction>
 
 	<!-- Misc -->
 	<VFEM2_StatsReport_Flammability>Timbered wall: +50%</VFEM2_StatsReport_Flammability>

@@ -344,6 +344,9 @@
       </skillRequirements>
       <displayPriority>332</displayPriority>
     </recipeMaker>
+    <comps>
+      <li Class="VFEMedieval.CompProperties_EditHeraldic"/>
+    </comps>
     <modExtensions>
       <li Class="VFECore.DynamicGraphicProps">
         <dataList>

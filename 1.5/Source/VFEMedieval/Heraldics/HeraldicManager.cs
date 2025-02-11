@@ -19,8 +19,10 @@ namespace VFEMedieval
         [DebugAction("VFEMedieval", "Edit Heraldics For Selected", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void EditHeraldicsForSelected()
         {
-            var pawn = Find.Selector.SelectedObjects.OfType<Pawn>().FirstOrDefault();
-            var window = new Dialog_Heraldic(pawn);
+            var thing = Find.Selector.SelectedObjects.OfType<Pawn>().FirstOrDefault();
+            if (thing == null) Find.Selector.SelectedObjects.OfType<Thing>().FirstOrDefault();
+            if (thing == null) throw new Exception("No valid thing selected for Heraldic editing.");
+            var window = new Dialog_Heraldic(thing);
             Find.WindowStack.Add(window);
         }
 
@@ -76,6 +78,7 @@ namespace VFEMedieval
     public class HeraldicSettings
     {
         public Faction faction;
+        public Thing thing = null;
 
         public TaggedText maskPath = null;
         public TaggedColor maskColorA = null;
@@ -93,14 +96,26 @@ namespace VFEMedieval
             (Heraldic.MASK_CLR_B, maskColorB),
         };
 
+        // Used if we need defaults for some reason.
+        public HeraldicSettings()
+        {
+            symbolColor = new TaggedColor(Heraldic.SYMBOL_CLR, new Color(0.15f, 0.15f, 0.15f, 1f));
+            maskColorA = new TaggedColor(Heraldic.MASK_CLR_A, new(0.45f, 0.2f, 0.2f));
+            maskColorB = new TaggedColor(Heraldic.MASK_CLR_B, new(0.15f, 0.28f, 0.43f));
+            maskPath = new TaggedText(Heraldic.MASK_PATH, HeraldicManager.allPatterns.First().path);
+            symbolPath = new TaggedText(Heraldic.SYMBOL_PATH, HeraldicManager.allSymbols.First().path);
+        }
+
+        public HeraldicSettings(Thing thing)
+        {
+            this.thing = thing;
+            Refresh();
+        }
+
         public HeraldicSettings(Faction faction)
         {
             this.faction = faction;
-            maskColorA = faction.ColorByTag(Heraldic.MASK_CLR_A);
-            maskColorB = faction.ColorByTag(Heraldic.MASK_CLR_B);
-            maskPath = faction.StringByTag(Heraldic.MASK_PATH);
-            symbolColor = faction.ColorByTag(Heraldic.SYMBOL_CLR);
-            symbolPath = faction.StringByTag(Heraldic.SYMBOL_PATH);
+            Refresh();
 
             // Note that these are just defaults if a faction doesn't define any heraldic settings.
             if (maskColorA == null || maskColorB == null || maskPath == null || symbolColor == null || symbolPath == null)
@@ -116,10 +131,10 @@ namespace VFEMedieval
                 {
                     var pattern = HeraldicManager.allPatterns.RandomElementByWeight(x => x.weight);
                     maskPath = new TaggedText(Heraldic.MASK_CLR_A, pattern.path);
-                    
+
                     symbolPath = new TaggedText(Heraldic.MASK_CLR_B,
                         HeraldicManager.allSymbols
-                            .Where(x=>!(x.blankType && pattern.blankType))  // Prevent double-blank.
+                            .Where(x => !(x.blankType && pattern.blankType))  // Prevent double-blank.
                             .RandomElementByWeight(x => x.weight).path);
                 }
                 var aColorA = new AdvancedColor { primaryFactionIdeoColor = true };
@@ -135,17 +150,48 @@ namespace VFEMedieval
                 maskColorA = new TaggedColor(Heraldic.MASK_CLR_A, aColorA.GetColor(faction));
                 maskColorB = new TaggedColor(Heraldic.MASK_CLR_B, aColorB.GetColor(faction));
                 symbolColor = new TaggedColor(Heraldic.SYMBOL_CLR, new Color(0.15f, 0.15f, 0.15f, 1f));
-                SaveToTags();
+                SaveTagsTo(faction);
             }
         }
 
-        public void SaveToTags()
+        public bool HasAllTags()
         {
-            TaggedColorPropManager.SetTagItem(faction, new TaggedColor(Heraldic.MASK_CLR_A, maskColorA.value));
-            TaggedColorPropManager.SetTagItem(faction, new TaggedColor(Heraldic.MASK_CLR_B, maskColorB.value));
-            TaggedTextPropManager.SetTagItem(faction, new TaggedText(Heraldic.MASK_PATH, maskPath.value));
-            TaggedColorPropManager.SetTagItem(faction, new TaggedColor(Heraldic.SYMBOL_CLR, symbolColor.value));
-            TaggedTextPropManager.SetTagItem(faction, new TaggedText(Heraldic.SYMBOL_PATH, symbolPath.value));
+            return maskColorA != null && maskColorB != null && maskPath != null && symbolColor != null && symbolPath != null;
+        }
+
+        public void Refresh()
+        {
+            if (thing != null)
+            {
+                // Used to reload the data after making changes.
+                maskColorA = thing.GetColorByTag(Heraldic.MASK_CLR_A);
+                maskColorB = thing.GetColorByTag(Heraldic.MASK_CLR_B);
+                maskPath = thing.GetStringByTag(Heraldic.MASK_PATH);
+                symbolColor = thing.GetColorByTag(Heraldic.SYMBOL_CLR);
+                symbolPath = thing.GetStringByTag(Heraldic.SYMBOL_PATH);
+            }
+            else if (faction != null)
+            {
+                RegenerateFaction(faction);
+            }
+        }
+
+        private void RegenerateFaction(Faction faction)
+        {
+            maskColorA = faction.GetColorByTag(Heraldic.MASK_CLR_A);
+            maskColorB = faction.GetColorByTag(Heraldic.MASK_CLR_B);
+            maskPath = faction.GetStringByTag(Heraldic.MASK_PATH);
+            symbolColor = faction.GetColorByTag(Heraldic.SYMBOL_CLR);
+            symbolPath = faction.GetStringByTag(Heraldic.SYMBOL_PATH);
+        }
+
+        public void SaveTagsTo(ILoadReferenceable tar)
+        {
+            TaggedColorPropManager.SetTagItem(tar, new TaggedColor(Heraldic.MASK_CLR_A, maskColorA.value));
+            TaggedColorPropManager.SetTagItem(tar, new TaggedColor(Heraldic.MASK_CLR_B, maskColorB.value));
+            TaggedTextPropManager.SetTagItem(tar, new TaggedText(Heraldic.MASK_PATH, maskPath.value));
+            TaggedColorPropManager.SetTagItem(tar, new TaggedColor(Heraldic.SYMBOL_CLR, symbolColor.value));
+            TaggedTextPropManager.SetTagItem(tar, new TaggedText(Heraldic.SYMBOL_PATH, symbolPath.value));
         }
     }
 }

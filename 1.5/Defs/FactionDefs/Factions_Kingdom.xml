@@ -266,6 +266,19 @@
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
 	<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <configurationListOrderPriority>30</configurationListOrderPriority>
+    <modExtensions>
+      <li Class="VFECore.TaggedDefProperties">
+          <taggedColors>
+            <HeraldryColorA>(0.34, 0.73, 0.76)</HeraldryColorA>
+            <HeraldryColorB>(0.73, 0.34, 0.76)</HeraldryColorB>
+            <HeraldrySymbolColor>(0.3, 0.3, 0.3)</HeraldrySymbolColor> 
+          </taggedColors>
+          <taggedStrings>
+            <HeraldrySymbol>Things/Heraldics/Symbols/HeraldrySymbol_Castle</HeraldrySymbol>
+            <HeraldryPattern>Things/Heraldics/Masks/BarryDancetty</HeraldryPattern>
+          </taggedStrings>
+        </li>
+      </modExtensions>
   </FactionDef>
 
   <FactionDef ParentName="VFEM2_MedievalFactionBase">
