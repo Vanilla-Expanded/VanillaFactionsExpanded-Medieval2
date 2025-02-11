@@ -21,7 +21,7 @@ namespace VFEMedieval
         public static void ModifyDuration(ref int __result, Thought_Memory __instance)
         {
 
-            if (StaticCollections.pawnMoodTimeMultiplier.ContainsKey(__instance.pawn))
+            if (__instance.pawn != null&&StaticCollections.pawnMoodTimeMultiplier.ContainsKey(__instance.pawn))
             {
                 __result = (int)(__result*StaticCollections.pawnMoodTimeMultiplier[__instance.pawn]);
             }
