@@ -43,4 +43,20 @@
 		</requiredCapacities>
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>VFEM2_DoBillsAlchemyTable_Electric</defName>
+		<label>craft draught</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>20</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VFEM2_AlchemicalWorkbench_Electric</li>
+		</fixedBillGiverDefs>
+		<verb>crafting draught</verb>
+		<gerund>crafting draught at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
 </Defs>
