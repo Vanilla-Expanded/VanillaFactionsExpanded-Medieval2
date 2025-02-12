@@ -384,6 +384,7 @@
     <Compile Include="StatParts\StatPart_Flammability.cs" />
     <Compile Include="VFEMedieval.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorldComponents\WorldComponent_HeraldryPawns.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">

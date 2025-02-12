@@ -530,6 +530,9 @@
       </tags>
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
+	  <comps>
+      <li Class="VFEMedieval.CompProperties_EditHeraldic"/>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="ApparelMakeableBase">

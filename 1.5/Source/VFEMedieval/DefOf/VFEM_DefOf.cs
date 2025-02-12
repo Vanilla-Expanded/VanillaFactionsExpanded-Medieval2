@@ -57,5 +57,7 @@ namespace VFEMedieval
         public static ThingDef Grimworld_FlintlockSmoke;
 
         public static ThingCategoryDef ResourcesRaw;
+
+        public static ResearchProjectDef VFEM2_Heraldry;
     }
 }

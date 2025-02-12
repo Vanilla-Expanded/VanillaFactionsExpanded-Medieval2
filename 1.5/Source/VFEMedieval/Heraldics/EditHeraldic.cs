@@ -27,8 +27,8 @@ namespace VFEMedieval
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             // Check if Heraldic Research is completed.
-            var research = DefDatabase<ResearchProjectDef>.GetNamed("VFEM2_Heraldry");
-            if (research != null && research.IsFinished)
+            var research = VFEM_DefOf.VFEM2_Heraldry;
+            if (research.IsFinished && (parent is Pawn == false || WorldComponent_HeraldryPawns.Instance.heraldry_pawns.Contains(parent)))
             {
                 yield return new Command_Action
                 {
@@ -41,6 +41,44 @@ namespace VFEMedieval
                     }
                 };
             }
+        }
+        public override void Notify_Equipped(Pawn pawn)
+        {
+            base.Notify_Equipped(pawn);
+         
+            WorldComponent_HeraldryPawns.Instance.AddHeraldryPawn(pawn);
+        }
+
+     
+        public override void Notify_Unequipped(Pawn pawn)
+        {
+            base.Notify_Unequipped(pawn);
+
+            bool flag = false;
+            List<Apparel> wornApparel = pawn.apparel.WornApparel;
+            for (int i = 0; i < wornApparel.Count; i++)
+            {
+                if (wornApparel[i].def?.HasComp<CompEditHeraldic>()==true)
+                {
+                    flag = true;
+                }
+               
+            }
+            List<ThingWithComps> equipment = pawn.equipment.AllEquipmentListForReading;
+            for (int i = 0; i < equipment.Count; i++)
+            {
+                if (equipment[i].def?.HasComp<CompEditHeraldic>() == true)
+                {
+                    flag = true;
+                }
+
+            }
+            if (!flag)
+            {
+                WorldComponent_HeraldryPawns.Instance.RemoveHeraldryPawn(pawn);
+            }
+
+            
         }
     }
 
