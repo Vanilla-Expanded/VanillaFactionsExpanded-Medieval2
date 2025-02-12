@@ -13,6 +13,13 @@ namespace VFEMedieval
 
         public override Quaternion ExactRotation => Quaternion.LookRotation(this.LookTowards);
 
+        public override void ImpactSomething()
+        {
+            def.projectile.flyOverhead = false;
+            base.ImpactSomething();
+            def.projectile.flyOverhead = true;
+        }
+
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             float num = ArcHeightFactor * GenMath.InverseParabola(DistanceCoveredFraction);
