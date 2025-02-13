@@ -198,7 +198,7 @@ namespace VFEMedieval
                  new StatModifier
                {
                    stat=StatDefOf.Flammability,
-                   value= 1
+                   value= 0
 
                } ,
                  new StatModifier
