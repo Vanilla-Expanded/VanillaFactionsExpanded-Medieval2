@@ -7,7 +7,7 @@
     <description>A bulky medieval helmet that provides full-head coverage. Offers a considerable amount of protection but restricts the wearer's field of vision.</description>
     <techLevel>Medieval</techLevel>
     <recipeMaker>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>PlateArmor</researchPrerequisite>
       <recipeUsers>
         <li>ElectricSmithy</li>
         <li>FueledSmithy</li>
