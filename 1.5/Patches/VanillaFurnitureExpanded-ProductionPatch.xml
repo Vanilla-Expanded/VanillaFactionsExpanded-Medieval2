@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
+
    <Operation Class="PatchOperationFindMod">
       <mods>
          <li>Vanilla Furniture Expanded - Production</li>
@@ -18,16 +19,6 @@
                   <li>VFE_DrugCabinet</li>
                </value>
             </li>
-         </operations>
-      </match>
-   </Operation>
-   
-   <Operation Class="PatchOperationFindMod">
-      <mods>
-         <li>Vanilla Furniture Expanded - Production</li>
-      </mods>
-      <match Class="PatchOperationSequence">
-         <operations>
             <li Class="PatchOperationAdd">
                <xpath>Defs/ThingDef[defName="VFE_TableSmithyLarge"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
                <value>
@@ -59,6 +50,7 @@
          </operations>
       </match>
    </Operation>
+   
 </Patch>
 
 
