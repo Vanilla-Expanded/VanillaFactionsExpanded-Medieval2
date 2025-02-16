@@ -150,7 +150,7 @@
       <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
     <relicChance>2</relicChance>
-    <equippedAngleOffset>25</equippedAngleOffset>
+    <equippedAngleOffset>-90</equippedAngleOffset>
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
@@ -224,6 +224,7 @@
     <equippedStatOffsets>
       <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
+	<equippedAngleOffset>-90</equippedAngleOffset>
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
