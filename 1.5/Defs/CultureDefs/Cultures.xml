@@ -14,7 +14,7 @@
     <allowedPlaceTags>
       <li>OriginTribal</li>
     </allowedPlaceTags>
-    <iconPath>World/WorldObjects/Expanding/Castle</iconPath>
+    <iconPath>MapIcons/CastleCivil</iconPath>
     <iconColor>(0.8, 0.8, 0.8)</iconColor>
     <preferredWeaponClasses>
       <noble>MeleePiercer</noble>
@@ -57,7 +57,7 @@
     <allowedPlaceTags>
       <li>OriginTribal</li>
     </allowedPlaceTags>
-    <iconPath>World/WorldObjects/Expanding/VikingsClan</iconPath>
+    <iconPath>MapIcons/ClanCivil</iconPath>
     <iconColor>(0.8, 0.8, 0.8)</iconColor>
     <preferredWeaponClasses>
       <noble>VFEM2_Vikings</noble>
