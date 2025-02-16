@@ -69,16 +69,24 @@
     </Operation>
 
     <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name="SleepingSpotBase"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <xpath>Defs/ThingDef[@Name="SleepingSpotBase"]/comps</xpath>
         <value>
-		    <li>VFEM2_SurgicalTools</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VFEM2_SurgicalTools</li>
+        </linkableFacilities>
+      </li>
 		</value>
     </Operation>
 	
     <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name="BedWithQualityBase"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <xpath>Defs/ThingDef[@Name="BedWithQualityBase"]/comps</xpath>
         <value>
-		    <li>VFEM2_SurgicalTools</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VFEM2_SurgicalTools</li>
+        </linkableFacilities>
+      </li>
 		</value>
     </Operation>
 	

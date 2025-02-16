@@ -74,7 +74,6 @@
       <li>VFEM2_Caravan_Medieval_ArtPatron</li>
       <li>VFEM2_Caravan_Medieval_Armourer</li>
       <li>VFEM2_Caravan_Medieval_Weaponsmith</li>
-      <li>VFEM2_Caravan_Medieval_Sellswords</li>
     </caravanTraderKinds>
     <visitorTraderKinds>
       <li>VFEM2_Visitor_Medieval_Standard</li>
