@@ -151,7 +151,7 @@
 		<defName>VFEM2_Heraldry</defName>
 		<label>heraldry</label>
 		<description>Adorn the colors of your faction and construct decorative banners and heraldic rugs.</description>
-		<baseCost>2500</baseCost>
+		<baseCost>1200</baseCost>
 		<tab>VanillaExpanded</tab>
 		<techLevel>Medieval</techLevel>
 		<researchViewX>4.00</researchViewX>
