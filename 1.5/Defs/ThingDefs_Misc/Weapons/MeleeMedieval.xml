@@ -130,7 +130,7 @@
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Claymore</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>1.5</drawSize>
+	  <drawSize>1.25</drawSize>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
@@ -150,7 +150,7 @@
       <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
     <relicChance>2</relicChance>
-    <equippedAngleOffset>-25</equippedAngleOffset>
+    <equippedAngleOffset>25</equippedAngleOffset>
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
@@ -201,7 +201,7 @@
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Halberd</defName>
     <label>halberd</label>
-    <description>A long, unwieldy polearm tipped with a sharp point for stabbing opponents. The reach of the pike allows to strike enemies much further away.</description>
+    <description>A long, unwieldy polearm with a sharp edge and a sharp point. The simple, ancient design concentrates cutting power generated from strong overhead swings. The reach of the halberd allows to strike enemies much further away.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Pike</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -261,7 +261,7 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>20</power>
+        <power>18</power>
         <cooldownTime>5.2</cooldownTime>
 		<armorPenetration>0.5</armorPenetration>
       </li>
@@ -307,7 +307,6 @@
     <equippedStatOffsets>
       <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
-    <equippedAngleOffset>-25</equippedAngleOffset>
     <costList>
       <WoodLog>80</WoodLog>
       <Cloth>80</Cloth>
@@ -423,7 +422,7 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>23</power>
+        <power>26</power>
         <armorPenetration>0.5</armorPenetration>
         <cooldownTime>4.2</cooldownTime>
       </li>
@@ -486,7 +485,7 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>18</power>
+        <power>16</power>
         <cooldownTime>1.8</cooldownTime>
 		<armorPenetration>0.24</armorPenetration>
       </li>
@@ -495,7 +494,7 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>16</power>
+        <power>15</power>
         <cooldownTime>1.8</cooldownTime>
 		<armorPenetration>0.24</armorPenetration>
       </li>

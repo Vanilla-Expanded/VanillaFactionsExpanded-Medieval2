@@ -19,7 +19,7 @@
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
 		<canMakeRandomly>true</canMakeRandomly>
 		<canStageAttacks>true</canStageAttacks>
-		<factionIconPath>MapIcons/CastleCivil</factionIconPath>
+		<factionIconPath>MapIcons/TradingGuild</factionIconPath>
 		<factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
 		<allowedCultures>
 			<li>VFEM2_Feudal</li>

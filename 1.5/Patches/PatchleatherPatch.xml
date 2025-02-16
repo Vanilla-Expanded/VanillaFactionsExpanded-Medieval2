@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[defName="Make_Patchleather"]/ingredients/li[1]/filter/disallowedThingDefs</xpath>
+        <value>
+		    <li>VFEM2_HardLeather</li>
+		</value>
+    </Operation> 
+	
+</Patch>
