@@ -9,6 +9,7 @@
 			<harvestTag>Standard</harvestTag>
 			<sowTags>
 				<li>Ground</li>
+				<li>Hydroponic</li>
 			</sowTags>
 			<sowResearchPrerequisites Inherit="False">
 				<li>VFEM2_Alchemy</li>
@@ -24,6 +25,7 @@
 			<harvestTag>Standard</harvestTag>
 			<sowTags>
 				<li>Ground</li>
+				<li>Hydroponic</li>
 			</sowTags>
 			<sowResearchPrerequisites Inherit="False">
 				<li>VFEM2_Alchemy</li>
@@ -45,6 +47,7 @@
 			<harvestTag>Standard</harvestTag>
 			<sowTags>
 				<li>Ground</li>
+				<li>Hydroponic</li>
 			</sowTags>
 			<sowResearchPrerequisites Inherit="False">
 				<li>VFEM2_Alchemy</li>
@@ -60,6 +63,7 @@
 			<harvestTag>Standard</harvestTag>
 			<sowTags>
 				<li>Ground</li>
+				<li>Hydroponic</li>
 			</sowTags>
 			<sowResearchPrerequisites Inherit="False">
 				<li>VFEM2_Alchemy</li>
@@ -83,6 +87,7 @@
 		<value>
 			<sowTags>
 				<li>Ground</li>
+				<li>Hydroponic</li>
 			</sowTags>
 			<sowResearchPrerequisites Inherit="False">
 				<li>VFEM2_Alchemy</li>

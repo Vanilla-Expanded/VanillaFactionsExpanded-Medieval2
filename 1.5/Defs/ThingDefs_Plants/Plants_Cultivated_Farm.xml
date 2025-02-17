@@ -27,6 +27,7 @@
 			<sowMinSkill>5</sowMinSkill>
 			<sowTags>
 				<li>Ground</li>
+				
 			</sowTags>
 			<topWindExposure>0.1</topWindExposure>
 			<wildOrder>2</wildOrder>
