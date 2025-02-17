@@ -14,6 +14,8 @@ namespace VFEMedieval
         [HarmonyPatch(typeof(ITab_Bills), "FillTab")]
         public static class ITab_Bills_FillTab_Patch
         {
+            private static Dictionary<ThingDef, List<RecipeDef>> recipeCache = new();
+
             [HarmonyPriority(int.MaxValue)]
             public static void Prefix(ITab_Bills __instance, out List<RecipeDef> __state)
             {
@@ -21,7 +23,11 @@ namespace VFEMedieval
                 __state = table.def.AllRecipes;
                 if (table.IsLinkedTo(VFEM_DefOf.VFEM2_MannequinStand))
                 {
-                    table.def.allRecipesCached = table.def.AllRecipes.Select(x => x.ContractedRecipe()).ToList();
+                    if (!recipeCache.TryGetValue(table.def, out var cachedRecipes))
+                    {
+                        recipeCache[table.def] = cachedRecipes = table.def.AllRecipes.Select(x => x.ContractedRecipe()).ToList();
+                    }
+                    table.def.allRecipesCached = cachedRecipes;
                 }
             }
 

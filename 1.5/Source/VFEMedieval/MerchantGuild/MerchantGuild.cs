@@ -223,7 +223,10 @@ namespace VFEMedieval
         {
             base.Tick();
             pather.PatherTick();
-            tweener.TweenerTick();
+            if (this.IsHashIntervalTick(30))
+            {
+                tweener.TweenerTick();
+            }
             if (pather.MovingNow is false)
             {
                 if (ticksToStay > 0)

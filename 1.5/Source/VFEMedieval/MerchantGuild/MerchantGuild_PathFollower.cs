@@ -60,7 +60,7 @@ namespace VFEMedieval
         {
             get
             {
-                if (Moving && !Paused)
+                if (moving && !paused)
                 {
                     return true;
                 }
