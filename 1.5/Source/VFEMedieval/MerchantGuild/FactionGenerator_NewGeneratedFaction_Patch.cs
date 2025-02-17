@@ -22,7 +22,8 @@ namespace VFEMedieval
 
         public static void GenerateMerchantCaravans(Faction merchantFaction)
         {
-            var spawnCount = Mathf.RoundToInt(VFEMedievalSettings.merchantCaravanSpawnCount * Find.World.info.overallPopulation.GetScaleFactor());
+            var spawnCount = Mathf.RoundToInt(VFEMedievalSettings.merchantCaravanSpawnCount 
+                * Find.World.info.overallPopulation.GetScaleFactor());
             for (var i = 0; i < spawnCount; i++)
             {
                 var merchantGuild = (MerchantGuild)WorldObjectMaker.MakeWorldObject(VFEM_DefOf.VFEM2_MerchantGuildCaravan);

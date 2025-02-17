@@ -69,6 +69,11 @@ namespace VFEMedieval
             {
                 AddToTradeables(good, Transactor.Trader);
             }
+            var newStuff = tradeablesPlayer.Where(x => tradeablesTrader.Any(y => y.ThingDef == x.ThingDef) is false).ToList();
+            foreach (var stuff in newStuff)
+            {
+                stuff.pricePlayerSell *= 1f + stuff.priceGain_PlayerNegotiator;
+            }
         }
 
         private void AddToTradeables(Thing t, Transactor trans)

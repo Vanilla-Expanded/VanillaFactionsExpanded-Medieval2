@@ -47,9 +47,9 @@ namespace VFEMedieval
 
         private Vector2 scrollPositionTraderSummary = Vector2.zero;
 
-        private QuickSearchWidget quickSearchWidgetPlayer = new QuickSearchWidget();
+        private QuickSearchWidget quickSearchWidgetTrader;
 
-        private QuickSearchWidget quickSearchWidgetTrader = new QuickSearchWidget();
+        private QuickSearchWidget quickSearchWidgetPlayer;
 
         private List<Tradeable> cachedTradeablesPlayer;
 
@@ -213,10 +213,12 @@ namespace VFEMedieval
             {
                 soundAmbient = SoundDefOf.RadioComms_Ambience;
             }
-            commonSearchWidgetOffset.x += 18f;
-            commonSearchWidgetOffset.y -= 18f;
             sorter1 = TransferableSorterDefOf.Category;
             sorter2 = TransferableSorterDefOf.MarketValue;
+            QuickSearchWidget.instanceCounter++;
+            quickSearchWidgetTrader = new QuickSearchWidget();
+            QuickSearchWidget.instanceCounter++;
+            quickSearchWidgetPlayer = new QuickSearchWidget();
         }
 
         public override void PreOpen()
@@ -243,23 +245,41 @@ namespace VFEMedieval
 
         private void CacheTradeables()
         {
+            CacheTradeablesPlayer();
+            CacheTradeablesTrader();
+        }
+
+        private void CacheTradeablesPlayer()
+        {
             CacheTradeables(ref cachedTradeablesPlayer, deal.tradeablesPlayer, quickSearchWidgetPlayer);
+        }
+
+        private void CacheTradeablesTrader()
+        {
             CacheTradeables(ref cachedTradeablesTrader, deal.tradeablesTrader, quickSearchWidgetTrader);
         }
 
-        private void CacheTradeables(ref List<Tradeable> cachedTradeables, List<Tradeable> tradeables, QuickSearchWidget quickSearchWidget)
+        private void CacheTradeables(ref List<Tradeable> cachedTradeables, List<Tradeable> tradeables, 
+            QuickSearchWidget quickSearchWidget)
         {
-            cachedTradeables = (from tr in tradeables
-                                where (tr.TraderWillTrade
-                                      || !TradeSession.trader.TraderKind.hideThingsNotWillingToTrade)
-                                      where quickSearchWidgetPlayer.filter.Matches(tr.Label)
-                                      orderby (!tr.TraderWillTrade) ? (-1) : 0 descending
-                                      select tr).ThenBy((Tradeable tr) => tr, sorter1.Comparer).ThenBy((Tradeable tr) => tr, sorter2.Comparer).ThenBy((Tradeable tr) => TransferableUIUtility.DefaultListOrderPriority(tr))
-                .ThenBy((Tradeable tr) => tr.ThingDef.label)
-                .ThenBy((Tradeable tr) => tr.AnyThing.TryGetQuality(out var qc) ? ((int)qc) : (-1))
-                .ThenBy((Tradeable tr) => tr.AnyThing.HitPoints)
-                .ToList();
-            quickSearchWidgetPlayer.noResultsMatched = !cachedTradeables.Any();
+            try
+            {
+                cachedTradeables = (from tr in tradeables
+                                    where quickSearchWidget.filter.Matches(tr.Label)
+                                    orderby (!tr.TraderWillTrade) ? (-1) : 0 descending
+                                    select tr).ThenBy((Tradeable tr) => tr, sorter1.Comparer)
+                          .ThenBy((Tradeable tr) => tr, sorter2.Comparer).ThenBy((Tradeable tr) =>
+                          TransferableUIUtility.DefaultListOrderPriority(tr))
+                            .ThenBy((Tradeable tr) => tr.ThingDef.label)
+                            .ThenBy((Tradeable tr) => tr.AnyThing.TryGetQuality(out var qc) ? ((int)qc) : (-1))
+                            .ThenBy((Tradeable tr) => tr.AnyThing.HitPoints)
+                            .ToList();
+                quickSearchWidget.noResultsMatched = !cachedTradeables.Any();
+            }
+            catch (Exception ex)
+            {
+                Log.Message("Error? " + ex.Message);
+            }
         }
 
         public override void DoWindowContents(Rect inRect)
@@ -364,9 +384,10 @@ namespace VFEMedieval
                 Close();
                 Event.current.Use();
             }
-
-            quickSearchWidgetPlayer.OnGUI(new Rect(0f, inRect.height - 24f, 200, 24f));
-            quickSearchWidgetTrader.OnGUI(new Rect(inRect.width - 200, inRect.height - 24f, 200, 24f));
+            var playerSearch = new Rect(0f, inRect.height - 24f, 200, 24f);
+            quickSearchWidgetPlayer.OnGUI(playerSearch, CacheTradeablesPlayer);
+            var traderSearch = new Rect(inRect.width - 200, inRect.height - 24f, 200, 24f);
+            quickSearchWidgetTrader.OnGUI(traderSearch, CacheTradeablesTrader);
             Widgets.EndGroup();
         }
 
@@ -452,11 +473,13 @@ namespace VFEMedieval
             Text.Font = GameFont.Small;
             Widgets.BeginGroup(rect);
             float width = rect.width;
+            bool isNotHumanlike = (trad.AnyThing is not Pawn pawn || pawn.RaceProps.Humanlike is false);
             if (interactive)
             {
                 int num = isTrader ? trad.CountHeldBy(Transactor.Trader) : trad.CountHeldBy(Transactor.Colony);
                 string traderCountTooltip = isTrader ? "TraderCount" : "ColonyCount";
-                if (num != 0 && trad.IsThing)
+
+                if (num != 0 && trad.IsThing && isNotHumanlike)
                 {
                     Rect rect2 = new Rect(width - 75f, 0f, 75f, rect.height);
                     if (Mouse.IsOver(rect2))
@@ -475,16 +498,234 @@ namespace VFEMedieval
 
                 Rect rect5 = new Rect(width, 0f, 255f, rect.height);
                 width += 20;
-                TransferableUIUtility.DoCountAdjustInterface(rect5, trad, index, trad.GetMinimumToTransfer(),
-                    trad.GetMaximumToTransfer(), false);
+                if (isNotHumanlike)
+                {
+                    TransferableUIUtility.DoCountAdjustInterface(rect5, trad, index, trad.GetMinimumToTransfer(),
+                        trad.GetMaximumToTransfer(), false);
+                }
+                else
+                {
+                    rect5.x += 30;
+                    DoCountAdjustInterfaceForHumanlike(rect5, trad, index, trad.GetMinimumToTransfer(),
+                        trad.GetMaximumToTransfer(), false);
+                }
             }
-
+            if (isNotHumanlike is false)
+            {
+                rect.width -= 60;
+                width -= 80;
+            }
             TransferableUIUtility.DoExtraIcons(trad, rect, ref width);
-
+            if (ModsConfig.IdeologyActive)
+            {
+                TransferableUIUtility.DrawCaptiveTradeInfo(trad, TradeSession.trader, rect, ref width);
+            }
             Rect idRect = new Rect(0f, 0f, width, rect.height);
             DrawTransferableInfo(trad, idRect, trad.TraderWillTrade ? Color.white : TradeUI.NoTradeColor, interactive is false);
             GenUI.ResetLabelAlign();
             Widgets.EndGroup();
+        }
+
+
+        public static void DoCountAdjustInterfaceForHumanlike(Rect rect, Transferable trad, int index, int min, int max, bool flash = false, List<TransferableCountToTransferStoppingPoint> extraStoppingPoints = null, bool readOnly = false)
+        {
+            TransferableUIUtility.stoppingPoints.Clear();
+            if (extraStoppingPoints != null)
+            {
+                TransferableUIUtility.stoppingPoints.AddRange(extraStoppingPoints);
+            }
+            for (int num = TransferableUIUtility.stoppingPoints.Count - 1; num >= 0; num--)
+            {
+                if (TransferableUIUtility.stoppingPoints[num].threshold != 0 && (TransferableUIUtility.stoppingPoints[num].threshold <= min || TransferableUIUtility.stoppingPoints[num].threshold >= max))
+                {
+                    TransferableUIUtility.stoppingPoints.RemoveAt(num);
+                }
+            }
+            bool flag = false;
+            for (int i = 0; i < TransferableUIUtility.stoppingPoints.Count; i++)
+            {
+                if (TransferableUIUtility.stoppingPoints[i].threshold == 0)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag)
+            {
+                TransferableUIUtility.stoppingPoints.Add(new TransferableCountToTransferStoppingPoint(0, "0", "0"));
+            }
+            DoCountAdjustInterfaceInternal(rect, trad, index, min, max, flash, readOnly);
+        }
+
+        private static void DoCountAdjustInterfaceInternal(Rect rect, Transferable trad, int index, int min, int max, bool flash, bool readOnly)
+        {
+            rect = rect.Rounded();
+            Rect rect2 = new Rect(rect.center.x - 45f, rect.center.y - 12.5f, 90f, 25f).Rounded();
+            if (flash)
+            {
+                GUI.DrawTexture(rect2, TransferableUIUtility.FlashTex);
+            }
+            bool flag = trad is TransferableOneWay { HasAnyThing: not false } transferableOneWay && transferableOneWay.AnyThing is Pawn && transferableOneWay.MaxCount == 1;
+            if (!trad.Interactive || readOnly)
+            {
+                if (flag)
+                {
+                    bool checkOn = trad.CountToTransfer != 0;
+                    Widgets.Checkbox(rect2.position, ref checkOn, 24f, disabled: true);
+                }
+                else
+                {
+                    GUI.color = ((trad.CountToTransfer == 0) ? TransferableUIUtility.ZeroCountColor : Color.white);
+                    Text.Anchor = TextAnchor.MiddleCenter;
+                    Widgets.Label(rect2, trad.CountToTransfer.ToStringCached());
+                }
+            }
+            else if (flag)
+            {
+                bool flag2 = trad.CountToTransfer != 0;
+                bool checkOn2 = flag2;
+                Widgets.Checkbox(rect2.position, ref checkOn2, 24f, disabled: false, paintable: true);
+                if (checkOn2 != flag2)
+                {
+                    if (checkOn2)
+                    {
+                        trad.AdjustTo(trad.GetMaximumToTransfer());
+                    }
+                    else
+                    {
+                        trad.AdjustTo(trad.GetMinimumToTransfer());
+                    }
+                }
+            }
+            else
+            {
+                Rect rect3 = rect2.ContractedBy(2f);
+                rect3.xMax -= 15f;
+                rect3.xMin += 16f;
+                int val = trad.CountToTransfer;
+                string buffer = trad.EditBuffer;
+                Widgets.TextFieldNumeric(rect3, ref val, ref buffer, min, max);
+                trad.AdjustTo(val);
+                trad.EditBuffer = buffer;
+            }
+            Text.Anchor = TextAnchor.UpperLeft;
+            GUI.color = Color.white;
+            if (trad.Interactive && !flag && !readOnly)
+            {
+                TransferablePositiveCountDirection positiveCountDirection = trad.PositiveCountDirection;
+                int num = ((positiveCountDirection == TransferablePositiveCountDirection.Source) ? 1 : (-1));
+                int num2 = GenUI.CurrentAdjustmentMultiplier();
+                bool flag3 = trad.GetRange() == 1;
+                if (trad.CanAdjustBy(num * num2).Accepted)
+                {
+                    Rect rect4 = new Rect(rect2.x - 30f, rect.y, 30f, rect.height);
+                    if (Widgets.ButtonText(rect4, "<"))
+                    {
+                        trad.AdjustBy(num * num2);
+                        SoundDefOf.Tick_High.PlayOneShotOnCamera();
+                    }
+                    if (!flag3)
+                    {
+                        string label = "<<";
+                        int? num3 = null;
+                        int num4 = 0;
+                        for (int i = 0; i < TransferableUIUtility.stoppingPoints.Count; i++)
+                        {
+                            TransferableCountToTransferStoppingPoint transferableCountToTransferStoppingPoint = TransferableUIUtility.stoppingPoints[i];
+                            if (positiveCountDirection == TransferablePositiveCountDirection.Source)
+                            {
+                                if (trad.CountToTransfer < transferableCountToTransferStoppingPoint.threshold && (transferableCountToTransferStoppingPoint.threshold < num4 || !num3.HasValue))
+                                {
+                                    label = transferableCountToTransferStoppingPoint.leftLabel;
+                                    num3 = transferableCountToTransferStoppingPoint.threshold;
+                                }
+                            }
+                            else if (trad.CountToTransfer > transferableCountToTransferStoppingPoint.threshold && (transferableCountToTransferStoppingPoint.threshold > num4 || !num3.HasValue))
+                            {
+                                label = transferableCountToTransferStoppingPoint.leftLabel;
+                                num3 = transferableCountToTransferStoppingPoint.threshold;
+                            }
+                        }
+                        rect4.x -= rect4.width;
+                        if (Widgets.ButtonText(rect4, label))
+                        {
+                            if (num3.HasValue)
+                            {
+                                trad.AdjustTo(num3.Value);
+                            }
+                            else if (num == 1)
+                            {
+                                trad.AdjustTo(trad.GetMaximumToTransfer());
+                            }
+                            else
+                            {
+                                trad.AdjustTo(trad.GetMinimumToTransfer());
+                            }
+                            SoundDefOf.Tick_High.PlayOneShotOnCamera();
+                        }
+                    }
+                }
+                if (trad.CanAdjustBy(-num * num2).Accepted)
+                {
+                    Rect rect5 = new Rect(rect2.xMax, rect.y, 30f, rect.height);
+                    if (Widgets.ButtonText(rect5, ">"))
+                    {
+                        trad.AdjustBy(-num * num2);
+                        SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+                    }
+                    if (!flag3)
+                    {
+                        string label2 = ">>";
+                        int? num5 = null;
+                        int num6 = 0;
+                        for (int j = 0; j < TransferableUIUtility.stoppingPoints.Count; j++)
+                        {
+                            TransferableCountToTransferStoppingPoint transferableCountToTransferStoppingPoint2 = TransferableUIUtility.stoppingPoints[j];
+                            if (positiveCountDirection == TransferablePositiveCountDirection.Destination)
+                            {
+                                if (trad.CountToTransfer < transferableCountToTransferStoppingPoint2.threshold && (transferableCountToTransferStoppingPoint2.threshold < num6 || !num5.HasValue))
+                                {
+                                    label2 = transferableCountToTransferStoppingPoint2.rightLabel;
+                                    num5 = transferableCountToTransferStoppingPoint2.threshold;
+                                }
+                            }
+                            else if (trad.CountToTransfer > transferableCountToTransferStoppingPoint2.threshold && (transferableCountToTransferStoppingPoint2.threshold > num6 || !num5.HasValue))
+                            {
+                                label2 = transferableCountToTransferStoppingPoint2.rightLabel;
+                                num5 = transferableCountToTransferStoppingPoint2.threshold;
+                            }
+                        }
+                        rect5.x += rect5.width;
+                        if (Widgets.ButtonText(rect5, label2))
+                        {
+                            if (num5.HasValue)
+                            {
+                                trad.AdjustTo(num5.Value);
+                            }
+                            else if (num == 1)
+                            {
+                                trad.AdjustTo(trad.GetMinimumToTransfer());
+                            }
+                            else
+                            {
+                                trad.AdjustTo(trad.GetMaximumToTransfer());
+                            }
+                            SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+                        }
+                    }
+                }
+            }
+            if (trad.CountToTransfer != 0)
+            {
+                Rect position = new Rect(rect2.x + rect2.width / 2f - (float)(TransferableUIUtility.TradeArrow.width / 2), rect2.y + rect2.height / 2f - (float)(TransferableUIUtility.TradeArrow.height / 2), TransferableUIUtility.TradeArrow.width, TransferableUIUtility.TradeArrow.height);
+                TransferablePositiveCountDirection positiveCountDirection2 = trad.PositiveCountDirection;
+                if ((positiveCountDirection2 == TransferablePositiveCountDirection.Source && trad.CountToTransfer > 0) || (positiveCountDirection2 == TransferablePositiveCountDirection.Destination && trad.CountToTransfer < 0))
+                {
+                    position.x += position.width;
+                    position.width *= -1f;
+                }
+                GUI.DrawTexture(position, TransferableUIUtility.TradeArrow);
+            }
         }
 
         public static void DrawTransferableInfo(Transferable trad, Rect idRect, Color labelColor, 
@@ -592,11 +833,6 @@ namespace VFEMedieval
             daysWorthOfFoodDirty = true;
             foragedFoodPerDayDirty = true;
             visibilityDirty = true;
-        }
-
-        public override void Notify_CommonSearchChanged()
-        {
-            CacheTradeables();
         }
     }
 }

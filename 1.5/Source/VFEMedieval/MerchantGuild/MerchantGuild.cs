@@ -27,8 +27,6 @@ namespace VFEMedieval
 
         private bool everGeneratedStock;
 
-        private List<Pawn> tmpSavedPawns = new List<Pawn>();
-
         public MerchantGuild()
         {
             pather = new MerchantGuild_PathFollower(this);
@@ -88,6 +86,70 @@ namespace VFEMedieval
                 return "VFEM2_MerchantCaravanStayPeriod".Translate(ticksToStay.ToStringTicksToPeriod());
             }
             return "";
+        }
+
+        public override IEnumerable<Gizmo> GetCaravanGizmos(Caravan caravan)
+        {
+            if (CanTradeNow && GuildVisitedNow(caravan) == this)
+            {
+                yield return TradeCommand(caravan, base.Faction, TraderKind);
+            }
+            foreach (Gizmo caravanGizmo in base.GetCaravanGizmos(caravan))
+            {
+                yield return caravanGizmo;
+            }
+        }
+
+        public static MerchantGuild GuildVisitedNow(Caravan caravan)
+        {
+            if (!caravan.Spawned || caravan.pather.Moving)
+            {
+                return null;
+            }
+            List<MerchantGuild> bases = Find.WorldObjects.AllWorldObjects.OfType<MerchantGuild>().ToList();
+            for (int i = 0; i < bases.Count; i++)
+            {
+                var settlement = bases[i];
+                if (settlement.Tile == caravan.Tile)
+                {
+                    return settlement;
+                }
+            }
+            return null;
+        }
+
+        public static Command_Action TradeCommand(Caravan caravan, Faction faction = null, TraderKindDef trader = null)
+        {
+            Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, trader);
+            Command_Action command_Action = new Command_Action();
+            command_Action.defaultLabel = "CommandTrade".Translate();
+            command_Action.defaultDesc = "CommandTradeDesc".Translate();
+            command_Action.icon = CaravanVisitUtility.TradeCommandTex;
+            command_Action.action = delegate
+            {
+                var settlement = GuildVisitedNow(caravan);
+                if (settlement != null && settlement.CanTradeNow)
+                {
+                    Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, settlement));
+                    PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter_Send(settlement.Goods.OfType<Pawn>(), "LetterRelatedPawnsTradingWithSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), LetterDefOf.NeutralEvent);
+                }
+            };
+            if (bestNegotiator == null)
+            {
+                if (trader != null && trader.permitRequiredForTrading != null && !caravan.PawnsListForReading.Any((Pawn p) => p.royalty != null && p.royalty.HasPermit(trader.permitRequiredForTrading, faction)))
+                {
+                    command_Action.Disable("CommandTradeFailNeedPermit".Translate(trader.permitRequiredForTrading.LabelCap));
+                }
+                else
+                {
+                    command_Action.Disable("CommandTradeFailNoNegotiator".Translate());
+                }
+            }
+            if (bestNegotiator != null && bestNegotiator.skills.GetSkill(SkillDefOf.Social).TotallyDisabled)
+            {
+                command_Action.Disable("CommandTradeFailSocialDisabled".Translate());
+            }
+            return command_Action;
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -162,7 +224,6 @@ namespace VFEMedieval
             base.Tick();
             pather.PatherTick();
             tweener.TweenerTick();
-            TraderTrackerTick();
             if (pather.MovingNow is false)
             {
                 if (ticksToStay > 0)
@@ -279,29 +340,6 @@ namespace VFEMedieval
             }
         }
 
-        public virtual void TraderTrackerTick()
-        {
-            if (stock == null)
-            {
-                return;
-            }
-            for (int num = stock.Count - 1; num >= 0; num--)
-            {
-                if (stock[num] is Pawn pawn && pawn.Destroyed is false)
-                {
-                    stock.Remove(pawn);
-                }
-            }
-            for (int num2 = stock.Count - 1; num2 >= 0; num2--)
-            {
-                if (stock[num2] is Pawn pawn2 && !pawn2.IsWorldPawn())
-                {
-                    Log.Error("Faction base has non-world-pawns in its stock. Removing...");
-                    stock.Remove(pawn2);
-                }
-            }
-        }
-
         public void TryDestroyStock()
         {
             if (stock == null)
@@ -334,13 +372,11 @@ namespace VFEMedieval
             TryDestroyStock();
             stock = new ThingOwner<Thing>(this);
             everGeneratedStock = true;
-
             ThingSetMakerParams parms = default(ThingSetMakerParams);
             parms.traderDef = TraderKind;
             parms.tile = Tile;
             parms.makingFaction = Faction;
             stock.TryAddRangeOrTransfer(ThingSetMakerDefOf.TraderStock.root.Generate(parms));
-
             for (int i = 0; i < stock.Count; i++)
             {
                 Thing thing = stock[i];
@@ -373,33 +409,9 @@ namespace VFEMedieval
             base.ExposeData();
             Scribe_Deep.Look(ref pather, "pather", this);
             Scribe_Values.Look(ref ticksToStay, "ticksToStay");
-            if (Scribe.mode == LoadSaveMode.Saving)
-            {
-                tmpSavedPawns.Clear();
-                if (stock != null)
-                {
-                    for (int num = stock.Count - 1; num >= 0; num--)
-                    {
-                        if (stock[num] is Pawn item)
-                        {
-                            stock.Remove(item);
-                            tmpSavedPawns.Add(item);
-                        }
-                    }
-                }
-            }
-            Scribe_Collections.Look(ref tmpSavedPawns, "tmpSavedPawns", LookMode.Reference);
             Scribe_Deep.Look(ref stock, "stock");
             Scribe_Values.Look(ref lastStockGenerationTicks, "lastStockGenerationTicks", 0);
             Scribe_Values.Look(ref everGeneratedStock, "wasStockGeneratedYet", defaultValue: false);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit || Scribe.mode == LoadSaveMode.Saving)
-            {
-                for (int i = 0; i < tmpSavedPawns.Count; i++)
-                {
-                    stock.TryAdd(tmpSavedPawns[i], canMergeWithExistingStacks: false);
-                }
-                tmpSavedPawns.Clear();
-            }
         }
     }
 }

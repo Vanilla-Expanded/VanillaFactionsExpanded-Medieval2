@@ -39,9 +39,9 @@ namespace VFEMedieval
         public override void Arrived(Caravan caravan)
         {
             CameraJumper.TryJumpAndSelect(caravan);
+            Caravan_PathFollower_ExposeData_Patch.merchantsToFollow.Remove(caravan.pather);
             Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, this.merchantGuild.Faction, 
                 this.merchantGuild.TraderKind);
-            Caravan_PathFollower_ExposeData_Patch.merchantsToFollow.Remove(caravan.pather);
             Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, this.merchantGuild));
         }
 
@@ -77,7 +77,16 @@ namespace VFEMedieval
                 "VFEM2_BarterWith".Translate(merchantGuild.Label), caravan, merchantGuild.Tile, merchantGuild,
                 delegate
                 {
-                    Caravan_PathFollower_ExposeData_Patch.merchantsToFollow[caravan.pather] = merchantGuild;
+                    if (caravan.Tile != merchantGuild.Tile)
+                    {
+                        Caravan_PathFollower_ExposeData_Patch.merchantsToFollow[caravan.pather] = merchantGuild;
+                    }
+                    else
+                    {
+                        Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, merchantGuild.Faction,
+                            merchantGuild.TraderKind);
+                        Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, merchantGuild));
+                    }
                 });
         }
     }

@@ -19,20 +19,21 @@ namespace VFEMedieval
 
     public class VFEMedievalSettings : ModSettings
     {
-        public static float merchantCaravanSpawnCount = 3f;
+        public static float merchantCaravanSpawnCount = 6f;
 
         public void DoSettingsWindowContents(Rect inRect)
         {
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect);
             merchantCaravanSpawnCount = listingStandard.SliderLabeled("VFEM2_MerchantCaravanSpawnCount".Translate() 
-                + ": " + merchantCaravanSpawnCount.ToString("F2"), merchantCaravanSpawnCount, 1f, 10f);
+                + ": " + merchantCaravanSpawnCount.ToString("F2"), merchantCaravanSpawnCount, 1f, 20f);
             listingStandard.End();
         }
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref merchantCaravanSpawnCount, "merchantCaravanSpawnCount", 3f);
+            Scribe_Values.Look(ref merchantCaravanSpawnCount, "merchantCaravanSpawnCount", 6f);
         }
     }
 }
