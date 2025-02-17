@@ -569,6 +569,7 @@
 			<li>AnimalProductRaw</li>
 			<li>Medicine</li>
 			<li>PlantMatter</li>
+			<li>Drugs</li>
           </categories>
           <thingDefs>
 		    <li>MedicineHerbal</li>
