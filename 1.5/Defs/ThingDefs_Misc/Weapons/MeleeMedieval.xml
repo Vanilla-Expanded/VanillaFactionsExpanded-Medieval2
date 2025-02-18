@@ -294,6 +294,7 @@
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>
+    <equippedAngleOffset>-90</equippedAngleOffset>
     <weaponTags>
       <li>VFEM2_Standard</li>
     </weaponTags>
