@@ -259,7 +259,7 @@ namespace VFEMedieval
             CacheTradeables(ref cachedTradeablesTrader, deal.tradeablesTrader, quickSearchWidgetTrader);
         }
 
-        private void CacheTradeables(ref List<Tradeable> cachedTradeables, List<Tradeable> tradeables, 
+        private void CacheTradeables(ref List<Tradeable> cachedTradeables, List<Tradeable> tradeables,
             QuickSearchWidget quickSearchWidget)
         {
             try
@@ -435,7 +435,7 @@ namespace VFEMedieval
             base.Close(doCloseSound);
         }
 
-        private void FillMainRect(Rect mainRect, List<Tradeable> cachedTradeables, ref Vector2 scrollPosition, 
+        private void FillMainRect(Rect mainRect, List<Tradeable> cachedTradeables, ref Vector2 scrollPosition,
             bool isTrader, bool interactive)
         {
             Text.Font = GameFont.Small;
@@ -500,14 +500,13 @@ namespace VFEMedieval
                 width += 20;
                 if (isNotHumanlike)
                 {
-                    TransferableUIUtility.DoCountAdjustInterface(rect5, trad, index, trad.GetMinimumToTransfer(),
-                        trad.GetMaximumToTransfer(), false);
+                    DoCountAdjustInterfaceInternal(rect5, trad, index, trad.GetMinimumToTransfer(), trad.GetMaximumToTransfer(), false, false);
+                    //TransferableUIUtility.DoCountAdjustInterface(rect5, trad, index, trad.GetMinimumToTransfer(), trad.GetMaximumToTransfer(), false, readOnly: isTrader);
                 }
                 else
                 {
                     rect5.x += 30;
-                    DoCountAdjustInterfaceForHumanlike(rect5, trad, index, trad.GetMinimumToTransfer(),
-                        trad.GetMaximumToTransfer(), false);
+                    DoCountAdjustInterfaceForHumanlike(rect5, trad, index, trad.GetMinimumToTransfer(), trad.GetMaximumToTransfer(), false);
                 }
             }
             if (isNotHumanlike is false)
@@ -647,7 +646,7 @@ namespace VFEMedieval
                             }
                         }
                         rect4.x -= rect4.width;
-                        if (Widgets.ButtonText(rect4, label))
+                        if (Widgets.ButtonText(rect4, label, active: Mouse.IsOver(rect4)))
                         {
                             if (num3.HasValue)
                             {
@@ -696,7 +695,7 @@ namespace VFEMedieval
                             }
                         }
                         rect5.x += rect5.width;
-                        if (Widgets.ButtonText(rect5, label2))
+                        if (Widgets.ButtonText(rect5, label2, active: Mouse.IsOver(rect5)))
                         {
                             if (num5.HasValue)
                             {
@@ -728,7 +727,7 @@ namespace VFEMedieval
             }
         }
 
-        public static void DrawTransferableInfo(Transferable trad, Rect idRect, Color labelColor, 
+        public static void DrawTransferableInfo(Transferable trad, Rect idRect, Color labelColor,
             bool drawCountToTransfer)
         {
             if (!trad.HasAnyThing && trad.IsThing)
@@ -763,7 +762,7 @@ namespace VFEMedieval
             Rect rect2 = new Rect(80f, 0f, idRect.width - 80f, idRect.height);
             Text.WordWrap = false;
             GUI.color = labelColor;
-            var label = drawCountToTransfer ? Mathf.Abs(trad.CountToTransfer)  + " " + trad.LabelCap : trad.LabelCap;
+            var label = drawCountToTransfer ? Mathf.Abs(trad.CountToTransfer) + " " + trad.LabelCap : trad.LabelCap;
             Widgets.Label(rect2, label);
             GUI.color = Color.white;
             Text.WordWrap = true;
