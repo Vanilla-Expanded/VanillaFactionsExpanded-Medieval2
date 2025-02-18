@@ -28,7 +28,7 @@ namespace VFEMedieval
         {
             // Check if Heraldic Research is completed.
             var research = VFEM_DefOf.VFEM2_Heraldry;
-            if (research.IsFinished && (parent is Pawn == false || WorldComponent_HeraldryPawns.Instance.heraldry_pawns.Contains(parent)))
+            if (research.IsFinished && parent.Faction == Faction.OfPlayerSilentFail && (parent is Pawn == false || WorldComponent_HeraldryPawns.Instance.heraldry_pawns.Contains(parent)))
             {
                 yield return new Command_Action
                 {
