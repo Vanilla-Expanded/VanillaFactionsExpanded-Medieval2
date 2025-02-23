@@ -35,4 +35,6 @@
 	<VFEM2_BarterWith>Barter with {0}</VFEM2_BarterWith>
 	<VFEM2_BarterFairness>Barter fairness</VFEM2_BarterFairness>
 	<VFEM2_BarterExplanation>In order to strike a deal with the Merchant's Guild, you need to provide them with enough goods for the deal to become fair. Value of every item is skewed in random direction slightly. Higher negotiation ability will increase the value of your items.</VFEM2_BarterExplanation>
+	<VFEM2_CommandBarter>Barter</VFEM2_CommandBarter>
+	<VFEM2_CommandBarterDesc>Barter with this merchant guild.</VFEM2_CommandBarterDesc>
 </LanguageData>

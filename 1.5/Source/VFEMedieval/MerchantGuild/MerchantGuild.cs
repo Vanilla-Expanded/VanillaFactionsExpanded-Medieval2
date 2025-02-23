@@ -92,7 +92,7 @@ namespace VFEMedieval
         {
             if (CanTradeNow && GuildVisitedNow(caravan) == this)
             {
-                yield return TradeCommand(caravan, base.Faction, TraderKind);
+                yield return BarterCommand(caravan, base.Faction, TraderKind);
             }
             foreach (Gizmo caravanGizmo in base.GetCaravanGizmos(caravan))
             {
@@ -118,20 +118,20 @@ namespace VFEMedieval
             return null;
         }
 
-        public static Command_Action TradeCommand(Caravan caravan, Faction faction = null, TraderKindDef trader = null)
+        public static Command_Action BarterCommand(Caravan caravan, Faction faction = null, TraderKindDef trader = null)
         {
             Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, trader);
             Command_Action command_Action = new Command_Action();
-            command_Action.defaultLabel = "CommandTrade".Translate();
-            command_Action.defaultDesc = "CommandTradeDesc".Translate();
+            command_Action.defaultLabel = "VFEM2_CommandBarter".Translate();
+            command_Action.defaultDesc = "VFEM2_CommandBarterDesc".Translate();
             command_Action.icon = CaravanVisitUtility.TradeCommandTex;
             command_Action.action = delegate
             {
-                var settlement = GuildVisitedNow(caravan);
-                if (settlement != null && settlement.CanTradeNow)
+                var guild = GuildVisitedNow(caravan);
+                if (guild != null && guild.CanTradeNow)
                 {
-                    Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, settlement));
-                    PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter_Send(settlement.Goods.OfType<Pawn>(), "LetterRelatedPawnsTradingWithSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), LetterDefOf.NeutralEvent);
+                    Find.WindowStack.Add(new Dialog_Barter(bestNegotiator, guild));
+                    PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter_Send(guild.Goods.OfType<Pawn>(), "LetterRelatedPawnsTradingWithSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), LetterDefOf.NeutralEvent);
                 }
             };
             if (bestNegotiator == null)
@@ -328,6 +328,7 @@ namespace VFEMedieval
             if (thing is Pawn p)
             {
                 caravan.AddPawn(p, addCarriedPawnToWorldPawnsIfAny: true);
+                Find.WorldPawns.PassToWorld(p);
                 return;
             }
             Pawn pawn = CaravanInventoryUtility.FindPawnToMoveInventoryTo(thing, caravan.PawnsListForReading, null);
@@ -380,14 +381,6 @@ namespace VFEMedieval
             parms.tile = Tile;
             parms.makingFaction = Faction;
             stock.TryAddRangeOrTransfer(ThingSetMakerDefOf.TraderStock.root.Generate(parms));
-            for (int i = 0; i < stock.Count; i++)
-            {
-                Thing thing = stock[i];
-                if (stock[i] is Pawn pawn)
-                {
-                    Find.WorldPawns.PassToWorld(pawn);
-                }
-            }
             lastStockGenerationTicks = Find.TickManager.TicksGame;
         }
 
