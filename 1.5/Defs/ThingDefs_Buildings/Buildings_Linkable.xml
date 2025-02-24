@@ -561,6 +561,7 @@
     <thingClass>Building_Storage</thingClass>
     <building>
       <storageGroupTag>Shelf</storageGroupTag>
+	  <maxItemsInCell>4</maxItemsInCell>
       <fixedStorageSettings>
         <filter>
           <disallowNotEverStorable>true</disallowNotEverStorable>
