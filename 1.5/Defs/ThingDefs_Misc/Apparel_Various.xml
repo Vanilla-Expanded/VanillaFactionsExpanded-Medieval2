@@ -547,14 +547,13 @@
     <costStuffCount>100</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
-      <li>Leathery</li>
     </stuffCategories>
     <tradeability>Sellable</tradeability>
     <statBases>
       <MaxHitPoints>180</MaxHitPoints>
       <WorkToMake>1800</WorkToMake>
       <Mass>5</Mass>
-      <StuffEffectMultiplierArmor>0.45</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.5</EquipDelay>
