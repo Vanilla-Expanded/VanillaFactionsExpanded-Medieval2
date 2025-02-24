@@ -153,9 +153,6 @@
   
   <RulePackDef>
     <defName>VFEM2_LeaderTitleMaker_Kingdom</defName>
-    <include>
-      <li>LeaderTitleMaker_GlobalStructure</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</li>
@@ -169,9 +166,6 @@
   
   <RulePackDef>
     <defName>VFEM2_LeaderTitleMaker_Clan</defName>
-    <include>
-      <li>LeaderTitleMaker_GlobalStructure</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</li>
@@ -185,9 +179,6 @@
   
   <RulePackDef>
     <defName>VFEM2_LeaderTitleMaker_MerchantGuild</defName>
-    <include>
-      <li>LeaderTitleMaker_GlobalStructure</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</li>
