@@ -220,6 +220,7 @@
     <statBases>
       <WorkToMake>14000</WorkToMake>
       <Mass>8</Mass>
+	  <VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.25</MoveSpeed>
@@ -274,11 +275,6 @@
       </skillRequirements>
       <displayPriority>331</displayPriority>
     </recipeMaker>
-	<modExtensions>
-		<li Class="VFECore.ThingDefExtension">
-			<meleeRangeOverride>2.84</meleeRangeOverride>
-		</li>
-	</modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -392,6 +388,7 @@
     <statBases>
       <WorkToMake>14000</WorkToMake>
       <Mass>6.5</Mass>
+	  <VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.15</MoveSpeed>
@@ -437,9 +434,6 @@
       <displayPriority>332</displayPriority>
     </recipeMaker>
 	<modExtensions>
-	  <li Class="VFECore.ThingDefExtension">
-		<meleeRangeOverride>2.84</meleeRangeOverride>
-	  </li>
      <li Class="VFECore.ThingDefExtension">
         <usableWithShields>true</usableWithShields>
       </li>
