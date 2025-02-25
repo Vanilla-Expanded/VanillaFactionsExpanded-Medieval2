@@ -447,7 +447,7 @@
   
   <ThingDef ParentName="BaseProjectileNeolithic">
     <defName>VFEM2_Arrow_Warbow</defName>
-    <label>arbalest bolt</label>
+    <label>warbow arrow</label>
 	<thingClass>VFEMedieval.WarbowArrow</thingClass>
     <graphicData>
       <texPath>Things/Projectile/ArbalestBolt/ArbalestBolt_Projectile</texPath>
