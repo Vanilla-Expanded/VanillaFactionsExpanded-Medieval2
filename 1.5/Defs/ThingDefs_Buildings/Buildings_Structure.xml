@@ -448,6 +448,7 @@
     <building>
       <paintable>true</paintable>
       <isInert>true</isInert>
+	  <isFence>true</isFence>
       <isPlaceOverableWall>true</isPlaceOverableWall>
       <ai_chillDestination>false</ai_chillDestination>
       <supportsWallAttachments>true</supportsWallAttachments>

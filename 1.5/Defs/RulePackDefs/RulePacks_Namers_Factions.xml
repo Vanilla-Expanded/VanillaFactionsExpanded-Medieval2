@@ -150,5 +150,44 @@
       </rulesStrings>
     </rulePack>
   </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_LeaderTitleMaker_Kingdom</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderNoun->king</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_LeaderTitleMaker_Clan</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderNoun->jarl</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_LeaderTitleMaker_MerchantGuild</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderNoun->guildmaster</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
 
 </Defs>

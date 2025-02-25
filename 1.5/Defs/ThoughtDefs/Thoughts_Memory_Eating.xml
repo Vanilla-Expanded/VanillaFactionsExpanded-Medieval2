@@ -10,6 +10,14 @@
 				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_DrankWine_Poor</defName>
@@ -21,6 +29,14 @@
 				<baseMoodEffect>-2</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_DrankWine_Normal</defName>
@@ -32,6 +48,14 @@
 				<baseMoodEffect>1</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_DrankWine_Good</defName>
@@ -43,6 +67,14 @@
 				<baseMoodEffect>2</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_DrankWine_Excellent</defName>
@@ -54,6 +86,14 @@
 				<baseMoodEffect>3</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_DrankWine_Masterwork</defName>
@@ -65,6 +105,14 @@
 				<baseMoodEffect>5</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_DrankWine_Legendary</defName>
@@ -72,10 +120,18 @@
 		<stages>
 			<li>
 				<label>drank legendary wine</label>
-				<description> I've never tasted anything like this before. It’s as though the very essence of joy has been captured in liquid form.</description>
+				<description>I've never tasted anything like this before. It’s as though the very essence of joy has been captured in liquid form.</description>
 				<baseMoodEffect>6</baseMoodEffect>
 			</li>
 		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+		</replaceThoughts>
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>VFEM2_TorturerDraught</defName>
