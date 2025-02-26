@@ -125,7 +125,7 @@
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Claymore</defName>
     <label>claymore</label>
-    <description>A brutal, ancient weapon of heavy knights, the claymore can be used cleave through enemies with ease, occasionally dealing critical damage and stunning the victim.</description>
+    <description>A brutal, ancient weapon of heavy knights, the claymore can be used cleave through enemies with ease.\n\nThis weapon has a chance to deal a critical strike, stunning the opponent.</description>
     <possessionCount>1</possessionCount>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Claymore</texPath>
