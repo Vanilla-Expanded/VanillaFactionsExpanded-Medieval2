@@ -86,7 +86,7 @@
         </statBases>
 		<recipeMaker>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-			<researchPrerequisite>ComplexClothing</researchPrerequisite>
+			<researchPrerequisite>PlateArmor</researchPrerequisite>
             <recipeUsers>
                 <li>ElectricSmithy</li>
                 <li>FueledSmithy</li>
@@ -150,10 +150,11 @@
         </costList>
 		<recipeMaker>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-			<researchPrerequisite>ComplexClothing</researchPrerequisite>
+			<researchPrerequisite>Smithing</researchPrerequisite>
             <recipeUsers>
                 <li>ElectricSmithy</li>
                 <li>FueledSmithy</li>
+				<li>CraftingSpot</li>
             </recipeUsers>
 		</recipeMaker>
         <statBases>
