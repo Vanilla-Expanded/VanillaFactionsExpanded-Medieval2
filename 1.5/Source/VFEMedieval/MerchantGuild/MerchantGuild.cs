@@ -71,7 +71,7 @@ namespace VFEMedieval
 
         public string TraderName => this.LabelCap;
 
-        public bool CanTradeNow => true;
+        public bool CanTradeNow => Faction.HostileTo(Faction.OfPlayer) is false;
 
         public float TradePriceImprovementOffsetForPlayer => 0f;
 
@@ -143,21 +143,28 @@ namespace VFEMedieval
         private void AttackNow(Caravan caravan)
         {
             bool mapWasGenerated = !HasMap;
-            Map orGenerateMap = GetOrGenerateMapUtility.GetOrGenerateMap(Tile, null);
+            Map map = GetOrGenerateMapUtility.GetOrGenerateMap(Tile, null);
+            CustomGenOption genOption = this.Faction.def.GetModExtension<CustomGenOption>();
 
-            CustomGenOption genOption = this.def.GetModExtension<CustomGenOption>();
-
-            if (genOption != null && genOption.chooseFromSettlements.Count > 0)
+            if (genOption != null)
             {
-                IntVec3 generationLocation = orGenerateMap.Center;
+                IntVec3 generationLocation = map.Center;
+                if (generationLocation.Fogged(map) && CellFinder.TryFindRandomSpawnCellForPawnNear(generationLocation, map, out var result,
+                    extraValidator: (IntVec3 x) => x.Fogged(Map) is false))
+                {
+                    generationLocation = result;
+                }
+                var lord = LordMaker.MakeNewLord(Faction, new LordJob_DefendBase(Faction, generationLocation), map, null);
+
                 if (pather.Moving)
                 {
-                    GeneratePawns(orGenerateMap, genOption, generationLocation);
+                    GeneratePawns(map, genOption, generationLocation, lord);
                 }
                 else
                 {
-                    genOption.Generate(generationLocation, orGenerateMap);
+                    genOption.Generate(generationLocation, map);
                 }
+                GenerateLoot(map, generationLocation, lord);
             }
 
             TaggedString letterLabel = "LetterLabelCaravanEnteredEnemyBase".Translate();
@@ -166,26 +173,25 @@ namespace VFEMedieval
             if (mapWasGenerated)
             {
                 Find.TickManager.Notify_GeneratedPotentiallyHostileMap();
-                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(orGenerateMap.mapPawns.AllPawns, ref letterLabel, ref letterText, "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
+                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(map.mapPawns.AllPawns, ref letterLabel, ref letterText, "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
             }
             Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, caravan.PawnsListForReading, Faction);
-            CaravanEnterMapUtility.Enter(caravan, orGenerateMap, CaravanEnterMode.Edge, CaravanDropInventoryMode.DoNotDrop, draftColonists: true);
+            CaravanEnterMapUtility.Enter(caravan, map, CaravanEnterMode.Edge, CaravanDropInventoryMode.DoNotDrop, draftColonists: true);
             Find.GoodwillSituationManager.RecalculateAll(canSendHostilityChangedLetter: true);
         }
 
-        private void GeneratePawns(Map map, CustomGenOption genOption, IntVec3 generationLocation)
+        private void GeneratePawns(Map map, CustomGenOption genOption, IntVec3 generationLocation, Lord lord)
         {
             ResolveParams rp = default;
             rp.faction = this.Faction;
 
-            int width = genOption.chooseFromSettlements.FirstOrDefault().centerBuildings.centerSize.x;
-            int height = genOption.chooseFromSettlements.FirstOrDefault().centerBuildings.centerSize.z;
+            int width = 50;
+            int height = 50;
 
             CellRect rect = CellRect.CenteredOn(generationLocation, width, height);
             rect.ClipInsideMap(map);
             rp.rect = rect;
             BaseGen.globalSettings.map = map;
-            var lord = LordMaker.MakeNewLord(rp.faction, new LordJob_DefendBase(rp.faction, generationLocation), map, null);
             rp.singlePawnLord = lord;
             rp.pawnGroupKindDef = PawnGroupKindDefOf.Settlement;
             rp.pawnGroupMakerParams = new PawnGroupMakerParms
@@ -199,7 +205,91 @@ namespace VFEMedieval
             };
             BaseGen.symbolStack.Push("pawnGroup", rp, null);
             BaseGen.Generate();
-            Log.Message("Generated p");
+        }
+
+
+        public void GenerateLoot(Map map, IntVec3 spawnPos, Lord lord)
+        {
+            PawnGroupMakerParms parms = new PawnGroupMakerParms();
+            parms.tile = map.Tile;
+            parms.faction = this.Faction;
+            parms.groupKind = PawnGroupKindDefOf.Trader;
+            parms.points = 1f;
+
+            PawnGroupMaker groupMaker = Faction.def.pawnGroupMakers.First(x => x.kindDef == parms.groupKind);
+            PawnKindDef carrierKind = groupMaker.carriers.Where(x => map.Biome.IsPackAnimalAllowed(x.kind.race)).RandomElementByWeight(x => x.selectionWeight).kind;
+
+            List<Pawn> outPawns = new List<Pawn>();
+            List<Thing> wares = new List<Thing>();
+
+            ThingSetMakerParams wareParams = default(ThingSetMakerParams);
+            wareParams.traderDef = this.TraderKind;
+            wareParams.tile = map.Tile;
+            wareParams.makingFaction = this.Faction;
+            if (stock is null)
+            {
+                RegenerateStock();
+            }
+            List<Thing> fullWares = stock.Where(x => x is not Pawn).InRandomOrder().ToList();
+            List<Pawn> slavesOrAnimals = stock.OfType<Pawn>().ToList();
+            stock = null;
+            float waresToSpawnFactor = 0.15f;
+            if (fullWares.Any())
+            {
+                int wareCountToTake = Mathf.Max(1, Mathf.RoundToInt(fullWares.Count * waresToSpawnFactor));
+                for (int i = 0; i < wareCountToTake && i < fullWares.Count; i++)
+                {
+                    Thing ware = fullWares[i].SplitOff(Mathf.Max(1, (int)(fullWares[i].stackCount * waresToSpawnFactor)));
+                    wares.Add(ware);
+                }
+            }
+
+            int numCarriers = Mathf.Max(1, Mathf.CeilToInt((float)wares.Count / 8f));
+
+            List<Pawn> carriers = new List<Pawn>();
+            int wareIndex = 0;
+            for (int j = 0; j < numCarriers; j++)
+            {
+                Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(carrierKind, parms.faction, PawnGenerationContext.NonPlayer, fixedIdeo: parms.ideo, tile: parms.tile, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: parms.inhabitants));
+                carriers.Add(pawn);
+                outPawns.Add(pawn);
+                if (wareIndex < wares.Count)
+                {
+                    pawn.inventory.innerContainer.TryAdd(wares[wareIndex]);
+                    wareIndex++;
+                }
+            }
+
+            int slavesOrAnimalsCountToTake = Mathf.Max(0, Mathf.RoundToInt(slavesOrAnimals.Count * waresToSpawnFactor));
+            List<Pawn> selectedSlavesOrAnimals = slavesOrAnimals.InRandomOrder().Take(slavesOrAnimalsCountToTake).ToList();
+            foreach (var pawn in selectedSlavesOrAnimals)
+            {
+                outPawns.Add(pawn);
+            }
+
+            for (; wareIndex < wares.Count; wareIndex++)
+            {
+                carriers.RandomElement().inventory.innerContainer.TryAdd(wares[wareIndex]);
+            }
+            foreach (Pawn pawn in outPawns)
+            {
+                if (pawn.Faction != parms.faction)
+                {
+                    pawn.SetFaction(parms.faction);
+                }
+                if (CellFinder.TryFindRandomSpawnCellForPawnNear(spawnPos, map, out IntVec3 spawnCell, firstTryWithRadius: 30) is false)
+                {
+                    spawnCell = DropCellFinder.TradeDropSpot(map);
+                    if (spawnCell.IsValid is false)
+                    {
+                        spawnCell = map.AllCells.Where(x => x.WalkableBy(map, pawn) && x.Roofed(map) is false
+                            && x.GetFirstPawn(map) is null).RandomElement();
+                    }
+                }
+                GenSpawn.Spawn(pawn, spawnCell, map);
+                lord.AddPawn(pawn);
+                Find.LetterStack.ReceiveLetter("test", "test", LetterDefOf.NeutralEvent, new LookTargets(pawn));
+            }
         }
 
         public static MerchantGuild GuildVisitedNow(Caravan caravan)
