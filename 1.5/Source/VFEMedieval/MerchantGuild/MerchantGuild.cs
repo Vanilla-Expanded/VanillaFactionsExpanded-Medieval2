@@ -1,15 +1,19 @@
-﻿using RimWorld;
+﻿using KCSG;
+using RimWorld;
+using RimWorld.BaseGen;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
 
 namespace VFEMedieval
 {
     [HotSwappable]
-    public class MerchantGuild : WorldObject, ILoadReferenceable, ITrader, IThingHolder
+    [StaticConstructorOnStartup]
+    public class MerchantGuild : MapParent, ILoadReferenceable, ITrader, IThingHolder
     {
         private Material cachedMat;
 
@@ -26,6 +30,8 @@ namespace VFEMedieval
         private int lastStockGenerationTicks = -1;
 
         private bool everGeneratedStock;
+
+        public static readonly Texture2D AttackCommand = ContentFinder<Texture2D>.Get("UI/Commands/AttackSettlement");
 
         public MerchantGuild()
         {
@@ -76,7 +82,14 @@ namespace VFEMedieval
         public override void PostAdd()
         {
             base.PostAdd();
-            TryStartPathing();
+            if (Rand.Bool)
+            {
+                StayInPlace();
+            }
+            else
+            {
+                TryStartPathing();
+            }
         }
 
         public override string GetInspectString()
@@ -98,6 +111,95 @@ namespace VFEMedieval
             {
                 yield return caravanGizmo;
             }
+            if (Attackable)
+            {
+                Command_Action command_Action = new Command_Action();
+                command_Action.icon = AttackCommand;
+                command_Action.defaultLabel = "CommandAttackSettlement".Translate();
+                command_Action.defaultDesc = "VFEM2_CommandAttackMerchantGuildDesc".Translate();
+                command_Action.action = delegate
+                {
+                    this.Attack(caravan);
+                };
+                yield return command_Action;
+            }
+        }
+
+        public void Attack(Caravan caravan)
+        {
+            if (HasMap)
+            {
+                LongEventHandler.QueueLongEvent(delegate
+                {
+                    AttackNow(caravan);
+                }, "GeneratingMapForNewEncounter", doAsynchronously: false, null);
+            }
+            else
+            {
+                AttackNow(caravan);
+            }
+        }
+
+        private void AttackNow(Caravan caravan)
+        {
+            bool mapWasGenerated = !HasMap;
+            Map orGenerateMap = GetOrGenerateMapUtility.GetOrGenerateMap(Tile, null);
+
+            CustomGenOption genOption = this.def.GetModExtension<CustomGenOption>();
+
+            if (genOption != null && genOption.chooseFromSettlements.Count > 0)
+            {
+                IntVec3 generationLocation = orGenerateMap.Center;
+                if (pather.Moving)
+                {
+                    GeneratePawns(orGenerateMap, genOption, generationLocation);
+                }
+                else
+                {
+                    genOption.Generate(generationLocation, orGenerateMap);
+                }
+            }
+
+            TaggedString letterLabel = "LetterLabelCaravanEnteredEnemyBase".Translate();
+            TaggedString letterText = "LetterCaravanEnteredEnemyBase".Translate(caravan.Label, Label.ApplyTag(TagType.Settlement, Faction.GetUniqueLoadID())).CapitalizeFirst();
+            SettlementUtility.AffectRelationsOnAttacked(this, ref letterText);
+            if (mapWasGenerated)
+            {
+                Find.TickManager.Notify_GeneratedPotentiallyHostileMap();
+                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(orGenerateMap.mapPawns.AllPawns, ref letterLabel, ref letterText, "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
+            }
+            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, caravan.PawnsListForReading, Faction);
+            CaravanEnterMapUtility.Enter(caravan, orGenerateMap, CaravanEnterMode.Edge, CaravanDropInventoryMode.DoNotDrop, draftColonists: true);
+            Find.GoodwillSituationManager.RecalculateAll(canSendHostilityChangedLetter: true);
+        }
+
+        private void GeneratePawns(Map map, CustomGenOption genOption, IntVec3 generationLocation)
+        {
+            ResolveParams rp = default;
+            rp.faction = this.Faction;
+
+            int width = genOption.chooseFromSettlements.FirstOrDefault().centerBuildings.centerSize.x;
+            int height = genOption.chooseFromSettlements.FirstOrDefault().centerBuildings.centerSize.z;
+
+            CellRect rect = CellRect.CenteredOn(generationLocation, width, height);
+            rect.ClipInsideMap(map);
+            rp.rect = rect;
+            BaseGen.globalSettings.map = map;
+            var lord = LordMaker.MakeNewLord(rp.faction, new LordJob_DefendBase(rp.faction, generationLocation), map, null);
+            rp.singlePawnLord = lord;
+            rp.pawnGroupKindDef = PawnGroupKindDefOf.Settlement;
+            rp.pawnGroupMakerParams = new PawnGroupMakerParms
+            {
+                tile = map.Tile,
+                faction = this.Faction,
+                points = new FloatRange(1150f, 1600f).RandomInRange,
+                groupKind = PawnGroupKindDefOf.Settlement,
+                inhabitants = true,
+                seed = Rand.Range(0, int.MaxValue)
+            };
+            BaseGen.symbolStack.Push("pawnGroup", rp, null);
+            BaseGen.Generate();
+            Log.Message("Generated p");
         }
 
         public static MerchantGuild GuildVisitedNow(Caravan caravan)
@@ -211,6 +313,10 @@ namespace VFEMedieval
             {
                 yield return floatMenuOption3;
             }
+            foreach (FloatMenuOption floatMenuOption4 in CaravanArrivalAction_AttackMerchantGuild.GetFloatMenuOptions(caravan, this))
+            {
+                yield return floatMenuOption4;
+            }
         }
 
         public override void SpawnSetup()
@@ -222,26 +328,35 @@ namespace VFEMedieval
         public override void Tick()
         {
             base.Tick();
-            pather.PatherTick();
-            if (this.IsHashIntervalTick(30))
+            if (HasMap is false)
             {
-                tweener.TweenerTick();
-            }
-            if (pather.MovingNow is false)
-            {
-                if (ticksToStay > 0)
+                pather.PatherTick();
+                if (this.IsHashIntervalTick(30))
                 {
-                    ticksToStay--;
-                    if (ticksToStay <= 0)
+                    tweener.TweenerTick();
+                }
+                if (pather.MovingNow is false)
+                {
+                    if (ticksToStay > 0)
                     {
-                        TryStartPathing();
+                        ticksToStay--;
+                        if (ticksToStay <= 0)
+                        {
+                            TryStartPathing();
+                        }
+                    }
+                    else
+                    {
+                        StayInPlace();
                     }
                 }
-                else
-                {
-                    ticksToStay = (int)(GenDate.TicksPerDay * Rand.Range(5f, 30f));
-                }
             }
+        }
+
+        public void StayInPlace()
+        {
+            ticksToStay = (int)(GenDate.TicksPerDay * Rand.Range(5f, 30f));
+            pather.StopDead();
         }
 
         private void TryStartPathing()
@@ -389,7 +504,7 @@ namespace VFEMedieval
             return stock;
         }
 
-        public void GetChildHolders(List<IThingHolder> outChildren)
+        public override void GetChildHolders(List<IThingHolder> outChildren)
         {
             ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
         }
@@ -409,5 +524,7 @@ namespace VFEMedieval
             Scribe_Values.Look(ref lastStockGenerationTicks, "lastStockGenerationTicks", 0);
             Scribe_Values.Look(ref everGeneratedStock, "wasStockGeneratedYet", defaultValue: false);
         }
+
+        public virtual bool Attackable => true;
     }
 }
