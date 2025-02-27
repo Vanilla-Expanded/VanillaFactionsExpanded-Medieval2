@@ -336,6 +336,8 @@
     <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts.cs" />
     <Compile Include="MerchantGuild\CaravanArrivalAction_AttackMerchantGuild.cs" />
     <Compile Include="MerchantGuild\FactionUIUtility_DoWindowContents_Patch.cs" />
+    <Compile Include="MerchantGuild\Faction_HasGoodwill_Patch.cs" />
+    <Compile Include="MerchantGuild\GoodwillSituationManager_GetNaturalGoodwill_Patch.cs" />
     <Compile Include="Warbow\Projectile_HitFlags_Patch.cs" />
     <Compile Include="Warbow\VerbProperties_Warbow.cs" />
     <Compile Include="Warbow\Verb_CanHitCellFromCellIgnoringRange_Patch.cs" />

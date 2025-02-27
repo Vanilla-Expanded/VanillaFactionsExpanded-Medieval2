@@ -1,0 +1,17 @@
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+
+      <value>
+        <li>VFEM2_MerchantGuild</li>
+      </value>
+    </match>
+  </Operation>
+  
+</Patch>

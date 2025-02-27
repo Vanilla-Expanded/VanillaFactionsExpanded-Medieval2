@@ -38,4 +38,9 @@
 	<VFEM2_CommandBarter>Barter</VFEM2_CommandBarter>
 	<VFEM2_CommandBarterDesc>Barter with this merchant guild.</VFEM2_CommandBarterDesc>
 	<VFEM2_CommandAttackMerchantGuildDesc>Attack this merchant guild.</VFEM2_CommandAttackMerchantGuildDesc>
+
+  <VFEM2_LetterLabelFactionBaseDefeated>Merchant's guild camp destroyed</VFEM2_LetterLabelFactionBaseDefeated>
+  <VFEM2_LetterFactionBaseDefeated>The merchant's guild camp has been destroyed.</VFEM2_LetterFactionBaseDefeated>
+  <VFEM2_LetterFactionBaseDefeated_FactionDestroyed>Since this was their last camp, {0} has been defeated.</VFEM2_LetterFactionBaseDefeated_FactionDestroyed>
+
 </LanguageData>

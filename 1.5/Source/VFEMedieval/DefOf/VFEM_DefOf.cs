@@ -59,5 +59,7 @@ namespace VFEMedieval
         public static ThingCategoryDef ResourcesRaw;
 
         public static ResearchProjectDef VFEM2_Heraldry;
+
+        public static WorldObjectDef VFEM2_DestroyedMerchantGuildCamp;
     }
 }

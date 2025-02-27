@@ -5,6 +5,7 @@ using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
@@ -78,6 +79,16 @@ namespace VFEMedieval
         public TradeCurrency TradeCurrency => TradeCurrency.Silver;
 
         private int ticksToStay;
+
+        public override bool ShouldRemoveMapNow(out bool alsoRemoveWorldObject)
+        {
+            alsoRemoveWorldObject = false;
+            if (!base.Map.IsPlayerHome)
+            {
+                return !base.Map.mapPawns.AnyPawnBlockingMapRemoval;
+            }
+            return false;
+        }
 
         public override void PostAdd()
         {
@@ -169,11 +180,16 @@ namespace VFEMedieval
 
             TaggedString letterLabel = "LetterLabelCaravanEnteredEnemyBase".Translate();
             TaggedString letterText = "LetterCaravanEnteredEnemyBase".Translate(caravan.Label, Label.ApplyTag(TagType.Settlement, Faction.GetUniqueLoadID())).CapitalizeFirst();
-            SettlementUtility.AffectRelationsOnAttacked(this, ref letterText);
+
+            var mapParent = map.Parent;
+            Faction.OfPlayer.TryAffectGoodwillWith(mapParent.Faction, Faction.OfPlayer.GoodwillToMakeHostile(mapParent.Faction),
+                canSendMessage: false, canSendHostilityLetter: false, HistoryEventDefOf.AttackedSettlement);
+
             if (mapWasGenerated)
             {
                 Find.TickManager.Notify_GeneratedPotentiallyHostileMap();
-                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(map.mapPawns.AllPawns, ref letterLabel, ref letterText, "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
+                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(map.mapPawns.AllPawns, ref letterLabel, ref letterText, 
+                    "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
             }
             Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, caravan.PawnsListForReading, Faction);
             CaravanEnterMapUtility.Enter(caravan, map, CaravanEnterMode.Edge, CaravanDropInventoryMode.DoNotDrop, draftColonists: true);
@@ -288,7 +304,6 @@ namespace VFEMedieval
                 }
                 GenSpawn.Spawn(pawn, spawnCell, map);
                 lord.AddPawn(pawn);
-                Find.LetterStack.ReceiveLetter("test", "test", LetterDefOf.NeutralEvent, new LookTargets(pawn));
             }
         }
 
@@ -441,6 +456,65 @@ namespace VFEMedieval
                     }
                 }
             }
+
+            CheckDefeated();
+        }
+
+        public void CheckDefeated()
+        {
+            if (Faction == Faction.OfPlayer)
+            {
+                return;
+            }
+            Map map = Map;
+            if (map == null || !SettlementDefeatUtility.IsDefeated(map, Faction))
+            {
+                return;
+            }
+            IdeoUtility.Notify_PlayerRaidedSomeone(map.mapPawns.FreeColonistsSpawned);
+            DestroyedSettlement destroyedSettlement = (DestroyedSettlement)WorldObjectMaker.MakeWorldObject(VFEM_DefOf.VFEM2_DestroyedMerchantGuildCamp);
+            destroyedSettlement.Tile = Tile;
+            destroyedSettlement.SetFaction(Faction);
+            Find.WorldObjects.Add(destroyedSettlement);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("VFEM2_LetterFactionBaseDefeated".Translate(Label));
+            if (!HasAnyOtherBase())
+            {
+                Faction.defeated = true;
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine();
+                stringBuilder.Append("VFEM2_LetterFactionBaseDefeated_FactionDestroyed".Translate(Faction.Name));
+            }
+            foreach (Faction allFaction in Find.FactionManager.AllFactions)
+            {
+                if (!allFaction.Hidden && !allFaction.IsPlayer && allFaction != Faction && allFaction.HostileTo(Faction) is false)
+                {
+                    FactionRelationKind playerRelationKind = allFaction.PlayerRelationKind;
+                    Faction.OfPlayer.TryAffectGoodwillWith(allFaction, -20, canSendMessage: false, canSendHostilityLetter: false);
+                    stringBuilder.AppendLine();
+                    stringBuilder.AppendLine();
+                    stringBuilder.Append("RelationsWith".Translate(allFaction.Name) + ": -20");
+                    allFaction.TryAppendRelationKindChangedInfo(stringBuilder, playerRelationKind, allFaction.PlayerRelationKind);
+                }
+            }
+            Find.LetterStack.ReceiveLetter("VFEM2_LetterLabelFactionBaseDefeated".Translate(), stringBuilder.ToString(), LetterDefOf.PositiveEvent, new GlobalTargetInfo(Tile), Faction);
+            map.info.parent = destroyedSettlement;
+            Destroy();
+            TaleRecorder.RecordTale(TaleDefOf.CaravanAssaultSuccessful, map.mapPawns.FreeColonists.RandomElement());
+        }
+
+        private bool HasAnyOtherBase()
+        {
+            var settlements = Find.WorldObjects.AllWorldObjects.OfType<MerchantGuild>().ToList();
+            for (int i = 0; i < settlements.Count; i++)
+            {
+                var settlement = settlements[i];
+                if (settlement.Faction == Faction && settlement != this)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public void StayInPlace()

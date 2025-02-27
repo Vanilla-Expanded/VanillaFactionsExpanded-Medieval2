@@ -215,6 +215,19 @@
 		<expandingIconTexture>MapIcons/Expanding/TradingGuildExpanding</expandingIconTexture>
 		<expandingIconPriority>10</expandingIconPriority>
 	</WorldObjectDef>
+  <WorldObjectDef>
+    <defName>VFEM2_DestroyedMerchantGuildCamp</defName>
+    <label>destroyed merchant's guild camp</label>
+    <description>A destroyed camp.</description>
+    <worldObjectClass>DestroyedSettlement</worldObjectClass>
+    <texture>World/WorldObjects/TribalSettlement</texture>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>World/WorldObjects/Expanding/DestroyedSettlement</expandingIconTexture>
+    <expandingIconPriority>20</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+    </comps>
+  </WorldObjectDef>
 	<TraderKindDef>
 		<defName>VFEM2_MerchantGuildTrader</defName>
 		<label>merchant's guild</label>
