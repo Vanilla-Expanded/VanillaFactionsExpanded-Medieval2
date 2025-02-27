@@ -42,6 +42,11 @@
     </Reference>
     <Reference Include="GraphicCustomization">
       <HintPath>..\..\..\..\VanillaExpandedFramework\1.5\Assemblies\GraphicCustomization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="KCSG">
+      <HintPath>..\..\..\..\VanillaExpandedFramework\1.5\Assemblies\KCSG.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -329,6 +334,7 @@
     <Compile Include="HarmonyPatches\DefGenerator_GenerateImpliedDefs_PreResolve.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyDatabase_GenerateStartingDrugPolicies.cs" />
     <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts.cs" />
+    <Compile Include="MerchantGuild\CaravanArrivalAction_AttackMerchantGuild.cs" />
     <Compile Include="MerchantGuild\FactionUIUtility_DoWindowContents_Patch.cs" />
     <Compile Include="Warbow\Projectile_HitFlags_Patch.cs" />
     <Compile Include="Warbow\VerbProperties_Warbow.cs" />

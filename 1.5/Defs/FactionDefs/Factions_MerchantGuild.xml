@@ -148,11 +148,11 @@
 				<kindDef>Settlement</kindDef>
 				<options>
 					<VFEM2_Knight>3</VFEM2_Knight>
-					<VFEM2_Handgunner>5</VFEM2_Handgunner>
-					<VFEM2_Raider>10</VFEM2_Raider>
-					<VFEM2_Trader>1</VFEM2_Trader>
+					<VFEM2_Militia>4</VFEM2_Militia>
+					<VFEM2_Handgunner>2</VFEM2_Handgunner>
+					<VFEM2_Merchant>3</VFEM2_Merchant>
+					<VFEM2_Trader>4</VFEM2_Trader>
 					<VFEM2_Guildmaster>1</VFEM2_Guildmaster>
-					<Drifter>10</Drifter>
 				</options>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology">

@@ -1,15 +1,19 @@
-﻿using RimWorld;
+﻿using KCSG;
+using RimWorld;
+using RimWorld.BaseGen;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
 
 namespace VFEMedieval
 {
     [HotSwappable]
-    public class MerchantGuild : WorldObject, ILoadReferenceable, ITrader, IThingHolder
+    [StaticConstructorOnStartup]
+    public class MerchantGuild : MapParent, ILoadReferenceable, ITrader, IThingHolder
     {
         private Material cachedMat;
 
@@ -26,6 +30,8 @@ namespace VFEMedieval
         private int lastStockGenerationTicks = -1;
 
         private bool everGeneratedStock;
+
+        public static readonly Texture2D AttackCommand = ContentFinder<Texture2D>.Get("UI/Commands/AttackSettlement");
 
         public MerchantGuild()
         {
@@ -65,7 +71,7 @@ namespace VFEMedieval
 
         public string TraderName => this.LabelCap;
 
-        public bool CanTradeNow => true;
+        public bool CanTradeNow => Faction.HostileTo(Faction.OfPlayer) is false;
 
         public float TradePriceImprovementOffsetForPlayer => 0f;
 
@@ -76,7 +82,14 @@ namespace VFEMedieval
         public override void PostAdd()
         {
             base.PostAdd();
-            TryStartPathing();
+            if (Rand.Bool)
+            {
+                StayInPlace();
+            }
+            else
+            {
+                TryStartPathing();
+            }
         }
 
         public override string GetInspectString()
@@ -97,6 +110,185 @@ namespace VFEMedieval
             foreach (Gizmo caravanGizmo in base.GetCaravanGizmos(caravan))
             {
                 yield return caravanGizmo;
+            }
+            if (Attackable)
+            {
+                Command_Action command_Action = new Command_Action();
+                command_Action.icon = AttackCommand;
+                command_Action.defaultLabel = "CommandAttackSettlement".Translate();
+                command_Action.defaultDesc = "VFEM2_CommandAttackMerchantGuildDesc".Translate();
+                command_Action.action = delegate
+                {
+                    this.Attack(caravan);
+                };
+                yield return command_Action;
+            }
+        }
+
+        public void Attack(Caravan caravan)
+        {
+            if (HasMap)
+            {
+                LongEventHandler.QueueLongEvent(delegate
+                {
+                    AttackNow(caravan);
+                }, "GeneratingMapForNewEncounter", doAsynchronously: false, null);
+            }
+            else
+            {
+                AttackNow(caravan);
+            }
+        }
+
+        private void AttackNow(Caravan caravan)
+        {
+            bool mapWasGenerated = !HasMap;
+            Map map = GetOrGenerateMapUtility.GetOrGenerateMap(Tile, null);
+            CustomGenOption genOption = this.Faction.def.GetModExtension<CustomGenOption>();
+
+            if (genOption != null)
+            {
+                IntVec3 generationLocation = map.Center;
+                if (generationLocation.Fogged(map) && CellFinder.TryFindRandomSpawnCellForPawnNear(generationLocation, map, out var result,
+                    extraValidator: (IntVec3 x) => x.Fogged(Map) is false))
+                {
+                    generationLocation = result;
+                }
+                var lord = LordMaker.MakeNewLord(Faction, new LordJob_DefendBase(Faction, generationLocation), map, null);
+
+                if (pather.Moving)
+                {
+                    GeneratePawns(map, genOption, generationLocation, lord);
+                }
+                else
+                {
+                    genOption.Generate(generationLocation, map);
+                }
+                GenerateLoot(map, generationLocation, lord);
+            }
+
+            TaggedString letterLabel = "LetterLabelCaravanEnteredEnemyBase".Translate();
+            TaggedString letterText = "LetterCaravanEnteredEnemyBase".Translate(caravan.Label, Label.ApplyTag(TagType.Settlement, Faction.GetUniqueLoadID())).CapitalizeFirst();
+            SettlementUtility.AffectRelationsOnAttacked(this, ref letterText);
+            if (mapWasGenerated)
+            {
+                Find.TickManager.Notify_GeneratedPotentiallyHostileMap();
+                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(map.mapPawns.AllPawns, ref letterLabel, ref letterText, "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
+            }
+            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, caravan.PawnsListForReading, Faction);
+            CaravanEnterMapUtility.Enter(caravan, map, CaravanEnterMode.Edge, CaravanDropInventoryMode.DoNotDrop, draftColonists: true);
+            Find.GoodwillSituationManager.RecalculateAll(canSendHostilityChangedLetter: true);
+        }
+
+        private void GeneratePawns(Map map, CustomGenOption genOption, IntVec3 generationLocation, Lord lord)
+        {
+            ResolveParams rp = default;
+            rp.faction = this.Faction;
+
+            int width = 50;
+            int height = 50;
+
+            CellRect rect = CellRect.CenteredOn(generationLocation, width, height);
+            rect.ClipInsideMap(map);
+            rp.rect = rect;
+            BaseGen.globalSettings.map = map;
+            rp.singlePawnLord = lord;
+            rp.pawnGroupKindDef = PawnGroupKindDefOf.Settlement;
+            rp.pawnGroupMakerParams = new PawnGroupMakerParms
+            {
+                tile = map.Tile,
+                faction = this.Faction,
+                points = new FloatRange(1150f, 1600f).RandomInRange,
+                groupKind = PawnGroupKindDefOf.Settlement,
+                inhabitants = true,
+                seed = Rand.Range(0, int.MaxValue)
+            };
+            BaseGen.symbolStack.Push("pawnGroup", rp, null);
+            BaseGen.Generate();
+        }
+
+
+        public void GenerateLoot(Map map, IntVec3 spawnPos, Lord lord)
+        {
+            PawnGroupMakerParms parms = new PawnGroupMakerParms();
+            parms.tile = map.Tile;
+            parms.faction = this.Faction;
+            parms.groupKind = PawnGroupKindDefOf.Trader;
+            parms.points = 1f;
+
+            PawnGroupMaker groupMaker = Faction.def.pawnGroupMakers.First(x => x.kindDef == parms.groupKind);
+            PawnKindDef carrierKind = groupMaker.carriers.Where(x => map.Biome.IsPackAnimalAllowed(x.kind.race)).RandomElementByWeight(x => x.selectionWeight).kind;
+
+            List<Pawn> outPawns = new List<Pawn>();
+            List<Thing> wares = new List<Thing>();
+
+            ThingSetMakerParams wareParams = default(ThingSetMakerParams);
+            wareParams.traderDef = this.TraderKind;
+            wareParams.tile = map.Tile;
+            wareParams.makingFaction = this.Faction;
+            if (stock is null)
+            {
+                RegenerateStock();
+            }
+            List<Thing> fullWares = stock.Where(x => x is not Pawn).InRandomOrder().ToList();
+            List<Pawn> slavesOrAnimals = stock.OfType<Pawn>().ToList();
+            stock = null;
+            float waresToSpawnFactor = 0.15f;
+            if (fullWares.Any())
+            {
+                int wareCountToTake = Mathf.Max(1, Mathf.RoundToInt(fullWares.Count * waresToSpawnFactor));
+                for (int i = 0; i < wareCountToTake && i < fullWares.Count; i++)
+                {
+                    Thing ware = fullWares[i].SplitOff(Mathf.Max(1, (int)(fullWares[i].stackCount * waresToSpawnFactor)));
+                    wares.Add(ware);
+                }
+            }
+
+            int numCarriers = Mathf.Max(1, Mathf.CeilToInt((float)wares.Count / 8f));
+
+            List<Pawn> carriers = new List<Pawn>();
+            int wareIndex = 0;
+            for (int j = 0; j < numCarriers; j++)
+            {
+                Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(carrierKind, parms.faction, PawnGenerationContext.NonPlayer, fixedIdeo: parms.ideo, tile: parms.tile, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: parms.inhabitants));
+                carriers.Add(pawn);
+                outPawns.Add(pawn);
+                if (wareIndex < wares.Count)
+                {
+                    pawn.inventory.innerContainer.TryAdd(wares[wareIndex]);
+                    wareIndex++;
+                }
+            }
+
+            int slavesOrAnimalsCountToTake = Mathf.Max(0, Mathf.RoundToInt(slavesOrAnimals.Count * waresToSpawnFactor));
+            List<Pawn> selectedSlavesOrAnimals = slavesOrAnimals.InRandomOrder().Take(slavesOrAnimalsCountToTake).ToList();
+            foreach (var pawn in selectedSlavesOrAnimals)
+            {
+                outPawns.Add(pawn);
+            }
+
+            for (; wareIndex < wares.Count; wareIndex++)
+            {
+                carriers.RandomElement().inventory.innerContainer.TryAdd(wares[wareIndex]);
+            }
+            foreach (Pawn pawn in outPawns)
+            {
+                if (pawn.Faction != parms.faction)
+                {
+                    pawn.SetFaction(parms.faction);
+                }
+                if (CellFinder.TryFindRandomSpawnCellForPawnNear(spawnPos, map, out IntVec3 spawnCell, firstTryWithRadius: 30) is false)
+                {
+                    spawnCell = DropCellFinder.TradeDropSpot(map);
+                    if (spawnCell.IsValid is false)
+                    {
+                        spawnCell = map.AllCells.Where(x => x.WalkableBy(map, pawn) && x.Roofed(map) is false
+                            && x.GetFirstPawn(map) is null).RandomElement();
+                    }
+                }
+                GenSpawn.Spawn(pawn, spawnCell, map);
+                lord.AddPawn(pawn);
+                Find.LetterStack.ReceiveLetter("test", "test", LetterDefOf.NeutralEvent, new LookTargets(pawn));
             }
         }
 
@@ -211,6 +403,10 @@ namespace VFEMedieval
             {
                 yield return floatMenuOption3;
             }
+            foreach (FloatMenuOption floatMenuOption4 in CaravanArrivalAction_AttackMerchantGuild.GetFloatMenuOptions(caravan, this))
+            {
+                yield return floatMenuOption4;
+            }
         }
 
         public override void SpawnSetup()
@@ -222,26 +418,35 @@ namespace VFEMedieval
         public override void Tick()
         {
             base.Tick();
-            pather.PatherTick();
-            if (this.IsHashIntervalTick(30))
+            if (HasMap is false)
             {
-                tweener.TweenerTick();
-            }
-            if (pather.MovingNow is false)
-            {
-                if (ticksToStay > 0)
+                pather.PatherTick();
+                if (this.IsHashIntervalTick(30))
                 {
-                    ticksToStay--;
-                    if (ticksToStay <= 0)
+                    tweener.TweenerTick();
+                }
+                if (pather.MovingNow is false)
+                {
+                    if (ticksToStay > 0)
                     {
-                        TryStartPathing();
+                        ticksToStay--;
+                        if (ticksToStay <= 0)
+                        {
+                            TryStartPathing();
+                        }
+                    }
+                    else
+                    {
+                        StayInPlace();
                     }
                 }
-                else
-                {
-                    ticksToStay = (int)(GenDate.TicksPerDay * Rand.Range(5f, 30f));
-                }
             }
+        }
+
+        public void StayInPlace()
+        {
+            ticksToStay = (int)(GenDate.TicksPerDay * Rand.Range(5f, 30f));
+            pather.StopDead();
         }
 
         private void TryStartPathing()
@@ -389,7 +594,7 @@ namespace VFEMedieval
             return stock;
         }
 
-        public void GetChildHolders(List<IThingHolder> outChildren)
+        public override void GetChildHolders(List<IThingHolder> outChildren)
         {
             ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
         }
@@ -409,5 +614,7 @@ namespace VFEMedieval
             Scribe_Values.Look(ref lastStockGenerationTicks, "lastStockGenerationTicks", 0);
             Scribe_Values.Look(ref everGeneratedStock, "wasStockGeneratedYet", defaultValue: false);
         }
+
+        public virtual bool Attackable => true;
     }
 }
