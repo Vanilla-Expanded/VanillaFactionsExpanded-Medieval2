@@ -254,7 +254,7 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>24</power>
+        <power>18</power>
         <armorPenetration>0.5</armorPenetration>
         <cooldownTime>4.2</cooldownTime>
       </li>
@@ -263,8 +263,8 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>18</power>
-        <cooldownTime>5.2</cooldownTime>
+        <power>24</power>
+        <cooldownTime>4.2</cooldownTime>
 		<armorPenetration>0.5</armorPenetration>
       </li>
     </tools>
