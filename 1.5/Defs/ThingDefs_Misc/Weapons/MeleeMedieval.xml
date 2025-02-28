@@ -390,16 +390,22 @@
       <li Class="VFECore.ThingDefExtension">
         <weaponCarryDrawOffsets>
           <north>
-            <drawOffset>(0,0,0.1)</drawOffset>
+            <drawOffset>(0.3,0,0.5)</drawOffset>
+            <angleOffset>25</angleOffset>
           </north>
           <east>
-            <drawOffset>(0,0,0.1)</drawOffset>
+            <drawOffset>(-0.3,0,0.5)</drawOffset>
+            <angleOffset>-25</angleOffset>
           </east>
           <south>
-            <drawOffset>(0,0,0.1)</drawOffset>
+            <drawOffset>(-0.2,0,0.7)</drawOffset>
+            <drawOffsetWhileMoving>(-0.3,0,0.5)</drawOffsetWhileMoving>
+            <angleOffset>-2</angleOffset>
+            <angleOffsetWhileMoving>-25</angleOffsetWhileMoving>
           </south>
           <west>
-            <drawOffset>(0,0,0.1)</drawOffset>
+            <drawOffset>(0.3,0,0.5)</drawOffset>
+            <angleOffset>25</angleOffset>
           </west>
         </weaponCarryDrawOffsets>
       </li>
