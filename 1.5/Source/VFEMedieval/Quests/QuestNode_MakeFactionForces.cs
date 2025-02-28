@@ -7,7 +7,7 @@ using RimWorld;
 
 namespace VFEMedieval
 {
-    public class QuestNode_SpawnFactionForceAndSetListVar : QuestNode
+    public class QuestNode_MakeFactionForces : QuestNode
     {
         public override bool TestRunInt(Slate slate)
         {

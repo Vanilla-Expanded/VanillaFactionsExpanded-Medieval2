@@ -202,13 +202,13 @@
       <li Class="VFECore.ThingDefExtension">
         <weaponCarryDrawOffsets>
           <north>
-            <drawOffset>(0,0,0.1)</drawOffset>
+            <drawOffset>(-0.2,0,0.1)</drawOffset>
           </north>
           <east>
             <drawOffset>(0,0,0.1)</drawOffset>
           </east>
           <south>
-            <drawOffset>(0,0,0.1)</drawOffset>
+            <drawOffset>(0.2,0,0.1)</drawOffset>
           </south>
           <west>
             <drawOffset>(0,0,0.1)</drawOffset>
@@ -312,7 +312,7 @@
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>
-    <equippedAngleOffset>-90</equippedAngleOffset>
+    <equippedAngleOffset>-50</equippedAngleOffset>
     <weaponTags>
       <li>VFEM2_Standard</li>
     </weaponTags>
