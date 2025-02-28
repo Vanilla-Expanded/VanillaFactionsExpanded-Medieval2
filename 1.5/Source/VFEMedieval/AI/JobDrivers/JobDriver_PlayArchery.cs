@@ -84,7 +84,6 @@ namespace VFEMedieval
                 drawLoc += drawOffset;
                 num += angleOffset;
             }
-            Material material = null;
             Graphic_StackCount graphic_StackCount = eq.Graphic as Graphic_StackCount;
             Graphics.DrawMesh(material: (graphic_StackCount == null) ? eq.Graphic.MatSingle : graphic_StackCount.SubGraphicForStackCount(1, eq.def).MatSingle, mesh: mesh, position: drawLoc, rotation: Quaternion.AngleAxis(num, Vector3.up), layer: 0);
         }

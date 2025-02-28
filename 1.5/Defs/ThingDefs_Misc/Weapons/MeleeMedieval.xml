@@ -196,6 +196,24 @@
       </skillRequirements>
       <displayPriority>421</displayPriority>
     </recipeMaker>
+	<modExtensions>
+		<li Class="VFECore.ThingDefExtension">
+		<weaponCarryDrawOffsets>
+			<north>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</north>
+			<east>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</east>
+			<south>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</south>
+			<west>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</west>
+		</weaponCarryDrawOffsets>
+	</li>
+	</modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -363,6 +381,22 @@
           </li>
         </dataList>
       </li>
+	<li Class="VFECore.ThingDefExtension">
+		<weaponCarryDrawOffsets>
+			<north>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</north>
+			<east>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</east>
+			<south>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</south>
+			<west>
+				<drawOffset>(0,0,0.1)</drawOffset>
+			</west>
+		</weaponCarryDrawOffsets>
+	</li>
     </modExtensions>
   </ThingDef>
   
