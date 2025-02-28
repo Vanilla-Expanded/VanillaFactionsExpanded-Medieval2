@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	
- <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+
+  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
     <defName>VFEM2_MeleeWeapon_HeavyMace</defName>
     <label>heavy mace</label>
     <description>A heavy mace consisting of a shaft and a heavy ball adorned with spikes. Very effective at piercing plate armor, this weapon is often used by more vicious knights and mercenaries.</description>
@@ -18,10 +18,10 @@
     </statBases>
     <equippedAngleOffset>-65</equippedAngleOffset>
     <recipeMaker>
-		<skillRequirements>
-			<Crafting>4</Crafting>
-		</skillRequirements>
-		<researchPrerequisite>Smithing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
     </recipeMaker>
     <stuffCategories>
       <li>Metallic</li>
@@ -31,7 +31,7 @@
       <li>MedievalMeleeDecent</li>
     </weaponTags>
     <weaponClasses>
-	  <li>VFEM2_Medieval</li>
+      <li>VFEM2_Medieval</li>
     </weaponClasses>
     <tools>
       <li>
@@ -49,12 +49,12 @@
           <li>Blunt</li>
         </capacities>
         <power>18.7</power>
-		<armorPenetration>0.20</armorPenetration>
+        <armorPenetration>0.20</armorPenetration>
         <cooldownTime>2.5</cooldownTime>
       </li>
     </tools>
   </ThingDef>
-  
+
   <!-- Vikings -->
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_DaneAxe</defName>
@@ -115,13 +115,13 @@
         <Crafting>5</Crafting>
       </skillRequirements>
     </recipeMaker>
-	<modExtensions>
-     <li Class="VFECore.ThingDefExtension">
+    <modExtensions>
+      <li Class="VFECore.ThingDefExtension">
         <usableWithShields>true</usableWithShields>
       </li>
-	</modExtensions>
+    </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Claymore</defName>
     <label>claymore</label>
@@ -130,7 +130,7 @@
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Claymore</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>1.25</drawSize>
+      <drawSize>1.25</drawSize>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
@@ -138,10 +138,12 @@
       <li>VFEM2_Claymore</li>
     </weaponTags>
     <weaponClasses>
-	  <li>VFEM2_Medieval</li>
+      <li>VFEM2_Medieval</li>
     </weaponClasses>
     <costStuffCount>125</costStuffCount>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
     <statBases>
       <WorkToMake>22000</WorkToMake>
       <Mass>3</Mass>
@@ -171,7 +173,7 @@
         </capacities>
         <power>24</power>
         <cooldownTime>2.8</cooldownTime>
-		<armorPenetration>0.3</armorPenetration>
+        <armorPenetration>0.3</armorPenetration>
       </li>
       <li>
         <label>edge</label>
@@ -180,12 +182,12 @@
         </capacities>
         <power>26</power>
         <cooldownTime>2.8</cooldownTime>
-		<armorPenetration>0.3</armorPenetration>
+        <armorPenetration>0.3</armorPenetration>
         <extraMeleeDamages>
-            <li>
-              <def>Stun</def>
-              <amount>5</amount>
-            </li>
+          <li>
+            <def>Stun</def>
+            <amount>5</amount>
+          </li>
         </extraMeleeDamages>
       </li>
     </tools>
@@ -196,26 +198,26 @@
       </skillRequirements>
       <displayPriority>421</displayPriority>
     </recipeMaker>
-	<modExtensions>
-		<li Class="VFECore.ThingDefExtension">
-		<weaponCarryDrawOffsets>
-			<north>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</north>
-			<east>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</east>
-			<south>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</south>
-			<west>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</west>
-		</weaponCarryDrawOffsets>
-	</li>
-	</modExtensions>
+    <modExtensions>
+      <li Class="VFECore.ThingDefExtension">
+        <weaponCarryDrawOffsets>
+          <north>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </north>
+          <east>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </east>
+          <south>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </south>
+          <west>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </west>
+        </weaponCarryDrawOffsets>
+      </li>
+    </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Halberd</defName>
     <label>halberd</label>
@@ -223,27 +225,29 @@
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Pike</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>3.0</drawSize>
+      <drawSize>3.0</drawSize>
     </graphicData>
     <techLevel>Medieval</techLevel>
-	<uiIconScale>0.8</uiIconScale>
+    <uiIconScale>0.8</uiIconScale>
     <weaponTags>
       <li>VFEM2_Halberd</li>
     </weaponTags>
     <weaponClasses>
-	  <li>VFEM2_Medieval</li>
+      <li>VFEM2_Medieval</li>
     </weaponClasses>
     <costStuffCount>100</costStuffCount>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
     <statBases>
       <WorkToMake>14000</WorkToMake>
       <Mass>8</Mass>
-	  <VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
+      <VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.25</MoveSpeed>
     </equippedStatOffsets>
-	<equippedAngleOffset>-90</equippedAngleOffset>
+    <equippedAngleOffset>-90</equippedAngleOffset>
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
@@ -256,7 +260,7 @@
         </capacities>
         <power>13</power>
         <cooldownTime>3.9</cooldownTime>
-		<armorPenetration>0.2</armorPenetration>
+        <armorPenetration>0.2</armorPenetration>
       </li>
       <li>
         <label>shaft</label>
@@ -265,7 +269,7 @@
         </capacities>
         <power>13</power>
         <cooldownTime>4.2</cooldownTime>
-		<armorPenetration>0.2</armorPenetration>
+        <armorPenetration>0.2</armorPenetration>
       </li>
       <li>
         <label>point</label>
@@ -283,7 +287,7 @@
         </capacities>
         <power>18</power>
         <cooldownTime>5.2</cooldownTime>
-		<armorPenetration>0.5</armorPenetration>
+        <armorPenetration>0.5</armorPenetration>
       </li>
     </tools>
     <recipeMaker>
@@ -315,7 +319,9 @@
     <weaponClasses>
       <li>VFEM2_Medieval</li>
     </weaponClasses>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
     <statBases>
       <WorkToMake>10000</WorkToMake>
       <Mass>6</Mass>
@@ -360,7 +366,7 @@
       <displayPriority>332</displayPriority>
     </recipeMaker>
     <comps>
-      <li Class="VFEMedieval.CompProperties_EditHeraldic"/>
+      <li Class="VFEMedieval.CompProperties_EditHeraldic" />
     </comps>
     <modExtensions>
       <li Class="VFECore.DynamicGraphicProps">
@@ -377,29 +383,29 @@
             <taggedColorA>HeraldrySymbolColor</taggedColorA>
             <shaderType>Cutout</shaderType>
             <drawSizeAbsolute>(0.5,0.5)</drawSizeAbsolute>
-						<drawOffset>(0,0,0.24)</drawOffset>
+            <drawOffset>(0,0,0.24)</drawOffset>
           </li>
         </dataList>
       </li>
-	<li Class="VFECore.ThingDefExtension">
-		<weaponCarryDrawOffsets>
-			<north>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</north>
-			<east>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</east>
-			<south>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</south>
-			<west>
-				<drawOffset>(0,0,0.1)</drawOffset>
-			</west>
-		</weaponCarryDrawOffsets>
-	</li>
+      <li Class="VFECore.ThingDefExtension">
+        <weaponCarryDrawOffsets>
+          <north>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </north>
+          <east>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </east>
+          <south>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </south>
+          <west>
+            <drawOffset>(0,0,0.1)</drawOffset>
+          </west>
+        </weaponCarryDrawOffsets>
+      </li>
     </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Pike</defName>
     <label>pike</label>
@@ -407,22 +413,24 @@
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/LongSpear</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>2.0</drawSize>
+      <drawSize>2.0</drawSize>
     </graphicData>
-	<uiIconScale>0.8</uiIconScale>
+    <uiIconScale>0.8</uiIconScale>
     <techLevel>Medieval</techLevel>
     <weaponTags>
       <li>VFEM2_Pike</li>
     </weaponTags>
     <weaponClasses>
-	  <li>VFEM2_Medieval</li>
+      <li>VFEM2_Medieval</li>
     </weaponClasses>
     <costStuffCount>100</costStuffCount>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
     <statBases>
       <WorkToMake>14000</WorkToMake>
       <Mass>6.5</Mass>
-	  <VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
+      <VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.15</MoveSpeed>
@@ -439,7 +447,7 @@
         </capacities>
         <power>13</power>
         <cooldownTime>3.9</cooldownTime>
-		<armorPenetration>0.2</armorPenetration>
+        <armorPenetration>0.2</armorPenetration>
       </li>
       <li>
         <label>shaft</label>
@@ -448,7 +456,7 @@
         </capacities>
         <power>13</power>
         <cooldownTime>4.2</cooldownTime>
-		<armorPenetration>0.2</armorPenetration>
+        <armorPenetration>0.2</armorPenetration>
       </li>
       <li>
         <label>point</label>
@@ -467,11 +475,11 @@
       </skillRequirements>
       <displayPriority>332</displayPriority>
     </recipeMaker>
-	<modExtensions>
-     <li Class="VFECore.ThingDefExtension">
+    <modExtensions>
+      <li Class="VFECore.ThingDefExtension">
         <usableWithShields>true</usableWithShields>
       </li>
-	</modExtensions>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -486,7 +494,9 @@
     <uiIconScale>1.2</uiIconScale>
     <techLevel>Medieval</techLevel>
     <costStuffCount>75</costStuffCount>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
     <weaponTags>
       <li>MedievalMeleeDecent</li>
     </weaponTags>
@@ -508,7 +518,7 @@
         </capacities>
         <power>8</power>
         <cooldownTime>2</cooldownTime>
-		<armorPenetration>0.13</armorPenetration>
+        <armorPenetration>0.13</armorPenetration>
       </li>
       <li>
         <label>point</label>
@@ -517,7 +527,7 @@
         </capacities>
         <power>16</power>
         <cooldownTime>1.8</cooldownTime>
-		<armorPenetration>0.24</armorPenetration>
+        <armorPenetration>0.24</armorPenetration>
       </li>
       <li>
         <label>edge</label>
@@ -526,7 +536,7 @@
         </capacities>
         <power>15</power>
         <cooldownTime>1.8</cooldownTime>
-		<armorPenetration>0.24</armorPenetration>
+        <armorPenetration>0.24</armorPenetration>
       </li>
     </tools>
     <recipeMaker>
@@ -536,13 +546,13 @@
       </skillRequirements>
       <displayPriority>411</displayPriority>
     </recipeMaker>
-	<modExtensions>
-     <li Class="VFECore.ThingDefExtension">
+    <modExtensions>
+      <li Class="VFECore.ThingDefExtension">
         <usableWithShields>true</usableWithShields>
       </li>
-	</modExtensions>
+    </modExtensions>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
     <defName>VFEM2_MeleeWeapon_Flail</defName>
     <label>flail</label>
@@ -576,7 +586,7 @@
     </weaponTags>
     <weaponClasses>
       <li>Melee</li>
-	  <li>VFEM2_Medieval</li>
+      <li>VFEM2_Medieval</li>
     </weaponClasses>
     <tools>
       <li>
@@ -586,7 +596,7 @@
         </capacities>
         <power>9</power>
         <cooldownTime>2</cooldownTime>
-		<armorPenetration>0.13</armorPenetration>
+        <armorPenetration>0.13</armorPenetration>
       </li>
       <li Class="VFEMedieval.ToolExtended">
         <label>head</label>
@@ -595,16 +605,16 @@
           <li>Blunt</li>
         </capacities>
         <power>18.7</power>
-		<powerMultiplierRange>0.5~1.5</powerMultiplierRange>
+        <powerMultiplierRange>0.5~1.5</powerMultiplierRange>
         <cooldownTime>2.2</cooldownTime>
-		<armorPenetration>0.24</armorPenetration>
+        <armorPenetration>0.24</armorPenetration>
       </li>
     </tools>
-	<modExtensions>
-     <li Class="VFECore.ThingDefExtension">
+    <modExtensions>
+      <li Class="VFECore.ThingDefExtension">
         <usableWithShields>true</usableWithShields>
       </li>
-	</modExtensions>
+    </modExtensions>
   </ThingDef>
-  
+
 </Defs>
