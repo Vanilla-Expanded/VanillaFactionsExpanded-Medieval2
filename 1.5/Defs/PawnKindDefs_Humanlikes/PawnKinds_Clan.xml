@@ -81,8 +81,7 @@
     <apparelMoney>180~360</apparelMoney>
     <weaponMoney>80~150</weaponMoney>
     <weaponTags>
-	  <li>MedievalMeleeBasic</li>
-	  <li>Spear</li>
+	  <li>VFEM2_Torches</li>
     </weaponTags>
     <apparelRequired>
       <li>VFEM2_Apparel_LeatherArmor</li>
