@@ -147,28 +147,4 @@
     </apparel>
   </ThingDef>
 
-
-  <ThingDef>
-    <defName>VFEM2_Proj_GrenadeTorch</defName>
-    <label>thrown torch</label>
-    <category>Projectile</category>
-    <altitudeLayer>Projectile</altitudeLayer>
-    <thingClass>Projectile_Explosive</thingClass>
-    <tickerType>Normal</tickerType>
-    <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
-    <graphicData>
-      <texPath>Things/Projectile/TorchThrown</texPath>
-      <graphicClass>Graphic_Flicker</graphicClass>
-      <shaderType>Transparent</shaderType>
-    </graphicData>
-    <projectile>
-      <explosionRadius>0.9</explosionRadius>
-      <damageDef>Flame</damageDef>
-      <!-- Use default damage from explosion def -->
-      <speed>24</speed>
-      <ai_IsIncendiary>true</ai_IsIncendiary>
-    </projectile>
-  </ThingDef>
-
 </Defs>
