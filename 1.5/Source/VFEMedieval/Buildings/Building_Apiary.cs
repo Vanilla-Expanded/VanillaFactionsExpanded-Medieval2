@@ -19,6 +19,8 @@ namespace VFEMedieval
         private int flowerNeeded;
         private List<IntVec3> cellsAround = new List<IntVec3>();
 
+        public const int minFlowersNeeded =28;
+
         public bool HoneyReady
         {
             get
@@ -147,14 +149,14 @@ namespace VFEMedieval
                 return null;
             }
             Thing thing = ThingMaker.MakeThing(VFEM_DefOf.VFEM2_Honey, null);
-            thing.stackCount = 75;
+            thing.stackCount = flowerCount>75 ? 75: flowerCount;
             this.Reset();
             return thing;
         }
 
         private int FlowerNeeded()
         {
-            int i = (cellsAround.Count - 8) / 2;
+            int i = minFlowersNeeded;
             i -= flowerCount;
             return i;
         }
@@ -173,7 +175,7 @@ namespace VFEMedieval
                     }
                 }
             }
-            if (flowerCount >= (int)((cellsAround.Count - 8) / 2))
+            if (flowerCount >= minFlowersNeeded)
             {
                 return true;
             }
@@ -187,10 +189,10 @@ namespace VFEMedieval
             {
                 return cellsAround;
             }
-            IEnumerable<IntVec3> cells = CellRect.CenteredOn(this.Position, 5).Cells;
+            IEnumerable<IntVec3> cells = CellRect.CenteredOn(this.Position, 10).Cells;
             foreach (IntVec3 item in cells)
             {
-                if (item.InHorDistOf(pos, 4.9f))
+                if (item.InHorDistOf(pos, 9.9f))
                 {
                     cellsAround.Add(item);
                 }

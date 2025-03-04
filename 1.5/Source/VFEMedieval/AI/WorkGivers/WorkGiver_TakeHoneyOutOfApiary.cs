@@ -28,10 +28,16 @@ namespace VFEMedieval
         {
             Building_Apiary tNR_Apiary = t as Building_Apiary;
             int skill = pawn.skills.skills.Find((SkillRecord r) => r.def.defName == "Animals").levelInt;
-            if (tNR_Apiary == null || !tNR_Apiary.HoneyReady || skill < 5)
+            if (tNR_Apiary == null || !tNR_Apiary.HoneyReady)
             {
                 return false;
             }
+            if (skill < 5)
+            {
+                JobFailReason.Is("VFEM2_BelowAnimalSkill".Translate());
+                return false;
+            }
+           
             if (t.IsBurning())
             {
                 return false;

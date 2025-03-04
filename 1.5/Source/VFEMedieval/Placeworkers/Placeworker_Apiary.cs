@@ -13,7 +13,7 @@ namespace VFEMedieval
     {
         public override AcceptanceReport AllowsPlacing(BuildableDef def, IntVec3 center, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null)
         {
-            foreach (IntVec3 c in GenAdj.OccupiedRect(center, rot, def.Size).ExpandedBy(8))
+            foreach (IntVec3 c in GenAdj.OccupiedRect(center, rot, def.Size).ExpandedBy(3))
             {
                 List<Thing> list = map.thingGrid.ThingsListAt(c);
                 for (int i = 0; i < list.Count; i++)
