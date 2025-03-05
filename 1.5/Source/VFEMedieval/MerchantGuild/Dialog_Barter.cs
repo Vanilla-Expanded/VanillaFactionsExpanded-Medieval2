@@ -262,24 +262,17 @@ namespace VFEMedieval
         private void CacheTradeables(ref List<Tradeable> cachedTradeables, List<Tradeable> tradeables,
             QuickSearchWidget quickSearchWidget)
         {
-            try
-            {
-                cachedTradeables = (from tr in tradeables
-                                    where quickSearchWidget.filter.Matches(tr.Label)
-                                    orderby (!tr.TraderWillTrade) ? (-1) : 0 descending
-                                    select tr).ThenBy((Tradeable tr) => tr, sorter1.Comparer)
-                          .ThenBy((Tradeable tr) => tr, sorter2.Comparer).ThenBy((Tradeable tr) =>
-                          TransferableUIUtility.DefaultListOrderPriority(tr))
-                            .ThenBy((Tradeable tr) => tr.ThingDef.label)
-                            .ThenBy((Tradeable tr) => tr.AnyThing.TryGetQuality(out var qc) ? ((int)qc) : (-1))
-                            .ThenBy((Tradeable tr) => tr.AnyThing.HitPoints)
-                            .ToList();
-                quickSearchWidget.noResultsMatched = !cachedTradeables.Any();
-            }
-            catch (Exception ex)
-            {
-                Log.Message("Error? " + ex.Message);
-            }
+            cachedTradeables = (from tr in tradeables
+                                where quickSearchWidget.filter.Matches(tr.Label)
+                                orderby (!tr.TraderWillTrade) ? (-1) : 0 descending
+                                select tr).ThenBy((Tradeable tr) => tr, sorter1.Comparer)
+                      .ThenBy((Tradeable tr) => tr, sorter2.Comparer).ThenBy((Tradeable tr) =>
+                      TransferableUIUtility.DefaultListOrderPriority(tr))
+                        .ThenBy((Tradeable tr) => tr.ThingDef.label)
+                        .ThenBy((Tradeable tr) => tr.AnyThing.TryGetQuality(out var qc) ? ((int)qc) : (-1))
+                        .ThenBy((Tradeable tr) => tr.AnyThing.HitPoints)
+                        .ToList();
+            quickSearchWidget.noResultsMatched = !cachedTradeables.Any();
         }
 
         public override void DoWindowContents(Rect inRect)

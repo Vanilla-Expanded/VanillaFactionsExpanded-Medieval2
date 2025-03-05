@@ -8,6 +8,7 @@ namespace VFEMedieval
 {
     public class QuestPart_FactionForces : QuestPartActivable
     {
+        private bool allEnemiesDefeatedSignalSent;
         public Site site;
         public List<Pawn> enemyUnitPawns;
         public List<Pawn> friendlyUnitPawns;
@@ -20,8 +21,14 @@ namespace VFEMedieval
             if (site.Map != null)
             {
                 spawned = true;
-                // do enemies fleeing/killing check
-                Log.Message("Ticking??: " + enemyUnitPawns.ToStringSafeEnumerable() + " - " + friendlyUnitPawns.ToStringSafeEnumerable());
+                if (!allEnemiesDefeatedSignalSent)
+                {
+                    if (CheckAllEnemiesDefeated())
+                    {
+                        QuestUtility.SendQuestTargetSignals(site.questTags, "AllEnemiesDefeated", this.Named("SUBJECT"));
+                        allEnemiesDefeatedSignalSent = true;
+                    }
+                }
             }
         }
         public override void ExposeData()
@@ -34,6 +41,24 @@ namespace VFEMedieval
             Scribe_Collections.Look(ref friendlyUnitPawns, "friendlyUnitPawns", lookMode);
             Scribe_References.Look(ref friendlyFaction, "friendlyFaction");
             Scribe_References.Look(ref enemyFaction, "enemyFaction");
+            Scribe_Values.Look(ref allEnemiesDefeatedSignalSent, "allEnemiesDefeatedSignalSent");
+        }
+
+        private bool CheckAllEnemiesDefeated()
+        {
+            if (enemyUnitPawns.NullOrEmpty())
+            {
+                return true;
+            }
+
+            foreach (var enemy in enemyUnitPawns)
+            {
+                if (!enemy.Dead && !enemy.Downed && enemy.MentalStateDef != MentalStateDefOf.PanicFlee)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
