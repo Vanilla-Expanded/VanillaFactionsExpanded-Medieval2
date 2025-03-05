@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <SitePartDef Name="VFEM_SkirmishSitePart">
+    <SitePartDef>
         <defName>VFEM_SkirmishSitePart</defName>
         <label>skirmish location</label>
         <description>A skirmish location.</description>
         <workerClass>SitePartWorker</workerClass>
         <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
         <expandingIconTexture>MapIcons/Skirmish</expandingIconTexture>
-        <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+        <applyFactionColorToSiteTexture>False</applyFactionColorToSiteTexture>
         <showFactionInInspectString>true</showFactionInInspectString>
         <requiresFaction>false</requiresFaction>
         <approachOrderString>Enter {0}</approachOrderString>
