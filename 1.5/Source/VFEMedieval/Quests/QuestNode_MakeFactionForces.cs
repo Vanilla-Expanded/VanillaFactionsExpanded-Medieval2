@@ -4,6 +4,8 @@ using Verse;
 using Verse.AI.Group;
 using RimWorld.QuestGen;
 using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
 
 namespace VFEMedieval
 {
@@ -11,48 +13,45 @@ namespace VFEMedieval
     {
         public override bool TestRunInt(Slate slate)
         {
-            return QuestGen_Get.GetMap() != null && slate.Get<Faction>("askerFaction", null) != null
-                && slate.Get<Faction>("siteFaction", null) != null;
+            return true;
         }
 
         public override void RunInt()
         {
             Slate slate = QuestGen.slate;
+            var site = slate.Get<Site>("site");
             Quest quest = QuestGen.quest;
-            Map map = QuestGen_Get.GetMap();
 
             Faction askerFaction = slate.Get<Faction>("askerFaction");
             Faction siteFaction = slate.Get<Faction>("siteFaction");
-            float points = slate.Get("points", 0f);
 
-            List<Pawn> enemyUnitPawns = GeneratePawnList(siteFaction, points, map);
+            float points = slate.Get("points", 0f);
+            Log.Message("points?: " + points);
+            List<Pawn> enemyUnitPawns = GeneratePawnList(siteFaction, points * 1.5f, site);
             slate.Set("EnemyUnitPawns", enemyUnitPawns);
             string enemyUnitList = FormatPawnListToString(enemyUnitPawns);
             slate.Set("EnemyUnitList", enemyUnitList);
 
-            List<Pawn> friendlyUnitPawns = GeneratePawnList(askerFaction, points / 2f, map);
+            List<Pawn> friendlyUnitPawns = GeneratePawnList(askerFaction, points / 2f, site);
             slate.Set("FriendlyUnitPawns", friendlyUnitPawns);
             string friendlyUnitList = FormatPawnListToString(friendlyUnitPawns);
             slate.Set("FriendlyUnitList", friendlyUnitList);
+
+            QuestPart_FactionForces questPart = new QuestPart_FactionForces();
+            questPart.inSignalEnable = quest.AddedSignal;
+            questPart.site = slate.Get<Site>("site");
+            questPart.enemyFaction = siteFaction;
+            questPart.friendlyFaction = askerFaction;
+            questPart.enemyUnitPawns = enemyUnitPawns;
+            questPart.friendlyUnitPawns = friendlyUnitPawns;
+            questPart.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
+            quest.AddPart(questPart);
         }
 
-        private List<Pawn> GeneratePawnList(Faction faction, float points, Map map)
+        private List<Pawn> GeneratePawnList(Faction faction, float points, Site site)
         {
-            if (points <= 0)
-            {
-                Log.Warning($"GeneratePawnList: Points are zero or negative ({points}), no pawns spawned for {faction.Name}.");
-                return new List<Pawn>();
-            }
-
-            PawnGroupMakerParms pawnGroupMakerParms = new PawnGroupMakerParms
-            {
-                groupKind = PawnGroupKindDefOf.Combat,
-                tile = map.Tile,
-                faction = faction,
-                points = points,
-                raidStrategy = RaidStrategyDefOf.ImmediateAttack
-            };
-
+            PawnGroupMakerParms pawnGroupMakerParms = GetParms(faction, points, site);
+            points = Mathf.Max(points, faction.def.MinPointsToGeneratePawnGroup(pawnGroupMakerParms.groupKind, pawnGroupMakerParms));
             List<Pawn> generatedPawns = PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms, true).ToList();
             if (!generatedPawns.Any())
             {
@@ -61,6 +60,18 @@ namespace VFEMedieval
             }
 
             return generatedPawns;
+        }
+
+        private static PawnGroupMakerParms GetParms(Faction faction, float points, Site site)
+        {
+            return new PawnGroupMakerParms
+            {
+                groupKind = PawnGroupKindDefOf.Combat,
+                tile = site.Tile,
+                faction = faction,
+                points = points,
+                raidStrategy = RaidStrategyDefOf.ImmediateAttack
+            };
         }
 
         private string FormatPawnListToString(List<Pawn> pawns)
