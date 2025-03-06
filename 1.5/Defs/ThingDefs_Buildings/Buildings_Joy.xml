@@ -3,7 +3,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM2_ArcheryTarget</defName>
 		<label>archery target</label>
-		<description>A simple archery target mounted on a wooden stand. It's relaxing, and trains shooting skills.</description>
+		<description>A simple archery target mounted on a wooden stand. It's relaxing, and allows oneself to test their accuracy and train over time without risking fatal confrontation.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/ArcheryTarget/ArcheryTarget</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -38,7 +38,8 @@
 			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
 		</building>
 		<costList>
-			<WoodLog>20</WoodLog>
+			<WoodLog>25</WoodLog>
+			<Hay>30</Hay>
 		</costList>
 		<pathCost>14</pathCost>
 		<researchPrerequisites>
@@ -79,7 +80,7 @@
 		</statBases>
 		<costList>
 			<WoodLog>25</WoodLog>
-			<Hay>15</Hay>
+			<Hay>30</Hay>
 		</costList>
 		<building>
 			<joyKind>Gaming_Dexterity</joyKind>

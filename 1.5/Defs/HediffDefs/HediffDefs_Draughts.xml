@@ -539,14 +539,14 @@
 				<label>fading</label>
 				<minSeverity>0</minSeverity>
 				<statOffsets>
-					<ToxicResistance>0.2</ToxicResistance>
+					<ToxicResistance>0.10</ToxicResistance>
 				</statOffsets>
 			</li>
 			<li Name="potent">
 				<label>potent</label>
 				<minSeverity>0.65</minSeverity>
 				<statOffsets>
-					<ToxicResistance>0.5</ToxicResistance>
+					<ToxicResistance>0.25</ToxicResistance>
 				</statOffsets>
 			</li>
 		</stages>
