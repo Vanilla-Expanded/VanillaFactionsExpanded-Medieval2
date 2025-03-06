@@ -58,6 +58,10 @@ namespace VFEMedieval
             {
                 return comp.PrimaryVerb.verbProps.range;
             }
+            else if (equipment is Building_TurretGun building_TurretGun)
+            {
+                return building_TurretGun.AttackVerb.verbProps.range;
+            }
             throw new Exception("[VFEMedieval] Couldn't determine max range for " + this.Label);
         }
 

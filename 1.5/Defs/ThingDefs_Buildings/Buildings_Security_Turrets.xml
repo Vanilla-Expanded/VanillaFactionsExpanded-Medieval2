@@ -31,11 +31,11 @@
     <pathCost>42</pathCost>
     <fillPercent>0.4</fillPercent>
     <hasTooltip>true</hasTooltip>
-	<minifiedDef inherit="False"/>
+    <minifiedDef inherit="False" />
     <statBases>
       <MaxHitPoints>600</MaxHitPoints>
       <Flammability>1</Flammability>
-	  <Mass>30</Mass>
+      <Mass>30</Mass>
       <WorkToBuild>2500</WorkToBuild>
       <Beauty>-10</Beauty>
       <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
@@ -155,7 +155,7 @@
       </li>
     </verbs>
   </ThingDef>
-  
+
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM2_Turret_WallMountedArquebus</defName>
     <label>wall-mounted arquebus</label>
@@ -186,11 +186,11 @@
     <pathCost>42</pathCost>
     <fillPercent>0.4</fillPercent>
     <hasTooltip>true</hasTooltip>
-	<minifiedDef inherit="False"/>
+    <minifiedDef inherit="False" />
     <statBases>
       <MaxHitPoints>600</MaxHitPoints>
       <Flammability>1</Flammability>
-	  <Mass>30</Mass>
+      <Mass>30</Mass>
       <WorkToBuild>3250</WorkToBuild>
       <Beauty>-10</Beauty>
       <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
@@ -230,7 +230,7 @@
     <costList>
       <WoodLog>90</WoodLog>
       <Steel>80</Steel>
-	  <Chemfuel>10</Chemfuel>
+      <Chemfuel>10</Chemfuel>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
@@ -242,14 +242,14 @@
       <turretTopDrawSize>2</turretTopDrawSize>
       <turretTopOffset>(0, 0.05)</turretTopOffset>
     </building>
-    <repairEffect>ConstructDirt</repairEffect> 
+    <repairEffect>ConstructDirt</repairEffect>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <researchPrerequisites>
       <li>VFEM2_Matchlocks</li>
     </researchPrerequisites>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <placeWorkers>
-      <li>PlaceWorker_ShowTurretRadius</li>
+      <li>VFEMedieval.PlaceWorker_ShowTurretRadius</li>
       <li>PlaceWorker_TurretTop</li>
     </placeWorkers>
   </ThingDef>
@@ -282,16 +282,16 @@
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
         <warmupTime>2.2</warmupTime>
-		<minRange>1.5</minRange>
+        <minRange>1.5</minRange>
         <range>40.9</range>
         <soundCast>VFEM2_Shot_Arquebus</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
-		<consumeFuelPerShot>1</consumeFuelPerShot>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
       </li>
     </verbs>
   </ThingDef>
