@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <SitePartDef>
+        <defName>VFEM_SkirmishSitePart</defName>
+        <label>skirmish location</label>
+        <description>A skirmish location.</description>
+        <workerClass>SitePartWorker</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>MapIcons/Skirmish</expandingIconTexture>
+        <applyFactionColorToSiteTexture>False</applyFactionColorToSiteTexture>
+        <showFactionInInspectString>true</showFactionInInspectString>
+        <requiresFaction>false</requiresFaction>
+        <approachOrderString>Enter {0}</approachOrderString>
+        <approachingReportString>Entering {0}</approachingReportString>
+        <arrivedLetter>Skirmish location in this area.</arrivedLetter>
+        <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <minThreatPoints>100</minThreatPoints>
+        <tags>
+            <li>VFEM2_Skirmish</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>VFEM_SkirmishGenStep</defName>
+        <linkWithSite>VFEM_SkirmishSitePart</linkWithSite>
+        <order>450</order>
+        <genStep Class="VFEMedieval.GenStep_Skirmish" />
+    </GenStepDef>
+
+</Defs>

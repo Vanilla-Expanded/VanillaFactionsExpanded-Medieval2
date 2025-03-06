@@ -3,20 +3,20 @@
 	<QuestScriptDef>
 		<defName>VFEM2_OpportunitySite_Skirmish</defName>
 		<rootSelectionWeight>0.8</rootSelectionWeight>
-		<rootMinPoints>100</rootMinPoints>
 		<expireDaysRange>4~8</expireDaysRange>
+		<rootMinPoints>500</rootMinPoints>
 		<questNameRules>
 			<rulesStrings>
-				<li>questName->[faction_name] requests aid</li>
-				<li>questName->[faction_name]'s [skirmish]</li>
-				<li>questName->Aid [faction_name] in battle</li>
-				<li>questName->[faction_name] clashes with [enemy_faction_name]</li>
-				<li>questName->[faction_name]'s fight</li>
-				<li>questName->Battle for [faction_name]</li>
-				<li>questName->[faction_name]'s call to arms</li>
-				<li>questName->Defend [faction_name]</li>
-				<li>questName->Support [faction_name]</li>
-				<li>questName->[faction_name]’s Skirmish</li>
+				<li>questName->[askerFaction_name] requests aid</li>
+				<li>questName->[askerFaction_name]'s [skirmish]</li>
+				<li>questName->Aid [askerFaction_name] in battle</li>
+				<li>questName->[askerFaction_name] clashes with [enemy_faction_name]</li>
+				<li>questName->[askerFaction_name]'s fight</li>
+				<li>questName->Battle for [askerFaction_name]</li>
+				<li>questName->[askerFaction_name]'s call to arms</li>
+				<li>questName->Defend [askerFaction_name]</li>
+				<li>questName->Support [askerFaction_name]</li>
+				<li>questName->[askerFaction_name]'s Skirmish</li>
 				<li>skirmish->Skirmish</li>
 				<li>skirmish->Battle</li>
 				<li>skirmish->Clash</li>
@@ -25,10 +25,10 @@
 		</questNameRules>
 		<questDescriptionRules>
 			<rulesStrings>
-				<li>questDescription->[faction_leader_nameFull], [faction_leaderTitle] of [faction_name], has requested our help in a skirmish against [siteFaction_name].
-\nA small force from [faction_name] is engaging a larger group of [siteFaction_pawnsPlural]. The friendlies will attack immediately upon arrival, but their chances of victory without our help are slim.
-\nThis is an opportunity to strengthen our bond with [faction_name]. However, the enemy force is significant, and this battle will not be without risk.
-\n\nAllied forces include::\n[FriendlyUnitList]
+				<li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has requested our help in a skirmish against [siteFaction_name].
+\nA small force from [askerFaction_name] is engaging a larger group of [siteFaction_pawnsPlural]. The friendlies will attack immediately upon arrival, but their chances of victory without our help are slim.
+\nThis is an opportunity to strengthen our bond with [askerFaction_name]. However, the enemy force is significant, and this battle will not be without risk.
+\n\nAllied forces include:\n[FriendlyUnitList]
 \n\nEnemies from [siteFaction_name]:\n[EnemyUnitList]</li>
 			</rulesStrings>
 		</questDescriptionRules>
@@ -48,31 +48,24 @@
 					<def>Util_AdjustPointsForDistantFight</def>
 				</li>
 				<li Class="QuestNode_GetMap" />
-				<li Class="QuestNode_RandomNode">
-					<nodes>
-						<li Class="QuestNode_GetPawn">
-							<storeAs>asker</storeAs>
-							<mustBeFactionLeader>true</mustBeFactionLeader>
-							<mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
-							<hostileWeight>0.15</hostileWeight>
-							<selectionWeight>0.3</selectionWeight>
-						</li>
-					</nodes>
+
+				<li Class="QuestNode_GetPawn">
+					<storeAs>asker</storeAs>
+					<mustBeFactionLeader>true</mustBeFactionLeader>
+					<mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+					<hostileWeight>0.15</hostileWeight>
+					<selectionWeight>0.3</selectionWeight>
 				</li>
+				<li Class="QuestNode_GetFactionOf">
+					<thing>$asker</thing>
+					<storeAs>askerFaction</storeAs>
+				</li>
+
 				<li Class="QuestNode_GetSiteTile">
 					<storeAs>siteTile</storeAs>
 					<preferCloserTiles>true</preferCloserTiles>
 				</li>
-				<li Class="QuestNode_ViolentQuestsAllowed">
-					<node Class="QuestNode_Set">
-						<name>siteThreatChance</name>
-						<value>0.7</value>
-					</node>
-					<elseNode Class="QuestNode_Set">
-						<name>siteThreatChance</name>
-						<value>0</value>
-					</elseNode>
-				</li>
+
 				<li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
 					<storeAs>sitePartDefs</storeAs>
 					<storeFactionAs>siteFaction</storeFactionAs>
@@ -81,6 +74,7 @@
 							<tag>VFEM2_Skirmish</tag>
 						</li>
 					</sitePartsTags>
+					<mustBeHostileToFactionOf>$asker</mustBeHostileToFactionOf>
 				</li>
 				<li Class="QuestNode_GetDefaultSitePartsParams">
 					<tile>$siteTile</tile>
@@ -88,11 +82,9 @@
 					<sitePartDefs>$sitePartDefs</sitePartDefs>
 					<storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
 				</li>
+
 				<li Class="QuestNode_SubScript">
 					<def>Util_GenerateSite</def>
-					<parms>
-						<hiddenSitePartsPossible>true</hiddenSitePartsPossible>
-					</parms>
 				</li>
 				<li Class="QuestNode_SpawnWorldObjects">
 					<worldObjects>$site</worldObjects>
@@ -119,19 +111,50 @@
 					<worldObject>$site</worldObject>
 					<node Class="QuestNode_End" />
 				</li>
+				<!-- If we enter and leave, the map is destroyed. Fail the quest. -->
 				<li Class="QuestNode_Signal">
-					<inSignal>site.EnemiesDefeated</inSignal>
+					<inSignal>site.Destroyed</inSignal>
 					<node Class="QuestNode_Sequence">
 						<nodes>
 							<li Class="QuestNode_Letter">
-								<label>Skirmish won</label>
-								<text>The enemy force has been defeated in the skirmish.</text>
+								<label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+								<text TKey="LetterTextQuestFailed">After leaving the site, the battle resolved itself without your help. The quest [resolvedQuestName] has ended.</text>
+							</li>
+							<li Class="QuestNode_End">
+								<outcome>Fail</outcome>
+							</li>
+						</nodes>
+					</node>
+				</li>
+				<li Class="QuestNode_Signal">
+					<inSignal>site.AllEnemiesDefeated</inSignal>
+					<node Class="QuestNode_Sequence">
+						<nodes>
+							<li Class="QuestNode_Notify_PlayerRaidedSomeone">
+								<getRaidersFromMapParent>$site</getRaidersFromMapParent>
+							</li>
+							<li Class="QuestNode_GiveRewards">
+								<parms>
+									<allowGoodwill>true</allowGoodwill>
+									<allowRoyalFavor>true</allowRoyalFavor>
+									<chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+								</parms>
+								<addCampLootReward>true</addCampLootReward>
+								<customLetterLabel TKey="LetterLabelPaymentArrived">Payment arrived</customLetterLabel>
+								<customLetterText TKey="LetterTextPaymentArrived">You have defeated the enemy forces!\n\nThe payment from [asker_faction_name] has arrived.</customLetterText>
+								<nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+									<letterDef>ChoosePawn</letterDef>
+									<label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+									<text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+									<useColonistsOnMap>$site</useColonistsOnMap>
+									<chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+								</nodeIfChosenPawnSignalUsed>
 							</li>
 						</nodes>
 					</node>
 				</li>
 				<li Class="QuestNode_End">
-					<inSignal>site.EnemiesDefeated</inSignal>
+					<inSignal>site.AllEnemiesDefeated</inSignal>
 					<outcome>Success</outcome>
 				</li>
 			</nodes>
