@@ -153,12 +153,10 @@
   
   <RulePackDef>
     <defName>VFEM2_LeaderTitleMaker_Kingdom</defName>
-    <include>
-      <li>LeaderTitleMaker_GlobalStructure</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+		<li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
 
         <li>cultureLeaderNoun->king</li>
       </rulesStrings>
@@ -167,12 +165,10 @@
   
   <RulePackDef>
     <defName>VFEM2_LeaderTitleMaker_Clan</defName>
-    <include>
-      <li>LeaderTitleMaker_GlobalStructure</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+        <li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
 
         <li>cultureLeaderNoun->jarl</li>
       </rulesStrings>
@@ -181,12 +177,10 @@
   
   <RulePackDef>
     <defName>VFEM2_LeaderTitleMaker_MerchantGuild</defName>
-    <include>
-      <li>LeaderTitleMaker_GlobalStructure</li>
-    </include>
     <rulePack>
       <rulesStrings>
         <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+		<li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
 
         <li>cultureLeaderNoun->guildmaster</li>
       </rulesStrings>

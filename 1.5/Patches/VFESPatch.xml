@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Security</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace"> 
+					<xpath>Defs/ThingDef[defName="VFEM2_Turret_WallMountedArbalest"]/researchPrerequisites</xpath>
+					<value>
+                        <researchPrerequisites>
+                            <li>VFES_SiegeEquipment</li>
+                        </researchPrerequisites>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
+
