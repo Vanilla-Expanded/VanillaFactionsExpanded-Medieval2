@@ -69,9 +69,10 @@
                     <inSignalDisable>site.MapGenerated</inSignalDisable>
                     <node Class="QuestNode_Sequence">
                         <nodes>
+                            <li Class="VFEMedieval.QuestNode_SpawnRaidOnFail"></li>
                             <li Class="QuestNode_Letter">
                                 <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
-                                <text>The siege camp was not defeated in time. The quest [resolvedQuestName] has expired, and they are now preparing to raid your colony.</text>
+                                <text>The siege camp was not defeated in time. The quest [resolvedQuestName] has expired, and the enemy forces are now raiding your colony.</text>
                             </li>
                             <li Class="QuestNode_End">
                                 <outcome>Fail</outcome>
@@ -102,36 +103,7 @@
                     <worldObject>$site</worldObject>
                     <node Class="QuestNode_End" />
                 </li>
-                <!-- Fail quest if player loses all pawns on the map -->
-                <li Class="QuestNode_Signal">
-                    <inSignal>site.AllAlliesDownedOrDead</inSignal>
-                    <node Class="QuestNode_Sequence">
-                        <nodes>
-                            <li Class="QuestNode_Letter">
-                                <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
-                                <text TKey="LetterTextQuestFailed">Your colonists have been defeated at the siege camp. The quest [resolvedQuestName] has ended in failure.</text>
-                            </li>
-                            <li Class="QuestNode_End">
-                                <outcome>Fail</outcome>
-                            </li>
-                        </nodes>
-                    </node>
-                </li>
-                <!-- Fail quest if player leaves the map -->
-                <li Class="QuestNode_Signal">
-                    <inSignal>site.Destroyed</inSignal>
-                    <node Class="QuestNode_Sequence">
-                        <nodes>
-                            <li Class="QuestNode_Letter">
-                                <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
-                                <text TKey="LetterTextQuestFailed">You left the siege camp. The quest [resolvedQuestName] has ended in failure.</text>
-                            </li>
-                            <li Class="QuestNode_End">
-                                <outcome>Fail</outcome>
-                            </li>
-                        </nodes>
-                    </node>
-                </li>
+
                 <li Class="QuestNode_Signal">
                     <inSignal>site.AllEnemiesDefeated</inSignal>
                     <node Class="QuestNode_Sequence">

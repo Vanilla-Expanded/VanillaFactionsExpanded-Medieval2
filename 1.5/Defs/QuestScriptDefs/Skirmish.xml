@@ -4,7 +4,6 @@
 		<defName>VFEM2_OpportunitySite_Skirmish</defName>
 		<rootSelectionWeight>0.8</rootSelectionWeight>
 		<expireDaysRange>4~8</expireDaysRange>
-		<rootMinPoints>500</rootMinPoints>
 		<questNameRules>
 			<rulesStrings>
 				<li>questName->[askerFaction_name] requests aid</li>

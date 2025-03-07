@@ -14,7 +14,7 @@
         <approachOrderString>Enter {0}</approachOrderString>
         <approachingReportString>Entering {0}</approachingReportString>
         <arrivedLetter>Skirmish location in this area.</arrivedLetter>
-        <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+        <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
         <wantsThreatPoints>true</wantsThreatPoints>
         <minThreatPoints>100</minThreatPoints>
         <tags>

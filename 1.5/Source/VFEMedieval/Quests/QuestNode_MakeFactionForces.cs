@@ -9,13 +9,8 @@ using UnityEngine;
 
 namespace VFEMedieval
 {
-    public class QuestNode_MakeFactionForces : QuestNode
+    public class QuestNode_MakeFactionForces : QuestNode_MakeFactionForcesBase
     {
-        public override bool TestRunInt(Slate slate)
-        {
-            return true;
-        }
-
         public override void RunInt()
         {
             Slate slate = QuestGen.slate;
@@ -43,41 +38,6 @@ namespace VFEMedieval
             questPart.friendlyUnitPawns = friendlyUnitPawns;
             questPart.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
             quest.AddPart(questPart);
-        }
-
-        private List<Pawn> GeneratePawnList(Faction faction, float points, Site site)
-        {
-            PawnGroupMakerParms pawnGroupMakerParms = GetParms(faction, points, site);
-            points = Mathf.Max(points, faction.def.MinPointsToGeneratePawnGroup(pawnGroupMakerParms.groupKind, pawnGroupMakerParms));
-            List<Pawn> generatedPawns = PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms, true).ToList();
-            if (!generatedPawns.Any())
-            {
-                Log.Warning($"GeneratePawnList: No pawns generated for {faction.Name} with {points} points.");
-                return new List<Pawn>();
-            }
-
-            return generatedPawns;
-        }
-
-        private static PawnGroupMakerParms GetParms(Faction faction, float points, Site site)
-        {
-            return new PawnGroupMakerParms
-            {
-                groupKind = PawnGroupKindDefOf.Combat,
-                tile = site.Tile,
-                faction = faction,
-                points = points,
-                raidStrategy = RaidStrategyDefOf.ImmediateAttack
-            };
-        }
-
-        private string FormatPawnListToString(List<Pawn> pawns)
-        {
-            if (pawns == null || !pawns.Any())
-            {
-                return "";
-            }
-            return pawns.GroupBy(p => p.kindDef).Select(group => $"{group.Count()} {group.Key.label}").ToCommaList();
         }
     }
 }

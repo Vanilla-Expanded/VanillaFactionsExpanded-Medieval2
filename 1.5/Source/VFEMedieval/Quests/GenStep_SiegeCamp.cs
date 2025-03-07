@@ -6,13 +6,14 @@ using Verse.AI;
 using System.Linq;
 using KCSG;
 using RimWorld.BaseGen;
+using UnityEngine;
 
 namespace VFEMedieval
 {
+
     public class GenStep_SiegeCamp : GenStep
     {
-        public override int SeedPart => 347859236; // Changed SeedPart to avoid conflict
-
+        public override int SeedPart => 347859236;
         public override void Generate(Map map, GenStepParams parms)
         {
             QuestPart_SiegeCampFactionForces questPart = null;
@@ -43,8 +44,12 @@ namespace VFEMedieval
                 return;
             }
             List<Pawn> defenderPawns = questPart.defenderPawns;
-
-            if (defenderPawns == null || !defenderPawns.Any())
+            if (defenderPawns.NullOrEmpty())
+            {
+                defenderPawns = QuestNode_MakeFactionForces.GeneratePawnList(siteFaction, questPart.points / 2f, questPart.site);
+            }
+            questPart.defenderPawns = new List<Pawn>();
+            if (defenderPawns.NullOrEmpty())
             {
                 Log.Error("VFEM_SiegeCamp quest generated without defender pawns.");
                 return;
@@ -61,7 +66,7 @@ namespace VFEMedieval
             }
 
             GenerateTents(map, genOption, generationLocation, siteFaction, defenderPawns);
-       }
+        }
 
         private void GenerateTents(Map map, CustomGenOption genOption, IntVec3 generationLocation, Faction faction, List<Pawn> defenders)
         {
@@ -80,14 +85,13 @@ namespace VFEMedieval
             resolveParams.rect = rect;
             BaseGen.globalSettings.map = map;
 
-            // Push additional resolver symbol
             BaseGen.symbolStack.Push("kcsg_runresolvers", resolveParams, null);
-            // Start gen
             SettlementGenUtils.Generate(resolveParams, map, GenOption.settlementLayout);
-            
-            BaseGen.Generate();
 
-            SpawnPawns(defenders, rect, map);
+            BaseGen.Generate();
+            var pawnSpawnRect = CellRect.CenteredOn(generationLocation, width / 2, height / 2);
+            pawnSpawnRect.ClipInsideMap(map);
+            SpawnPawns(defenders, pawnSpawnRect, map);
             LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, generationLocation), map, defenders);
         }
 

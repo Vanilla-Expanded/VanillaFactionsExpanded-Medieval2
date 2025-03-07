@@ -9,12 +9,12 @@ namespace VFEMedieval
     public class QuestPart_SiegeCampFactionForces : QuestPartActivable
     {
         private bool allEnemiesDefeatedSignalSent;
-        private bool allAlliesDownedOrDeadSignalSent; //New: Track allies downed/dead
+        private bool allAlliesDownedOrDeadSignalSent;
         public Site site;
-        public List<Pawn> defenderPawns; // defenders
-        public List<Pawn> potentialAttackerPawns; // potential attackers (raid force)
+        public List<Pawn> defenderPawns;
         private bool spawned;
-        public Faction siteFaction; // site faction (enemy)
+        public Faction siteFaction;
+        public float points;
         public override void QuestPartTick()
         {
             base.QuestPartTick();
@@ -23,7 +23,7 @@ namespace VFEMedieval
                 spawned = true;
                 if (!allEnemiesDefeatedSignalSent)
                 {
-                    if (CheckAllDefendersDefeated()) // Check defenders instead of generic enemies
+                    if (CheckAllDefendersDefeated())
                     {
                         QuestUtility.SendQuestTargetSignals(site.questTags, "AllEnemiesDefeated", this.Named("SUBJECT")); //Keep signal name same for XML compatibility
                         allEnemiesDefeatedSignalSent = true;
@@ -37,15 +37,14 @@ namespace VFEMedieval
             Scribe_References.Look(ref site, "site");
             Scribe_Values.Look(ref spawned, "spawned");
             var lookMode = spawned ? LookMode.Reference : LookMode.Deep;
-            Scribe_Collections.Look(ref defenderPawns, "defenderPawns", lookMode); // defenders
-            Scribe_Collections.Look(ref potentialAttackerPawns, "potentialAttackerPawns", LookMode.Deep); // potential attackers
-            Scribe_References.Look(ref siteFaction, "siteFaction"); // siteFaction
+            Scribe_Collections.Look(ref defenderPawns, "defenderPawns", lookMode);
+            Scribe_References.Look(ref siteFaction, "siteFaction");
             Scribe_Values.Look(ref allEnemiesDefeatedSignalSent, "allEnemiesDefeatedSignalSent");
-            Scribe_Values.Look(ref allAlliesDownedOrDeadSignalSent, "allAlliesDownedOrDeadSignalSent"); // New: Save bool
-
+            Scribe_Values.Look(ref allAlliesDownedOrDeadSignalSent, "allAlliesDownedOrDeadSignalSent");
+            Scribe_Values.Look(ref points, "points");
         }
 
-        private bool CheckAllDefendersDefeated() //Check only defenders
+        private bool CheckAllDefendersDefeated()
         {
             if (defenderPawns.NullOrEmpty())
             {
@@ -60,23 +59,6 @@ namespace VFEMedieval
                 }
             }
             return true;
-        }
-
-        private bool CheckAllPlayerPawnsLost() // New: Check if player lost all pawns
-        {
-            List<Pawn> playerPawns = site.Map.mapPawns.PawnsInFaction(Faction.OfPlayer);
-            if (playerPawns.NullOrEmpty())
-            {
-                return true; // No player pawns on map, consider them lost
-            }
-            foreach (var pawn in playerPawns)
-            {
-                if (!pawn.Dead && !pawn.Downed)
-                {
-                    return false; // Found at least one player pawn alive and not downed
-                }
-            }
-            return true; // All player pawns are dead or downed
         }
     }
 }
