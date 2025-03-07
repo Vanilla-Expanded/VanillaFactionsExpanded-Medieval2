@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <ScenPartDef>
+    <defName>VFEM_PlayerPawnsArriveMethod</defName>
+    <label>arrival method</label>
+    <category>Fixed</category>
+    <scenPartClass>VFEMedieval.ScenPart_MedievalScenario</scenPartClass>
+    <summaryPriority>470</summaryPriority>
+	<modExtensions>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromSettlements>
+          <li>VFEM2_KeepHousesSettlement</li>
+        </chooseFromSettlements>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </modExtensions>
+  </ScenPartDef>
 
   <ScenarioDef>
     <defName>VFEM2_NewKingdom</defName>
@@ -10,7 +25,7 @@ Armed with nothing but fury, you march upon the castle where the lord and his kn
 
 But not all believe in victory. Some whisper of escape, of slipping away before the slaughter begins. Beyond the walls lies an uncertain world, one that promises danger but also the chance for a new life. Will you fight to take the castle, or flee and forge your own path?
 Note: Since you start around an enemy castle, this is a difficult scenario.
-</description>
+    </description>
     <scenario>
       <summary>A group of peasants, rebelling against oppressing knights. A classic VFE - Medieval 2 experience.</summary>
       <playerFaction>
@@ -26,10 +41,8 @@ Note: Since you start around an enemy castle, this is a difficult scenario.
           <pawnChoiceCount>8</pawnChoiceCount>
         </li>
 
-        <!-- Player starting stuff spawn method-->
-        <li Class="ScenPart_PlayerPawnsArriveMethod">
-          <def>PlayerPawnsArriveMethod</def>
-          <method>Standing</method>
+        <li Class="VFEMedieval.ScenPart_MedievalScenario">
+          <def>VFEM_PlayerPawnsArriveMethod</def>
         </li>
 
         <!-- Player pawns modifiers -->

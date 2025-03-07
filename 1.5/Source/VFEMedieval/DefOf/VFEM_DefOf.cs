@@ -1,6 +1,6 @@
 ﻿using RimWorld;
 using Verse;
-
+using KCSG;
 namespace VFEMedieval
 {
     [DefOf]
@@ -21,9 +21,9 @@ namespace VFEMedieval
         public static ThingDef VFEM2_Apiary;
         public static ThingDef VFEM2_Wine;
         public static ThingDef Bow_Great;
-   
+
         public static ThingDef MeleeWeapon_LongSword;
-        public static ThingDef VFEM2_TimberedWall;        
+        public static ThingDef VFEM2_TimberedWall;
         public static ThingDef VFEM2_CastleWall;
         public static ThingDef VFEM2_DamagedCastleWall;
         public static ThingDef VFEM2_LowCastleWall;
@@ -59,7 +59,11 @@ namespace VFEMedieval
         public static ThingCategoryDef ResourcesRaw;
 
         public static ResearchProjectDef VFEM2_Heraldry;
-
         public static WorldObjectDef VFEM2_DestroyedMerchantGuildCamp;
+        public static SettlementLayoutDef VFEM2_KeepHousesSettlement;
+        public static PawnKindDef VFEM2_Lord;
+        public static PawnKindDef VFEM2_Knight;
+        public static PawnKindDef VFEM2_Militia;
+        public static FactionDef VFEM2_KingdomRough;
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <KCSG.SettlementLayoutDef>
+        <defName>VFEM2_KeepHousesSettlement</defName>
+        <settlementSize>85,85</settlementSize>
+        <avoidBridgeable>true</avoidBridgeable>
+        <avoidMountains>true</avoidMountains>
+        <centerBuildings>
+            <centerSize>39,39</centerSize>
+            <spaceAround>10</spaceAround>
+            <forceClean>true</forceClean>
+            <allowedStructures>
+                <li>
+                    <count>1~1</count>
+                    <tag>VFEM2_Keep</tag>
+                </li>
+            </allowedStructures>
+            <centralBuildingTags>
+                <li>VFEM2_Keep</li>
+            </centralBuildingTags>
+        </centerBuildings>
+        <peripheralBuildings>
+            <allowedStructures>
+                <li>
+                    <count>5~5</count>
+                    <tag>VFEM2_MedievalHouses</tag>
+                </li>
+            </allowedStructures>
+        </peripheralBuildings>
+        <roadOptions>
+            <addMainRoad>true</addMainRoad>
+            <mainRoadDef>PackedDirt</mainRoadDef>
+            <mainRoadWidth>4</mainRoadWidth>
+            <addLinkRoad>true</addLinkRoad>
+            <linkRoadDef>PackedDirt</linkRoadDef>
+        </roadOptions>
+    </KCSG.SettlementLayoutDef>
+</Defs>

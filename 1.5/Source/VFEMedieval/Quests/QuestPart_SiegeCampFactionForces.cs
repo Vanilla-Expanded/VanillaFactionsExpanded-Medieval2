@@ -25,7 +25,7 @@ namespace VFEMedieval
                 {
                     if (CheckAllDefendersDefeated())
                     {
-                        QuestUtility.SendQuestTargetSignals(site.questTags, "AllEnemiesDefeated", this.Named("SUBJECT")); //Keep signal name same for XML compatibility
+                        QuestUtility.SendQuestTargetSignals(site.questTags, "AllEnemiesDefeated", this.Named("SUBJECT"));
                         allEnemiesDefeatedSignalSent = true;
                     }
                 }
