@@ -7,6 +7,30 @@
         <isBad>false</isBad>
         <comps>
             <li Class="HediffCompProperties_DisappearsOnDeath" />
+            <li Class="VFEMedieval.HediffCompProperties_MentalStatePrevention">
+                <preventMentalStates>
+                    <li>Binging_Food</li>
+                    <li>Wander_Sad</li>
+                    <li>Wander_OwnRoom</li>
+                    <li>InsultingSpree</li>
+                    <li>TargetedInsultingSpree</li>
+                    <li>Binging_DrugMajor</li>
+                    <li>Wander_Psychotic</li>
+                    <li>Tantrum</li>
+                    <li>TargetedTantrum</li>
+                    <li>BedroomTantrum</li>
+                    <li>SadisticRage</li>
+                    <li>CorpseObsession</li>
+                    <li MayRequire="Ludeon.RimWorld.Anomaly">EntityKiller</li>
+                    <li>Berserk</li>
+                    <li>FireStartingSpree</li>
+                    <li>Binging_DrugExtreme</li>
+                    <li>Jailbreaker</li>
+                    <li>Slaughterer</li>
+                    <li>MurderousRage</li>
+                    <li>GiveUpExit</li>
+                </preventMentalStates>
+            </li>
         </comps>
     </HediffDef>
 
@@ -67,6 +91,9 @@
                 <hediff>VFEM_RallyAuraBuffHediff</hediff>
                 <mote>VFEM_Mote_CombatCommand</mote>
             </li>
+            <li Class="VFEMedieval.HediffCompProperties_RemoveIfNoWeapon">
+                <weaponDef>VFEM2_MeleeWeapon_Standard</weaponDef>
+            </li>
         </comps>
     </HediffDef>
 
@@ -82,30 +109,6 @@
             </li>
             <li Class="HediffCompProperties_Disappears">
                 <showRemainingTime>false</showRemainingTime>
-            </li>
-            <li Class="VFEMedieval.HediffCompProperties_MentalStatePrevention">
-                <preventMentalStates>
-                    <li>Binging_Food</li>
-                    <li>Wander_Sad</li>
-                    <li>Wander_OwnRoom</li>
-                    <li>InsultingSpree</li>
-                    <li>TargetedInsultingSpree</li>
-                    <li>Binging_DrugMajor</li>
-                    <li>Wander_Psychotic</li>
-                    <li>Tantrum</li>
-                    <li>TargetedTantrum</li>
-                    <li>BedroomTantrum</li>
-                    <li>SadisticRage</li>
-                    <li>CorpseObsession</li>
-                    <li MayRequire="Ludeon.RimWorld.Anomaly">EntityKiller</li>
-                    <li>Berserk</li>
-                    <li>FireStartingSpree</li>
-                    <li>Binging_DrugExtreme</li>
-                    <li>Jailbreaker</li>
-                    <li>Slaughterer</li>
-                    <li>MurderousRage</li>
-                    <li>GiveUpExit</li>
-                </preventMentalStates>
             </li>
         </comps>
     </HediffDef>
