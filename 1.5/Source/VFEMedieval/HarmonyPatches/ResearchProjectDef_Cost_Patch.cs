@@ -14,7 +14,7 @@ namespace VFEMedieval
 
         public static void Postfix(ResearchProjectDef __instance, float __state)
         {
-            ResearchManager_FinishProject_Patch.Postfix(__instance, __state);
+            __instance.baseCost = __state;
         }
     }
 }
