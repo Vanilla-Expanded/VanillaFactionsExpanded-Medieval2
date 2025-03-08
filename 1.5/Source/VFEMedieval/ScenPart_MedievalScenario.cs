@@ -119,7 +119,12 @@ namespace VFEMedieval
                     GenSpawn.Spawn(item, spawnPos, map);
                 }
             }
-            FloodFillerFog.DebugRefogMap(map);        
+            FloodFillerFog.DebugRefogMap(map);  
+            
+            foreach (var item in map.listerThings.AllThings.Where(x => x.def.category == ThingCategory.Item).ToList())
+            {
+                item.SetForbidden(true, false);
+            }
         }
     }
 }

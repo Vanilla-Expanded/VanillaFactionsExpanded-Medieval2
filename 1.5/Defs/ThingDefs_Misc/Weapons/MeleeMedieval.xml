@@ -367,6 +367,14 @@
     </recipeMaker>
     <comps>
       <li Class="VFEMedieval.CompProperties_EditHeraldic" />
+      <li Class="VFEMedieval.CompProperties_RallyAbility">
+        <gizmoLabel>Rally</gizmoLabel>
+        <gizmoDescription>Create an aura that rallies everyone nearby, stopping their mental breaks and preventing them from breaking again. The effect lasts 12 hours and remains attached to the standard-bearer for the duration.</gizmoDescription>
+        <icon>UI/HeraldicRally</icon>
+        <hediffWearer>VFEM_RallyWearerHediff</hediffWearer>
+        <disabledReason>Can’t use Rally: No enemies on the map.</disabledReason>
+        <disabledReasonAlreadyUsing>Already using Rally.</disabledReasonAlreadyUsing>
+      </li>
     </comps>
     <modExtensions>
       <li Class="VFECore.DynamicGraphicProps">
