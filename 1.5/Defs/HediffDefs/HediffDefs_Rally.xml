@@ -91,7 +91,7 @@
                 <hediff>VFEM_RallyAuraBuffHediff</hediff>
                 <mote>VFEM_Mote_CombatCommand</mote>
             </li>
-            <li Class="VFEMedieval.HediffCompProperties_RemoveIfNoWeapon">
+            <li Class="VFEMedieval.HediffCompProperties_RemoveIfNoWeaponOrDowned">
                 <weaponDef>VFEM2_MeleeWeapon_Standard</weaponDef>
             </li>
         </comps>

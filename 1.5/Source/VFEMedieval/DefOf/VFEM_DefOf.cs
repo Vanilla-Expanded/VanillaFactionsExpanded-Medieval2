@@ -65,5 +65,6 @@ namespace VFEMedieval
         public static PawnKindDef VFEM2_Knight;
         public static PawnKindDef VFEM2_Militia;
         public static FactionDef VFEM2_KingdomRough;
+        public static StorytellerDef VFEM_MaynardMedieval;
     }
 }
