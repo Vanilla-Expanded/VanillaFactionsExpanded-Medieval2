@@ -43,5 +43,5 @@
   <VFEM2_LetterLabelFactionBaseDefeated>Merchant's guild camp destroyed</VFEM2_LetterLabelFactionBaseDefeated>
   <VFEM2_LetterFactionBaseDefeated>The merchant's guild camp has been destroyed.</VFEM2_LetterFactionBaseDefeated>
   <VFEM2_LetterFactionBaseDefeated_FactionDestroyed>Since this was their last camp, {0} has been defeated.</VFEM2_LetterFactionBaseDefeated_FactionDestroyed>
-
+	<VFEM_MaynardMedievalResearchModifier>Due to the amount of completed research projects, the research  cost is increased to: {0}</VFEM_MaynardMedievalResearchModifier>
 </LanguageData>
