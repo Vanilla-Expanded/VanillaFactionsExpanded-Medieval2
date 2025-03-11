@@ -14,5 +14,10 @@
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
 
- 
+   <JobDef>
+    <defName>VFEM_IgniteWithTorches</defName>
+    <driverClass>VFEMedieval.JobDriver_IgniteWithTorches</driverClass>
+    <reportString>igniting TargetA with torches.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

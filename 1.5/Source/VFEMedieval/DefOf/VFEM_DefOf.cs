@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using KCSG;
+using Verse.AI;
 namespace VFEMedieval
 {
     [DefOf]
@@ -66,5 +67,10 @@ namespace VFEMedieval
         public static PawnKindDef VFEM2_Militia;
         public static FactionDef VFEM2_KingdomRough;
         public static StorytellerDef VFEM_MaynardMedieval;
+        public static ThingDef VFEM2_Apparel_TorchBelt;
+        public static JobDef VFEM_IgniteWithTorches;
+        public static DutyDef VFEM_BurnAndStealColony;
+        public static FactionDef VFEM2_ClanSavage;
+        public static FactionDef VFEM2_ClanRough;
     }
 }

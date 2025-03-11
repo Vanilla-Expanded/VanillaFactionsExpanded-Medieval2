@@ -44,4 +44,6 @@
   <VFEM2_LetterFactionBaseDefeated>The merchant's guild camp has been destroyed.</VFEM2_LetterFactionBaseDefeated>
   <VFEM2_LetterFactionBaseDefeated_FactionDestroyed>Since this was their last camp, {0} has been defeated.</VFEM2_LetterFactionBaseDefeated_FactionDestroyed>
 	<VFEM_MaynardMedievalResearchModifier>Due to the amount of completed research projects, the research  cost is increased to: {0}</VFEM_MaynardMedievalResearchModifier>
+		<VFEM_PillageRaidDesc>A group of vikings from {0} have arrived nearby.\nThey will attempt to burn your colony down, stealing whatever they can before they leave.\nPrepare a defense or attack them preemptively.</VFEM_PillageRaidDesc>
+
 </LanguageData>
