@@ -2,60 +2,23 @@
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.Planet;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
+using VFECore;
 
 namespace VFEMedieval
 {
     [HotSwappable]
-    [StaticConstructorOnStartup]
-    public class MerchantGuild : MapParent, ILoadReferenceable, ITrader, IThingHolder
+    public class MerchantGuild : MovingBase, ITrader, IThingHolder
     {
-        private Material cachedMat;
-
-        public MerchantGuild_PathFollower pather;
-
-        public MerchantGuild_Tweener tweener;
-
-        public int TicksPerMove => 3300;
-
-        public override Vector3 DrawPos => tweener.TweenedPos;
-
         private ThingOwner<Thing> stock;
-
         private int lastStockGenerationTicks = -1;
-
         private bool everGeneratedStock;
-
-        public static readonly Texture2D AttackCommand = ContentFinder<Texture2D>.Get("UI/Commands/AttackSettlement");
-
-        public MerchantGuild()
-        {
-            pather = new MerchantGuild_PathFollower(this);
-            tweener = new MerchantGuild_Tweener(this);
-        }
-
-        public override Material Material
-        {
-            get
-            {
-                if (cachedMat == null)
-                {
-                    cachedMat = MaterialPool.MatFrom(base.def.expandingIconTexture, ShaderDatabase.WorldOverlayTransparentLit, base.Faction.Color, WorldMaterials.WorldObjectRenderQueue);
-                }
-                return cachedMat;
-            }
-        }
-
-        public override Texture2D ExpandingIcon => pather.Moving ? base.ExpandingIcon : ContentFinder<Texture2D>.Get(base.def.texture);
-
         public TraderKindDef TraderKind => VFEM_DefOf.VFEM2_MerchantGuildTrader;
-
         public IEnumerable<Thing> Goods
         {
             get
@@ -79,16 +42,6 @@ namespace VFEMedieval
         public TradeCurrency TradeCurrency => TradeCurrency.Silver;
 
         private int ticksToStay;
-
-        public override bool ShouldRemoveMapNow(out bool alsoRemoveWorldObject)
-        {
-            alsoRemoveWorldObject = false;
-            if (!base.Map.IsPlayerHome)
-            {
-                return !base.Map.mapPawns.AnyPawnBlockingMapRemoval;
-            }
-            return false;
-        }
 
         public override void PostAdd()
         {
@@ -114,7 +67,7 @@ namespace VFEMedieval
 
         public override IEnumerable<Gizmo> GetCaravanGizmos(Caravan caravan)
         {
-            if (CanTradeNow && GuildVisitedNow(caravan) == this)
+            if (CanTradeNow && BaseVisitedNow(caravan) == this)
             {
                 yield return BarterCommand(caravan, base.Faction, TraderKind);
             }
@@ -122,41 +75,23 @@ namespace VFEMedieval
             {
                 yield return caravanGizmo;
             }
-            if (Attackable)
+        }
+
+        protected override IEnumerable<FloatMenuOption> GetFloatMenuOptions_MovingBase(Caravan caravan)
+        {
+            foreach (FloatMenuOption floatMenuOption3 in CaravanArrivalAction_Barter.GetFloatMenuOptions(caravan, this))
             {
-                Command_Action command_Action = new Command_Action();
-                command_Action.icon = AttackCommand;
-                command_Action.defaultLabel = "CommandAttackSettlement".Translate();
-                command_Action.defaultDesc = "VFEM2_CommandAttackMerchantGuildDesc".Translate();
-                command_Action.action = delegate
-                {
-                    this.Attack(caravan);
-                };
-                yield return command_Action;
+                yield return floatMenuOption3;
+            }
+            foreach (var floatMenuOption in base.GetFloatMenuOptions_MovingBase(caravan))
+            {
+                yield return floatMenuOption;
             }
         }
 
-        public void Attack(Caravan caravan)
+        protected override void DoMapGeneration(Caravan caravan, bool mapWasGenerated, Map map)
         {
-            if (HasMap)
-            {
-                LongEventHandler.QueueLongEvent(delegate
-                {
-                    AttackNow(caravan);
-                }, "GeneratingMapForNewEncounter", doAsynchronously: false, null);
-            }
-            else
-            {
-                AttackNow(caravan);
-            }
-        }
-
-        private void AttackNow(Caravan caravan)
-        {
-            bool mapWasGenerated = !HasMap;
-            Map map = GetOrGenerateMapUtility.GetOrGenerateMap(Tile, null);
             CustomGenOption genOption = this.Faction.def.GetModExtension<CustomGenOption>();
-
             if (genOption != null)
             {
                 IntVec3 generationLocation = map.Center;
@@ -188,7 +123,7 @@ namespace VFEMedieval
             if (mapWasGenerated)
             {
                 Find.TickManager.Notify_GeneratedPotentiallyHostileMap();
-                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(map.mapPawns.AllPawns, ref letterLabel, ref letterText, 
+                PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter(map.mapPawns.AllPawns, ref letterLabel, ref letterText,
                     "LetterRelatedPawnsSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), informEvenIfSeenBefore: true);
             }
             Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, caravan.PawnsListForReading, Faction);
@@ -307,25 +242,7 @@ namespace VFEMedieval
             }
         }
 
-        public static MerchantGuild GuildVisitedNow(Caravan caravan)
-        {
-            if (!caravan.Spawned || caravan.pather.Moving)
-            {
-                return null;
-            }
-            List<MerchantGuild> bases = Find.WorldObjects.AllWorldObjects.OfType<MerchantGuild>().ToList();
-            for (int i = 0; i < bases.Count; i++)
-            {
-                var settlement = bases[i];
-                if (settlement.Tile == caravan.Tile)
-                {
-                    return settlement;
-                }
-            }
-            return null;
-        }
-
-        public static Command_Action BarterCommand(Caravan caravan, Faction faction = null, TraderKindDef trader = null)
+        public Command_Action BarterCommand(Caravan caravan, Faction faction = null, TraderKindDef trader = null)
         {
             Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, trader);
             Command_Action command_Action = new Command_Action();
@@ -334,8 +251,8 @@ namespace VFEMedieval
             command_Action.icon = CaravanVisitUtility.TradeCommandTex;
             command_Action.action = delegate
             {
-                var guild = GuildVisitedNow(caravan);
-                if (guild != null && guild.CanTradeNow)
+                var movingBase = BaseVisitedNow(caravan);
+                if (movingBase is MerchantGuild guild && guild.CanTradeNow)
                 {
                     Find.WindowStack.Add(new Dialog_Barter(bestNegotiator, guild));
                     PawnRelationUtility.Notify_PawnsSeenByPlayer_Letter_Send(guild.Goods.OfType<Pawn>(), "LetterRelatedPawnsTradingWithSettlement".Translate(Faction.OfPlayer.def.pawnsPlural), LetterDefOf.NeutralEvent);
@@ -408,38 +325,11 @@ namespace VFEMedieval
             }
         }
 
-        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan)
-        {
-            foreach (FloatMenuOption floatMenuOption in base.GetFloatMenuOptions(caravan))
-            {
-                yield return floatMenuOption;
-            }
-            foreach (FloatMenuOption floatMenuOption3 in CaravanArrivalAction_Barter.GetFloatMenuOptions(caravan, this))
-            {
-                yield return floatMenuOption3;
-            }
-            foreach (FloatMenuOption floatMenuOption4 in CaravanArrivalAction_AttackMerchantGuild.GetFloatMenuOptions(caravan, this))
-            {
-                yield return floatMenuOption4;
-            }
-        }
-
-        public override void SpawnSetup()
-        {
-            base.SpawnSetup();
-            tweener.ResetTweenedPosToRoot();
-        }
-
         public override void Tick()
         {
             base.Tick();
             if (HasMap is false)
             {
-                pather.PatherTick();
-                if (this.IsHashIntervalTick(30))
-                {
-                    tweener.TweenerTick();
-                }
                 if (pather.MovingNow is false)
                 {
                     if (ticksToStay > 0)
@@ -534,29 +424,6 @@ namespace VFEMedieval
                     this.pather.StartPath(num, repathImmediately: true);
                 }
             }
-        }
-
-        public int BestGotoDestNear(int tile)
-        {
-            Predicate<int> predicate = delegate (int t)
-            {
-                if (Find.World.Impassable(t))
-                {
-                    return false;
-                }
-                return CanReach(tile) ? true : false;
-            };
-            if (predicate(tile))
-            {
-                return tile;
-            }
-            GenWorldClosest.TryFindClosestTile(tile, predicate, out var foundTile, 50);
-            return foundTile;
-        }
-
-        public bool CanReach(int tile)
-        {
-            return Find.WorldReachability.CanReach(this.Tile, tile);
         }
 
         public IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
@@ -673,22 +540,14 @@ namespace VFEMedieval
             ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
         }
 
-        public override void PostRemove()
-        {
-            base.PostRemove();
-            pather.StopDead();
-        }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.Look(ref pather, "pather", this);
             Scribe_Values.Look(ref ticksToStay, "ticksToStay");
             Scribe_Deep.Look(ref stock, "stock");
             Scribe_Values.Look(ref lastStockGenerationTicks, "lastStockGenerationTicks", 0);
             Scribe_Values.Look(ref everGeneratedStock, "wasStockGeneratedYet", defaultValue: false);
         }
-
-        public virtual bool Attackable => true;
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using VFECore;
 
 namespace VFEMedieval
 {
@@ -35,7 +36,7 @@ namespace VFEMedieval
         {
             if (fairness < 0.5f)
             {
-               return BadDealTexture;
+                return BadDealTexture;
             }
             return FairDealTexture;
         }
@@ -90,7 +91,7 @@ namespace VFEMedieval
             tradeable.AddThing(t, trans);
             if (initPrice)
             {
-                Rand.PushState((TradeSession.trader as MerchantGuild).Tile);
+                Rand.PushState((TradeSession.trader as MovingBase).Tile);
                 tradeable.InitPriceDataIfNeeded();
                 if (trans == Transactor.Colony)
                 {

@@ -2,66 +2,51 @@
 using RimWorld.Planet;
 using System.Collections.Generic;
 using Verse;
+using VFECore;
 
 namespace VFEMedieval
 {
-    public class CaravanArrivalAction_Barter : CaravanArrivalAction
+    [HotSwappable]
+    public class CaravanArrivalAction_Barter : CaravanArrivalAction_MovingBase
     {
-        private MerchantGuild merchantGuild;
+        public override string Label => "TradeWithSettlement".Translate(movingBase.Label);
 
-        public override string Label => "TradeWithSettlement".Translate(merchantGuild.Label);
-
-        public override string ReportString => "CaravanTrading".Translate(merchantGuild.Label);
+        public override string ReportString => "CaravanTrading".Translate(movingBase.Label);
 
         public CaravanArrivalAction_Barter()
         {
         }
 
-        public CaravanArrivalAction_Barter(MerchantGuild settlement)
+        public CaravanArrivalAction_Barter(MerchantGuild merchantGuild)
         {
-            this.merchantGuild = settlement;
+            this.movingBase = merchantGuild;
         }
 
         public override FloatMenuAcceptanceReport StillValid(Caravan caravan, int destinationTile)
         {
-            FloatMenuAcceptanceReport floatMenuAcceptanceReport = base.StillValid(caravan, destinationTile);
-            if (!floatMenuAcceptanceReport)
-            {
-                return floatMenuAcceptanceReport;
-            }
-            if (merchantGuild != null && merchantGuild.Tile != destinationTile)
-            {
-                return false;
-            }
-            return CanTradeWith(caravan, merchantGuild);
+            return base.StillValid(caravan, destinationTile) && CanTradeWith(caravan, movingBase as MerchantGuild);
         }
 
         public override void Arrived(Caravan caravan)
         {
+            base.Arrived(caravan);
             CameraJumper.TryJumpAndSelect(caravan);
-            Caravan_PathFollower_ExposeData_Patch.merchantsToFollow.Remove(caravan.pather);
-            Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, this.merchantGuild.Faction, 
-                this.merchantGuild.TraderKind);
-            Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, this.merchantGuild));
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_References.Look(ref merchantGuild, "settlement");
+            var merchantGuild = movingBase as MerchantGuild;
+            Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, merchantGuild.Faction,
+                merchantGuild.TraderKind);
+            Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, merchantGuild));
         }
 
         public static FloatMenuAcceptanceReport CanTradeWith(Caravan caravan, MerchantGuild merchantGuild)
         {
             return merchantGuild != null && merchantGuild.Spawned
-                && merchantGuild.Faction != null && merchantGuild.Faction != Faction.OfPlayer 
-                && !merchantGuild.Faction.def.permanentEnemy && !merchantGuild.Faction.HostileTo(Faction.OfPlayer) 
+                && merchantGuild.Faction != null && !merchantGuild.Faction.HostileTo(Faction.OfPlayer)
                 && merchantGuild.CanTradeNow && HasNegotiator(caravan, merchantGuild);
         }
 
         public static bool HasNegotiator(Caravan caravan, MerchantGuild merchantGuild)
         {
-            Pawn pawn = BestCaravanPawnUtility.FindBestNegotiator(caravan, merchantGuild.Faction, 
+            Pawn pawn = BestCaravanPawnUtility.FindBestNegotiator(caravan, merchantGuild.Faction,
                 merchantGuild.TraderKind);
             if (pawn != null)
             {
@@ -72,14 +57,14 @@ namespace VFEMedieval
 
         public static IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan, MerchantGuild merchantGuild)
         {
-            return CaravanArrivalActionUtility.GetFloatMenuOptions(() => CanTradeWith(caravan, merchantGuild), 
-                () => new CaravanArrivalAction_Barter(merchantGuild), 
+            return CaravanArrivalActionUtility.GetFloatMenuOptions(() => CanTradeWith(caravan, merchantGuild),
+                () => new CaravanArrivalAction_Barter(merchantGuild),
                 "VFEM2_BarterWith".Translate(merchantGuild.Label), caravan, merchantGuild.Tile, merchantGuild,
                 delegate
                 {
                     if (caravan.Tile != merchantGuild.Tile)
                     {
-                        Caravan_PathFollower_ExposeData_Patch.merchantsToFollow[caravan.pather] = merchantGuild;
+                        SetDestination(caravan, merchantGuild);
                     }
                     else
                     {

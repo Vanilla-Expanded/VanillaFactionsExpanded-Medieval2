@@ -204,17 +204,20 @@
 			</li>
 		</modExtensions>
 	</FactionDef>
-	<WorldObjectDef>
+	<VFECore.MovingBaseDef>
 		<defName>VFEM2_MerchantGuildCaravan</defName>
 		<label>merchant's guild</label>
 		<description>A group of traveling people.</description>
+		<baseFaction>VFEM2_MerchantGuild</baseFaction>
 		<worldObjectClass>VFEMedieval.MerchantGuild</worldObjectClass>
 		<texture>MapIcons/TradingGuild</texture>
 		<useDynamicDrawer>true</useDynamicDrawer>
 		<expandingIcon>true</expandingIcon>
 		<expandingIconTexture>MapIcons/Expanding/TradingGuildExpanding</expandingIconTexture>
 		<expandingIconPriority>10</expandingIconPriority>
-	</WorldObjectDef>
+		<initialSpawnCount>6</initialSpawnCount>
+		<initialSpawnScalesWithPopulation>True</initialSpawnScalesWithPopulation>
+	</VFECore.MovingBaseDef>
   <WorldObjectDef>
     <defName>VFEM2_DestroyedMerchantGuildCamp</defName>
     <label>destroyed merchant's guild camp</label>
