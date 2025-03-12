@@ -9,7 +9,7 @@ namespace VFEMedieval
         public override bool TryCastShot()
         {
             var shotCount = (this.GetProjectile().projectile as ProjectilePropertiesMatchLock).shotCount;
-            var result = base.TryCastShot();
+            var result = false;
             for (int i = 0; i < shotCount; i++)
             {
                 if (base.TryCastShot())
