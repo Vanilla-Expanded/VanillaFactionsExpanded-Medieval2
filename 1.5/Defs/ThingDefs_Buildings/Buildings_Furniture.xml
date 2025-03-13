@@ -243,7 +243,7 @@
 	<!-- Heraldry -->
 	<ThingDef ParentName="FurnitureBase">
 		<defName>VFEM2_StandingBanner</defName>
-		<label>standing banner</label>
+		<label>heraldic standing banner</label>
 		<description>A tall fabric banner mounted on a sturdy wooden frame, proudly displaying the heraldry of the faction.</description>
 		<thingClass>VFECore.DynamicGraphicBuilding</thingClass>
     <drawerType>RealtimeOnly</drawerType>

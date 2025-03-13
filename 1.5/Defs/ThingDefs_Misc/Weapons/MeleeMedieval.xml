@@ -301,7 +301,7 @@
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFEM2_MeleeWeapon_Standard</defName>
-    <label>standard</label>
+    <label>heraldic standard</label>
     <description>A long wooden pole adorned with a flag bearing the heraldry of its bearer. While it inspires unity and bolsters morale as a rallying point for soldiers, the standard itself is poorly suited for combat, offering little in terms of offense or defense.</description>
     <thingClass>VFECore.DynamicGraphicThing</thingClass>
     <drawerType>RealtimeOnly</drawerType>
