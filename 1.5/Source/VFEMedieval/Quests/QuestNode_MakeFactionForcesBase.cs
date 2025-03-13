@@ -16,23 +16,22 @@ namespace VFEMedieval
             return true;
         }
 
-        public static List<Pawn> GeneratePawnList(Faction faction, float points, Site site)
+        public static List<PawnKindDef> GeneratePawnKindList(Faction faction, float points, Site site)
         {
             PawnGroupMakerParms pawnGroupMakerParms = GetParms(faction, points, site);
             var minPoints = faction.def.MinPointsToGeneratePawnGroup(pawnGroupMakerParms.groupKind, pawnGroupMakerParms);
             points = minPoints < float.MaxValue ? Mathf.Max(points, minPoints) : points;
             pawnGroupMakerParms.points = points;
-            List<Pawn> generatedPawns = new List<Pawn>();
+            List<PawnKindDef> generatedPawns = new List<PawnKindDef>();
             while (generatedPawns.Any() is false && points < 99999)
             {
                 points += 50f;
                 pawnGroupMakerParms.points = points;
-                generatedPawns = GeneratePawns(pawnGroupMakerParms, false).ToList();
+                generatedPawns = GeneratePawnKinds(pawnGroupMakerParms, false).ToList();
             }
             return generatedPawns;
         }
-        
-        public static IEnumerable<Pawn> GeneratePawns(PawnGroupMakerParms parms, bool warnOnZeroResults = true)
+        public static IEnumerable<PawnKindDef> GeneratePawnKinds(PawnGroupMakerParms parms, bool warnOnZeroResults = true)
         {
             if (parms.groupKind == null)
             {
@@ -53,7 +52,7 @@ namespace VFEMedieval
             {
                 yield break;
             }
-            foreach (Pawn item in pawnGroupMaker.GeneratePawns(parms, warnOnZeroResults))
+            foreach (PawnKindDef item in pawnGroupMaker.GeneratePawnKindsExample(parms))
             {
                 yield return item;
             }
@@ -70,13 +69,13 @@ namespace VFEMedieval
             };
         }
 
-        protected string FormatPawnListToString(List<Pawn> pawns)
+        protected string FormatPawnListToString(List<PawnKindDef> pawns)
         {
             if (pawns == null || !pawns.Any())
             {
                 return "";
             }
-            return pawns.GroupBy(p => p.kindDef).Select(group => $"{group.Count()} {group.Key.label}").ToCommaList();
+            return pawns.GroupBy(p => p).Select(group => $"{group.Count()} {group.Key.label}").ToCommaList();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace VFEMedieval
             Faction siteFaction = slate.Get<Faction>("siteFaction");
 
             float points = slate.Get("points", 0f);
-            List<Pawn> defenderPawns = GeneratePawnList(siteFaction, points / 2f, site);
+            List<PawnKindDef> defenderPawns = GeneratePawnKindList(siteFaction, points / 2f, site);
             string defenderList = FormatPawnListToString(defenderPawns);
             slate.Set("ListOfEnemies", defenderList);
 

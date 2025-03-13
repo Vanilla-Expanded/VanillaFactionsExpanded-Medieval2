@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 namespace VFEMedieval
@@ -6,14 +7,14 @@ namespace VFEMedieval
     public class QuestPart_SpawnRaidOnFail : QuestPartActivable
     {
         public Faction faction;
-        public List<Pawn> pawns;
+        public List<PawnKindDef> raidersList;
         public Map map;
         public string inSignal;
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_References.Look(ref faction, "faction");
-            Scribe_Collections.Look(ref pawns, "pawns", LookMode.Deep);
+            Scribe_Collections.Look(ref raidersList, "raidersList", LookMode.Def);
             Scribe_References.Look(ref map, "map");
             Scribe_Values.Look(ref inSignal, "inSignal");
         }
@@ -26,11 +27,12 @@ namespace VFEMedieval
                 return;
             }
             SpawnRaid();
-            pawns.Clear();
+            raidersList.Clear();
         }
 
         private void SpawnRaid()
         {
+            var pawns = raidersList.Select(x => PawnGenerator.GeneratePawn(x, faction)).ToList();
             IncidentParms parms = new IncidentParms();
             parms.target = map;
             parms.faction = faction;

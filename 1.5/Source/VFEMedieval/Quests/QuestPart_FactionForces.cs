@@ -10,9 +10,9 @@ namespace VFEMedieval
     {
         private bool allEnemiesDefeatedSignalSent;
         public Site site;
-        public List<Pawn> enemyUnitPawns;
-        public List<Pawn> friendlyUnitPawns;
-        private bool spawned;
+        public List<PawnKindDef> enemyUnitPawns;
+        public List<PawnKindDef> friendlyUnitPawns;
+        public List<Pawn> enemyUnitPawnsGenerated;
         public Faction friendlyFaction;
         public Faction enemyFaction;
         public override void QuestPartTick()
@@ -20,7 +20,6 @@ namespace VFEMedieval
             base.QuestPartTick();
             if (site.Map != null)
             {
-                spawned = true;
                 if (!allEnemiesDefeatedSignalSent)
                 {
                     if (CheckAllEnemiesDefeated())
@@ -35,10 +34,9 @@ namespace VFEMedieval
         {
             base.ExposeData();
             Scribe_References.Look(ref site, "site");
-            Scribe_Values.Look(ref spawned, "spawned");
-            var lookMode = spawned ? LookMode.Reference : LookMode.Deep;
-            Scribe_Collections.Look(ref enemyUnitPawns, "enemyUnitPawns", lookMode);
-            Scribe_Collections.Look(ref friendlyUnitPawns, "friendlyUnitPawns", lookMode);
+            Scribe_Collections.Look(ref enemyUnitPawns, "enemyUnitPawns", LookMode.Def);
+            Scribe_Collections.Look(ref enemyUnitPawnsGenerated, "enemyUnitPawnsGenerated", LookMode.Reference);
+            Scribe_Collections.Look(ref friendlyUnitPawns, "friendlyUnitPawns", LookMode.Def);
             Scribe_References.Look(ref friendlyFaction, "friendlyFaction");
             Scribe_References.Look(ref enemyFaction, "enemyFaction");
             Scribe_Values.Look(ref allEnemiesDefeatedSignalSent, "allEnemiesDefeatedSignalSent");
@@ -46,12 +44,12 @@ namespace VFEMedieval
 
         private bool CheckAllEnemiesDefeated()
         {
-            if (enemyUnitPawns.NullOrEmpty())
+            if (enemyUnitPawnsGenerated.NullOrEmpty())
             {
                 return true;
             }
 
-            foreach (var enemy in enemyUnitPawns)
+            foreach (var enemy in enemyUnitPawnsGenerated)
             {
                 if (!enemy.Dead && !enemy.Downed && enemy.MentalStateDef != MentalStateDefOf.PanicFlee)
                 {

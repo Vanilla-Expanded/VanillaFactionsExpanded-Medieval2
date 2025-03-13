@@ -43,18 +43,14 @@ namespace VFEMedieval
                 Log.Error("VFEM_SiegeCamp quest generated without site faction.");
                 return;
             }
-            List<Pawn> defenderPawns = questPart.defenderPawns;
-            if (defenderPawns.NullOrEmpty())
-            {
-                defenderPawns = QuestNode_MakeFactionForces.GeneratePawnList(siteFaction, questPart.points / 2f, questPart.site);
-            }
-            questPart.defenderPawns = new List<Pawn>();
+            List<Pawn> defenderPawns = questPart.defenderPawns.Select(x => PawnGenerator.GeneratePawn(x, siteFaction)).ToList();
             if (defenderPawns.NullOrEmpty())
             {
                 Log.Error("VFEM_SiegeCamp quest generated without defender pawns.");
                 return;
             }
-
+            questPart.defenderPawnsGenerated = defenderPawns;
+            
             // Spawn tents using CustomGenOption
             var genOption = parms.sitePart.def.GetModExtension<CustomGenOption>();
 

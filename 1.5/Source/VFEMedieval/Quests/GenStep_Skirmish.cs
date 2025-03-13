@@ -40,9 +40,9 @@ namespace VFEMedieval
                 Log.Error("VFEM_Skirmish quest generated without factions.");
                 return;
             }
-            List<Pawn> friendlyPawns = questPart.friendlyUnitPawns;
-            List<Pawn> enemyPawns = questPart.enemyUnitPawns;
-
+            List<Pawn> friendlyPawns = questPart.friendlyUnitPawns.Select(x => PawnGenerator.GeneratePawn(x, friendlyFaction)).ToList();
+            List<Pawn> enemyPawns = questPart.enemyUnitPawns.Select(x => PawnGenerator.GeneratePawn(x, enemyFaction)).ToList();
+            questPart.enemyUnitPawnsGenerated = enemyPawns;
             bool vertical = Rand.Bool;
             IntVec3 friendlySpawnSpot = FindEdgeCell(map, vertical ? Rot4.North : Rot4.East);
             IntVec3 enemySpawnSpot = FindEdgeCell(map, vertical ? Rot4.South : Rot4.West);

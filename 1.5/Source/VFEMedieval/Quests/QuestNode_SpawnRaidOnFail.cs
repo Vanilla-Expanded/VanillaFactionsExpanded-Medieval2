@@ -21,13 +21,13 @@ namespace VFEMedieval
             float points = slate.Get("points", 0f);
             Map map = slate.Get<Map>("map");
 
-            List<Pawn> raiders = GeneratePawnList(siteFaction, points * 1.5f, site);
+            List<PawnKindDef> raiders = GeneratePawnKindList(siteFaction, points * 1.5f, site);
             string potentialAttackerList = FormatPawnListToString(raiders);
             slate.Set("ListOfPotentialEnemies", potentialAttackerList);
 
             QuestPart_SpawnRaidOnFail questPart = new QuestPart_SpawnRaidOnFail();
             questPart.faction = siteFaction;
-            questPart.pawns = raiders;
+            questPart.raidersList = raiders;
             questPart.map = map;
             questPart.inSignal = QuestGenUtility.HardcodedSignalWithQuestID(slate.Get<string>("inSignal"));
             QuestGen.quest.AddPart(questPart);

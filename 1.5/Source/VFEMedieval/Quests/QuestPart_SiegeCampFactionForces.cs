@@ -11,8 +11,8 @@ namespace VFEMedieval
         private bool allEnemiesDefeatedSignalSent;
         private bool allAlliesDownedOrDeadSignalSent;
         public Site site;
-        public List<Pawn> defenderPawns;
-        private bool spawned;
+        public List<PawnKindDef> defenderPawns;
+        public List<Pawn> defenderPawnsGenerated;
         public Faction siteFaction;
         public float points;
         public override void QuestPartTick()
@@ -20,7 +20,6 @@ namespace VFEMedieval
             base.QuestPartTick();
             if (site.Map != null)
             {
-                spawned = true;
                 if (!allEnemiesDefeatedSignalSent)
                 {
                     if (CheckAllDefendersDefeated())
@@ -35,9 +34,8 @@ namespace VFEMedieval
         {
             base.ExposeData();
             Scribe_References.Look(ref site, "site");
-            Scribe_Values.Look(ref spawned, "spawned");
-            var lookMode = spawned ? LookMode.Reference : LookMode.Deep;
-            Scribe_Collections.Look(ref defenderPawns, "defenderPawns", lookMode);
+            Scribe_Collections.Look(ref defenderPawns, "defenderPawns",  LookMode.Def);
+            Scribe_Collections.Look(ref defenderPawnsGenerated, "defenderPawnsGenerated", LookMode.Reference);
             Scribe_References.Look(ref siteFaction, "siteFaction");
             Scribe_Values.Look(ref allEnemiesDefeatedSignalSent, "allEnemiesDefeatedSignalSent");
             Scribe_Values.Look(ref allAlliesDownedOrDeadSignalSent, "allAlliesDownedOrDeadSignalSent");
@@ -46,12 +44,12 @@ namespace VFEMedieval
 
         private bool CheckAllDefendersDefeated()
         {
-            if (defenderPawns.NullOrEmpty())
+            if (defenderPawnsGenerated.NullOrEmpty())
             {
                 return true;
             }
 
-            foreach (var defender in defenderPawns)
+            foreach (var defender in defenderPawnsGenerated)
             {
                 if (!defender.Dead && !defender.Downed && defender.MentalStateDef != MentalStateDefOf.PanicFlee)
                 {
