@@ -27,7 +27,7 @@ namespace VFEMedieval
             merchantCaravanSpawnCount = (int)listingStandard.SliderLabeled("VFEM2_MerchantCaravanSpawnCount".Translate() 
                 + ": " + merchantCaravanSpawnCount.ToString(), merchantCaravanSpawnCount, 1, 20);
             listingStandard.End();
-            VFEM_DefOf.VFEM2_MerchantGuildCaravan.initialSpawnCount = merchantCaravanSpawnCount;
+            VFEM_DefOf.VFEM2_MerchantGuildCaravan.initialSpawnCount = new IntRange(merchantCaravanSpawnCount, merchantCaravanSpawnCount);
         }
 
         public override void ExposeData()
@@ -36,7 +36,7 @@ namespace VFEMedieval
             Scribe_Values.Look(ref merchantCaravanSpawnCount, "merchantCaravanSpawnCount", 6);
             if (VFEM_DefOf.VFEM2_MerchantGuildCaravan != null)
             {
-                VFEM_DefOf.VFEM2_MerchantGuildCaravan.initialSpawnCount = merchantCaravanSpawnCount;
+                VFEM_DefOf.VFEM2_MerchantGuildCaravan.initialSpawnCount = new IntRange(merchantCaravanSpawnCount, merchantCaravanSpawnCount);
             }
         }
     }
