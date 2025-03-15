@@ -14,7 +14,10 @@ namespace VFEMedieval
     {
         public override void GenerateIntoMap(Map map)
         {
-            base.GenerateIntoMap(map);
+            if (Find.GameInitData == null)
+            {
+                return;
+            }
             Faction enemyFaction = Find.FactionManager.FirstFactionOfDef(VFEM_DefOf.VFEM2_KingdomRough) ?? Find.FactionManager.RandomEnemyFaction(allowNonHumanlike: false);
             SettlementLayoutDef settlementLayout = VFEM_DefOf.VFEM2_KeepHousesSettlement;
             GenOption.customGenExt = this.def.GetModExtension<CustomGenOption>();
