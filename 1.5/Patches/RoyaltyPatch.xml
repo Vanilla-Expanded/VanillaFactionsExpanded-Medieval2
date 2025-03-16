@@ -4,12 +4,13 @@
     <mods>
       <li>Royalty</li>
     </mods>
-
     <match Class="PatchOperationAdd">
       <xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
-
       <value>
         <li>VFEM2_MerchantGuild</li>
+		<li>VFEM2_KingdomCivil</li>
+		<li>VFEM2_CivilClan</li>
+		<li>VFEM2_PlayerKingdom</li>
       </value>
     </match>
   </Operation>
