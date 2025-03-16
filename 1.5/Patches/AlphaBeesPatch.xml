@@ -42,7 +42,7 @@
 				<li Class="PatchOperationReplace"> 
 					<xpath>Defs/HediffDef[defName="VFEM2_MeadAlcoholHigh"]/labelNoun</xpath>
 					<value>
-						<label>a honey-wine high</label>		
+						<labelNoun>a honey-wine high</labelNoun>		
 					</value>
 				</li>
 				<li Class="PatchOperationReplace"> 
