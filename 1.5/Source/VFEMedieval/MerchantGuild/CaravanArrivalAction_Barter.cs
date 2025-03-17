@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
 using Verse;
 using VFECore;
@@ -58,19 +59,19 @@ namespace VFEMedieval
         public static IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan, MerchantGuild merchantGuild)
         {
             return CaravanArrivalActionUtility.GetFloatMenuOptions(() => CanTradeWith(caravan, merchantGuild),
-                () => new CaravanArrivalAction_Barter(merchantGuild),
+                () => CreateCaravanArrivalAction(new CaravanArrivalAction_Barter(merchantGuild), caravan, merchantGuild),
                 "VFEM2_BarterWith".Translate(merchantGuild.Label), caravan, merchantGuild.Tile, merchantGuild,
-                delegate
+                delegate (Action action)
                 {
-                    if (caravan.Tile != merchantGuild.Tile)
-                    {
-                        SetDestination(caravan, merchantGuild);
-                    }
-                    else
+                    if (caravan.Tile == merchantGuild.Tile)
                     {
                         Pawn playerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, merchantGuild.Faction,
                             merchantGuild.TraderKind);
                         Find.WindowStack.Add(new Dialog_Barter(playerNegotiator, merchantGuild));
+                    }
+                    else
+                    {
+                        action();
                     }
                 });
         }

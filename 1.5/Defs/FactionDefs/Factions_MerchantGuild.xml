@@ -217,6 +217,7 @@
 		<expandingIconPriority>10</expandingIconPriority>
 		<initialSpawnCount>6</initialSpawnCount>
 		<initialSpawnScalesWithPopulation>True</initialSpawnScalesWithPopulation>
+		<attackConfirmationMessage>You are about to attack the Merchants' Guild, which will make that faction hostile. Are you sure you want to do that?</attackConfirmationMessage>
 	</VFECore.MovingBaseDef>
   <WorldObjectDef>
     <defName>VFEM2_DestroyedMerchantGuildCamp</defName>
