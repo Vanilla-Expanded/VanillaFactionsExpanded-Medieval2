@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <!-- Add hearth and darklight hearth to all vanilla fire meditation linkables. -->
+        <!-- The patch will cause no errors as long as at least one of the defs was matches, so no need for separate per-DLC patches. -->
+        <xpath>Defs/ThingDef[@Name="TorchBase" or defName="TorchWallLamp" or defName="Campfire" or defName="Darktorch" or defName="DarktorchFungus" or defName="Brazier" or defName="DarklightBrazier" or defName="SanguphageMeetingTorch"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class = "FocusStrengthOffset_BuildingDefsLit"]/defs</xpath>
+        <value>
+            <li>VFEM2_Hearth</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">VFEM2_HearthDarklight</li>
+        </value>
+    </Operation>
+
+</Patch>

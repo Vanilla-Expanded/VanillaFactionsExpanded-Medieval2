@@ -145,6 +145,7 @@
 			<Flammability>0</Flammability>
 			<Beauty>5</Beauty>
 			<Mass>15</Mass>
+			<MeditationFocusStrength>0.0</MeditationFocusStrength>
 		</statBases>
 		<category>Building</category>
 		<tickerType>Normal</tickerType>
@@ -215,7 +216,16 @@
 						<defs>
 							<li>Campfire</li>
 							<li>TorchLamp</li>
+							<li>TorchWallLamp</li>
 							<li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Ideology">DarklightBrazier</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">Darktorch</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">DarktorchFungus</li>
+							<li MayRequire="VanillaExpanded.VFECore">Stone_Campfire</li>
+							<li MayRequire="VanillaExpanded.VFECore,Ludeon.RimWorld.Ideology">Stone_DarklightCampfire</li>
+							<li MayRequire="OskarPotocki.VFE.Tribals">VFET_LargeFire</li>
+							<li>VFEM2_Hearth</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">VFEM2_HearthDarklight</li>
 						</defs>
 						<radius>9.9</radius>
 						<maxBuildings>8</maxBuildings>
