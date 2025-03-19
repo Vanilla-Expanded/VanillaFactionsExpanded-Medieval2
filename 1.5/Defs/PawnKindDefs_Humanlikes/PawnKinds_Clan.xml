@@ -18,7 +18,6 @@
     <label>peasant</label>
     <combatPower>40</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>50~100</apparelMoney>
@@ -47,7 +46,6 @@
     <label>thrall</label>
     <combatPower>45</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>180~360</apparelMoney>
@@ -75,7 +73,6 @@
     <label>torch thrower</label>
     <combatPower>45</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>180~360</apparelMoney>
@@ -104,7 +101,6 @@
     <label>bowman</label>
     <combatPower>45</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.3~1.1</gearHealthRange>
     <apparelMoney>180~360</apparelMoney>
@@ -133,7 +129,6 @@
     <label>skirmisher</label>
     <combatPower>60</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.3~1.1</gearHealthRange>
     <apparelMoney>180~400</apparelMoney>
@@ -161,7 +156,6 @@
     <label>raider</label>
     <combatPower>80</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -193,7 +187,6 @@
     <label>spearman</label>
     <combatPower>80</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -223,7 +216,6 @@
     <label>siege raider</label>
     <combatPower>80</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -253,7 +245,6 @@
     <label>heavy bowman</label>
     <combatPower>75</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>300~550</apparelMoney>
@@ -282,7 +273,6 @@
     <label>berserker</label>
     <combatPower>75</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -310,7 +300,6 @@
     <label>merchant</label>
     <combatPower>65</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -339,7 +328,6 @@
     <label>jarl</label>
     <combatPower>120</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Good</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>

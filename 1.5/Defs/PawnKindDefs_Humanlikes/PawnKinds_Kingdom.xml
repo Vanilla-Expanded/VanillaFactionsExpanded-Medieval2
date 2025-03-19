@@ -18,7 +18,6 @@
     <label>peasant</label>
     <combatPower>40</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>50~100</apparelMoney>
@@ -47,7 +46,6 @@
     <label>militia</label>
     <combatPower>45</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>180~360</apparelMoney>
@@ -74,7 +72,6 @@
     <label>archer</label>
     <combatPower>45</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>180~360</apparelMoney>
@@ -101,7 +98,6 @@
     <label>hunter</label>
     <combatPower>60</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.3~1.1</gearHealthRange>
     <apparelMoney>180~400</apparelMoney>
@@ -131,7 +127,6 @@
 	<trader>true</trader>
     <combatPower>65</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Good</itemQuality>
     <gearHealthRange>0.3~1.1</gearHealthRange>
     <apparelMoney>200~500</apparelMoney>
@@ -169,7 +164,6 @@
 	<trader>true</trader>
     <combatPower>100</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Good</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>750~1000</apparelMoney>
@@ -207,7 +201,6 @@
     <label>heavy archer</label>
     <combatPower>75</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>300~550</apparelMoney>
@@ -234,7 +227,6 @@
     <label>crossbowman</label>
     <combatPower>85</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -263,7 +255,6 @@
     <label>halberdier</label>
     <combatPower>75</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -292,7 +283,6 @@
     <label>man-at-arms</label>
     <combatPower>80</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -323,7 +313,6 @@
     <label>wall-breaker</label>
     <combatPower>80</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -354,7 +343,6 @@
     <label>bannerman</label>
     <combatPower>90</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>450~750</apparelMoney>
@@ -383,7 +371,6 @@
     <label>knight</label>
     <combatPower>100</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
@@ -420,7 +407,6 @@
     <label>greatsword</label>
     <combatPower>100</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
@@ -462,7 +448,6 @@
     <label>handgunner</label>
     <combatPower>115</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
@@ -498,7 +483,6 @@
     <label>lord</label>
     <combatPower>120</combatPower>
     <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <invNutrition>0</invNutrition>
     <itemQuality>Good</itemQuality>
     <gearHealthRange>0.6~1.1</gearHealthRange>
     <apparelMoney>650~1000</apparelMoney>
