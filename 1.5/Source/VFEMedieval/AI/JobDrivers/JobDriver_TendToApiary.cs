@@ -35,8 +35,8 @@ namespace VFEMedieval
             {
                 initAction = delegate ()
                 {
-                    int skill = pawn.skills.skills.Find((SkillRecord r) => r.def.defName == "Animals").levelInt / 2;
-                    if (Rand.RangeInclusive(0, 11 - skill) <= 5)
+                    SkillRecord skill = pawn.skills.GetSkill(SkillDefOf.Animals);
+                    if (Rand.RangeInclusive(0, 11 - skill.Level / 2) <= 5)
                     {
                         this.Apiary.tickBeforeTend += 120000;
                     }
@@ -44,10 +44,10 @@ namespace VFEMedieval
                     {
                        
                         pawn.needs.mood.thoughts.memories.TryGainMemoryFast(VFEM_DefOf.VFEM2_StingMoodDebuff);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Tending failed", 5f);
-                        pawn.jobs.StartJob(new Job(VFEM_DefOf.VFEM2_TendToApiary, TargetA));
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "VFEM2_TendingFailed".Translate(), 5f);
+                        pawn.jobs.StartJob(JobMaker.MakeJob(VFEM_DefOf.VFEM2_TendToApiary, TargetA), JobCondition.InterruptForced);
                     }
-                    pawn.skills.skills.Find((SkillRecord r) => r.def.defName == "Animals").Learn(20, false);
+                    skill.Learn(20);
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };

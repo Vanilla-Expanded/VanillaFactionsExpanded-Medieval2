@@ -49,7 +49,7 @@ namespace VFEMedieval
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            return new Job(VFEM_DefOf.VFEM2_TendToApiary, t);
+            return JobMaker.MakeJob(VFEM_DefOf.VFEM2_TendToApiary, t);
         }
     }
 }

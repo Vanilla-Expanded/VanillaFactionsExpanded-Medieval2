@@ -27,11 +27,11 @@ namespace VFEMedieval
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_Apiary tNR_Apiary = t as Building_Apiary;
-            int skill = pawn.skills.skills.Find((SkillRecord r) => r.def.defName == "Animals").levelInt;
             if (tNR_Apiary == null || !tNR_Apiary.HoneyReady)
             {
                 return false;
             }
+            int skill = pawn.skills.GetSkill(SkillDefOf.Animals).Level;
             if (skill < 5)
             {
                 JobFailReason.Is("VFEM2_BelowAnimalSkill".Translate());
@@ -55,7 +55,7 @@ namespace VFEMedieval
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            return new Job(VFEM_DefOf.VFEM2_TakeHoneyOutOfApiary, t);
+            return JobMaker.MakeJob(VFEM_DefOf.VFEM2_TakeHoneyOutOfApiary, t);
         }
     }
 }

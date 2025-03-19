@@ -84,9 +84,8 @@ namespace VFEMedieval
 
         public void ResetTend(Pawn pawn)
         {
-            int skill = pawn.skills.skills.Find((SkillRecord r) => r.def.defName == "Animals").levelInt;
-            System.Random rnd = new System.Random();
-            if (rnd.Next(0, 21 - skill) == 1)
+            SkillRecord skill = pawn.skills.GetSkill(SkillDefOf.Animals);
+            if (Rand.Range(0, 21 - skill.Level) == 1)
             {
                 this.tickBeforeTend = 120000;
             }
@@ -94,9 +93,9 @@ namespace VFEMedieval
             {
                 pawn.health.AddHediff(VFEM_DefOf.VFEM2_Sting);
                 pawn.needs.mood.thoughts.memories.TryGainMemoryFast(VFEM_DefOf.VFEM2_StingMoodDebuff);
-                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Tending failed", 5f);
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "VFEM2_TendingFailed".Translate(), 5f);
             }
-            pawn.skills.skills.Find((SkillRecord r) => r.def.defName == "Animals").Learn(100, false);
+            skill.Learn(100);
         }
 
         public override string GetInspectString()
