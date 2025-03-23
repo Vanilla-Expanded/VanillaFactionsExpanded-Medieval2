@@ -32,7 +32,8 @@ namespace VFEMedieval
                 for (int i = 0; i < numberOfItems; i++)
                 {
                     StockGenerator gen = listTribal.RandomElement();
-                    List<ThingDef> thingDefs = DefDatabase<ThingDef>.AllDefs.Where(d => gen?.HandlesThingDef(d) == true && !d.IsEdifice() && !d.IsCorpse && d.race==null && d.techLevel<TechLevel.Medieval && d.tradeTags?.Contains("Serum")!=true && !d.defName.Contains("ABooks_")).ToList();
+                    List<ThingDef> thingDefs = DefDatabase<ThingDef>.AllDefs.Where(d => gen?.HandlesThingDef(d) == true && !d.IsEdifice() && !d.IsCorpse && d.race==null && d.techLevel<TechLevel.Medieval && d.tradeTags?.Contains("Serum")!=true && 
+                    !d.defName.Contains("ABooks_") && d.thingCategories?.Contains(VFEM_DefOf.Books) !=true).ToList();
                     if (!thingDefs.NullOrEmpty())
                     {
                         ThingDef thingToAdd = thingDefs.RandomElement();
