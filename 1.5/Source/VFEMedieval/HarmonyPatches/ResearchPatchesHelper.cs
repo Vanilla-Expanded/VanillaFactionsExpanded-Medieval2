@@ -8,6 +8,8 @@ namespace VFEMedieval
         private static int lastCalculatedTick = -1;
         private static float cachedFactor = 1f;
         private const int CacheInvalidationInterval = 30;
+
+        private static Game currentGame;
         public static float GetMaynardCostFactor()
         {
             if (Find.Storyteller?.def != VFEM_DefOf.VFEM_MaynardMedieval)
@@ -18,13 +20,14 @@ namespace VFEMedieval
             int currentTick = GenTicks.TicksGame;
             bool cacheExpired = lastCalculatedTick < 0 || currentTick >= lastCalculatedTick + CacheInvalidationInterval;
             
-            if (cacheExpired)
+            if (cacheExpired || currentGame != Current.Game)
             {
                 lastCalculatedTick = currentTick;
                 int finishedProjectsCount = DefDatabase<ResearchProjectDef>
                                                 .AllDefsListForReading
                                                 .Count(x => x.IsFinished);
                 cachedFactor = 1f + (finishedProjectsCount * 0.01f);
+                currentGame = Current.Game;
             }
             return cachedFactor;
         }
