@@ -91,7 +91,6 @@
     <researchPrerequisites>
       <li>Greatbow</li>
     </researchPrerequisites>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <placeWorkers>
       <li>PlaceWorker_ShowTurretRadius</li>
       <li>PlaceWorker_TurretTop</li>
@@ -247,7 +246,6 @@
     <researchPrerequisites>
       <li>VFEM2_Matchlocks</li>
     </researchPrerequisites>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <placeWorkers>
       <li>VFEMedieval.PlaceWorker_ShowTurretRadius</li>
       <li>PlaceWorker_TurretTop</li>
