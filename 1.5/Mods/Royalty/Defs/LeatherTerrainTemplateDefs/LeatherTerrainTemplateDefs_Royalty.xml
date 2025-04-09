@@ -11,6 +11,7 @@
 		<costList>14</costList>
 		<tags>
 			<li>Floor</li>
+			<li>FineFloor</li>
 		</tags>
 		<researchPrerequisites>
 			<li>VFEM2_MedievalArchitecture</li>
