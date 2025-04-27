@@ -51,12 +51,14 @@
 				<linkableFacilities>
 					<li>EndTable</li>
 					<li>Dresser</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_LightEndTable</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalDresser</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalEndTable</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_Wardrobe</li>
 					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedEndTable</li>
 					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedDresser</li>
+					<li>VFEM2_SurgicalTools</li>
 				</linkableFacilities>
 			</li>
 			<li Class="VFEMedieval.CompProperties_CureHypothermia"/>
@@ -113,12 +115,14 @@
 				<linkableFacilities>
 					<li>EndTable</li>
 					<li>Dresser</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_LightEndTable</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalDresser</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_RoyalEndTable</li>
 					<li MayRequire="VanillaExpanded.VFECore">Table_Wardrobe</li>
 					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedEndTable</li>
 					<li MayRequire="VanillaExpanded.VFESpacer">Table_IlluminatedDresser</li>
+					<li>VFEM2_SurgicalTools</li>
 				</linkableFacilities>
 			</li>
 			<li Class="VFEMedieval.CompProperties_CureHypothermia"/>
