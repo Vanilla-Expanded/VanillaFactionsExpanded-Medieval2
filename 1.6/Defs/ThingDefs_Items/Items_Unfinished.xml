@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>VFEM2_UnfinishedApparelNoStuff</defName>
+    <label>unfinished apparel</label>
+    <description>An unfinished piece of an apparel.</description>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedApparel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

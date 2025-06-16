@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+   
+   <Operation Class="PatchOperationFindMod">
+      <mods>
+         <li>Vanilla Helixien Gas Expanded</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+         <operations>
+            <li Class="PatchOperationAdd">
+               <xpath>Defs/ThingDef[defName="VHGE_GasPoweredSmithy"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+               <value>
+                  <li>VFEM2_SmithingAnvil</li>
+                  <li>VFEM2_ForgeBellows</li>
+               </value>
+            </li>
+         </operations>
+      </match>
+   </Operation>
+   
+</Patch>
+
+

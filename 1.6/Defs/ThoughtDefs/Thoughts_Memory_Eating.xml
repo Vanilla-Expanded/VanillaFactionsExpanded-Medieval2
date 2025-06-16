@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Awful</defName>
+		<durationDays>0.25</durationDays>
+		<stages>
+			<li>
+				<label>drank awful wine</label>
+				<description>I can't believe I just drank that. The sour taste still lingers, and my stomach feels unsettled. What was that supposed to be, vinegar?</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Poor</defName>
+		<durationDays>0.166</durationDays>
+		<stages>
+			<li>
+				<label>drank poor wine</label>
+				<description>Not the best I’ve had. It’s bitter and barely drinkable. I guess it'll do if nothing else is around, but I can feel a headache coming on already.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Normal</defName>
+		<durationDays>0.166</durationDays>
+		<stages>
+			<li>
+				<label>drank wine</label>
+				<description>This is passable. It doesn’t excite the senses, but it’s smooth enough to enjoy.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Good</defName>
+		<durationDays>0.25</durationDays>
+		<stages>
+			<li>
+				<label>drank good wine</label>
+				<description>Ah, this wine is quite pleasant. The flavors blend nicely, and I can feel a comfortable buzz setting in.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Excellent</defName>
+		<durationDays>0.5</durationDays>
+		<stages>
+			<li>
+				<label>drank excellent wine</label>
+				<description>Now this is what wine is supposed to taste like! Each sip is a delight. I feel my mind clearing, and everything seems just a little more vibrant.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Masterwork</defName>
+		<durationDays>1</durationDays>
+		<stages>
+			<li>
+				<label>drank masterwork wine</label>
+				<description>Absolutely exquisite. The depth of flavor is extraordinary, and I can feel my body relaxing, as if every worry is drifting away.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Legendary</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_DrankWine_Legendary</defName>
+		<durationDays>2</durationDays>
+		<stages>
+			<li>
+				<label>drank legendary wine</label>
+				<description>I've never tasted anything like this before. It’s as though the very essence of joy has been captured in liquid form.</description>
+				<baseMoodEffect>6</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>VFEM2_DrankWine_Awful</li>
+			<li>VFEM2_DrankWine_Poor</li>
+			<li>VFEM2_DrankWine_Normal</li>
+			<li>VFEM2_DrankWine_Good</li>
+			<li>VFEM2_DrankWine_Excellent</li>
+			<li>VFEM2_DrankWine_Masterwork</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEM2_TorturerDraught</defName>
+		<durationDays>2</durationDays>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>twisting pain</label>
+				<description>This wicked concoction set my insides on fire! It hurts all over!</description>
+				<baseMoodEffect>-15</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

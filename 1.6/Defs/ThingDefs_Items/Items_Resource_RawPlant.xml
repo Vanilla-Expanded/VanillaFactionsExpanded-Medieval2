@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>VFEM2_RawGrapes</defName>
+		<label>grapes</label>
+		<description>Raw grapes. Nice to eat, even when raw. Grapes can also be made into must which can then be used to make wine.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/Grapes</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.2</MarketValue>
+			<Mass>0.027</Mass>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>14</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<ingestible>
+			<preferability>RawTasty</preferability>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="RoughPlantBase">
+		<defName>VFEM2_RafflesiaLeaves</defName>
+		<label>rafflesia petals</label>
+		<description>Giant petals of the rafflesia flower. Smell like rotting flesh and are very likely to cause food poisoning when consumed raw. Rafflesia petals have been used by medieval civilizations in creation of different draughts.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/RafflesiaLeaves</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>0.35</MarketValue>
+			<Flammability>1</Flammability>
+			<Nutrition>0.01</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.16</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>30</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>PlantMatter</li>
+		</thingCategories>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<ingestible>
+			<preferability>RawBad</preferability>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="RoughPlantBase">
+		<defName>VFEM2_AstragalusFlowers</defName>
+		<label>astragalus flowers</label>
+		<description>Small perennial wildflowers that grow in alpine climates. Astragalus flowers have been used by medieval civilizations in creation of different draughts.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/AstragalusFlowers</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.2</MarketValue>
+			<Flammability>1</Flammability>
+			<Mass>0.01</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>30</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>PlantMatter</li>
+		</thingCategories>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="RoughPlantBase">
+		<defName>VFEM2_CliviaPetals</defName>
+		<label>clivia petals</label>
+		<description>Petals of an unusual plant with tall, pretty flowers, called ‘bush lily’ by some. Clivia petals have been used by medieval civilizations in creation of different draughts.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/CliviaPetals</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>0.25</MarketValue>
+			<Mass>0.02</Mass>
+			<Flammability>1</Flammability>
+			<Nutrition>0.01</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>30</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>PlantMatter</li>
+		</thingCategories>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<ingestible>
+			<preferability>RawBad</preferability>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="RoughPlantBase">
+		<defName>VFEM2_AlocasiaLeaves</defName>
+		<label>alocasia leaves</label>
+		<description>Extremely broad leaves of a plant that’s a commonly-recognized signifier of tropical forests. Alocasia leaves have been used by medieval civilizations in creation of different draughts.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/AlocasiaLeaves</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>1.05</MarketValue>
+			<Mass>0.03</Mass>
+			<Flammability>1</Flammability>
+			<Nutrition>0.02</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>25</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>PlantMatter</li>
+		</thingCategories>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<ingestible>
+			<preferability>RawBad</preferability>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>VFEM2_RawGlowstool</defName>
+		<label>raw glowstool</label>
+		<description>Raw glowstool fungus obtained by harvesting glowstools growing in caves. Raw glowstool have been used by medieval civilizations in creation of different draughts.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/RawGlowstool</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.1</MarketValue>
+			<Mass>0.03</Mass>
+		</statBases>
+		<ingestible>
+			<foodType>Fungus</foodType>
+		</ingestible>
+		<ingredient>
+			<mergeCompatibilityTags>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Fungus</li>
+			</mergeCompatibilityTags>
+		</ingredient>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>40</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <ThingDef ParentName="BuildingFloorCoveringMediumBase">
+    <defName>VFEM2_Viking_Slab_Medium</defName>
+    <label>viking slab (medium)</label>
+    <description>A stone bas relief of viking imagery for decorating a floor.</description>
+    <dominantStyleCategory>VFEM2_Viking</dominantStyleCategory>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>VikingStyle/VikingMediumSlab</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringBroadBase">
+    <defName>VFEM2_Viking_Slab_Broad</defName>
+    <label>viking slab (broad)</label>
+    <description>A stone bas relief of viking imagery for decorating a floor.</description>
+    <dominantStyleCategory>VFEM2_Viking</dominantStyleCategory>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>VikingStyle/VikingBroadSlab</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>150</costStuffCount>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+  </ThingDef>
+ 
+</Defs>

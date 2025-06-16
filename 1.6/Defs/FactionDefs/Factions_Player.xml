@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>VFEM2_PlayerKingdom</defName>
+    <label>New Kingdom</label>
+    <description>A small kingdom.</description>
+    <isPlayer>true</isPlayer>
+    <categoryTag>Tribal</categoryTag>
+    <basicMemberKind>VFEM2_Peasant</basicMemberKind>
+    <pawnSingular>subject</pawnSingular>
+    <pawnsPlural>subjects</pawnsPlural>
+    <techLevel>Medieval</techLevel>
+    <factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
+    <settlementNameMaker>VFEM2_NamerSettlementMedieval</settlementNameMaker>
+    <allowedCultures>
+      <li>VFEM2_Feudal</li>
+    </allowedCultures>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
+    </disallowedPrecepts>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>MedievalCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>MapIcons/PlayerCastle</factionIconPath>
+    <settlementTexturePath>MapIcons/Expanding/CastleExpanding</settlementTexturePath>
+    <forageabilityFactor>1.7</forageabilityFactor>
+    <startingResearchTags>
+      <li>TribalStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>TribalStart</li>
+      <li>TribalStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+
+</Defs>

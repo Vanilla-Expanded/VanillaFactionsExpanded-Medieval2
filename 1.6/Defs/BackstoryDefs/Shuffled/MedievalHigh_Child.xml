@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<BackstoryDef>
+  <defName>VFEM_NobleWard141</defName>
+  <title>noble ward</title>
+  <titleShort>ward</titleShort>
+  <description>[PAWN_nameDef] was sent to another noble’s court to be raised and educated in the ways of governance and etiquette. [PAWN_pronoun] learned to navigate the complexities of noble relationships and gained a basic understanding of leadership. Though surrounded by luxury, [PAWN_pronoun] spent much of [PAWN_possessive] time under watchful eyes.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Intellectual>2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Page142</defName>
+  <title>page</title>
+  <titleShort>page</titleShort>
+  <description>[PAWN_nameDef] began [PAWN_possessive] training in a noble household, learning the fundamentals of serving and knightly duties. [PAWN_pronoun] spent hours cleaning armor, carrying messages, and studying basic combat techniques. The experience gave [PAWN_pronoun] an early introduction to the discipline and loyalty expected of nobility.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>3</Melee>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_YoungScholar143</defName>
+  <title>young scholar</title>
+  <titleShort>scholar</titleShort>
+  <description>[PAWN_nameDef] was tutored in history, philosophy, and mathematics from an early age, as was expected of highborn children. [PAWN_pronoun] showed a natural curiosity and an aptitude for learning, earning praise from [PAWN_possessive] tutors. Though well-read, [PAWN_pronoun] had little experience with manual or practical work.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Intellectual>5</Intellectual>
+    <Social>1</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_CastlePlaymate144</defName>
+  <title>castle playmate</title>
+  <titleShort>playmate</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] childhood running through the halls and courtyards of a castle, playing games with other noble children. The carefree years gave [PAWN_pronoun] a strong sense of camaraderie and a basic understanding of courtly manners. However, the sheltered life left [PAWN_pronoun] naive about the struggles of common folk.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>3</Social>
+    <Artistic>2</Artistic>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_AspiringKnight145</defName>
+  <title>aspiring knight</title>
+  <titleShort>knight</titleShort>
+  <description>[PAWN_nameDef] trained from an early age in the art of combat, preparing for the day [PAWN_pronoun] could earn [PAWN_possessive] place among the knights of [PAWN_possessive] house. [PAWN_pronoun] practiced with wooden swords and sparred with instructors, learning discipline and honor. While young, [PAWN_pronoun] already showed promise as a warrior.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>4</Melee>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_HeirToTheEstate146</defName>
+  <title>heir to the estate</title>
+  <titleShort>heir</titleShort>
+  <description>[PAWN_nameDef] was raised to inherit the family estate, receiving lessons in administration and diplomacy from a young age. [PAWN_pronoun] was taught to manage resources, oversee servants, and maintain order among the household. The structured upbringing prepared [PAWN_pronoun] for leadership but left little time for play.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Intellectual>3</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ScribeInTraining147</defName>
+  <title>scribe in training</title>
+  <titleShort>scribe</titleShort>
+  <description>[PAWN_nameDef] spent long hours learning to read and write under the guidance of a family-appointed tutor. [PAWN_pronoun] practiced copying texts and recording transactions, developing a keen eye for detail. While skilled in intellectual pursuits, [PAWN_pronoun] had little exposure to physical labor or combat training.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Intellectual>5</Intellectual>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_CourtAttendant148</defName>
+  <title>court attendant</title>
+  <titleShort>attendant</titleShort>
+  <description>[PAWN_nameDef] grew up serving as a junior attendant in a royal court, learning the nuances of etiquette and the art of flattery. [PAWN_pronoun] observed the dealings of nobles and practiced [PAWN_possessive] own skills in negotiation and charm. Though immersed in the intrigue of the court, [PAWN_pronoun] rarely ventured beyond its walls.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>5</Social>
+    <Artistic>2</Artistic>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FalconryStudent149</defName>
+  <title>falconry student</title>
+  <titleShort>falconer</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] youth learning the noble pastime of falconry, training birds to hunt and obey commands. [PAWN_pronoun] developed patience and a keen understanding of animal behavior. Though the skill impressed others, [PAWN_pronoun] had little time for practical tasks outside the sport.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Animals>4</Animals>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_AspiringDiplomat150</defName>
+  <title>aspiring diplomat</title>
+  <titleShort>diplomat</titleShort>
+  <description>[PAWN_nameDef] was groomed for a future in diplomacy, studying languages, geography, and the customs of foreign courts. [PAWN_pronoun] practiced making speeches and mediating minor disputes among peers. Though still young, [PAWN_pronoun] showed promise as a skilled negotiator and tactician.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>5</Social>
+    <Intellectual>3</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Squire151</defName>
+  <title>squire</title>
+  <titleShort>squire</titleShort>
+  <description>[PAWN_nameDef] was apprenticed to a knight, tasked with maintaining armor, tending horses, and learning the code of chivalry. [PAWN_pronoun] spent countless hours observing battles and practicing with training weapons. The rigorous training instilled discipline and a desire to prove [PAWN_possessive] worth on the battlefield.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>4</Melee>
+    <Animals>2</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ShieldCarrier152</defName>
+  <title>shield carrier</title>
+  <titleShort>carrier</titleShort>
+  <description>[PAWN_nameDef] trained alongside warriors, serving as a shield carrier during skirmishes and drills. [PAWN_pronoun] learned to endure long marches and protect [PAWN_possessive] mentors in the heat of battle. Though young, [PAWN_pronoun] displayed courage and determination beyond [PAWN_possessive] years.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>3</Melee>
+    <Construction>2</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_CastleDefender153</defName>
+  <title>castle defender</title>
+  <titleShort>defender</titleShort>
+  <description>[PAWN_nameDef] was raised in a fortified castle and spent [PAWN_possessive] days training with guards and learning the basics of siege defense. [PAWN_pronoun] practiced with bows on the battlements and drilled with spears in the courtyard. The life gave [PAWN_pronoun] a strong sense of duty and early combat experience.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>4</Shooting>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_BannerBearer154</defName>
+  <title>banner bearer</title>
+  <titleShort>banner bearer</titleShort>
+  <description>[PAWN_nameDef] carried the family banner into drills and parades, learning to represent [PAWN_possessive] house with pride. [PAWN_pronoun] spent hours practicing marching formations and staying composed under scrutiny. Though not a frontline fighter, [PAWN_pronoun] gained valuable lessons in discipline and leadership.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>3</Social>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ArcherTrainee155</defName>
+  <title>archer trainee</title>
+  <titleShort>archer</titleShort>
+  <description>[PAWN_nameDef] began training with a bow from a young age, aiming for skill and precision as required of noble warriors. [PAWN_pronoun] spent hours drawing targets in the courtyard and practicing long-distance shots. The training honed [PAWN_possessive] focus and gave [PAWN_pronoun] an edge in ranged combat.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>5</Shooting>
+    <Melee>1</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_MerchantsProdigy156</defName>
+  <title>merchant's prodigy</title>
+  <titleShort>prodigy</titleShort>
+  <description>[PAWN_nameDef] grew up surrounded by the bustling trade of [PAWN_possessive] family’s business, watching deals unfold and goods change hands. [PAWN_pronoun] was taught the art of negotiation and the importance of wealth. Though well-versed in trade, [PAWN_pronoun] had little exposure to the struggles of common life.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Intellectual>2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_EstateHeir157</defName>
+  <title>estate heir</title>
+  <titleShort>heir</titleShort>
+  <description>[PAWN_nameDef] was raised on a sprawling estate, learning to oversee the household and manage the laborers who worked the land. [PAWN_pronoun] received lessons in stewardship and basic leadership, preparing [PAWN_objective] for a life of privilege. Though competent, [PAWN_pronoun] had little understanding of life beyond [PAWN_possessive] family’s wealth.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>3</Social>
+    <Plants>2</Plants>
+    <Intellectual>1</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_LavishUpbringing158</defName>
+  <title>lavish upbringing</title>
+  <titleShort>lavish</titleShort>
+  <description>[PAWN_nameDef] was surrounded by luxury from birth, never knowing hunger or hardship. [PAWN_pronoun] was taught courtly manners and spent [PAWN_possessive] days enjoying music, fine food, and leisure. While refined and confident, [PAWN_pronoun] struggled with practical tasks that required hard labor.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>5</Social>
+    <Artistic>2</Artistic>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_PatronOfTheArts159</defName>
+  <title>patron of the arts</title>
+  <titleShort>patron</titleShort>
+  <description>[PAWN_nameDef] was encouraged to pursue and support the arts, attending performances and commissioning works from talented craftsmen. [PAWN_pronoun] developed an appreciation for beauty and creativity, as well as a talent for recognizing skill in others. Though cultured, [PAWN_pronoun] was sheltered from the harsher realities of life.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Artistic>5</Artistic>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_PrivilegedScholar160</defName>
+  <title>privileged scholar</title>
+  <titleShort>scholar</titleShort>
+  <description>[PAWN_nameDef] had access to the finest tutors, studying history, philosophy, and the sciences from a young age. [PAWN_pronoun] showed promise in academic pursuits, impressing [PAWN_possessive] family with [PAWN_possessive] keen intellect. However, [PAWN_pronoun] had little understanding of the struggles faced by those less fortunate.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Intellectual>6</Intellectual>
+    <Social>1</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ShadowedOutcast161</defName>
+  <title>shadowed outcast</title>
+  <titleShort>outcast</titleShort>
+  <description>[PAWN_nameDef] was feared by the villagers for reasons whispered but never explained. [PAWN_pronoun] spent [PAWN_possessive] childhood in the shadows, avoiding those who glared or crossed themselves at [PAWN_possessive] presence. The isolation hardened [PAWN_objective], leaving [PAWN_pronoun] mistrustful and quiet, always watching from the dark corners.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>-2</Social>
+    <Intellectual>3</Intellectual>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ChildOfTheEclipse162</defName>
+  <title>child of the eclipse</title>
+  <titleShort>eclipse-born</titleShort>
+  <description>[PAWN_nameDef] was born under an ominous eclipse, a sign that filled the villagers with dread. [PAWN_pronoun] grew up under the weight of grim superstition, with some believing [PAWN_pronoun] brought bad luck or worse. [PAWN_pronoun] learned to navigate the fear of others, growing cunning and detached to survive.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>-2</Social>
+    <Intellectual>4</Intellectual>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_GraveyardWanderer163</defName>
+  <title>graveyard wanderer</title>
+  <titleShort>wanderer</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] days among the headstones, speaking to the dead as though they were alive. [PAWN_pronoun] was drawn to the quiet stillness and the stories carved into weathered stone. The villagers whispered of [PAWN_possessive] odd habits, and [PAWN_pronoun] learned to keep [PAWN_possessive] thoughts hidden from prying eyes.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Intellectual>3</Intellectual>
+    <Medicine>2</Medicine>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageCurseBearer164</defName>
+  <title>village curse-bearer</title>
+  <titleShort>cursed</titleShort>
+  <description>[PAWN_nameDef] was believed to be cursed, blamed for every ill fortune that befell the village. Crops failed, livestock died, and villagers fell ill, all under [PAWN_possessive] dark shadow. [PAWN_pronoun] grew to expect rejection, developing a cold resilience to survive in a world that feared [PAWN_objective].</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>-3</Social>
+    <Plants>3</Plants>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_WhisperedFoundling165</defName>
+  <title>whispered foundling</title>
+  <titleShort>foundling</titleShort>
+  <description>[PAWN_nameDef] was discovered as an infant at the edge of the woods, wrapped in tattered cloth and left in the rain. The villagers took [PAWN_objective] in reluctantly, always murmuring of unnatural origins. [PAWN_pronoun] grew up in the shadow of suspicion, learning to remain unseen and unheard.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>3</Shooting>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_YoungDiplomat166</defName>
+  <title>young diplomat</title>
+  <titleShort>diplomat</titleShort>
+  <description>[PAWN_nameDef] surprised [PAWN_possessive] elders by brokering a truce between feuding noble families at just twelve years old. [PAWN_pronoun] used charm and logic to persuade both sides, earning respect far beyond [PAWN_possessive] years. The experience cemented [PAWN_possessive] place as a rising star in courtly politics.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Social>5</Social>
+    <Intellectual>2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_ProdigiousTactician167</defName>
+  <title>prodigious tactician</title>
+  <titleShort>tactician</titleShort>
+  <description>[PAWN_nameDef] demonstrated a gift for strategy by organizing and winning a mock battle between the castle’s squires. [PAWN_pronoun] anticipated [PAWN_possessive] opponents’ moves and used the terrain to [PAWN_possessive] advantage, earning the admiration of seasoned knights. The event marked [PAWN_objective] as a promising future commander.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Melee>3</Melee>
+    <Intellectual>4</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_YoungArchitect168</defName>
+  <title>young architect</title>
+  <titleShort>architect</titleShort>
+  <description>[PAWN_nameDef] designed an innovative irrigation system for the family estate at just ten years old, greatly increasing crop yields. [PAWN_pronoun] impressed both the stewards and laborers with [PAWN_possessive] ingenuity. The success ensured [PAWN_pronoun] would be taken seriously, even at such a young age.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Construction>4</Construction>
+    <Plants>3</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_PrizeArcher169</defName>
+  <title>prize archer</title>
+  <titleShort>archer</titleShort>
+  <description>[PAWN_nameDef] won a prestigious archery competition at the age of thirteen, besting older and more experienced opponents. [PAWN_pronoun] was praised for [PAWN_possessive] precision and composure under pressure. The victory brought honor to [PAWN_possessive] family and set [PAWN_objective] on a path of future acclaim.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Shooting>5</Shooting>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_BuddingPoet170</defName>
+  <title>budding poet</title>
+  <titleShort>poet</titleShort>
+  <description>[PAWN_nameDef] composed an epic poem at a young age that spread throughout the region, earning [PAWN_pronoun] fame and admiration. Nobles and commoners alike recited [PAWN_possessive] verses, praising their vivid imagery and emotional depth. The success brought invitations to courts across the land.</description>
+  <slot>Childhood</slot>
+  <skillGains>
+    <Artistic>5</Artistic>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+</BackstoryDef>
+
+
+
+</Defs>

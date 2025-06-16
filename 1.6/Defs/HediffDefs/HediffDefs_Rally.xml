@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <HediffDef Name="VFEM_RallyHediffBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(128, 0, 128)</defaultLabelColor>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_DisappearsOnDeath" />
+            <li Class="VFEMedieval.HediffCompProperties_MentalStatePrevention">
+                <preventMentalStates>
+                    <li>Binging_Food</li>
+                    <li>Wander_Sad</li>
+                    <li>Wander_OwnRoom</li>
+                    <li>InsultingSpree</li>
+                    <li>TargetedInsultingSpree</li>
+                    <li>Binging_DrugMajor</li>
+                    <li>Wander_Psychotic</li>
+                    <li>Tantrum</li>
+                    <li>TargetedTantrum</li>
+                    <li>BedroomTantrum</li>
+                    <li>SadisticRage</li>
+                    <li>CorpseObsession</li>
+                    <li MayRequire="Ludeon.RimWorld.Anomaly">EntityKiller</li>
+                    <li>Berserk</li>
+                    <li>FireStartingSpree</li>
+                    <li>Binging_DrugExtreme</li>
+                    <li>Jailbreaker</li>
+                    <li>Slaughterer</li>
+                    <li>MurderousRage</li>
+                    <li>GiveUpExit</li>
+                </preventMentalStates>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <ThingDef ParentName="MoteBase">
+        <defName>VFEM_Mote_CombatCommand</defName>
+        <thingClass>MoteAttached</thingClass>
+        <altitudeLayer>LightingOverlay</altitudeLayer>
+        <drawOffscreen>true</drawOffscreen>
+        <mote>
+            <solidTime>9999999</solidTime>
+            <needsMaintenance>true</needsMaintenance>
+        </mote>
+        <graphicData>
+            <graphicClass>Graphic_Mote</graphicClass>
+            <texPath>Things/Mote/VFEM2_CombatCommandMask</texPath>
+            <shaderType>MoteGlow</shaderType>
+            <color>(128, 0, 128)</color>            <!-- Purple color -->
+            <drawSize>20</drawSize>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="MoteBase">
+        <defName>VFEM_Mote_CombatCommandLinkLine</defName>
+        <thingClass>MoteDualAttached</thingClass>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <mote>
+            <fadeInTime>0.1</fadeInTime>
+            <fadeOutTime>0.1</fadeOutTime>
+            <solidTime>999999</solidTime>
+            <needsMaintenance>True</needsMaintenance>
+            <rotateTowardsTarget>True</rotateTowardsTarget>
+            <scaleToConnectTargets>True</scaleToConnectTargets>
+        </mote>
+        <graphicData>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>Things/Mote/VFEM2_CombatCommandLinkLine</texPath>
+            <color>(128, 0, 128)</color>            <!-- Purple color -->
+        </graphicData>
+    </ThingDef>
+
+    <HediffDef ParentName="VFEM_RallyHediffBase">
+        <defName>VFEM_RallyWearerHediff</defName>
+        <label>rally</label>
+        <description>Aura that rallies everyone nearby, stopping their mental breaks and preventing them from breaking again.</description>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_GiveHediffsInRange">
+                <range>9.9</range>
+                <hideMoteWhenNotDrafted>false</hideMoteWhenNotDrafted>
+                <targetingParameters>
+                    <canTargetBuildings>false</canTargetBuildings>
+                    <canTargetAnimals>false</canTargetAnimals>
+                    <canTargetMechs>false</canTargetMechs>
+                    <onlyTargetColonists>true</onlyTargetColonists>
+                </targetingParameters>
+                <hediff>VFEM_RallyAuraBuffHediff</hediff>
+                <mote>VFEM_Mote_CombatCommand</mote>
+            </li>
+            <li Class="VFEMedieval.HediffCompProperties_RemoveIfNoWeaponOrDowned">
+                <weaponDef>VFEM2_MeleeWeapon_Standard</weaponDef>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="VFEM_RallyHediffBase">
+        <defName>VFEM_RallyAuraBuffHediff</defName>
+        <label>rally aura</label>
+        <description>Rallying aura that prevents mental breaks.</description>
+        <comps>
+            <li Class="HediffCompProperties_Link">
+                <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+                <maxDistance>9.9</maxDistance>
+                <customMote>VFEM_Mote_CombatCommandLinkLine</customMote>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>false</showRemainingTime>
+            </li>
+        </comps>
+    </HediffDef>
+
+</Defs>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+  <ThingDef ParentName="LeatherBase">
+    <defName>VFEM2_HardLeather</defName>
+    <label>hardleather</label>
+    <description>A hardened textile created from patchleather via the leather hardening process. It’s significantly harder and stronger than patchleather, but it’s still lacking in comparison to proper hard leather, such as rhinoceros or elephant hide.</description>
+    <graphicData>
+	 <texPath>Things/Item/Resource/Hardleather</texPath>
+      <color>(75,70,65)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>1.5</MarketValue>
+	   <Beauty>-20</Beauty>
+      <StuffPower_Armor_Sharp>0.88</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.22</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>1.14</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>10</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
+    </statBases>
+    <stuffProps>
+      <color>(75,70,65)</color>
+      <commonality>0</commonality>
+      <statFactors>
+        <MaxHitPoints>1.3</MaxHitPoints>
+		<WorkToMake>1.25</WorkToMake>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+
+</Defs>

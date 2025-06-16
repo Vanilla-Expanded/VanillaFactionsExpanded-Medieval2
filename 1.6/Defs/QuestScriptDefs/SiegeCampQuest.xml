@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <QuestScriptDef>
+        <defName>VFEM2_OpportunitySite_SiegeCamp</defName>
+        <rootSelectionWeight>0.8</rootSelectionWeight>
+        <autoAccept>true</autoAccept>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->[siteFaction_name]'s siege camp</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <!-- Faction leader asker -->
+                <li>questDescription(asker_factionLeader==True)->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has informed us about a siege camp belonging to [siteFaction_name], set up near your location. They seem to be gathering numbers and will imminently attack your colony at [map_definite].\nIf you choose to attack preemptively, you will only need to face:\n[ListOfEnemies]\n\nIf you wait, they are bound to increase their numbers and will eventually attack you with a much larger force:\n[ListOfPotentialEnemies]</li>
+                <!-- No asker -->
+                <li>questDescription(askerIsNull==true)->You have found out that there is a siege camp belonging to [siteFaction_name], set up near your location. They seem to be gathering numbers and will imminently attack your colony at [map_definite].\nIf you choose to attack preemptively, you will only need to face:\n[ListOfEnemies]\n\nIf you wait, they are bound to increase their numbers and will eventually attack you with a much larger force:\n[ListOfPotentialEnemies]</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_RandomizePointsChallengeRating</def>
+                    <parms>
+                        <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+                        <pointsFactorThreeStar>2</pointsFactorThreeStar>
+                    </parms>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GetDefaultRewardValueFromPoints</def>
+                </li>
+                <li Class="QuestNode_GetMap" />
+
+                <li Class="QuestNode_Set">
+                    <name>siteDistRange</name>
+                    <value>1~3</value>
+                </li>
+
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                </li>
+
+                <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+                    <storeAs>sitePartDefs</storeAs>
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <sitePartsTags>
+                        <li>
+                            <tag>VFEM2_SiegeCamp</tag>
+                        </li>
+                    </sitePartsTags>
+                </li>
+
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GenerateSite</def>
+                </li>
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                </li>
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(3,5)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="VFEMedieval.QuestNode_SpawnRaidOnFail"></li>
+                            <li Class="QuestNode_Letter">
+                                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                                <text>The siege camp was not defeated in time. The quest [resolvedQuestName] has expired, and the enemy forces are now raiding your colony.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <li Class="QuestNode_RandomNode">
+                    <nodes>
+                        <li Class="QuestNode_Set">
+                            <name>askerIsNull</name>
+                            <value>true</value>
+                            <selectionWeight>0.5</selectionWeight>
+                        </li>
+                        <li Class="QuestNode_GetPawn">
+                            <storeAs>asker</storeAs>
+                            <mustBeFactionLeader>true</mustBeFactionLeader>
+                            <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+                            <hostileWeight>0.15</hostileWeight>
+                            <selectionWeight>0.3</selectionWeight>
+                        </li>
+                    </nodes>
+                </li>
+                <li Class="VFEMedieval.QuestNode_MakeSiegeCampFactionForces" />
+
+                <li Class="QuestNode_NoWorldObject">
+                    <worldObject>$site</worldObject>
+                    <node Class="QuestNode_End" />
+                </li>
+
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.AllEnemiesDefeated</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.AllEnemiesDefeated</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label TKey="LetterLabelQuestSucceeded">Camp defeated</label>
+                                <text TKey="LetterTextQuestSucceeded">You have successfully defeated the siege camp and the enemy forces!</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Success</outcome>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+            </nodes>
+        </root>
+    </QuestScriptDef>
+</Defs>

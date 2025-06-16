@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>VFEM2_ArrowThrowable</defName>
+		<graphicData>
+			<texPath>Things/Projectile/Arrow_Small</texPath>
+		</graphicData>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<solidTime>10</solidTime>
+		<fadeOutTime>4</fadeOutTime>
+		<landSound>StoneImpact</landSound>
+	</FleckDef>
+</Defs>

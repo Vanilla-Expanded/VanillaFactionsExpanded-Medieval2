@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>	
+	<!-- Castle Gates -->
+	<SoundDef>
+		<defName>VFEM2_CastleGate_OpenManual</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/Gate/MedievalGate_OpenManual</clipPath>
+					</li>
+				</grains>
+				<volumeRange>3</volumeRange>
+				<pitchRange>0.85~1.15</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef>
+		<defName>VFEM2_CastleGate_CloseManual</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/Gate/MedievalGate_CloseManual</clipPath>
+					</li>
+				</grains>
+				<volumeRange>3</volumeRange>
+				<pitchRange>0.85~1.15</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<!-- Castle Doors
+	<SoundDef>
+		<defName>VFEM2_CastleDoor_OpenManual</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<gameSpeedRange>1~2</gameSpeedRange>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Misc/Door/ManualDoors/Open/Normal</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>3</volumeRange>
+				<pitchRange>0.85~1.15</pitchRange>
+			</li>
+			<li>
+				<gameSpeedRange>3~99</gameSpeedRange>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Misc/Door/ManualDoors/Open/Fast</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>1</volumeRange>
+				<pitchRange>0.85~1.15</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef>
+		<defName>VFEM2_CastleDoor_CloseManual</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<gameSpeedRange>1~2</gameSpeedRange>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Misc/Door/ManualDoors/Close/Normal</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>3</volumeRange>
+				<pitchRange>0.85~1.15</pitchRange>
+			</li>
+			<li>
+				<gameSpeedRange>3~99</gameSpeedRange>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Misc/Door/ManualDoors/Close/Fast</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>1</volumeRange>
+				<pitchRange>0.85~1.15</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef> -->
+</Defs>

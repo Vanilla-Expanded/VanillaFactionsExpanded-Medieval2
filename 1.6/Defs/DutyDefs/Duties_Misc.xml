@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<DutyDef>
+		<defName>VFEM_BurnAndStealColony</defName>
+		<alwaysShowWeapon>true</alwaysShowWeapon>
+		<thinkNode Class="ThinkNode_Priority">
+			<subNodes>
+				<li Class="JobGiver_TakeCombatEnhancingDrug" />
+				<li Class="VFEMedieval.JobGiver_BurnAndStealColony" />
+			</subNodes>
+		</thinkNode>
+	</DutyDef>
+
+
+</Defs>

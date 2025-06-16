@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ScenPartDef>
+    <defName>VFEM_PlayerPawnsArriveMethod</defName>
+    <label>arrival method</label>
+    <category>Fixed</category>
+    <scenPartClass>VFEMedieval.ScenPart_MedievalScenario</scenPartClass>
+    <summaryPriority>470</summaryPriority>
+	<modExtensions>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromSettlements>
+          <li>VFEM2_KeepHousesSettlement</li>
+        </chooseFromSettlements>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </modExtensions>
+  </ScenPartDef>
+
+  <ScenarioDef>
+    <defName>VFEM2_NewKingdom</defName>
+    <label>New Kingdom</label>
+    <description>Oppression breeds defiance. For years, your village toiled under the weight of crushing taxes and hunger while the lord’s knights took everything: grain, livestock, even your last scraps of dignity. When they seized your final stores of food, desperation turned to rage.
+
+Armed with nothing but fury, you march upon the castle where the lord and his knights hide behind stone walls. You are weak, but sheer numbers and resolve may turn the tide. Should you triumph, the castle’s wealth and security could be yours.
+
+But not all believe in victory. Some whisper of escape, of slipping away before the slaughter begins. Beyond the walls lies an uncertain world, one that promises danger but also the chance for a new life. Will you fight to take the castle, or flee and forge your own path?
+Note: Since you start around an enemy castle, this is a difficult scenario.
+    </description>
+    <scenario>
+      <summary>A group of peasants, rebelling against oppressing knights. A classic VFE - Medieval 2 experience.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>VFEM2_PlayerKingdom</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>8</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+
+        <li Class="VFEMedieval.ScenPart_MedievalScenario">
+          <def>VFEM_PlayerPawnsArriveMethod</def>
+        </li>
+
+        <!-- Player pawns modifiers -->
+        <li Class="ScenPart_ForcedHediff">
+          <def>ForcedHediff</def>
+          <visible>false</visible>
+          <context>PlayerStarter</context>
+          <chance>0.2</chance>
+          <hediff>Malnutrition</hediff>
+          <severityRange>0.2~0.4</severityRange>
+        </li>
+        <li Class="ScenPart_SetNeedLevel">
+          <def>SetNeedLevel</def>
+          <visible>false</visible>
+          <context>PlayerStarter</context>
+          <chance>1.0</chance>
+          <need>Food</need>
+          <levelRange>0~0</levelRange>
+        </li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>StartingThing_Defined</def>
+          <thingDef>WoodLog</thingDef>
+          <count>750</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>10</count>
+        </li>
+
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Oppression breeds defiance. For years, your village toiled under the weight of crushing taxes and hunger while the lord’s knights took everything: grain, livestock, even your last scraps of dignity. When they seized your final stores of food, desperation turned to rage.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>

@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<BackstoryDef>
+  <defName>VFEM_VillageHunter01</defName>
+  <title>village hunter</title>
+  <titleShort>hunter</titleShort>
+  <description>[PAWN_nameDef] grew up in a small village and spent [PAWN_possessive] days hunting game to provide food for the community. [PAWN_pronoun] became skilled at tracking and setting traps but rarely interacted with others, preferring the solitude of the forest. Over time, [PAWN_pronoun] gained a reputation as a reliable provider, though [PAWN_possessive] social skills remained underdeveloped.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Shooting>5</Shooting>
+    <Animals>2</Animals>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_FieldHand02</defName>
+  <title>field hand</title>
+  <titleShort>field hand</titleShort>
+  <description>[PAWN_nameDef] worked as a laborer in the fields from a young age, planting crops and harvesting under the watchful eye of overseers. [PAWN_pronoun] grew strong from hauling sacks of grain and learned the basics of caring for plants. However, the grueling work left little time for other pursuits, and [PAWN_pronoun] never learned to read or write.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Plants>5</Plants>
+    <Construction>2</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables>
+    <li>Intellectual</li>
+  </workDisables>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+    <li>PlantWork</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Woodcutter03</defName>
+  <title>woodcutter</title>
+  <titleShort>woodcutter</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] life in the forests, cutting down trees to supply timber for the local village. The work was grueling, but it made [PAWN_pronoun] strong and skilled with tools. Though the solitude of the woods suited [PAWN_objective], [PAWN_pronoun] never learned much about socializing or the finer arts of crafting.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Plants>3</Plants>
+    <Construction>4</Construction>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+    <li>PlantWork</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Fisher04</defName>
+  <title>fisher</title>
+  <titleShort>fisher</titleShort>
+  <description>[PAWN_nameDef] made a living catching fish from the rivers and lakes near [PAWN_possessive] village. [PAWN_pronoun] learned to craft simple nets and traps but spent most of [PAWN_possessive] time alone on the water. The repetitive work left [PAWN_pronoun] skilled but uninterested in other tasks.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Animals>4</Animals>
+    <Crafting>3</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_StoneHauler05</defName>
+  <title>stone hauler</title>
+  <titleShort>hauler</titleShort>
+  <description>[PAWN_nameDef] worked in a stone quarry, hauling heavy blocks to construction sites. The endless labor left [PAWN_pronoun] with great strength but little patience for intellectual pursuits. The hard life in the quarry also sharpened [PAWN_possessive] instincts for survival.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Mining>5</Mining>
+    <Melee>2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables>
+    <li>Intellectual</li>
+  </workDisables>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+    <li>Mining</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Shepherd06</defName>
+  <title>shepherd</title>
+  <titleShort>shepherd</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] days tending sheep in the hills surrounding [PAWN_possessive] village. [PAWN_pronoun] became skilled at managing livestock and defending the flock from predators. The quiet life made [PAWN_pronoun] thoughtful but left [PAWN_pronoun] unprepared for more physically demanding work.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Animals>5</Animals>
+    <Shooting>2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Tanner07</defName>
+  <title>tanner</title>
+  <titleShort>tanner</titleShort>
+  <description>[PAWN_nameDef] worked in a tannery, turning raw hides into leather for clothing and armor. The job was messy and unpleasant, but it gave [PAWN_pronoun] an eye for detail and strong hands. Years of exposure to harsh chemicals left [PAWN_pronoun] with poor health.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>6</Crafting>
+    <Medicine>-2</Medicine>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_CandleMaker08</defName>
+  <title>candle maker</title>
+  <titleShort>candler</titleShort>
+  <description>[PAWN_nameDef] spent years crafting candles from tallow and wax, supplying light to the nearby village. The work required patience and precision, which [PAWN_pronoun] excelled at. However, the repetitive nature of the trade left [PAWN_pronoun] uninterested in more creative pursuits.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>5</Crafting>
+    <Artistic>-2</Artistic>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageCook09</defName>
+  <title>village cook</title>
+  <titleShort>cook</titleShort>
+  <description>[PAWN_nameDef] prepared meals for the local villagers, using simple ingredients to make hearty stews and breads. [PAWN_pronoun] honed [PAWN_possessive] skills over countless fires and learned to stretch resources in times of scarcity. The kitchen, however, left no time for intellectual or artistic pursuits.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Cooking>6</Cooking>
+    <Artistic>-2</Artistic>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Cooking</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Brickmaker10</defName>
+  <title>brickmaker</title>
+  <titleShort>brickmaker</titleShort>
+  <description>[PAWN_nameDef] shaped and fired clay bricks for construction projects in [PAWN_possessive] village. The intense labor strengthened [PAWN_possessive] body and gave [PAWN_pronoun] a keen understanding of construction techniques. Years of working near hot kilns left [PAWN_pronoun] with little stamina for long days of physical labor.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Construction>5</Construction>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Weaver11</defName>
+  <title>weaver</title>
+  <titleShort>weaver</titleShort>
+  <description>[PAWN_nameDef] worked at a loom, spinning thread into fabric for the village. The delicate work required focus and dexterity, which [PAWN_pronoun] developed over years of practice. However, the sedentary nature of weaving left [PAWN_pronoun] with little physical strength.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>6</Crafting>
+    <Melee>-2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Miller12</defName>
+  <title>miller</title>
+  <titleShort>miller</titleShort>
+  <description>[PAWN_nameDef] operated a village mill, grinding grain into flour for the community. The job required an understanding of machinery and a steady hand to keep the mill running smoothly. Years of dusty work left [PAWN_pronoun] prone to coughing fits and other ailments.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Construction>3</Construction>
+    <Crafting>3</Crafting>
+    <Medicine>-2</Medicine>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Gravedigger13</defName>
+  <title>gravedigger</title>
+  <titleShort>gravedigger</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] nights digging graves for the dead and maintaining the village cemetery. The work was somber and lonely, but it made [PAWN_pronoun] strong and capable of handling heavy tools. Constant exposure to death left [PAWN_pronoun] emotionally detached from others.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Mining>5</Mining>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+    <li>Mining</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Baker14</defName>
+  <title>baker</title>
+  <titleShort>baker</titleShort>
+  <description>[PAWN_nameDef] rose early each morning to knead dough and bake bread for the village. Over the years, [PAWN_pronoun] developed a knack for crafting perfect loaves and managing a hot oven. However, the repetitive nature of the work left [PAWN_pronoun] uninterested in other trades or studies.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Cooking>6</Cooking>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Cooking</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Cooper15</defName>
+  <title>cooper</title>
+  <titleShort>cooper</titleShort>
+  <description>[PAWN_nameDef] crafted barrels and casks for the village, using simple tools to shape and assemble wooden staves. The work required precision and patience, skills that [PAWN_pronoun] mastered over years. Despite [PAWN_possessive] expertise, [PAWN_pronoun] rarely ventured beyond the workshop to socialize or pursue other interests.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>6</Crafting>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Stablehand16</defName>
+  <title>stablehand</title>
+  <titleShort>stablehand</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] days mucking stalls and tending to horses in the village stables. Over time, [PAWN_pronoun] developed a deep understanding of animal care and a steady hand for calming even the most skittish creatures. The hard labor left [PAWN_pronoun] with little time for intellectual pursuits.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Animals>6</Animals>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables>
+    <li>Intellectual</li>
+  </workDisables>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Thatcher17</defName>
+  <title>thatcher</title>
+  <titleShort>thatcher</titleShort>
+  <description>[PAWN_nameDef] repaired and constructed thatched roofs for the village. The work demanded both skill and endurance, as [PAWN_pronoun] balanced on rooftops for hours. Years of labor made [PAWN_pronoun] strong and precise, but [PAWN_pronoun] rarely pursued creative endeavors.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Construction>5</Construction>
+    <Crafting>2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_VillageBrewer18</defName>
+  <title>village brewer</title>
+  <titleShort>brewer</titleShort>
+  <description>[PAWN_nameDef] brewed ale for the village, perfecting recipes passed down through generations. The brewing process taught [PAWN_pronoun] patience and attention to detail, as each batch required careful timing and temperature control. [PAWN_pronoun] spent so much time brewing that [PAWN_pronoun] neglected physical training.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Cooking>6</Cooking>
+    <Intellectual>2</Intellectual>
+    <Melee>-2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Cooking</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_RatCatcher19</defName>
+  <title>rat catcher</title>
+  <titleShort>rat catcher</titleShort>
+  <description>[PAWN_nameDef] made a living ridding the village of vermin, setting traps and chasing down rats with [PAWN_possessive] bare hands. The work was dangerous and filthy, but it honed [PAWN_possessive] reflexes and taught [PAWN_pronoun] the ways of small creatures. Years in dark cellars left [PAWN_pronoun] socially awkward.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Animals>4</Animals>
+    <Melee>3</Melee>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_MudDigger20</defName>
+  <title>mud digger</title>
+  <titleShort>mud digger</titleShort>
+  <description>[PAWN_nameDef] dug clay from riverbanks for pottery and construction projects in the village. The exhausting labor left [PAWN_pronoun] with a strong back and thick arms but little interest in intellectual endeavors. [PAWN_pronoun] rarely interacted with others, spending most days knee-deep in mud.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Mining>5</Mining>
+    <Construction>2</Construction>
+    <Intellectual>-2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+    <li>Mining</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Footman21</defName>
+  <title>footman</title>
+  <titleShort>footman</titleShort>
+  <description>[PAWN_nameDef] served as a foot soldier in the local lord's army, marching into battle with sword and shield. The brutal skirmishes taught [PAWN_pronoun] the value of endurance and discipline. Years of combat left [PAWN_pronoun] skilled with melee weapons but untrained in ranged combat.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>6</Melee>
+    <Construction>2</Construction>
+    <Shooting>-2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Archer22</defName>
+  <title>archer</title>
+  <titleShort>archer</titleShort>
+  <description>[PAWN_nameDef] was trained to fight in the lord’s army as an archer, spending countless hours practicing [PAWN_possessive] aim. [PAWN_pronoun] became an expert at firing arrows accurately and quickly, even under pressure. However, [PAWN_pronoun] lacked experience with close combat, often relying on others to protect [PAWN_objective].</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Shooting>6</Shooting>
+    <Plants>2</Plants>
+    <Melee>-2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Squire23</defName>
+  <title>squire</title>
+  <titleShort>squire</titleShort>
+  <description>[PAWN_nameDef] served as a squire to a local knight, learning the ways of battle and assisting [PAWN_objective] master. [PAWN_pronoun] gained skill with weapons and armor, though most of [PAWN_possessive] duties involved maintenance and carrying supplies. The experience made [PAWN_pronoun] strong and disciplined but left little time for independent thought.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>5</Melee>
+    <Crafting>3</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Watchman24</defName>
+  <title>watchman</title>
+  <titleShort>watchman</titleShort>
+  <description>[PAWN_nameDef] guarded the village walls and gates, keeping an eye out for bandits and other threats. The job demanded vigilance and a steady hand, which [PAWN_pronoun] developed over long hours of patrol. Though experienced with ranged weapons, [PAWN_pronoun] rarely saw true battle.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Shooting>5</Shooting>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Spearman25</defName>
+  <title>spearman</title>
+  <titleShort>spearman</titleShort>
+  <description>[PAWN_nameDef] was trained to hold the front line with a spear, using reach to keep enemies at bay. [PAWN_pronoun] learned to work in formation with others, relying on coordination and timing to fend off cavalry charges. Years of combat hardened [PAWN_pronoun], though [PAWN_pronoun] lacked skill in crafting or more delicate tasks.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>6</Melee>
+    <Animals>2</Animals>
+    <Crafting>-2</Crafting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Pikeman26</defName>
+  <title>pikeman</title>
+  <titleShort>pikeman</titleShort>
+  <description>[PAWN_nameDef] stood in tightly packed lines, wielding a long pike to defend against charging cavalry. The work was grueling and required coordination with [PAWN_possessive] comrades to form an impenetrable wall of steel. While [PAWN_pronoun] excelled in formation combat, [PAWN_pronoun] struggled with tasks requiring individual creativity.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>6</Melee>
+    <Construction>2</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Shieldbearer27</defName>
+  <title>shieldbearer</title>
+  <titleShort>shieldbearer</titleShort>
+  <description>[PAWN_nameDef] was tasked with carrying a large shield into battle, protecting [PAWN_possessive] comrades from incoming projectiles. The position required endurance and discipline, as [PAWN_pronoun] stood firm even under heavy fire. The role left [PAWN_pronoun] with little opportunity to practice ranged combat.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>5</Melee>
+    <Social>2</Social>
+    <Shooting>-2</Shooting>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_CampFollower28</defName>
+  <title>camp follower</title>
+  <titleShort>camp follower</titleShort>
+  <description>[PAWN_nameDef] traveled with armies, maintaining the camp and preparing supplies. [PAWN_pronoun] became skilled in basic survival and cooking, ensuring the soldiers were fed and ready for battle. Despite living near combat, [PAWN_pronoun] rarely saw direct action and focused on support roles.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Cooking>5</Cooking>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Cooking</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Mercenary29</defName>
+  <title>mercenary</title>
+  <titleShort>mercenary</titleShort>
+  <description>[PAWN_nameDef] sold [PAWN_possessive] sword to the highest bidder, fighting in skirmishes across the land. Years of battle left [PAWN_pronoun] hardened and skilled in melee combat, but [PAWN_pronoun] never trusted anyone enough to form lasting bonds. [PAWN_pronoun] carried scars from both physical and emotional wounds.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>6</Melee>
+    <Shooting>2</Shooting>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_SiegeEngineer30</defName>
+  <title>siege engineer</title>
+  <titleShort>siege engineer</titleShort>
+  <description>[PAWN_nameDef] worked with a team to build and operate siege engines during castle assaults. The role demanded ingenuity and strength, as [PAWN_pronoun] helped design, construct, and fire massive weapons. While skilled in engineering, [PAWN_pronoun] struggled with close-quarters combat.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Construction>5</Construction>
+    <Intellectual>2</Intellectual>
+    <Melee>-2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Beggar31</defName>
+  <title>beggar</title>
+  <titleShort>beggar</titleShort>
+  <description>[PAWN_nameDef] survived by begging on the streets, relying on the charity of others for food and shelter. [PAWN_pronoun] became skilled at reading people’s moods and persuading them to give, but the harsh life left [PAWN_pronoun] weak and unskilled in manual labor.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>6</Social>
+    <Construction>-2</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Poacher32</defName>
+  <title>poacher</title>
+  <titleShort>poacher</titleShort>
+  <description>[PAWN_nameDef] hunted illegally in the lord’s forests, risking [PAWN_possessive] life to feed [PAWN_possessive] family. [PAWN_pronoun] became skilled with a bow and learned to move silently through the woods, but [PAWN_pronoun] always lived in fear of being caught by the lord’s men.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Shooting>5</Shooting>
+    <Plants>3</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Outlaw33</defName>
+  <title>outlaw</title>
+  <titleShort>outlaw</titleShort>
+  <description>[PAWN_nameDef] lived outside the law, surviving through theft and violence. [PAWN_pronoun] became skilled at fighting and evading capture, but [PAWN_pronoun] was shunned by society and relied on [PAWN_possessive] wits to stay alive. The life of an outlaw left [PAWN_pronoun] hardened and distrusting of others.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>5</Melee>
+    <Shooting>3</Shooting>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Scavenger34</defName>
+  <title>scavenger</title>
+  <titleShort>scavenger</titleShort>
+  <description>[PAWN_nameDef] survived by scavenging abandoned battlefields and ruined villages, gathering anything of value. [PAWN_pronoun] became adept at spotting useful items and avoiding danger, but the life left [PAWN_pronoun] with little sense of cleanliness or order.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>4</Crafting>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Vagabond35</defName>
+  <title>vagabond</title>
+  <titleShort>vagabond</titleShort>
+  <description>[PAWN_nameDef] wandered from village to village, taking odd jobs and sleeping wherever [PAWN_pronoun] could find shelter. [PAWN_pronoun] learned to survive on little and became skilled at adapting to new situations, but [PAWN_pronoun] never stayed in one place long enough to form meaningful relationships.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Animals>3</Animals>
+    <Intellectual>-2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Herbalist36</defName>
+  <title>herbalist</title>
+  <titleShort>herbalist</titleShort>
+  <description>[PAWN_nameDef] lived near the edge of the forest, gathering plants to craft medicines and salves for the village. [PAWN_pronoun] developed a keen understanding of nature and its uses but often kept to [PAWN_possessive]self to focus on [PAWN_possessive] craft. Villagers respected [PAWN_possessive] knowledge, seeking [PAWN_possessive] help in times of need.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Plants>4</Plants>
+    <Medicine>4</Medicine>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Caring</li>
+    <li>PlantWork</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Blacksmith37</defName>
+  <title>blacksmith</title>
+  <titleShort>blacksmith</titleShort>
+  <description>[PAWN_nameDef] worked in the forge, shaping metal into tools, weapons, and armor. [PAWN_pronoun] earned the admiration of the village for [PAWN_possessive] skill and reliability. The constant heat and heavy labor left [PAWN_pronoun] strong and focused, though not particularly well-read.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>6</Crafting>
+    <Melee>3</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Mason38</defName>
+  <title>mason</title>
+  <titleShort>mason</titleShort>
+  <description>[PAWN_nameDef] was a skilled mason, shaping stone into sturdy walls and magnificent buildings. [PAWN_pronoun] earned a good reputation for [PAWN_possessive] precision and creativity in construction. [PAWN_pronoun] rarely participated in farming or hunting, focusing solely on [PAWN_possessive] craft.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Construction>6</Construction>
+    <Artistic>3</Artistic>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Healer39</defName>
+  <title>healer</title>
+  <titleShort>healer</titleShort>
+  <description>[PAWN_nameDef] tended to the sick and wounded, applying [PAWN_possessive] knowledge of medicine and herbal remedies. [PAWN_pronoun] gained respect for [PAWN_possessive] ability to save lives, though [PAWN_pronoun] often had to face the harsh reality of those [PAWN_pronoun] couldn’t save. The villagers relied on [PAWN_objective] as their primary source of care.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Medicine>6</Medicine>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Caring</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Carpenter40</defName>
+  <title>carpenter</title>
+  <titleShort>carpenter</titleShort>
+  <description>[PAWN_nameDef] crafted furniture, tools, and wooden structures for the village. [PAWN_pronoun] earned [PAWN_possessive] living through precision and skill, shaping timber into practical and beautiful creations. Though [PAWN_pronoun] excelled at [PAWN_possessive] trade, [PAWN_pronoun] had little time for intellectual pursuits.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Construction>5</Construction>
+    <Crafting>3</Crafting>
+    <Intellectual>-2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+    <li>MedievalHigh</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_KitchenServant41</defName>
+  <title>kitchen servant</title>
+  <titleShort>kitchen hand</titleShort>
+  <description>[PAWN_nameDef] worked long hours in the keep's kitchens, preparing food for the nobles and their guests. [PAWN_pronoun] learned to cook large meals with limited resources, honing [PAWN_possessive] culinary skills. Though the work was exhausting, [PAWN_pronoun] found pride in [PAWN_possessive] ability to feed others.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Cooking>6</Cooking>
+    <Plants>2</Plants>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Cooking</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Chamberlain42</defName>
+  <title>chamberlain</title>
+  <titleShort>chamberlain</titleShort>
+  <description>[PAWN_nameDef] managed the keep’s living quarters, overseeing servants and ensuring the lord’s chambers were well-kept. [PAWN_pronoun] became adept at organizing and managing resources but often found [PAWN_possessive]self caught in the politics of the household. The role demanded both precision and tact.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>5</Social>
+    <Construction>3</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Social</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Scullion43</defName>
+  <title>scullion</title>
+  <titleShort>scullion</titleShort>
+  <description>[PAWN_nameDef] spent [PAWN_possessive] days washing dishes and scrubbing pots in the keep’s kitchens. The work was dirty and thankless, but it gave [PAWN_pronoun] a strong work ethic and the ability to endure long hours of labor. [PAWN_pronoun] rarely interacted with anyone outside the kitchen staff.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Cooking>4</Cooking>
+    <Construction>2</Construction>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_StableServant44</defName>
+  <title>stable servant</title>
+  <titleShort>stable hand</titleShort>
+  <description>[PAWN_nameDef] tended to the lord’s horses, feeding and grooming them and cleaning their stalls. [PAWN_pronoun] gained a deep understanding of animal care and built strong muscles from the physical labor. The isolation of the stables left [PAWN_pronoun] with limited social skills.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Animals>5</Animals>
+    <Melee>2</Melee>
+    <Social>-2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Butler45</defName>
+  <title>butler</title>
+  <titleShort>butler</titleShort>
+  <description>[PAWN_nameDef] served the lord and [PAWN_possessive] family directly, ensuring their needs were met with promptness and discretion. [PAWN_pronoun] became skilled in etiquette and managing a household staff. The role gave [PAWN_pronoun] a sharp eye for detail but little patience for physical labor.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>6</Social>
+    <Medicine>2</Medicine>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Social</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Pickpocket46</defName>
+  <title>pickpocket</title>
+  <titleShort>pickpocket</titleShort>
+  <description>[PAWN_nameDef] survived by slipping through crowded markets, deftly lifting coins and trinkets from unsuspecting villagers. [PAWN_pronoun] developed nimble fingers and a keen sense for spotting opportunities, but [PAWN_pronoun] always lived in fear of being caught. Years of petty theft left [PAWN_pronoun] mistrustful and secretive.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Crafting>3</Crafting>
+    <Melee>-2</Melee>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Fence47</defName>
+  <title>fence</title>
+  <titleShort>fence</titleShort>
+  <description>[PAWN_nameDef] traded in stolen goods, turning ill-gotten items into coin while avoiding the attention of the authorities. [PAWN_pronoun] became skilled at bargaining and gauging the value of items but avoided direct involvement in theft. The constant deception made [PAWN_pronoun] adept at reading people’s motives.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>5</Social>
+    <Intellectual>2</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>Social</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Bandit48</defName>
+  <title>bandit</title>
+  <titleShort>bandit</titleShort>
+  <description>[PAWN_nameDef] roamed the countryside with a band of outlaws, ambushing travelers and raiding villages. [PAWN_pronoun] became skilled in both melee combat and intimidation but earned a reputation as a dangerous outlaw. Life on the run hardened [PAWN_pronoun] and left [PAWN_pronoun] distrusting of others.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Melee>6</Melee>
+    <Social>2</Social>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualDumb</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Smuggler49</defName>
+  <title>smuggler</title>
+  <titleShort>smuggler</titleShort>
+  <description>[PAWN_nameDef] transported contraband across borders, using [PAWN_possessive] knowledge of hidden paths and bribes to avoid detection. [PAWN_pronoun] became adept at navigating and negotiating under pressure, though the constant risk of capture took a toll on [PAWN_possessive] nerves. The life of secrecy made [PAWN_pronoun] wary of strangers.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Social>4</Social>
+    <Animals>3</Animals>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+<BackstoryDef>
+  <defName>VFEM_Counterfeiter50</defName>
+  <title>counterfeiter</title>
+  <titleShort>counterfeiter</titleShort>
+  <description>[PAWN_nameDef] forged coins and documents, deceiving merchants and nobles alike. [PAWN_pronoun] became skilled at crafting convincing replicas, though [PAWN_pronoun] avoided physical labor whenever possible. The constant risk of exposure forced [PAWN_pronoun] to move frequently, never staying in one place for long.</description>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <Crafting>5</Crafting>
+    <Intellectual>3</Intellectual>
+  </skillGains>
+  <spawnCategories>
+    <li>MedievalCommon</li>
+  </spawnCategories>
+  <workDisables/>
+  <requiredWorkTags>
+    <li>ManualSkilled</li>
+  </requiredWorkTags>
+</BackstoryDef>
+
+
+</Defs>

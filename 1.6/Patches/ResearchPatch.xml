@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/prerequisites</xpath>
+        <value>
+		    <li>VFEM2_Matchlocks</li>
+		</value>
+    </Operation> 
+	
+</Patch>

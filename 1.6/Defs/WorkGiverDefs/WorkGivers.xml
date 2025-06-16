@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ============= Take honey out of Apiary ============= -->
+	<WorkGiverDef>
+		<defName>VFEM2_TakeHoneyOutOfApiary</defName>
+		<label>take honey out of apiary</label>
+		<giverClass>VFEMedieval.WorkGiver_TakeHoneyOutOfApiary</giverClass>
+		<workType>Handling</workType>
+		<verb>take honey</verb>
+		<gerund>taking honey from</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	<!-- ============= Tend to the Apiary ============= -->
+	<WorkGiverDef>
+		<defName>VFEM2_TendToTheApiary</defName>
+		<label>tend to the apiary</label>
+		<giverClass>VFEMedieval.WorkGiver_TendToApiary</giverClass>
+		<workType>Handling</workType>
+		<verb>tend apiary</verb>
+		<gerund>tend to</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	<!-- ============= Draught lab ============= -->
+	<WorkGiverDef>
+		<defName>VFEM2_DoBillsAlchemyTable</defName>
+		<label>craft draught</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>20</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VFEM2_AlchemicalWorkbench</li>
+		</fixedBillGiverDefs>
+		<verb>crafting draught</verb>
+		<gerund>crafting draught at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>VFEM2_DoBillsAlchemyTable_Electric</defName>
+		<label>craft draught</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>20</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VFEM2_AlchemicalWorkbench_Electric</li>
+		</fixedBillGiverDefs>
+		<verb>crafting draught</verb>
+		<gerund>crafting draught at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+</Defs>

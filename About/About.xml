@@ -4,6 +4,7 @@
 	<author>Oskar Potocki, xrushha, Taranchuk, Sarg Bjornson, Oracle of Thessia</author>
 	<supportedVersions>
 		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
 	<packageId>OskarPotocki.VFE.Medieval2</packageId>
 	<description>A worthy successor to our beloved Vanilla Factions Expanded - Medieval and Vanilla Factions Expanded - Vikings, VFE-Medieval 2 builds upon everything that made the originals great. While this isn’t a medieval overhaul that removes late game content in favor of medieval content, we’ve carefully designed it to seamlessly fill the gap between the neolithic and industrial eras, ensuring medieval technologies remain relevant even as you advance.
@@ -33,9 +34,7 @@ After many months of development, Medieval 2 is our most refined medieval era ex
 		</li>
 	</modDependencies>
 	<loadAfter>
-		<li>Ludeon.RimWorld</li>
-		<li>Ludeon.RimWorld.Royalty</li>
-		<li>brrainz.harmony</li>
+		
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 </ModMetaData>

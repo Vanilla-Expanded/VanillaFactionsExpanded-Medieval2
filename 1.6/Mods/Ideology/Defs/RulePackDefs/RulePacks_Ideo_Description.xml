@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IdeoStoryPatternDef>
+		
+	<defName>VFEM2_Structure_Norse_Description</defName>
+	<segments>
+		<li>asatruLessonIntro</li>
+		<li>lesson</li>
+		<li>lessonReinforcement</li>
+		<li>asatruLessonReinforcement</li>
+	</segments>
+	<noCapitalizeFirstSentence>
+		<li>lesson</li>
+	</noCapitalizeFirstSentence>
+	<rules>
+		<include>
+			<li>IdeoDescriptionGlobal</li>
+		</include>
+		<rulesStrings>
+			<!-- final fallbacks (when no memes selected yet) -->
+			<li>lesson(priority=-1)->things happen</li>
+			<!-- typesetting -->
+			<li>r_pattern->"[r_asatruLessonIntro] [r_lesson]. [r_lessonReinforcement] [r_asatruLessonReinforcement]"\n\n  - [lessonAttribution]</li>
+			<!-- attribution -->
+			<li>lessonAttribution->fragment of a [edited] [saga] found [museum]</li>
+			<li>edited->damaged</li>
+			<li>edited->misinterpreted</li>
+			<li>edited->ancient</li>
+			<li>edited->forgotten</li>
+			<li>edited->preserved</li>
+			<li>saga->Edda</li>
+			<li>saga->rune stone inscription</li>
+			<li>saga->skaldic verse</li>
+			<li>saga->ancient saga</li>
+			<li>museum->in the archive of Yggdrasil Station</li>
+			<li>museum->on a distant star colony named Himinbjörg</li>
+			<li>museum->in the Imperial Hall of Ancient Relics</li>
+			<li>museum->in the ruins of Jotunheim Prime</li>
+			<li>museum->in the vaults of the Keepers of Memory</li>
+			<!-- generic intro -->
+			<li>asatruLessonIntro->Hear the words of Odin, All-Father, who whispers from the Well of Urd:</li>
+			<li>asatruLessonIntro->Lo, the verses of the Völuspá proclaim to all who would listen:</li>
+			<li>asatruLessonIntro->Take heed of Thor's hammer as it strikes, for it teaches:</li>
+			<li>asatruLessonIntro->Hark, the ravens Huginn and Muninn circle and cry their truth:</li>
+			<li>asatruLessonIntro->Under the shade of Yggdrasil, the gods did gather and declare:</li>
+			<li>asatruLessonIntro->By the light of Baldr's blessing, know this:</li>
+			<li>asatruLessonIntro->On the fjords of the Nine Worlds, wisdom echoes, saying:</li>
+			<li>asatruLessonIntro->The runes carved deep into the stones of Midgard teach us thus:</li>
+			<!-- generic reinforcement -->
+			<li>asatruLessonReinforcement->May your deeds echo in the halls of Valhalla.</li>
+			<li>asatruLessonReinforcement->The Norns weave your destiny with threads of honor.</li>
+			<li>asatruLessonReinforcement->Stand firm, for the gods reward courage and resolve.</li>
+			<li>asatruLessonReinforcement->Hail, for your actions shall inspire skalds to song.</li>
+			<li>asatruLessonReinforcement->The hammer of Thor blesses those who uphold truth and strength.</li>
+			<li>asatruLessonReinforcement->The All-Father watches those who honor the old ways.</li>
+			<li>asatruLessonReinforcement->May you find victory in the sacred bonds of kinship.</li>
+			<li>lessonReinforcement->And so the tale will live on.</li>
+		</rulesStrings>
+	</rules>
+</IdeoStoryPatternDef>
+
+  
+</Defs>

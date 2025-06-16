@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThingDef ParentName="VFEM2_DraughtBase">
+		<defName>VFEM2_ClarityDraught</defName>
+		<label>clarity draught</label>
+		<description>A light blue liquid that’s sparkling with a subtle effervescence. When the user drinks it, it restores some of their psychic focus and enhances their psychic sensitivity, allowing for clearer mental processing and heightened awareness. However, this increased mental activity significantly raises the user's hunger rate, making them need to eat more often. Additionally, the relentless mental buzz from the draught leads to a noticeable drop in mood due to the overwhelming flow of thoughts.</description>
+		<graphicData>
+			<texPath>Things/Item/Draught/DraughtClarity</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>VFEM2_ClarityDraught</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>VFEM2_SingleBeerDrink</soundOnUsed>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectAddHediffWithSeverity">
+				<hediffDef>ToxicBuildup</hediffDef>
+				<severity>0.2</severity>
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectIncreasePsypower">
+				<amount>0.1</amount>
+				
+			</li>
+			<li Class="VFEMedieval.CompProperties_UseEffectGiveThought">
+				<thought>VFEM2_ClarityDraught</thought>
+				
+			</li>
+			
+		</comps>
+		<costList>
+			<VFEM2_AstragalusFlowers>2</VFEM2_AstragalusFlowers>
+			<PsychoidLeaves>2</PsychoidLeaves>
+		</costList>
+		<recipeMaker>
+			<workAmount>800</workAmount>
+			<researchPrerequisite>VFEM2_Alchemy</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+</Defs>

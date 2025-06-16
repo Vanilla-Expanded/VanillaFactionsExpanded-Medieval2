@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WeaponClassDef>
+    <defName>VFEM2_Medieval</defName>
+    <label>medieval</label>
+  </WeaponClassDef>
+
+</Defs>

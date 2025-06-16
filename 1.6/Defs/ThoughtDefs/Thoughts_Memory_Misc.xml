@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>VFEM2_StingMoodDebuff</defName>
+    <durationDays>2.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>Stung by bees</label>
+        <description>I was stung, and it hurt!</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+</Defs>

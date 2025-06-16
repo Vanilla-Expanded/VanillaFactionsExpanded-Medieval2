@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RulePackDef>
+    <defName>VFEM2_NamerFactionMedieval</defName>
+    <include>
+      <li>OutlanderPlaceNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=0.35)->[PlaceOutlander]</li>
+        <li>r_name->the [political_union_medieval] of [PlaceOutlander]</li>
+        <li>r_name->[PlaceOutlander] [political_union_medieval]</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>political_union_medieval->Words/Nouns/PoliticalUnions_Medieval</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>VFEM2_NamerSettlementMedieval</defName>
+    <include>
+      <li>OutlanderPlaceNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=4)->[PlaceOutlander] [medievalSettlementEnd]</li>
+        <li>r_name->[AnimalBadass]'s [medievalSettlementEnd]-on-the-[TerrainFeature]</li>
+        <li>r_name->[AnimalBadass]'s [medievalSettlementEnd]-by-the-[TerrainFeature]</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>medievalSettlementEnd->Words/Nouns/PlaceEnd_Medieval</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_NamerPersonMedievalUtility</defName>
+    <rulePack>
+      <rulesFiles>
+        <li>Medieval_First_Male->Names/Medieval_First_Male</li>
+        <li>Medieval_First_Female->Names/Medieval_First_Female</li>
+		<li>Medieval_Last->Names/Medieval_Last</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_NamerPersonMedieval</defName>
+	<include>
+      <li>VFEM2_NamerPersonMedievalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[Medieval_First_Male] [Medieval_Last]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>VFEM2_NamerPersonMedievalFemale</defName>
+	<include>
+      <li>VFEM2_NamerPersonMedievalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[Medieval_First_Female] [Medieval_Last]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Viking -->
+
+  <RulePackDef>
+    <defName>VFEM2_NamerFactionViking</defName>
+    <include>
+      <li>VFEM2_NamerPersonVikingUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->The [AnimalNordic] Clan</li>
+        <li>r_name->The [Color] [AnimalNordic] Clan</li>
+        <li>r_name->[NorseNames]'s Clan</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>AnimalNordic->Words/Nouns/AnimalsNordic</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>VFEM2_NamerSettlementViking</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[townname_wordgen]</li>
+
+        <li>townname_wordgen(p=2)->[SylE][SylE]</li>
+        <li>townname_wordgen(p=2)->[SylE][SylE][SylE]</li>
+        <li>townname_wordgen(p=2)->[SylE][townendevil]</li>
+        <li>townname_wordgen(p=2)->[SylE][SylE][townendevil]</li>
+        <li>townendevil->vast</li>
+        <li>townendevil->varg</li>
+        <li>townendevil->vix</li>
+        <li>townendevil->tor</li>
+        <li>townendevil->tear</li>
+        <li>townendevil->cut</li>
+        <li>townendevil->lop</li>
+        <li>townendevil->oze</li>
+        <li>townendevil->ozzle</li>
+        <li>townendevil->latch</li>
+        <li>townendevil->lock</li>
+        <li>townendevil->burn</li>
+        <li>townendevil->sear</li>
+        <li>townendevil->shank</li>
+        <li>townendevil->hurt</li>
+        <li>townendevil->vash</li>
+        <li>townendevil->warg</li>
+        <li>townendevil->wug</li>
+        <li>townendevil->thot</li>
+        <li>townendevil->thard</li>
+        <li>townendevil->thad</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>VFEM2_NamerPersonVikingUtility</defName>
+    <rulePack>
+      <rulesFiles>
+        <li>NorseNames->Words/Names/NorseNames</li>
+        <li>AnimalNordic->Words/Nouns/AnimalsNordic</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>VFEM2_NamerPersonViking</defName>
+    <include>
+      <li>VFEM2_NamerPersonVikingUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[NorseNames] [NorseNames]son</li>
+        <li>r_name->[NorseNames] [NorseNames]berg</li>
+        <li>r_name->[NorseNames] '[AnimalBadass]slayer' [NorseNames]son</li>
+        <li>r_name->[NorseNames] '[Color] [Animal]' [NorseNames]son</li>
+        <li>r_name->[NorseNames] [NorseNames]-son</li>
+        <li>r_name->[NorseNames] '[NorseNames]son' of [Animal] clan</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_LeaderTitleMaker_Kingdom</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+		<li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderNoun->king</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_LeaderTitleMaker_Clan</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+        <li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderNoun->jarl</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEM2_LeaderTitleMaker_MerchantGuild</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+		<li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
+
+        <li>cultureLeaderNoun->guildmaster</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

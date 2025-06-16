@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+ 
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_FocusDraught"]/stages/li[@Name="fading"]/statFactors</xpath>
+        <value>
+           
+				<MeditationFocusGain>0.5</MeditationFocusGain>
+			
+        </value>
+    </Operation>
+	
+	 <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_FocusDraught"]/stages/li[@Name="potent"]/statFactors</xpath>
+        <value>
+         
+				<MeditationFocusGain>1.25</MeditationFocusGain>
+			
+        </value>
+    </Operation>
+
+</Patch>

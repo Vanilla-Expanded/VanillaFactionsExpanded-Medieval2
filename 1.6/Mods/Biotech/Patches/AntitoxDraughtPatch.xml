@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+ 
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_AntitoxDraught"]/stages/li[@Name="fading"]/statOffsets</xpath>
+        <value>
+           
+				<ToxicEnvironmentResistance>0.2</ToxicEnvironmentResistance>
+	
+        </value>
+    </Operation>
+	
+	 <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="VFEM2_AntitoxDraught"]/stages/li[@Name="potent"]/statOffsets</xpath>
+        <value>
+            
+				<ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+			
+        </value>
+    </Operation>
+
+</Patch>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>VFEM2_ClarityDraught</defName>
+		<label>clarity draught</label>
+		<description>A draught is improving psychic sensitivity of the user, improving their meditation capabilities.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<PsychicSensitivity>0.1</PsychicSensitivity>
+				</statOffsets>
+				<statFactors>
+					<MeditationFocusGain>1.05</MeditationFocusGain>
+				</statFactors>
+			</li>
+			<li>
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<statOffsets>
+					<PsychicSensitivity>0.4</PsychicSensitivity>
+				</statOffsets>
+				<statFactors>
+					<MeditationFocusGain>1.2</MeditationFocusGain>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

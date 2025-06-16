@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <SitePartDef>
+        <defName>VFEM2_SiegeCampBase</defName>
+        <label>siege camp</label>
+        <description>A siege camp.</description>
+        <workerClass>VFEMedieval.SitePartWorker_Siege</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>MapIcons/SiegeCamp</expandingIconTexture>
+        <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+        <showFactionInInspectString>true</showFactionInInspectString>
+        <requiresFaction>true</requiresFaction>
+        <approachOrderString>Attack {0}</approachOrderString>
+        <approachingReportString>Attacking {0}</approachingReportString>
+        <arrivedLetter>Siege camp in this area.</arrivedLetter>
+        <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <minThreatPoints>100</minThreatPoints>
+        <tags>
+            <li>VFEM2_SiegeCamp</li>
+        </tags>
+        <modExtensions>
+            <li Class="KCSG.CustomGenOption">
+                <chooseFromSettlements>
+                    <li>VFEM2_SiegeCamp</li>
+                </chooseFromSettlements>
+                <preventBridgeable>true</preventBridgeable>
+                <symbolResolver>kcsg_roomsgenfromstructure</symbolResolver>
+            </li>
+        </modExtensions>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>VFEM2_SiegeCampGenStep</defName>
+        <linkWithSite>VFEM2_SiegeCampBase</linkWithSite>
+        <order>450</order>
+        <genStep Class="VFEMedieval.GenStep_SiegeCamp" />
+    </GenStepDef>
+</Defs>

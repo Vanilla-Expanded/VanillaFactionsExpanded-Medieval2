@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+  
+  <SoundDef>
+    <defName>VFEM2_Shot_Arbalest</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/Arbalest_Shot_01a</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>60~77</volumeRange>      
+        <pitchRange>0.6976015~0.7769372</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFEM2_Shot_Warbow</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Weapon/Warbow_Shot_01</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>60~77</volumeRange>      
+        <pitchRange>0.6976015~0.7769372</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFEM2_Shot_Arquebus</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Arquebus_Shot_01</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>0.9770592~1.114706</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFEM2_Shot_HandCannon</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/HandCannon_Shot_01</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>0.9770592~1.114706</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFEM2_Interact_MatchlockWeapon</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/MatchlockWeapon_Interact_01a</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~25</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

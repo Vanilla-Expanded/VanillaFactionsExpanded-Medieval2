@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>VFEM2_RoyalJellyDraught</defName>
+		<label>royal jelly draught</label>
+		<description>A draught is greatly improving the immunity gain speed of the user while also boosting their consciousness and movement speed.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.4</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+				
+			</li>
+			<li>
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<statOffsets>
+					<ImmunityGainSpeed>1</ImmunityGainSpeed>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.1</MoveSpeed>
+				</statFactors>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

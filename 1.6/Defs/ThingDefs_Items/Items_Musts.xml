@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>VFEM2_Must</defName>
+		<label>grape must</label>
+		<description>Un-fermented wine. This substance needs to ferment in a wine barrel before it becomes drinkable wine.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Must</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<statBases>
+			<DeteriorationRate>1.0</DeteriorationRate>
+			<MarketValue>2.5</MarketValue>
+			<Mass>0.8</Mass>
+			<Flammability>0.2</Flammability>
+			<MaxHitPoints>60</MaxHitPoints>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>5</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

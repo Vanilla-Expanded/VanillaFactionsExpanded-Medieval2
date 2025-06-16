@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>VFEM2_HemogenDraught</defName>
+		<label>hemogen draught</label>
+		<description>A draught is improving all traits and abilities of the hemogenic user, as well as replenishes the hemogen over time.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.4</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+			<li Class="VFEMedieval.HediffCompProperties_OffsetHemogen">
+				
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fading</label>
+				<minSeverity>0</minSeverity>
+				
+			</li>
+			<li>
+				<label>potent</label>
+				<minSeverity>0.65</minSeverity>
+				<painFactor>0.75</painFactor>
+				<statOffsets>
+					<PsychicSensitivity>0.1</PsychicSensitivity>
+					<MoveSpeed>0.1</MoveSpeed>
+				</statOffsets>
+				<statFactors>
+					<ImmunityGainSpeed>1.1</ImmunityGainSpeed>
+					<InjuryHealingFactor>1.1</InjuryHealingFactor>
+					<MeleeDamageFactor>1.1</MeleeDamageFactor>
+					<IncomingDamageFactor>0.75</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VFEM2_HemogenDraughtDumbHediff</defName>
+		<label>hemogen draught</label>
+		<description>A draught is improving all traits and abilities of the hemogenic user, as well as replenishes the hemogen over time.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1000</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				
+				
+			</li>
+			
+		</stages>
+	</HediffDef>
+</Defs>

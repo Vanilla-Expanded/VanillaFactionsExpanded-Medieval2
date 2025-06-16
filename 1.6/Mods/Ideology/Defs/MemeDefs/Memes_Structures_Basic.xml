@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<MemeDef>
+		<defName>VFEM2_Structure_Norse</defName>
+		<label>norse</label>
+		<description>This ideoligion is a descendant of Germanic paganism, also known as Asatru. It may have very different precepts than those of thousands of years ago, but its symbols are similar.</description>
+		<category>Structure</category>
+		<iconPath>VikingStyle/Norse</iconPath>
+		<impact>0</impact>
+		<worshipRoomLabel>great hall</worshipRoomLabel>
+		<randomizationSelectionWeightFactor>3</randomizationSelectionWeightFactor>
+		<deityCount>5</deityCount>
+		<generalRules>
+			<rulesStrings>
+				<li>memeAdjective->norse</li>
+				<li>memeAdjective->heathen</li>
+				<li>memeAdjective->pagan</li>
+				<li>memeAdjective->ancestral</li>
+				<li>memeAdjective->traditional</li>
+				<li>memeAdjective->old-faith</li>
+				<li>memeLeaderNoun->godi</li>
+				<li>memeLeaderNoun->volva</li>
+				<li>memeLeaderAdjective->sacred</li>
+				<li>memeLeaderAdjective->runic</li>
+				<li>memeMoralist->skald</li>
+				<li>memeMoralist->seer</li>
+				<li>memeMoralist->wise one</li>
+				<li>memeMoralist->sage</li>
+				<li>memeMoralist->keeper of lore</li>
+				<li>memeMoralist->rune master</li>
+				<li>memeMoralist->spiritual guide</li>
+			</rulesStrings>
+		</generalRules>
+		<descriptionMaker>
+			<patterns>
+				<li>
+					<def>VFEM2_Structure_Norse_Description</def>
+				</li>
+			</patterns>
+			<constants>
+				<li>
+					<key>structure_norse</key>
+					<value>true</value>
+				</li>
+			</constants>
+		</descriptionMaker>
+		<symbolPacks>
+			<li>
+				<theme>vikings</theme>
+				<adjective>norse</adjective>
+				<member>viking</member>
+			</li>
+		</symbolPacks>
+		<thingStyleCategories>
+			<li>
+				<category>VFEM2_Viking</category>
+				<priority>4</priority>
+			</li>
+		</thingStyleCategories>
+		<fixedDeityNameTypes>
+			<li>
+				<name>Odin</name>
+				<type>Allfather and God of Wisdom</type>
+			</li>
+			<li>
+				<name>Thor</name>
+				<type>God of Thunder and Strength</type>
+			</li>
+			<li>
+				<name>Frigg</name>
+				<type>Goddess of Marriage and Prophecy</type>
+			</li>
+			<li>
+				<name>Loki</name>
+				<type>God of Mischief and Trickery</type>
+			</li>
+			<li>
+				<name>Baldr</name>
+				<type>God of Beauty and Light</type>
+			</li>
+			<li>
+				<name>Tyr</name>
+				<type>God of War and Justice</type>
+			</li>
+			<li>
+				<name>Freya</name>
+				<type>Goddess of Love and Fertility</type>
+			</li>
+			<li>
+				<name>Freyr</name>
+				<type>God of Fertility and Peace</type>
+			</li>
+			<li>
+				<name>Njord</name>
+				<type>God of the Sea and Wealth</type>
+			</li>
+			<li>
+				<name>Skadi</name>
+				<type>Goddess of Winter and Hunting</type>
+			</li>
+			<li>
+				<name>Heimdall</name>
+				<type>Guardian of the Bifrost</type>
+			</li>
+			<li>
+				<name>Hel</name>
+				<type>Goddess of the Underworld</type>
+			</li>
+			<li>
+				<name>Fenrir</name>
+				<type>Wolf of Chaos</type>
+			</li>
+			<li>
+				<name>Jörmungandr</name>
+				<type>World Serpent</type>
+			</li>
+			<li>
+				<name>Idunn</name>
+				<type>Goddess of Eternal Youth</type>
+			</li>
+			<li>
+				<name>Bragi</name>
+				<type>God of Poetry and Eloquence</type>
+			</li>
+			<li>
+				<name>Sigyn</name>
+				<type>Goddess of Fidelity</type>
+			</li>
+			<li>
+				<name>Vidar</name>
+				<type>God of Vengeance and Silence</type>
+			</li>
+			<li>
+				<name>Vali</name>
+				<type>God of Revenge</type>
+			</li>
+			<li>
+				<name>Magni</name>
+				<type>God of Strength</type>
+			</li>
+			<li>
+				<name>Modi</name>
+				<type>God of Courage</type>
+			</li>
+			<li>
+				<name>Surt</name>
+				<type>Fire Giant and Harbinger of Ragnarok</type>
+			</li>
+			<li>
+				<name>Ymir</name>
+				<type>Primordial Giant</type>
+			</li>
+			<li>
+				<name>Mimir</name>
+				<type>Keeper of Wisdom</type>
+			</li>
+			<li>
+				<name>Ran</name>
+				<type>Goddess of the Sea</type>
+			</li>
+			<li>
+				<name>Aegir</name>
+				<type>God of the Ocean</type>
+			</li>
+			<li>
+				<name>Nidhogg</name>
+				<type>Dragon of Yggdrasil's Roots</type>
+			</li>
+			<li>
+				<name>Gullveig</name>
+				<type>Goddess of Sorcery</type>
+			</li>
+			<li>
+				<name>Kvasir</name>
+				<type>God of Inspiration</type>
+			</li>
+		</fixedDeityNameTypes>
+	</MemeDef>
+</Defs>

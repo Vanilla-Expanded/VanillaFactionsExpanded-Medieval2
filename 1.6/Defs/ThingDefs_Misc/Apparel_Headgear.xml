@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
+    <defName>VFEM2_Apparel_PlateHelmetHeavy</defName>
+    <label>heavy plate helmet</label>
+    <description>A bulky medieval helmet that provides full-head coverage. Offers a considerable amount of protection but restricts the wearer's field of vision.</description>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>PlateArmor</researchPrerequisite>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/HeavyPlateHelmet/HeavyPlateHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>3.5</Mass>
+      <StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>-8</ShootingAccuracyPawn>
+      <MeleeHitChance>-2</MeleeHitChance>
+    </equippedStatOffsets>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>70</costStuffCount>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyPlateHelmet/HeavyPlateHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>MedievalArmorElite</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <modExtensions>
+      <li Class="VFEMedieval.ApparelExtension">
+        <showOpenWhenNotShowingWeapons>True</showOpenWhenNotShowingWeapons>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_JesterHat</defName>
+    <label>jester hat</label>
+    <description>A hat worthy of a jester. Each half is different from the other one in color.</description>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/JesterHat/JesterHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>1800</WorkToMake>
+      <Mass>0.14</Mass>
+      <StuffEffectMultiplierArmor>0.15</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.10</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.30</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <equippedStatOffsets>
+      <SocialImpact>0.15</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.3</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/JesterHat/JesterHat</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>Jester</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.54,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.9,0.6,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.9,0.42,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_DameHat</defName>
+    <label>dame hat</label>
+    <description>A beautiful long cone hat for a dame.</description>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/DameHat/DameHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>35</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>1800</WorkToMake>
+      <Mass>0.14</Mass>
+      <StuffEffectMultiplierArmor>0.12</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.10</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.20</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <equippedStatOffsets>
+      <SocialImpact>0.15</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/DameHat/DameHat</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>MedievalApparelNoble</li>
+        <li>Dame</li>
+        <li>Aristocrat</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <gender>Female</gender>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.54,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.9,0.6,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.9,0.42,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_KingsCrown</defName>
+    <label>king's crown</label>
+    <description>A beautiful metal crown. The wearer becomes very influential, but at the same time they will refuse to do any work.</description>
+    <recipeMaker>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/KingsCrown/KingsCrown</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costList>
+      <Gold>2</Gold>
+    </costList>
+    <costStuffCount>50</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>1.0</Mass>
+      <EquipDelay>0.8</EquipDelay>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Insulation_Heat>4</Insulation_Heat>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <equippedStatOffsets>
+      <NegotiationAbility>0.25</NegotiationAbility>
+      <SocialImpact>0.25</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+      <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">0.083</PsychicEntropyRecoveryRate>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/KingsCrown/KingsCrown</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>King</li>
+        <li>RoyalTier6</li>
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+      <useWornGraphicMask>true</useWornGraphicMask>
+    </apparel>
+    <modExtensions>
+      <li Class="VanillaApparelExpanded.ApparelExtension">
+        <workDisables>
+          <li>ManualDumb</li>
+          <li>ManualSkilled</li>
+          <li>Violent</li>
+          <li>Caring</li>
+          <li>Commoner</li>
+          <li>Intellectual</li>
+          <li>Animals</li>
+          <li>Artistic</li>
+          <li>Crafting</li>
+          <li>Cooking</li>
+          <li>Firefighting</li>
+          <li>Cleaning</li>
+          <li>Hauling</li>
+          <li>PlantWork</li>
+          <li>Mining</li>
+          <li>Hunting</li>
+          <li>Constructing</li>
+          <li>Shooting</li>
+        </workDisables>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_PlagueMask</defName>
+    <label>plague mask</label>
+    <description>A mask with a long ‘beak’ filled with herbal medicine that keeps infected pawns at a distance.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlagueMask/PlagueMask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costList>
+      <MedicineHerbal>5</MedicineHerbal>
+      <WoodLog>25</WoodLog>
+    </costList>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <EquipDelay>0.8</EquipDelay>
+      <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>6</Insulation_Heat>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <equippedStatOffsets>
+      <ToxicResistance>0.2</ToxicResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">+0.1</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <tickerType>Normal</tickerType>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+    </recipeMaker>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlagueMask/PlagueMask</wornGraphicPath>
+
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>MedievalApparelPlague</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    <comps>
+      <li Class="VEF.Apparels.CompProperties_ApparelHediffs">
+        <hediffDefnames>
+          <li>VFEM2_PlagueMask</li>
+        </hediffDefnames>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!--====================================== Vikings ======================================-->
+
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
+    <defName>VFEM2_Apparel_HeavyLeatherHelmet</defName>
+    <label>heavy leather helmet</label>
+    <description>A strong medieval helmet that provides full-head coverage. While it offers fantastic protection, one's vision is greatly obscured, thus it is only recommended for front line infantry, particularly those foregoing shields.</description>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite Inherit='False'>PlateArmor</researchPrerequisite>
+      <recipeUsers Inherit='False'>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherHelmet/HeavyLeatherHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>3.5</Mass>
+      <StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>2.0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>-8</ShootingAccuracyPawn>
+      <MeleeHitChance>-2</MeleeHitChance>
+    </equippedStatOffsets>
+    <stuffCategories>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>70</costStuffCount>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+        <li>Neck</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyLeatherHelmet/HeavyLeatherHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags Inherit="False">
+        <li>Apparel_VikingGuardian</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
+    <defName>VFEM2_Apparel_LeatherHelmet</defName>
+    <label>leather helmet</label>
+    <description>A simple leather helmet designed to not block ones communication during combat. Often worn by front line, shield-wielding infantry to soak damage.</description>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <recipeUsers Inherit='False'>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LeatherHelmet/LeatherHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <statBases>
+      <WorkToMake>3200</WorkToMake>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2</Mass>
+      <StuffEffectMultiplierArmor>0.35</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>1.5</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>2.5</EquipDelay>
+    </statBases>
+    <generateCommonality>0.4</generateCommonality>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
+    </equippedStatOffsets>
+    <stuffCategories>
+      <li>Leathery</li>
+    </stuffCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LeatherHelmet/LeatherHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags Inherit="False">
+        <li>Apparel_VikingRavager</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <!--================= New =================-->
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_PaddedHelmet</defName>
+    <label>padded helmet</label>
+    <description>A simple leather helmet designed to not block one's communication during combat. Often worn by front line, shield-wielding infantry to soak damage.</description>
+    <possessionCount>1</possessionCount>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>103</displayPriority> <!-- should be 253 if we want it to go after padded armour -->
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PaddedHelmet/PaddedHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>35</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>0.15</Mass>
+      <StuffEffectMultiplierArmor>0.35</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <!--<equippedStatOffsets>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+    </equippedStatOffsets>-->
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PaddedHelmet/PaddedHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>MedievalMilitary</li>
+        <li>MedievalLevy</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.4,0.3,0.15)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.6,0.45,0.18)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.8,0.6,0.23)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <tradeTags>
+      <li>Clothing</li>
+      <li>Armor</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_Chaperon</defName>
+    <label>chaperon</label>
+    <description>A stylish and versatile hood with a wrapped tail, favored by diplomats and merchants. It lends an air of authority, subtly improving negotiation skills.</description>
+    <possessionCount>1</possessionCount>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>101</displayPriority>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Chaperon/Chaperon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>2600</WorkToMake>
+      <Mass>0.16</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.45</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <NegotiationAbility>0.05</NegotiationAbility>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Chaperon/Chaperon</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>VFEM2_Trader</li>
+        <li>Aristocrat</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.54,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.9,0.6,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.9,0.42,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <tradeTags>
+      <li>Clothing</li>
+    </tradeTags>
+  </ThingDef>
+
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>VFEM2_Apparel_Cap</defName>
+    <label>cap</label>
+    <description>A sleek, feathered cap worn by skilled archers and woodland hunters. Its lightweight design keeps vision clear and focus sharp, making it easier to land precise shots.</description>
+    <possessionCount>1</possessionCount>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>102</displayPriority>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Cap/Cap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>25</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <WorkToMake>1800</WorkToMake>
+      <Mass>0.12</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.5</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Cap/Cap</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>VFEM2_Cap</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.54,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.9,0.6,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.9,0.42,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <tradeTags>
+      <li>Clothing</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

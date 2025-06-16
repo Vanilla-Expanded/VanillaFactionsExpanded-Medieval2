@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>VFEM2_TakeHoneyOutOfApiary</defName>
+    <driverClass>VFEMedieval.JobDriver_TakeHoneyOutOfApiary</driverClass>
+    <reportString>taking honey out of TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>VFEM2_TendToApiary</defName>
+    <driverClass>VFEMedieval.JobDriver_TendToApiary</driverClass>
+    <reportString>tending to TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+   <JobDef>
+    <defName>VFEM_IgniteWithTorches</defName>
+    <driverClass>VFEMedieval.JobDriver_IgniteWithTorches</driverClass>
+    <reportString>igniting TargetA with torches.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

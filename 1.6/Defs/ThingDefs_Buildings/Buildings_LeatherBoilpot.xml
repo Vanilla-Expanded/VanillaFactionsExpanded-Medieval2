@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM2_LeatherBoilpot</defName>
+		<label>leather boilpot</label>
+		<description>A wood-fueled metal pot used to boil patchleather. Consumes wood when working.</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Empty</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.75, 0.35, 0.33)</volume>
+			</shadowData>
+			<drawSize>2</drawSize>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>42</pathCost>
+		<rotatable>false</rotatable>
+		<uiIconScale>0.75</uiIconScale>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<statBases>
+			<WorkToBuild>1200</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<MarketValue>74</MarketValue>
+		</statBases>
+		<costList>
+			<WoodLog>30</WoodLog>
+			<Steel>30</Steel>
+		</costList>
+		<comps>
+			<li Class="PipeSystem.CompProperties_AdvancedResourceProcessor">
+				<notWorkingKey>VFEM2_BoilPotNotWorking</notWorkingKey>
+				<processes>
+					<li>VFEM2_PatchLeatherToHardleather</li>
+				</processes>
+				<progressBarOffset>(0,0,-0.75)</progressBarOffset>
+				<inProgressTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Working</inProgressTexture>
+				<finishedTexture>Things/Building/Production/LeatherBoilpot/LeatherBoilpot_Finished</finishedTexture>
+				<hideSettings>true</hideSettings>
+			</li>
+			<li Class="PipeSystem.CompProperties_GlowerOnProcess">
+				<glowRadius>5</glowRadius>
+				<glowColor>(73,123,138,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>80.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>PipeSystem.ITab_Processor</li>
+		</inspectorTabs>
+		<tickerType>Rare</tickerType>
+	
+		<designationCategory>Production</designationCategory>
+		<constructEffect>ConstructWood</constructEffect>
+		<building>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<destroySound>BuildingDestroyed_Wood_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+			<li>ComplexClothing</li>
+		</researchPrerequisites>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<resourcesFractionWhenDeconstructed>0.75</resourcesFractionWhenDeconstructed>
+	</ThingDef>
+</Defs>

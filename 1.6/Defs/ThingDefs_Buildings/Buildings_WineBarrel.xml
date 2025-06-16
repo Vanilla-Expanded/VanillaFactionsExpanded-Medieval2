@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM2_WineBarrel</defName>
+		<label>wine barrel</label>
+		<description>A barrel for fermenting raw must into wine.</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Production/WineBarrel/WineBarrel</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.75, 0.35, 0.33)</volume>
+			</shadowData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>60</pathCost>
+		<inspectorTabs>
+			<li>PipeSystem.ITab_Processor</li>
+		</inspectorTabs>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<statBases>
+			<WorkToBuild>600</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<costList>
+			<Steel>10</Steel>
+			<WoodLog>30</WoodLog>
+		</costList>
+		<comps>
+			<li Class="PipeSystem.CompProperties_AdvancedResourceProcessor">
+				<notWorkingKey>VFEM2_WineBarrelNotWorking</notWorkingKey>
+				<processes>
+					<li>VFEM2_GrapeToAwfulWine</li>
+					<li>VFEM2_GrapeToPoorWine</li>
+					<li>VFEM2_GrapeToNormalWine</li>
+					<li>VFEM2_GrapeToGoodWine</li>
+					<li>VFEM2_GrapeToExcellentWine</li>
+					<li>VFEM2_GrapeToMasterworkWine</li>
+					<li>VFEM2_GrapeToLegendaryWine</li>
+				</processes>
+				<progressBarOffset>(0,0,-0.5)</progressBarOffset>
+				<hideSettings>true</hideSettings>
+			</li>
+		</comps>
+		<tickerType>Rare</tickerType>
+		<rotatable>true</rotatable>
+		<designationCategory>Production</designationCategory>
+		<constructEffect>ConstructWood</constructEffect>
+		<researchPrerequisites>
+			<li>Brewing</li>
+			<li>VFEM2_Wine</li>
+		</researchPrerequisites>
+	</ThingDef>
+</Defs>

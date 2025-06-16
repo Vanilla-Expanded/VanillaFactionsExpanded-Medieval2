@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<JoyGiverDef>
+		<defName>VFEM2_Play_TrainingDummy</defName>
+		<giverClass>VFEMedieval.JoyGiver_PlayTrainingDummy</giverClass>
+		<baseChance>4</baseChance>
+		<thingDefs>
+			<li>VFEM2_TrainingDummy</li>
+		</thingDefs>
+		<desireSit>false</desireSit>
+		<jobDef>VFEM2_Play_TrainingDummy</jobDef>
+		<joyKind>Gaming_Dexterity</joyKind>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
+	<JoyGiverDef>
+		<defName>VFEM2_Play_Archery</defName>
+		<giverClass>JoyGiver_WatchBuilding</giverClass>
+		<baseChance>2.5</baseChance>
+		<thingDefs>
+			<li>VFEM2_ArcheryTarget</li>
+		</thingDefs>
+		<jobDef>VFEM2_Play_Archery</jobDef>
+		<desireSit>false</desireSit>
+		<joyKind>Gaming_Dexterity</joyKind>
+		<requiredCapacities>
+			<li>Sight</li>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
+</Defs>

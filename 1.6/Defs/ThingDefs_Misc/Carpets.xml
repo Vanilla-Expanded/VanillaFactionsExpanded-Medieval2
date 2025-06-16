@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="VFEM2_BuildingFloorBase" ParentName="BuildingBase">
+    <altitudeLayer>FloorCoverings</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <designationCategory>Floors</designationCategory>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <blocksAltitudes>
+      <li>FloorCoverings</li>
+    </blocksAltitudes>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+  </ThingDef>
+
+  <ThingDef Name="HeraldicRugBase" Abstract="True" ParentName="VFEM2_BuildingFloorBase">
+    <thingClass>VEF.Graphics.DynamicGraphicBuilding</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
+    <comps>
+      <li Class="VFEMedieval.CompProperties_EditHeraldic"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="HeraldicRugBase">
+    <defName>VFEM2_HeraldicRugNarrow</defName>
+    <label>heraldic rug (narrow)</label>
+    <description>A narrow decorative rug featuring a bold heraldic design, perfect for displaying allegiance or family pride in any room.</description>
+    <statBases>
+      <Flammability>0.32</Flammability>
+      <Beauty>15</Beauty>
+      <MarketValue>180</MarketValue>
+      <WorkToBuild>1200</WorkToBuild>
+      <Mass>75</Mass>
+    </statBases>
+    <size>(1,3)</size>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Floors/LongHeraldicRug</texPath>
+      <drawSize>(1,3)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <costList>
+      <Cloth>100</Cloth>
+    </costList>
+    <researchPrerequisites>
+      <li>VFEM2_Heraldry</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="VEF.Graphics.DynamicGraphicProps">
+        <dataList>
+          <li>
+            <texPath>Things/Building/Floors/LongHeraldicRug</texPath>
+            <shaderType>CutoutComplex</shaderType>
+            <taggedColorA>HeraldryColorA</taggedColorA>
+            <taggedColorB>HeraldryColorB</taggedColorB>
+            <taggedMaskPath>HeraldryPattern+/LongHeraldicRug</taggedMaskPath>
+          </li>
+          <li>
+            <taggedTexPath>HeraldrySymbol</taggedTexPath>
+            <taggedColorA>HeraldrySymbolColor</taggedColorA>
+            <shaderType>Cutout</shaderType>
+            <drawSizeAbsolute>(0.8,0.8)</drawSizeAbsolute>
+          </li>
+        </dataList>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="HeraldicRugBase">
+    <defName>VFEM2_HeraldicRugBroad</defName>
+    <label>heraldic rug (broad)</label>
+    <description>A large decorative rug featuring a bold heraldic design, perfect for displaying allegiance or family pride in any room.</description>
+    <statBases>
+      <Flammability>0.32</Flammability>
+      <Beauty>30</Beauty>
+      <WorkToBuild>2000</WorkToBuild>
+      <MarketValue>290</MarketValue>
+      <Mass>150</Mass>
+    </statBases>
+    <size>(4,4)</size>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Floors/LargeHeraldicRug</texPath>
+      <drawSize>(4,4)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <costList>
+      <Cloth>200</Cloth>
+    </costList>
+    <researchPrerequisites>
+      <li>VFEM2_Heraldry</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="VEF.Graphics.DynamicGraphicProps">
+        <dataList>
+          <li>
+            <texPath>Things/Building/Floors/LargeHeraldicRug</texPath>
+            <shaderType>CutoutComplex</shaderType>
+            <taggedColorA>HeraldryColorA</taggedColorA>
+            <taggedColorB>HeraldryColorB</taggedColorB>
+            <taggedMaskPath>HeraldryPattern+/LargeHeraldicRug</taggedMaskPath>
+          </li>
+          <li>
+            <taggedTexPath>HeraldrySymbol</taggedTexPath>
+            <taggedColorA>HeraldrySymbolColor</taggedColorA>
+            <shaderType>Cutout</shaderType>
+            <drawSizeAbsolute>(3,3)</drawSizeAbsolute>
+          </li>
+        </dataList>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="HeraldicRugBase">
+    <defName>VFEM2_HeraldicRugGrand</defName>
+    <label>heraldic rug (grand)</label>
+    <description>A massive decorative rug featuring a bold heraldic design, perfect for displaying allegiance or family pride in any room.</description>
+    <statBases>
+      <Flammability>0.32</Flammability>
+      <Beauty>45</Beauty>
+      <MarketValue>360</MarketValue>
+      <WorkToBuild>3400</WorkToBuild>
+      <Mass>200</Mass>
+    </statBases>
+    <size>(4,6)</size>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Floors/LongHeraldicRug</texPath>
+      <drawSize>(4,6)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <costList>
+      <Cloth>320</Cloth>
+    </costList>
+    <researchPrerequisites>
+      <li>VFEM2_Heraldry</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="VEF.Graphics.DynamicGraphicProps">
+        <dataList>
+          <li>
+            <texPath>Things/Building/Floors/LongHeraldicRug</texPath>
+            <shaderType>CutoutComplex</shaderType>
+            <taggedColorA>HeraldryColorA</taggedColorA>
+            <taggedColorB>HeraldryColorB</taggedColorB>
+            <taggedMaskPath>HeraldryPattern+/GrandHeraldicRug</taggedMaskPath>
+          </li>
+          <li>
+            <taggedTexPath>HeraldrySymbol</taggedTexPath>
+            <taggedColorA>HeraldrySymbolColor</taggedColorA>
+            <shaderType>Cutout</shaderType>
+            <drawSizeAbsolute>(3,3)</drawSizeAbsolute>
+          </li>
+        </dataList>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

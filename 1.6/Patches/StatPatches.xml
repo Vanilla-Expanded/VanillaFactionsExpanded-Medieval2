@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<success>Always</success>
+		<xpath>/Defs/StatDef[defName = "Flammability"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/StatDef[defName = "Flammability"]</xpath>
+			<value>
+				<parts>
+					<li Class="VFEMedieval.StatPart_Flammability"/>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+		<xpath>/Defs/StatDef[defName = "Flammability"]/parts</xpath>
+			<value>
+				<li Class="VFEMedieval.StatPart_Flammability"/>
+			</value>
+		</match>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEM2_Turret_WallMountedArbalest</defName>
+    <label>wall-mounted arbalest</label>
+    <description>A stationary heavy arbalest mounted on a low castle wall to grant cover. While reload speed leaves a lot to be desired, arbalest has an extremely long range, provided there is line of sight on the target.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.5,0.35,0.4)</volume>
+        <offset>(0,0,-0.05)</offset>
+      </shadowData>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <uiIconPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_MenuIcon</uiIconPath>
+    <uiIconScale>0.95</uiIconScale>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <minifiedDef inherit="False" />
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <Mass>30</Mass>
+      <WorkToBuild>2500</WorkToBuild>
+      <Beauty>-10</Beauty>
+      <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Arbalest bolts loaded</fuelLabel>
+        <fuelGizmoLabel>Arbalest bolts</fuelGizmoLabel>
+        <showFuelGizmo>true</showFuelGizmo>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelConsumptionRate>1</fuelConsumptionRate>
+        <fuelCapacity>30</fuelCapacity>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>1</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs reloading</outOfFuelMessage>
+        <fuelIconPath>Things/Item/Resource/WoodLog</fuelIconPath>
+        <initialFuelPercent>1</initialFuelPercent>
+      </li>
+    </comps>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <costList>
+      <WoodLog>50</WoodLog>
+      <Steel>30</Steel>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>VFEM2_Gun_ArbalestTurret</turretGunDef>
+      <turretBurstCooldownTime>4.7</turretBurstCooldownTime>
+      <turretBurstWarmupTime>1.2</turretBurstWarmupTime>
+      <turretTopDrawSize>2</turretTopDrawSize>
+      <turretTopOffset>(0, 0.05)</turretTopOffset>
+    </building>
+    <repairEffect>ConstructDirt</repairEffect>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Greatbow</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowTurretRadius</li>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>VFEM2_Bolt_ArbalestTurret</defName>
+    <label>arbalest bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/ArbalestBolt/ArbalestBolt_Projectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <stoppingPower>2</stoppingPower>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>56</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>VFEM2_Gun_ArbalestTurret</defName>
+    <label>arbalest</label>
+    <description>A stationary heavy arbalest mounted on a low castle wall to grant cover. While reload speed leaves a lot to be desired, arbalest has an extremely long range, provided there is line of sight on the target.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.65</AccuracyLong>
+      <RangedWeapon_Cooldown>4.7</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="false">
+      <li>ArtilleryMedieval</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bolt_ArbalestTurret</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <minRange>2.9</minRange>
+        <range>42.9</range>
+        <soundCast>VFEM2_Shot_Arbalest</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEM2_Turret_WallMountedArquebus</defName>
+    <label>wall-mounted arquebus</label>
+    <description>A stationary arquebus mounted on a low castle wall to grant cover. Because of the added stability, the wall-mounted arquebus can fire much further than normal. The lead balls lose velocity and damage with distance, and are extremely ineffective against armor. Due to the chempowder reaction when firing the arquebus, plumes of blindsmoke are ejected from the barrel.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.5,0.35,0.4)</volume>
+        <offset>(0,0,-0.05)</offset>
+      </shadowData>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <uiIconPath>Things/Building/Security/ArquebusTurret/ArquebusTurret_MenuIcon</uiIconPath>
+    <uiIconScale>0.95</uiIconScale>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <minifiedDef inherit="False" />
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <Mass>30</Mass>
+      <WorkToBuild>3250</WorkToBuild>
+      <Beauty>-10</Beauty>
+      <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <showFuelGizmo>true</showFuelGizmo>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelConsumptionRate>1</fuelConsumptionRate>
+        <fuelCapacity>60</fuelCapacity>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>0.5</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+        <initialFuelPercent>1</initialFuelPercent>
+      </li>
+    </comps>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <costList>
+      <WoodLog>90</WoodLog>
+      <Steel>80</Steel>
+      <Chemfuel>10</Chemfuel>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>VFEM2_Gun_ArquebusTurret</turretGunDef>
+      <turretBurstCooldownTime>4.0</turretBurstCooldownTime>
+      <turretBurstWarmupTime>2.2</turretBurstWarmupTime>
+      <turretTopDrawSize>2</turretTopDrawSize>
+      <turretTopOffset>(0, 0.05)</turretTopOffset>
+    </building>
+    <repairEffect>ConstructDirt</repairEffect>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>VFEM2_Matchlocks</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>VFEMedieval.PlaceWorker_ShowTurretRadius</li>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>VFEM2_Gun_ArquebusTurret</defName>
+    <label>arquebus</label>
+    <description>A stationary arquebus mounted on a low castle wall to grant cover. Because of the added stability, the wall-mounted arquebus can fire much further than normal. The lead balls lose velocity and damage with distance, and are extremely ineffective against armor. Due to the chempowder reaction when firing the arquebus, plumes of blindsmoke are ejected from the barrel.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/ArquebusTurret/ArquebusTurret_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <soundInteract>VFEM2_Interact_MatchlockWeapon</soundInteract>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.65</AccuracyLong>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>48</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="false">
+      <li>ArtilleryMedieval</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bullet_Arquebus</defaultProjectile>
+        <warmupTime>2.2</warmupTime>
+        <minRange>1.5</minRange>
+        <range>40.9</range>
+        <soundCast>VFEM2_Shot_Arquebus</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>
