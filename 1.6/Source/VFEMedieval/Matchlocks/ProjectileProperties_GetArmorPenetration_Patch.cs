@@ -8,7 +8,7 @@ using Verse;
 
 namespace VFEMedieval
 {
-    [HarmonyPatch(typeof(ProjectileProperties), "GetArmorPenetration", new Type[] { typeof(float), typeof(StringBuilder) })]
+    [HarmonyPatch(typeof(ProjectileProperties), "GetArmorPenetration", typeof(Thing), typeof(StringBuilder))]
     public static class ProjectileProperties_GetArmorPenetration_Patch
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)

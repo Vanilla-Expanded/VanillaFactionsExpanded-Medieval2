@@ -36,7 +36,6 @@
 		</statBases>
 		<building>
 			<paintable>true</paintable>
-			<soundAmbient>VFEM2_Apiary_Ambience</soundAmbient>
 		</building>
 		<stuffCategories>
 			<li>Woody</li>
@@ -50,7 +49,11 @@
 		<researchPrerequisites>
 			<li>VFEM2_Beekeeping</li>
 		</researchPrerequisites>
-	
+		<comps>
+			<li Class="CompProperties_AmbientSound">
+				<sound>VFEM2_Apiary_Ambience</sound>
+			</li>
+		</comps>
 		<placeWorkers>
 			<li>VFEMedieval.Placeworker_Apiary</li>
 		</placeWorkers>

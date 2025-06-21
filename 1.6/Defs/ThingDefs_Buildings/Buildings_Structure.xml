@@ -42,7 +42,7 @@
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
@@ -140,7 +140,7 @@
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
@@ -239,7 +239,7 @@
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>1.0</fillPercent>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
@@ -333,7 +333,7 @@
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
@@ -430,7 +430,7 @@
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>0.55</fillPercent>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
@@ -517,7 +517,7 @@
     <fillPercent>0.6</fillPercent>
 	<pathCost>42</pathCost>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
@@ -613,7 +613,7 @@
     <fillPercent>0</fillPercent>
 	<pathCost>5</pathCost>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+   <drawStyleCategory>Walls</drawStyleCategory>
     <tickerType>Rare</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>

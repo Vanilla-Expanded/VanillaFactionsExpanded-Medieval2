@@ -16,7 +16,7 @@
     </modExtensions>
   </ScenPartDef>
 
-  <ScenarioDef>
+  <ScenarioDef ParentName="ScenarioBase">
     <defName>VFEM2_NewKingdom</defName>
     <label>New Kingdom</label>
     <description>Oppression breeds defiance. For years, your village toiled under the weight of crushing taxes and hunger while the lord’s knights took everything: grain, livestock, even your last scraps of dignity. When they seized your final stores of food, desperation turned to rage.

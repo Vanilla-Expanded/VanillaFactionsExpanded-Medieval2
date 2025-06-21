@@ -112,7 +112,7 @@
     </equippedStatOffsets>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
     <modExtensions>
-      <li Class="VanillaApparelExpanded.ApparelExtension">
+      <li Class="VEF.Apparels.ApparelExtension">
         <skillGainModifier>0</skillGainModifier>
       </li>
     </modExtensions>
@@ -174,7 +174,7 @@
     </equippedStatOffsets>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
     <modExtensions>
-      <li Class="VanillaApparelExpanded.ApparelExtension">
+      <li Class="VEF.Apparels.ApparelExtension">
         <workDisables>
           <li>ManualDumb</li>
         </workDisables>

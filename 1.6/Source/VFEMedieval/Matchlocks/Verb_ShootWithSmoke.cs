@@ -48,7 +48,7 @@ namespace VFEMedieval
 
         public static void ThrowFlintLockSmoke(Vector3 loc, Map map, float size)
         {
-            MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(VFEM_DefOf.Grimworld_FlintlockSmoke, null);
+            MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(VFEM_DefOf.VEF_FlintlockSmoke, null);
             moteThrown.Scale = Rand.Range(1.5f, 2.5f) * size;
             moteThrown.rotationRate = Rand.Range(-30f, 30f);
             moteThrown.exactPosition = loc;

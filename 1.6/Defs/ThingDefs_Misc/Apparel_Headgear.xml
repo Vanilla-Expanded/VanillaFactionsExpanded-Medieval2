@@ -262,7 +262,7 @@
       <useWornGraphicMask>true</useWornGraphicMask>
     </apparel>
     <modExtensions>
-      <li Class="VanillaApparelExpanded.ApparelExtension">
+      <li Class="VEF.Apparels.ApparelExtension">
         <workDisables>
           <li>ManualDumb</li>
           <li>ManualSkilled</li>

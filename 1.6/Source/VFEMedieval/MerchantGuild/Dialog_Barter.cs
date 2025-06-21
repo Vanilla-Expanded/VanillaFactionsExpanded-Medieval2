@@ -353,7 +353,7 @@ namespace VFEMedieval
                         if (actuallyTraded)
                         {
                             SoundDefOf.ExecuteTrade.PlayOneShotOnCamera();
-                            TradeSession.playerNegotiator.GetCaravan()?.RecacheImmobilizedNow();
+                            TradeSession.playerNegotiator.GetCaravan()?.RecacheInventory();
                             Close(doCloseSound: false);
                         }
                         else
