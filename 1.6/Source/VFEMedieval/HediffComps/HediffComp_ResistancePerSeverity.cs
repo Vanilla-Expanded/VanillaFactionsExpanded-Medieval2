@@ -12,11 +12,10 @@ namespace VFEMedieval
         public HediffCompProperties_ResistancePerSeverity Props => (HediffCompProperties_ResistancePerSeverity)props;
 
 
-
-        public override void CompPostTick(ref float severityAdjustment)
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             Pawn pawn = this.parent.pawn;
-            if (pawn.IsHashIntervalTick(3600))
+            if (pawn.IsHashIntervalTick(3600, delta))
             {
                 float loss;
                 if (this.parent.Severity > 0.65f)

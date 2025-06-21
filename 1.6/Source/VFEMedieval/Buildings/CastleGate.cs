@@ -13,15 +13,11 @@ namespace VFEMedieval
         public override void Tick()
         {
             base.Tick();
-            if (openInt is false)
+            if (openInt is false && ticksSinceOpen > 0)
             {
-                for (var i = 0; i < 9; i++)
-                {
-                    if (ticksSinceOpen > 0)
-                    {
-                        ticksSinceOpen--;
-                    }
-                }
+                ticksSinceOpen -= 9;
+                if (ticksSinceOpen < 0)
+                    ticksSinceOpen = 0;
             }
         }
 

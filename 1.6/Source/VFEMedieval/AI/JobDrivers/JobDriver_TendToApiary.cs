@@ -31,27 +31,24 @@ namespace VFEMedieval
             this.FailOnBurningImmobile(TargetIndex.A);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             yield return Toils_General.Wait(500, TargetIndex.None).FailOnDestroyedNullOrForbidden(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch).FailOn(() => !this.Apiary.needTend).WithProgressBarToilDelay(TargetIndex.A, false, -0.5f);
-            yield return new Toil
+            var toil = ToilMaker.MakeToil();
+            toil.initAction = delegate
             {
-                initAction = delegate ()
+                SkillRecord skill = pawn.skills.GetSkill(SkillDefOf.Animals);
+                if (Rand.RangeInclusive(0, 11 - skill.Level / 2) <= 5)
                 {
-                    SkillRecord skill = pawn.skills.GetSkill(SkillDefOf.Animals);
-                    if (Rand.RangeInclusive(0, 11 - skill.Level / 2) <= 5)
-                    {
-                        this.Apiary.tickBeforeTend += 120000;
-                    }
-                    else
-                    {
-                       
-                        pawn.needs.mood.thoughts.memories.TryGainMemoryFast(VFEM_DefOf.VFEM2_StingMoodDebuff);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "VFEM2_TendingFailed".Translate(), 5f);
-                        pawn.jobs.StartJob(JobMaker.MakeJob(VFEM_DefOf.VFEM2_TendToApiary, TargetA), JobCondition.InterruptForced);
-                    }
-                    skill.Learn(20);
-                },
-                defaultCompleteMode = ToilCompleteMode.Instant
+                    this.Apiary.tickBeforeTend += 120000;
+                }
+                else
+                {
+                    pawn.needs.mood.thoughts.memories.TryGainMemoryFast(VFEM_DefOf.VFEM2_StingMoodDebuff);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "VFEM2_TendingFailed".Translate(), 5f);
+                    pawn.jobs.StartJob(JobMaker.MakeJob(VFEM_DefOf.VFEM2_TendToApiary, TargetA), JobCondition.InterruptForced);
+                }
+                skill.Learn(20);
             };
-            yield break;
+            toil.defaultCompleteMode = ToilCompleteMode.Instant;
+            yield return toil;
         }
     }
 }

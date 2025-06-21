@@ -22,10 +22,7 @@ namespace VFEMedieval
 
         public static void RemovePawnMoodTimeMultiplierFromList(Pawn thing)
         {
-            if (pawnMoodTimeMultiplier.ContainsKey(thing))
-            {
-                pawnMoodTimeMultiplier.Remove(thing);
-            }
+            pawnMoodTimeMultiplier.Remove(thing);
         }
 
      
@@ -37,10 +34,7 @@ namespace VFEMedieval
 
         public static void RemovePawnLearningFactorSinglePassionMultiplierFromList(Pawn thing)
         {
-            if (pawnLearningFactorSinglePassionMultiplier.ContainsKey(thing))
-            {
-                pawnLearningFactorSinglePassionMultiplier.Remove(thing);
-            }
+            pawnLearningFactorSinglePassionMultiplier.Remove(thing);
         }
 
         public static void AddPawnLearningFactorDoublePassionMultiplierToList(Pawn thing, float modifier)
@@ -50,10 +44,7 @@ namespace VFEMedieval
 
         public static void RemovePawnLearningFactorDoublePassionMultiplierFromList(Pawn thing)
         {
-            if (pawnLearningFactorDoublePassionMultiplier.ContainsKey(thing))
-            {
-                pawnLearningFactorDoublePassionMultiplier.Remove(thing);
-            }
+            pawnLearningFactorDoublePassionMultiplier.Remove(thing);
         }
 
     }

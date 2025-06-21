@@ -12,13 +12,12 @@ namespace VFEMedieval
         public HediffCompProperties_OffsetHemogen Props => (HediffCompProperties_OffsetHemogen)props;
 
 
-
-        public override void CompPostTick(ref float severityAdjustment)
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             
            
 
-            if (this.parent.pawn.IsHashIntervalTick(100))
+            if (this.parent.pawn.IsHashIntervalTick(100, delta))
             {
                 Pawn pawn = this.parent.pawn;
 

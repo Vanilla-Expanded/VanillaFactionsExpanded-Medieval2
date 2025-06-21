@@ -325,16 +325,16 @@ namespace VFEMedieval
             }
         }
 
-        protected override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
+            base.TickInterval(delta);
             if (HasMap is false)
             {
                 if (pather.MovingNow is false)
                 {
                     if (ticksToStay > 0)
                     {
-                        ticksToStay--;
+                        ticksToStay -= delta;
                         if (ticksToStay <= 0)
                         {
                             TryStartPathing();

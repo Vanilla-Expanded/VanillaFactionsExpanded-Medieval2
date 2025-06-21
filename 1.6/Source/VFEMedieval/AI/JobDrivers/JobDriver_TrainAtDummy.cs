@@ -36,32 +36,33 @@ namespace VFEMedieval
             this.EndOnDespawnedOrNull(TargetIndex.A, JobCondition.Incompletable);
             this.FailOnBurningImmobile(TargetIndex.A);
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.Touch);
-            Toil toil = new Toil();
+            var toil = ToilMaker.MakeToil();
             toil.initAction = delegate ()
             {
                 initialXP = TargetThingA.HitPoints;
             };
-            toil.tickAction = delegate ()
+            toil.tickAction = () =>
             {
-                pawn.rotationTracker.FaceTarget(TargetA);
-                pawn.GainComfortFromCellIfPossible(1,false);
                 if (pawn.meleeVerbs.TryMeleeAttack(TargetA.Thing))
                 {
                     pawn.skills.Learn(SkillDefOf.Melee, 30f, false);
                     TargetThingA.HitPoints = initialXP;
                 }
-                Building joySource = (Building)TargetThingA;
-                JoyUtility.JoyTickCheckEnd(pawn, 1,job.doUntilGatheringEnded ? JoyTickFullJoyAction.None : JoyTickFullJoyAction.EndJob, 1f, joySource);
+            };
+            toil.tickIntervalAction = delta =>
+            {
+                pawn.rotationTracker.FaceTarget(TargetA);
+                pawn.GainComfortFromCellIfPossible(delta);
+                JoyUtility.JoyTickCheckEnd(pawn, delta, job.doUntilGatheringEnded ? JoyTickFullJoyAction.None : JoyTickFullJoyAction.EndJob, 1f, (Building)TargetThingA);
             };
             toil.handlingFacing = true;
             toil.defaultCompleteMode = ToilCompleteMode.Delay;
             toil.defaultDuration = job.doUntilGatheringEnded ? job.expiryInterval : job.def.joyDuration;
-            toil.AddFinishAction(delegate
+            toil.AddFinishAction(() =>
             {
                 JoyUtility.TryGainRecRoomThought(pawn);
             });
             yield return toil;
-            yield break;
         }
 
 

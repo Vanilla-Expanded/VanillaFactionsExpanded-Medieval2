@@ -13,21 +13,20 @@ namespace VFEMedieval
 
         public static List<BodyPartDef> bodyParts = new List<BodyPartDef>() { BodyPartDefOf.Heart, BodyPartDefOf.Lung, VFEM_DefOf.Kidney };
 
-
-        public override void CompPostTick(ref float severityAdjustment)
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             Pawn pawn = this.parent.pawn;
 
             if (this.parent.Severity > 0.9f)
             {
-                if (pawn.IsHashIntervalTick(3600))
+                if (pawn.IsHashIntervalTick(3600, delta))
                 {
                     HediffGiverUtility.TryApply(pawn, HediffDefOf.OrganDecay, bodyParts);
                 }
             }
             else
             {
-                if (pawn.IsHashIntervalTick(10800))
+                if (pawn.IsHashIntervalTick(10800, delta))
                 {
                     HediffGiverUtility.TryApply(pawn, HediffDefOf.OrganDecay, bodyParts);
                 }

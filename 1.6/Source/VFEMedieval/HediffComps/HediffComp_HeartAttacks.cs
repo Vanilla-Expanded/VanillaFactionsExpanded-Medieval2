@@ -13,10 +13,10 @@ namespace VFEMedieval
 
         public static  List<BodyPartDef> bodyParts = new List<BodyPartDef>() { BodyPartDefOf.Heart};
 
-        public override void CompPostTick(ref float severityAdjustment)
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             Pawn pawn = this.parent.pawn;
-            if (pawn.IsHashIntervalTick(30000))
+            if (pawn.IsHashIntervalTick(30000, delta))
             {
               
                 if (this.parent.Severity > 0.65f)

@@ -12,10 +12,10 @@ namespace VFEMedieval
         public HediffCompProperties_MoodPeriodModifier Props => (HediffCompProperties_MoodPeriodModifier)props;
 
 
-        public override void CompPostTick(ref float severityAdjustment)
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             Pawn pawn = this.parent.pawn;
-            if (pawn.IsHashIntervalTick(200))
+            if (pawn.IsHashIntervalTick(200, delta))
             {
                
                 if (this.parent.Severity > 0.65f)
