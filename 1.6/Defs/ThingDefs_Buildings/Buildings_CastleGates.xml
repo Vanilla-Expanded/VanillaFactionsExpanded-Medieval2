@@ -34,6 +34,7 @@
 				<shaderType>EdgeDetect</shaderType>
 				<drawSize>(2.6, 3.1)</drawSize>
 			</blueprintGraphicData>
+			<isSupportDoor>true</isSupportDoor>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor2x1_Top</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
@@ -88,6 +89,7 @@
 				<shaderType>EdgeDetect</shaderType>
 				<drawSize>(3.6, 4.1)</drawSize>
 			</blueprintGraphicData>
+			<isSupportDoor>true</isSupportDoor>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor3x1_Top</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
@@ -142,6 +144,7 @@
 				<shaderType>EdgeDetect</shaderType>
 				<drawSize>(4.6, 5.1)</drawSize>
 			</blueprintGraphicData>
+			<isSupportDoor>true</isSupportDoor>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor4x1_Top</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
@@ -200,6 +203,7 @@
 				<shaderType>EdgeDetect</shaderType>
 				<drawSize>(2.6, 3.1)</drawSize>
 			</blueprintGraphicData>
+			<isSupportDoor>true</isSupportDoor>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor2x1_Top</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
@@ -257,6 +261,7 @@
 				<shaderType>EdgeDetect</shaderType>
 				<drawSize>(3.6, 4.1)</drawSize>
 			</blueprintGraphicData>
+			<isSupportDoor>true</isSupportDoor>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor3x1_Top</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
@@ -314,6 +319,7 @@
 				<shaderType>EdgeDetect</shaderType>
 				<drawSize>(4.6, 5.1)</drawSize>
 			</blueprintGraphicData>
+			<isSupportDoor>true</isSupportDoor>
 			<doorTopGraphic>
 				<texPath>Things/Building/Doors/CastleDoor4x1_Top</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
