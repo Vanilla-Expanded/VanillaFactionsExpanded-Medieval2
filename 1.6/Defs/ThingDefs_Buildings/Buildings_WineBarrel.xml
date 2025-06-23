@@ -40,13 +40,8 @@
 			<li Class="PipeSystem.CompProperties_AdvancedResourceProcessor">
 				<notWorkingKey>VFEM2_WineBarrelNotWorking</notWorkingKey>
 				<processes>
-					<li>VFEM2_GrapeToAwfulWine</li>
-					<li>VFEM2_GrapeToPoorWine</li>
-					<li>VFEM2_GrapeToNormalWine</li>
-					<li>VFEM2_GrapeToGoodWine</li>
-					<li>VFEM2_GrapeToExcellentWine</li>
-					<li>VFEM2_GrapeToMasterworkWine</li>
-					<li>VFEM2_GrapeToLegendaryWine</li>
+					<li>VFEM2_GrapeToWine</li>
+				
 				</processes>
 				<progressBarOffset>(0,0,-0.5)</progressBarOffset>
 				<hideSettings>true</hideSettings>
