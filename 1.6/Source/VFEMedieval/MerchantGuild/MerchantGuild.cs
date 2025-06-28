@@ -100,7 +100,7 @@ namespace VFEMedieval
                 {
                     generationLocation = result;
                 }
-                var lord = LordMaker.MakeNewLord(Faction, new LordJob_DefendBase(Faction, generationLocation), map, null);
+                var lord = LordMaker.MakeNewLord(Faction, new LordJob_DefendBase(Faction, generationLocation, 180000), map, null);
 
                 if (pather.Moving)
                 {

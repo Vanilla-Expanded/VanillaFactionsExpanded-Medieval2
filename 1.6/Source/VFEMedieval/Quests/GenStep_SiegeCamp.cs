@@ -88,7 +88,7 @@ namespace VFEMedieval
             var pawnSpawnRect = CellRect.CenteredOn(generationLocation, width / 2, height / 2);
             pawnSpawnRect.ClipInsideMap(map);
             SpawnPawns(defenders, pawnSpawnRect, map);
-            LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, generationLocation), map, defenders);
+            LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, generationLocation, 180000), map, defenders);
         }
 
         private void SpawnPawns(List<Pawn> pawns, CellRect cellRect, Map map)

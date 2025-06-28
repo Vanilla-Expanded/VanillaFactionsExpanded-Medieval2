@@ -58,7 +58,7 @@ namespace VFEMedieval
             GenSpawn.Spawn(militia1, CellFinder.RandomClosewalkCellNear(castleCenter, map, 4, null), map);
             GenSpawn.Spawn(militia2, CellFinder.RandomClosewalkCellNear(castleCenter, map, 4, null), map);
 
-            LordMaker.MakeNewLord(enemyFaction, new LordJob_DefendBase(enemyFaction, castleCenter), map, enemyPawns);
+            LordMaker.MakeNewLord(enemyFaction, new LordJob_DefendBase(enemyFaction, castleCenter, 180000), map, enemyPawns);
 
             foreach (var building in map.listerThings.AllThings.Where(x => x is Building && x.def.IsBuildingArtificial).ToList())
             {
