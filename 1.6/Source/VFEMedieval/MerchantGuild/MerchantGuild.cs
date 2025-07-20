@@ -325,7 +325,7 @@ namespace VFEMedieval
             }
         }
 
-        public override void TickInterval(int delta)
+        protected override void TickInterval(int delta)
         {
             base.TickInterval(delta);
             if (HasMap is false)
