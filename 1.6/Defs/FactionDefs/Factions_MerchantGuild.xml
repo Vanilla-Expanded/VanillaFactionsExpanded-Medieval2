@@ -17,7 +17,7 @@
 		<settlementGenerationWeight>0</settlementGenerationWeight>
 		<hidden>true</hidden>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
-		<canMakeRandomly>true</canMakeRandomly>
+		<canMakeRandomly>false</canMakeRandomly>
 		<canStageAttacks>true</canStageAttacks>
 		<factionIconPath>MapIcons/TradingGuild</factionIconPath>
 		<factionNameMaker>VFEM2_NamerFactionMedieval</factionNameMaker>
