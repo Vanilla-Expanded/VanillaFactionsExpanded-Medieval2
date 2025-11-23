@@ -17,6 +17,7 @@
         <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
         <wantsThreatPoints>true</wantsThreatPoints>
         <minThreatPoints>100</minThreatPoints>
+		<gravShipsCanLandOn>true</gravShipsCanLandOn>
         <tags>
             <li>VFEM2_Skirmish</li>
         </tags>
