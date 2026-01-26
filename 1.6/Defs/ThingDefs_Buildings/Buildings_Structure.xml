@@ -527,8 +527,8 @@
     <holdsRoof>false</holdsRoof>
     <designationCategory>Structure</designationCategory>
     <uiOrder>2005</uiOrder>
-    <staticSunShadowHeight>1.0</staticSunShadowHeight>
-    <blockLight>true</blockLight>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <blockLight>false</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
     <stuffCategories>

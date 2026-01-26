@@ -8,16 +8,23 @@
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Base</texPath>
+      <texPath>Things/Building/Linked/LowCastleWall/LowCastleWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1, 1)</drawSize>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
       <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
       </damageData>
-      <shadowData>
-        <volume>(0.5,0.35,0.4)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <uiIconPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_MenuIcon</uiIconPath>
@@ -26,7 +33,8 @@
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>true</rotatable>
-    <blockWind>true</blockWind>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
     <passability>PassThroughOnly</passability>
     <pathCost>42</pathCost>
     <fillPercent>0.4</fillPercent>
@@ -62,12 +70,12 @@
         <factorByDifficulty>true</factorByDifficulty>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <outOfFuelMessage>Cannot shoot: Needs reloading</outOfFuelMessage>
-        <fuelIconPath>Things/Item/Resource/WoodLog</fuelIconPath>
         <initialFuelPercent>1</initialFuelPercent>
       </li>
     </comps>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <stuffCategories>
       <li>Stony</li>
     </stuffCategories>
@@ -95,6 +103,33 @@
       <li>PlaceWorker_ShowTurretRadius</li>
       <li>PlaceWorker_TurretTop</li>
     </placeWorkers>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <modExtensions>
+      <li Class="VEF.Weapons.AutoRefuelMannedTurrets">
+        <reloadsMoreThanSingleItem>true</reloadsMoreThanSingleItem>
+      </li>
+      <li Class="VEF.Buildings.GhostGraphicExtension">
+        <ghostMode>CustomGraphicPath</ghostMode>
+        <customGraphicData>
+          <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Base</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(1,1)</drawSize>
+          <drawRotated>false</drawRotated>
+          <allowFlip>false</allowFlip>
+        </customGraphicData>
+
+        <extraGraphicGhostMode>VanillaNoLinking</extraGraphicGhostMode>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseProjectileNeolithic">
@@ -162,16 +197,23 @@
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Base</texPath>
+      <texPath>Things/Building/Linked/LowCastleWall/LowCastleWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1, 1)</drawSize>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
       <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
       </damageData>
-      <shadowData>
-        <volume>(0.5,0.35,0.4)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <uiIconPath>Things/Building/Security/ArquebusTurret/ArquebusTurret_MenuIcon</uiIconPath>
@@ -180,7 +222,8 @@
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>true</rotatable>
-    <blockWind>true</blockWind>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
     <passability>PassThroughOnly</passability>
     <pathCost>42</pathCost>
     <fillPercent>0.4</fillPercent>
@@ -222,6 +265,7 @@
     </comps>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <stuffCategories>
       <li>Stony</li>
     </stuffCategories>
@@ -250,6 +294,33 @@
       <li>VFEMedieval.PlaceWorker_ShowTurretRadius</li>
       <li>PlaceWorker_TurretTop</li>
     </placeWorkers>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <modExtensions>
+      <li Class="VEF.Weapons.AutoRefuelMannedTurrets">
+        <reloadsMoreThanSingleItem>true</reloadsMoreThanSingleItem>
+      </li>
+      <li Class="VEF.Buildings.GhostGraphicExtension">
+        <ghostMode>CustomGraphicPath</ghostMode>
+        <customGraphicData>
+          <texPath>Things/Building/Security/ArbalestTurret/ArbalestTurret_Base</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(1,1)</drawSize>
+          <drawRotated>false</drawRotated>
+          <allowFlip>false</allowFlip>
+        </customGraphicData>
+
+        <extraGraphicGhostMode>VanillaNoLinking</extraGraphicGhostMode>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseWeaponTurret">
