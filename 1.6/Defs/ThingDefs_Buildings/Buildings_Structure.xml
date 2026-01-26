@@ -334,7 +334,7 @@
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
     <drawStyleCategory>Walls</drawStyleCategory>
-    <tickerType>Rare</tickerType>
+    <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
@@ -431,7 +431,7 @@
     <fillPercent>0.55</fillPercent>
     <coversFloor>true</coversFloor>
     <drawStyleCategory>Walls</drawStyleCategory>
-    <tickerType>Rare</tickerType>
+    <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
@@ -518,7 +518,7 @@
 	<pathCost>42</pathCost>
     <coversFloor>true</coversFloor>
     <drawStyleCategory>Walls</drawStyleCategory>
-    <tickerType>Rare</tickerType>
+    <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
@@ -614,7 +614,7 @@
 	<pathCost>5</pathCost>
     <coversFloor>true</coversFloor>
    <drawStyleCategory>Walls</drawStyleCategory>
-    <tickerType>Rare</tickerType>
+    <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
