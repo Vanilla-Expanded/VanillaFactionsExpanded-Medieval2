@@ -464,4 +464,198 @@
     </projectile>
   </ThingDef>
 
+  <!-- Musket -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>VFEM2_Gun_Musket</defName>
+    <label>musket</label>
+    <description>A long-barreled, smoothbore firearm, the musket is a weapon of the line infantry. The lead ball loses velocity and damage with distance, and is extremely ineffective against armor. Due to the chempowder reaction when firing the musket, plumes of blindsmoke are ejected from the barrel.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Musket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.11</drawSize>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>4.2</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.88</AccuracyMedium>
+      <AccuracyLong>0.8</AccuracyLong>
+      <RangedWeapon_Cooldown>5</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <weaponTags>
+    </weaponTags>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <costList>
+      <WoodLog>70</WoodLog>
+      <Steel>25</Steel>
+      <Chemfuel>15</Chemfuel>
+    </costList>
+    <recipeMaker>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>VFEM2_Matchlocks</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bullet_Musket</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>46.9</range>
+        <soundCast>VFEM2_Shot_Arquebus</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <armorPenetration>0.15</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <armorPenetration>0.15</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>bayonet</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>14</power>
+        <armorPenetration>0.2</armorPenetration>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFEM2_Bullet_Musket</defName>
+    <label>musket shot</label>
+    <thingClass>VFEMedieval.MatchlockProjectile</thingClass>
+    <projectile Class="VFEMedieval.ProjectilePropertiesMatchLock">
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>3.0</stoppingPower>
+      <speed>75</speed>
+      <armorPenetrationBase>-0.1</armorPenetrationBase>
+      <shotCount>1</shotCount>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/MatchlockShot/MatchlockShot_Large</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <!-- Flintlock -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>VFEM2_Gun_Flintlock</defName>
+    <label>flintlock</label>
+    <description>A simple, heavy pistol utilizing a flintlock mechanism. It fires a powerful shot at close-to-medium range but is slow to reload. The lead ball loses velocity and damage with distance, and is extremely ineffective against armor. Due to the chempowder reaction when firing the flintlock, plumes of blindsmoke are ejected from the barrel.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Flintlock</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.8</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.4</AccuracyLong>
+      <RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+    </weaponTags>
+    <weaponClasses>
+    </weaponClasses>
+    <costList>
+      <WoodLog>40</WoodLog>
+      <Steel>15</Steel>
+      <Chemfuel>8</Chemfuel>
+    </costList>
+    <recipeMaker>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>VFEM2_Matchlocks</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>VFEMedieval.Verb_ShootWithSmoke</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEM2_Bullet_Flintlock</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>25.9</range>
+        <soundCast>VFEM2_Shot_Arquebus</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <armorPenetration>0.13</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <armorPenetration>0.13</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFEM2_Bullet_Flintlock</defName>
+    <label>flintlock shot</label>
+    <thingClass>VFEMedieval.MatchlockProjectile</thingClass>
+    <projectile Class="VFEMedieval.ProjectilePropertiesMatchLock">
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <stoppingPower>2.5</stoppingPower>
+      <speed>60</speed>
+      <armorPenetrationBase>-0.05</armorPenetrationBase>
+      <shotCount>1</shotCount>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/MatchlockShot/MatchlockShot_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
 </Defs>
