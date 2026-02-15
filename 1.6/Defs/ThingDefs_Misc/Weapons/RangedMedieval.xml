@@ -513,7 +513,7 @@
         <defaultProjectile>VFEM2_Bullet_Musket</defaultProjectile>
         <warmupTime>2.5</warmupTime>
         <range>46.9</range>
-        <soundCast>VFEM2_Shot_Arquebus</soundCast>
+        <soundCast>VFEM2_Shot_Musket</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -613,7 +613,7 @@
         <defaultProjectile>VFEM2_Bullet_Flintlock</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <range>25.9</range>
-        <soundCast>VFEM2_Shot_Arquebus</soundCast>
+        <soundCast>VFEM2_Shot_Flintlock</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>

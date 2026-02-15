@@ -82,4 +82,38 @@
     </subSounds>
   </SoundDef>
 
+  <SoundDef>
+    <defName>VFEM2_Shot_Musket</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Arquebus_Shot_01</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.9770592~1.114706</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFEM2_Shot_Flintlock</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Arquebus_Shot_01</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.9770592~1.114706</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
 </Defs>
