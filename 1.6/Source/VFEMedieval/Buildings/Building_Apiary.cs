@@ -5,6 +5,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using VFEMedieval;
+using VEF.Plants;
 
 namespace VFEMedieval
 {
@@ -170,7 +171,16 @@ namespace VFEMedieval
                 {
                     if (item.def.plant != null && (item.def.plant.purpose == PlantPurpose.Beauty || item.def.defName == "VCE_Blueberry"))
                     {
-                        flowerCount++;
+                        Plant_Blooming plantBlooming = item as Plant_Blooming;
+                        if (plantBlooming?.isBlooming==true)
+                        {
+                            flowerCount += 4;
+                        }
+                        else
+                        {
+                            flowerCount++;
+                        }
+                        
                     }
                 }
             }
