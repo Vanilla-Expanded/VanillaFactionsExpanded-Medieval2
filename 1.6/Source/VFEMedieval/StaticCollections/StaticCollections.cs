@@ -7,6 +7,7 @@ using VEF.Weapons;
 
 namespace VFEMedieval
 {
+    [StaticConstructorOnStartup]
     public static class StaticCollections
     {      
 
