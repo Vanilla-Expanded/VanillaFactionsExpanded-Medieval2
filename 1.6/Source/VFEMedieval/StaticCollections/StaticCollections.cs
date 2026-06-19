@@ -3,6 +3,7 @@ using System;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using VEF.Weapons;
 
 namespace VFEMedieval
 {
@@ -13,6 +14,8 @@ namespace VFEMedieval
     
         public static Dictionary<Pawn, float> pawnLearningFactorSinglePassionMultiplier = new Dictionary<Pawn, float>();
         public static Dictionary<Pawn, float> pawnLearningFactorDoublePassionMultiplier = new Dictionary<Pawn, float>();
+
+        public static List<ThingDef> apiaryFlowers = new List<ThingDef>();
 
 
         public static void AddPawnMoodTimeMultiplierToList(Pawn thing, float modifier)
@@ -45,6 +48,14 @@ namespace VFEMedieval
         public static void RemovePawnLearningFactorDoublePassionMultiplierFromList(Pawn thing)
         {
             pawnLearningFactorDoublePassionMultiplier.Remove(thing);
+        }
+
+
+        static StaticCollections()
+        {
+
+            apiaryFlowers = DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.plant?.purpose == PlantPurpose.Beauty || x.GetModExtension<ApiaryFlowerExtension>()?.isApiaryFlower == true).ToList();
+            
         }
 
     }

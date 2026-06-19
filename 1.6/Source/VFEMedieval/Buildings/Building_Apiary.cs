@@ -169,7 +169,7 @@ namespace VFEMedieval
             {
                 foreach (Thing item in cell.GetThingList(this.Map))
                 {
-                    if (item.def.plant != null && (item.def.plant.purpose == PlantPurpose.Beauty || item.def.defName == "VCE_Blueberry"))
+                    if (item.def.plant != null && StaticCollections.apiaryFlowers.Contains(item.def))
                     {
                         Plant_Blooming plantBlooming = item as Plant_Blooming;
                         if (plantBlooming?.isBlooming==true)

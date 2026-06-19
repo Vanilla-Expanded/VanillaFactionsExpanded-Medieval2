@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Plants Expanded - More Plants</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Blueberry"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Canola"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Lavender"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_FragrantbloomRose"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Hyacinth"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Jasmine"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Lily"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Orchid"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Plumeria"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Tulip"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Vanilla"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_Violet"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="VCE_YlangYlang"]</xpath>
+					<value>
+						<li Class="VFEMedieval.ApiaryFlowerExtension">
+							
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
+
+
