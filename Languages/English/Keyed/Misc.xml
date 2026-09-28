@@ -4,7 +4,10 @@
 	<VFEM2_NeedTend>The apiary needs to be tended to</VFEM2_NeedTend>
 	<VFEM2_Resting>The apiary is resting because the ambient temperature is below 10°C</VFEM2_Resting>
 	<VFEM2_Ready>Honey ready</VFEM2_Ready>
+	<!-- Kept for the 1.5 assembly, which still looks up the plain key. -->
 	<VFEM2_NeedFlower>The apiary needs {0} more flowers around it for bees to forage around.</VFEM2_NeedFlower>
+	<VFEM2_NeedFlower.One>The apiary needs {0} more flower around it for bees to forage around.</VFEM2_NeedFlower.One>
+	<VFEM2_NeedFlower.Many>The apiary needs {0} more flowers around it for bees to forage around.</VFEM2_NeedFlower.Many>
 	<VFEM2_NeedTIn>The apiary needs tending in {0}</VFEM2_NeedTIn>
 	<VFEM2_PlaceWorker>The apiary needs to be three cells away from any other apiaries</VFEM2_PlaceWorker>
 	<VFEM2_PlaceWorkerNoRoof>The apiary can't be built under a roof</VFEM2_PlaceWorkerNoRoof>

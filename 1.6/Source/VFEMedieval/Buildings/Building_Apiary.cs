@@ -116,7 +116,7 @@ namespace VFEMedieval
             {
                 if (!IsthereFlowerAround)
                 {
-                    stringBuilder.AppendLine("VFEM2_NeedFlower".Translate(flowerNeeded));
+                    stringBuilder.AppendLine((flowerNeeded == 1 ? "VFEM2_NeedFlower.One" : "VFEM2_NeedFlower.Many").Translate(flowerNeeded));
                 }
                 else
                 {
