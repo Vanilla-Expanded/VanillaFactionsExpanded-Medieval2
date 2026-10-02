@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -14,7 +14,7 @@ namespace VFEMedieval
     [HarmonyPatch(typeof(TradeDeal), "CurrencyTradeable", MethodType.Getter)]
     public static class TradeDeal_CurrencyTradeable_Patch
     {
-        public static void Postfix(BarterDeal __instance, ref Tradeable __result)
+        public static void Postfix(ref Tradeable __result)
         {
             if (Find.WindowStack.IsOpen<Dialog_Barter>())
             {
@@ -26,7 +26,7 @@ namespace VFEMedieval
     [HarmonyPatch(typeof(Tradeable), "IsCurrency", MethodType.Getter)]
     public static class Tradeable_IsCurrency_Patch
     {
-        public static void Postfix(Tradeable __instance, ref bool __result)
+        public static void Postfix(ref bool __result)
         {
             if (Find.WindowStack.IsOpen<Dialog_Barter>())
             {
@@ -149,7 +149,7 @@ namespace VFEMedieval
                     Caravan caravan = TradeSession.playerNegotiator.GetCaravan();
                     StringBuilder stringBuilder = new StringBuilder();
                     cachedTilesPerDay = TilesPerDayCalculator.ApproxTilesPerDayLeftAfterTradeableTransfer(playerCaravanAllPawnsAndItems, deal.AllTradeables, MassUsage, MassCapacity, Tile,
-                        (caravan != null && caravan.pather.Moving) ? caravan.pather.nextTile : (-1),false, stringBuilder);
+                        (caravan != null && caravan.pather.Moving) ? caravan.pather.nextTile : (-1), false, stringBuilder);
                     cachedTilesPerDayExplanation = stringBuilder.ToString();
                 }
                 return cachedTilesPerDay;
@@ -521,7 +521,6 @@ namespace VFEMedieval
             Widgets.EndGroup();
         }
 
-
         public static void DoCountAdjustInterfaceForHumanlike(Rect rect, Transferable trad, int index, int min, int max, bool flash = false, List<TransferableCountToTransferStoppingPoint> extraStoppingPoints = null, bool readOnly = false)
         {
             TransferableUIUtility.stoppingPoints.Clear();
@@ -791,8 +790,6 @@ namespace VFEMedieval
                 return text;
             }, localTrad.GetHashCode()));
         }
-
-
 
         public override bool CausesMessageBackground()
         {
