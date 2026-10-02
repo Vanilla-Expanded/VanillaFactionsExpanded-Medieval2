@@ -107,7 +107,7 @@ namespace VFEMedieval
 
         public override Vector2 InitialSize => new Vector2(1280f, UI.screenHeight);
 
-        private int Tile => TradeSession.playerNegotiator.Tile;
+        private PlanetTile Tile => TradeSession.playerNegotiator.Tile;
 
         private BiomeDef Biome => Find.WorldGrid[Tile].biome;
 
