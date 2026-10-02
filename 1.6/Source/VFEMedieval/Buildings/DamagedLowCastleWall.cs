@@ -16,16 +16,16 @@ namespace VFEMedieval
 
         public void Notify_HitPointsChanged(int hitPoints)
         {
-            if (hitPoints <= 0 || hitPoints <= 0.3 * MaxHitPoints || this.Map == null)
+            if (hitPoints <= 0 || 10 * hitPoints <= 3 * MaxHitPoints || this.Map == null)
                 return;
 
             // Need to check before spawning a replacement, as it'll destroy (and deselect) the current wall
             var selected = Find.Selector.IsSelected(this);
 
-            Thing thingToMake = GenSpawn.Spawn(ThingMaker.MakeThing(VFEM_DefOf.VFEM2_LowCastleWall, this.Stuff), this.PositionHeld, this.Map);
+            Thing thingToMake = ThingMaker.MakeThing(VFEM_DefOf.VFEM2_LowCastleWall, this.Stuff);
+            thingToMake.HitPoints = System.Math.Max(1, System.Math.Min(hitPoints, thingToMake.MaxHitPoints));
             thingToMake.SetFaction(this.Faction);
-            DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, thingToMake.HitPoints * 0.4f);
-            thingToMake.TakeDamage(dinfo);
+            GenSpawn.Spawn(thingToMake, this.PositionHeld, this.Map, this.Rotation);
 
             if (selected)
             {
