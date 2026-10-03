@@ -348,7 +348,7 @@
     <apparelMoney>450~750</apparelMoney>
     <weaponMoney>500~750</weaponMoney>
     <weaponTags>
-	  <li>VFEM2_MeleeWeapon_Standard</li>
+	  <li>VFEM2_Standard</li>
     </weaponTags>
     <apparelRequired>
       <li>Apparel_PlateArmor</li>
