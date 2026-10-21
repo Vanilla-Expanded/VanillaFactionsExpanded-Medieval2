@@ -13,7 +13,7 @@ using VEF.Planet;
 namespace VFEMedieval
 {
     [HotSwappable]
-    public class MerchantGuild : MovingBase, ITrader, IThingHolder
+    public class MerchantGuild : MovingBase, ITrader, IThingHolder, IThingHolderTickable
     {
         private ThingOwner<Thing> stock;
         private int lastStockGenerationTicks = -1;
@@ -534,6 +534,8 @@ namespace VFEMedieval
         {
             return stock;
         }
+
+        public bool ShouldTickContents => false;
 
         public override void GetChildHolders(List<IThingHolder> outChildren)
         {
