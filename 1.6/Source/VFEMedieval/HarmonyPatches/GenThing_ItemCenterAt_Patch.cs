@@ -10,7 +10,7 @@ namespace VFEMedieval
     {
         public static bool Prefix(Thing thing, ref Vector3 __result)
         {
-            if (!thing.Spawned || thing.Position.GetEdifice(thing.Map)?.def != VFEM_DefOf.VFEM2_AilmentsShelf)
+            if (thing.Position.GetEdifice(thing.Map)?.def != VFEM_DefOf.VFEM2_AilmentsShelf)
                 return true;
 
             int itemCount = 0;
